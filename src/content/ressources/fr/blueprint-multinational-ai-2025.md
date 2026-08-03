@@ -5,20 +5,16 @@ type: note
 cadre: "Oxford Martin AI Governance Initiative et Forum de Paris sur la Paix"
 externe: false
 role: co-auteur
-coAuteurs: [Adrien Abecassis, Jonathan Barry, Ima Bello, Yoshua Bengio,
-Antonin Bergeaud, Yann Bonnet, Philipp Hacker, Ben Harack, Sophia Hatz,
-Joachim Henkel, Holger H. Hoos, Kit Kitamura, Ranjit Lall, Yann Lechelle,
-Constance de Leusse, Charles Martinet, Nicolas Miailhe, Julia C. Morse,
-Maximilian Negele, Kyung Ryul Park, Miro Pluckebaum, Murielle Popa-Fabre,
-Benjamin Prud’homme, Yohann Ralle, Mark Robinson, Charbel-Raphael
-Segerie, José-Ignacio Torreblanca, Lucia Velasco, K. VijayRaghavan]
+coAuteurs:
+  - "Adrien Abécassis"
+  - "Yoshua Bengio"
 langueDocument: en
 groupe: blueprint-multinational-ai-2025
 themes:
   - ia
   - souverainete
   - politiques-publiques
-lienCanonique: "https://aigi.ox.ac.uk/wp-content/uploads/2025/11/blueprint_for_multinational_ai_development.pdf""
+lienCanonique: "https://aigi.ox.ac.uk/wp-content/uploads/2025/11/blueprint_for_multinational_ai_development.pdf"
 resume: "Note proposant une architecture de coopération multinationale pour le développement des systèmes d'IA avancés, alternative à la concurrence entre États et laboratoires privés."
 aVerifier: true
 ---

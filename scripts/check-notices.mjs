@@ -16,19 +16,30 @@ function listMarkdownFiles(dir) {
   });
 }
 
-function extractBody(raw) {
+function splitFrontmatter(raw) {
   const lines = raw.split('\n');
-  if (lines[0].trim() !== '---') return raw.trim();
+  if (lines[0].trim() !== '---') return { frontmatter: '', body: raw.trim() };
   const closingIndex = lines.slice(1).findIndex((line) => line.trim() === '---');
-  if (closingIndex === -1) return raw.trim();
-  return lines.slice(closingIndex + 2).join('\n').trim();
+  if (closingIndex === -1) return { frontmatter: '', body: raw.trim() };
+  return {
+    frontmatter: lines.slice(1, closingIndex + 1).join('\n'),
+    body: lines.slice(closingIndex + 2).join('\n').trim(),
+  };
+}
+
+// Référence externe (cf. CLAUDE.md §6) : pas de notice critique attendue, juste une
+// contextualisation. On repère `externe: true` par une ligne de premier niveau plutôt
+// que de tirer js-yaml (dépendance transitive seulement) pour un booléen scalaire simple.
+function isExterne(frontmatter) {
+  return /^externe:\s*true\s*$/m.test(frontmatter);
 }
 
 const files = listMarkdownFiles(ROOT);
 const errors = [];
 
 for (const file of files) {
-  const body = extractBody(readFileSync(file, 'utf-8'));
+  const { frontmatter, body } = splitFrontmatter(readFileSync(file, 'utf-8'));
+  if (isExterne(frontmatter)) continue;
   if (body.length === 0) {
     errors.push(`${file} : notice vide (corps Markdown manquant)`);
   } else if (/\bTODO\b/.test(body)) {

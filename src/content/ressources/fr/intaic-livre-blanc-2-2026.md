@@ -6,8 +6,7 @@ type: rapport
 cadre: "Coalition INTAiC — Forum de Paris sur la Paix et CeSIA"
 externe: false
 role: co-auteur
-coAuteurs: [Pablo Rice,Illena Armstrong, Gérôme Billois,Yann Bonnet,Francesca Bosco,Elsa Bouly
-Diplomat, Ministry for Europe and Foreign,Nicholas Butts,Lola Carbonell,Pauline Charazac,Michael Daniel,Stéphane Duguin,John Hultquist,Paolo Palumbo,Paolo Pellegrino,Jean-Bernard Prouhet,Jim Ravis,Keir Reid, Wicus Ross, Pascal Steichen, Adriana Stephan]
+coAuteurs: [Pablo Rice, Illena Armstrong, Gérôme Billois, Yann Bonnet, Francesca Bosco, Elsa Bouly, Nicholas Butts, Lola Carbonell, Pauline Charazac, Michael Daniel, Stéphane Duguin, John Hultquist, Paolo Palumbo, Paolo Pellegrino, Jean-Bernard Prouhet, Jim Ravis, Keir Reid, Wicus Ross, Pascal Steichen, Adriana Stephan]
 langueDocument: fr
 groupe: intaic-livre-blanc-2-2026
 themes:
