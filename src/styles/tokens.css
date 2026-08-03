@@ -28,10 +28,64 @@
   --espace-5: 4rem;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   color: var(--couleur-texte);
   background-color: var(--couleur-fond);
   font-family: var(--police-corps);
   font-size: var(--taille-base);
   line-height: 1.6;
+}
+
+a {
+  color: var(--couleur-accent);
+}
+
+a:visited {
+  color: var(--couleur-accent);
+}
+
+/* Colonne de lecture centrée (§8 : mesure de ligne 62–72 caractères).
+   Pas de conteneur dédié dans les gabarits : la largeur est posée ici,
+   directement sur les régions de page. */
+header,
+main,
+footer {
+  max-width: calc(var(--mesure-ligne) + 2 * var(--espace-4));
+  margin-inline: auto;
+  padding-inline: var(--espace-3);
+}
+
+header {
+  padding-block: var(--espace-2);
+}
+
+main {
+  padding-block: var(--espace-4);
+}
+
+footer {
+  padding-block: var(--espace-3);
+  font-family: var(--police-interface);
+  font-size: var(--taille-petite);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--police-corps);
+  line-height: 1.25;
+  margin-block: var(--espace-4) var(--espace-2);
+}
+
+p,
+ul,
+ol {
+  margin-block: 0 var(--espace-2);
 }
