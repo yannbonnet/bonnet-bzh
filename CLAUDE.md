@@ -248,9 +248,16 @@ Une phase par session, un commit par phase. Ne pas anticiper sur la phase suivan
 1. **Architecture** — squelette Astro, `content/config.ts`, layouts, routage, i18n,
    configuration Tailwind ou CSS. Aucune donnée réelle, deux fiches d'exemple.
    *À faire en mode plan, validé avant écriture.*
-2. **Contenu** — un fichier Markdown par ressource, front-matter complet, `resume`
-   rédigé, `notice` laissée en `TODO:` explicite. **Ne pas rédiger les notices
-   critiques** : elles sont écrites à la main par Yann Bonnet. Signaler tout lien non
+2. **Contenu** — *terminé.* Quinze fiches FR dans `src/content/ressources/fr/`,
+   front-matter complet et notices critiques rédigées à la main par Yann Bonnet
+   (3 à 6 lignes, §3.2). `scripts/check-notices.mjs` échoue si le corps Markdown d'une
+   fiche est vide ou contient encore `TODO`, sauf pour les fiches `externe: true`
+   (référence externe : une contextualisation de deux ou trois phrases suffit, pas de
+   rétrospective critique — §6).
+   **Convention `TODO` pour toute fiche future :** front-matter complet dès la
+   création, corps Markdown laissé en `TODO: rédiger la notice critique.` jusqu'à
+   rédaction manuelle — c'est ce marqueur littéral que `check-notices.mjs` détecte.
+   Ne jamais rédiger la notice à la place de Yann Bonnet. Signaler tout lien non
    confirmé avec `aVerifier: true`.
 3. **Design** — mise en forme, échelle typographique, composants de fiche, filtres,
    états vides, responsive.
