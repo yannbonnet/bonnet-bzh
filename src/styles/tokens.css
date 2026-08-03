@@ -1,0 +1,37 @@
+:root {
+  /* Couleurs — cf. CLAUDE.md §2 et §8 : même teinte que genea.bonnet.bzh,
+     un seul accent, utilisé avec parcimonie. */
+  --couleur-texte: #1a1f24;
+  --couleur-fond: #faf9f6;
+  --couleur-accent: #222b33;
+  --couleur-bordure: #d8d5cd;
+
+  /* Typographie — pile de secours en attendant les polices woff2
+     auto-hébergées (Source Serif / Newsreader) posées en phase 3. */
+  --police-corps: Georgia, 'Times New Roman', serif;
+  --police-interface: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --taille-base: 1.125rem;
+  --echelle-typo: 1.25;
+  --taille-petite: calc(var(--taille-base) / var(--echelle-typo));
+  --taille-h3: calc(var(--taille-base) * var(--echelle-typo));
+  --taille-h2: calc(var(--taille-h3) * var(--echelle-typo));
+  --taille-h1: calc(var(--taille-h2) * var(--echelle-typo));
+
+  /* Mesure de ligne du corps de texte : 62–72 caractères (§8) */
+  --mesure-ligne: 68ch;
+
+  --espace-1: 0.5rem;
+  --espace-2: 1rem;
+  --espace-3: 1.5rem;
+  --espace-4: 2.5rem;
+  --espace-5: 4rem;
+}
+
+body {
+  color: var(--couleur-texte);
+  background-color: var(--couleur-fond);
+  font-family: var(--police-corps);
+  font-size: var(--taille-base);
+  line-height: 1.6;
+}

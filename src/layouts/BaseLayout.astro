@@ -1,0 +1,47 @@
+---
+import '../styles/tokens.css';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: 'fr' | 'en';
+  title: string;
+  description?: string;
+}
+
+const { lang, title, description } = Astro.props;
+const t = useTranslations(lang);
+const prefix = lang === 'fr' ? '' : '/en';
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — bonnet.bzh</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header>
+      <nav aria-label={lang === 'fr' ? 'Navigation principale' : 'Main navigation'}>
+        <a href={`${prefix}/`}>bonnet.bzh</a>
+        <ul>
+          <li><a href={`${prefix}/`}>{t('nav.accueil')}</a></li>
+          <li><a href={`${prefix}/ressources`}>{t('nav.ressources')}</a></li>
+          <li><a href="/a-propos">{t('nav.apropos')}</a></li>
+          <li><a href="https://genea.bonnet.bzh">{t('nav.genea')}</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <p>{t('footer.licence')}</p>
+      <p><a href="/mentions-legales">{t('footer.mentions')}</a></p>
+    </footer>
+  </body>
+</html>

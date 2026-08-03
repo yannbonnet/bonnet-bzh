@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const ressources = (
+  await getCollection('ressources', (entry) => entry.id.startsWith('fr/'))
+).sort((a, b) => b.data.annee - a.data.annee);
+---
+
+<BaseLayout
+  lang="fr"
+  title="Accueil"
+  description="Bibliothèque d'archives commentées sur les politiques publiques du numérique, la gouvernance de l'IA et la cybersécurité."
+>
+  <p>
+    [Présentation à rédiger — deux lignes maximum : poste actuel de Yann Bonnet, puis à
+    quoi sert ce site. Contrainte stricte, cf. CLAUDE.md §5 : pas de biographie ici, elle
+    va dans /a-propos.]
+  </p>
+
+  <section aria-labelledby="bibliotheque-titre">
+    <h2 id="bibliotheque-titre">Bibliothèque</h2>
+    <ul>
+      {
+        ressources.map((entry) => (
+          <li>
+            <a href={`/ressources/${entry.id.replace(/^fr\//, '')}`}>{entry.data.titre}</a>
+            <p>{entry.data.resume}</p>
+          </li>
+        ))
+      }
+    </ul>
+    <p><a href="/ressources">Voir toute la bibliothèque →</a></p>
+  </section>
+</BaseLayout>

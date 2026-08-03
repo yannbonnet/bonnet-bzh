@@ -1,0 +1,19 @@
+---
+import { getCollection, render } from 'astro:content';
+import RessourceLayout from '../../../layouts/RessourceLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('ressources', (entry) => entry.id.startsWith('en/'));
+  return entries.map((entry) => ({
+    params: { slug: entry.id.replace(/^en\//, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<RessourceLayout lang="en" entry={entry}>
+  <Content />
+</RessourceLayout>

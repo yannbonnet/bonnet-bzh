@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const ressources = (
+  await getCollection('ressources', (entry) => entry.id.startsWith('en/'))
+).sort((a, b) => b.data.annee - a.data.annee);
+---
+
+<BaseLayout lang="en" title="Resources" description="A library of resources on digital policy.">
+  <h1>Library</h1>
+  <!-- Theme filters (§8): added in phase 3, once real data exists. -->
+  <ul>
+    {
+      ressources.map((entry) => (
+        <li>
+          <a href={`/en/ressources/${entry.id.replace(/^en\//, '')}`}>{entry.data.titre}</a>
+          <p>{entry.data.resume}</p>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const ressources = (
+  await getCollection('ressources', (entry) => entry.id.startsWith('en/'))
+).sort((a, b) => b.data.annee - a.data.annee);
+---
+
+<BaseLayout
+  lang="en"
+  title="Home"
+  description="A commented archive of reports and notes on digital policy, AI governance and cybersecurity."
+>
+  <p>
+    [Introduction to be written — two lines maximum: Yann Bonnet's current role, then
+    what this site is for. Strict constraint, see CLAUDE.md §5: no biography here, that
+    belongs on /a-propos.]
+  </p>
+
+  <section aria-labelledby="library-title">
+    <h2 id="library-title">Library</h2>
+    <ul>
+      {
+        ressources.map((entry) => (
+          <li>
+            <a href={`/en/ressources/${entry.id.replace(/^en\//, '')}`}>{entry.data.titre}</a>
+            <p>{entry.data.resume}</p>
+          </li>
+        ))
+      }
+    </ul>
+    <p><a href="/en/ressources">Browse the full library →</a></p>
+  </section>
+</BaseLayout>

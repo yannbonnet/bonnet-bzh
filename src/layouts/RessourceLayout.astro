@@ -1,0 +1,62 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  lang: 'fr' | 'en';
+  entry: CollectionEntry<'ressources'>;
+}
+
+const { lang, entry } = Astro.props;
+const {
+  titre,
+  sousTitre,
+  annee,
+  type,
+  cadre,
+  role,
+  coAuteurs,
+  themes,
+  lienCanonique,
+  lienArchive,
+  licence,
+  aVerifier,
+  resume,
+} = entry.data;
+---
+
+<BaseLayout lang={lang} title={titre} description={resume}>
+  <article>
+    <header>
+      <p class="meta">{type} · {annee} · {cadre}</p>
+      <h1>{titre}</h1>
+      {sousTitre && <p class="sous-titre">{sousTitre}</p>}
+      <p class="role">
+        {role}
+        {coAuteurs.length > 0 && ` — ${coAuteurs.join(', ')}`}
+      </p>
+      <ul class="themes">
+        {themes.map((theme) => <li>{theme}</li>)}
+      </ul>
+    </header>
+
+    <p class="resume">{resume}</p>
+
+    <div class="notice">
+      <slot />
+    </div>
+
+    <footer class="liens">
+      {lienCanonique && (
+        <p><a href={lienCanonique}>{lang === 'fr' ? 'Lien canonique' : 'Canonical link'}</a></p>
+      )}
+      {lienArchive && (
+        <p><a href={lienArchive}>{lang === 'fr' ? "Copie d'archive" : 'Archived copy'}</a></p>
+      )}
+      {licence && <p>{lang === 'fr' ? 'Licence' : 'Licence'} : {licence}</p>}
+      {aVerifier && (
+        <p class="a-verifier">{lang === 'fr' ? '⚠ Information à vérifier' : '⚠ To be verified'}</p>
+      )}
+    </footer>
+  </article>
+</BaseLayout>
