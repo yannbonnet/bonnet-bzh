@@ -1,6 +1,11 @@
-// src/content.config.ts
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+
+const lienComplementaire = z.object({
+  url: z.string().url(),
+  label: z.string(),
+  type: z.enum(['video', 'article', 'conference', 'page', 'donnees']).optional(),
+});
 
 const ressources = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/ressources' }),
@@ -8,25 +13,66 @@ const ressources = defineCollection({
     titre: z.string(),
     sousTitre: z.string().optional(),
     annee: z.number(),
-    dateExacte: z.string().optional(),            // ISO, si connue
-    type: z.enum(['rapport', 'avis', 'note', 'article', 'tribune',
-                  'guidelines', 'audition']),
-    cadre: z.string(),                             // institution commanditaire
-    role: z.enum(['auteur', 'co-auteur', 'coordinateur',
-                  'contributeur', 'membre du groupe']),
+    dateExacte: z.string().optional(),
+
+    type: z.enum([
+      'rapport', 'avis', 'note', 'article', 'tribune',
+      'guidelines', 'audition', 'entretien', 'cours', 'reference',
+    ]),
+
+    cadre: z.string(),
+
+    // Distinction contribution personnelle / référence externe.
+    externe: z.boolean().default(false),
+    role: z
+      .enum([
+        'auteur', 'co-auteur', 'coordinateur',
+        'contributeur', 'membre du groupe', 'interviewe',
+      ])
+      .optional(),
+
     coAuteurs: z.array(z.string()).default([]),
-    langueDocument: z.enum(['fr', 'en']),          // langue du document archivé, pas du site
-    groupe: z.string(),                            // identifiant partagé FR/EN de la ressource
-    themes: z.array(z.enum(['ia', 'cybersecurite', 'souverainete',
-                            'politiques-publiques', 'education',
-                            'sante', 'travail'])).min(1),
-    lienCanonique: z.string().url().optional(),    // source officielle
-    lienArchive: z.string().url().optional(),      // Wayback Machine
-    copieLocale: z.string().optional(),            // /pdf/xxx.pdf
-    licence: z.string().optional(),                // ex. « Licence Ouverte 2.0 »
-    resume: z.string().max(300),                   // factuel, une ligne, ce que dit le texte
-    aVerifier: z.boolean().default(false),         // lien mort ou info à confirmer
+    langueDocument: z.enum(['fr', 'en']),
+    groupe: z.string(),
+    themes: z
+      .array(
+        z.enum([
+          'ia', 'cybersecurite', 'souverainete',
+          'politiques-publiques', 'education', 'sante', 'travail',
+        ]),
+      )
+      .min(1),
+
+    lienCanonique: z.string().url().optional(),
+    lienArchive: z.string().url().optional(),
+    copieLocale: z.string().optional(),
+    liensComplementaires: z.array(lienComplementaire).default([]),
+    accesRestreint: z.boolean().default(false),
+
+    licence: z.string().optional(),
+    resume: z.string().max(300),
+    aVerifier: z.boolean().default(false),
+  })
+  // Un travail personnel déclare son rôle ; une référence externe n'en a pas.
+  .refine((d) => d.externe === (d.role === undefined), {
+    message: 'role est obligatoire si externe: false, et interdit si externe: true',
   }),
 });
 
-export const collections = { ressources };
+// Jalons de la frise chronologique : pas d'auteur, pas de rôle, pas de notice.
+const jalons = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/jalons' }),
+  schema: z.object({
+    intitule: z.string(),
+    date: z.string(),
+    echelle: z.enum(['france', 'union-europeenne', 'international']),
+    nature: z.enum(['loi', 'reglement', 'rapport', 'institution', 'incident', 'decision']),
+    themes: z.array(z.string()).min(1),
+    lien: z.string().url().optional(),
+    // `groupe` d'une ressource, si l'un de tes travaux se rattache à ce jalon.
+    ressourceLiee: z.string().optional(),
+    aVerifier: z.boolean().default(false),
+  }),
+});
+
+export const collections = { ressources, jalons };
