@@ -17,9 +17,9 @@ groupe: cnnum-convergence-transitions-2015
 themes:
   - environnement
   - politiques-publiques
-lienCanonique: "https://www.vie-publique.fr/rapport/37289-pour-une-convergence-des-transitions-ecologique-et-numerique-appel-e"
+lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/184000224.pdf"
 resume: "Appel à engagements de 19 pages, lancé cinq jours avant l'ouverture de la COP21, pour rapprocher les acteurs de la transition numérique et ceux de la transition écologique."
-aVerifier: true
+aVerifier: false
 ---
 
 Cette fiche n'est pas un rapport, et c'est tout son intérêt.
