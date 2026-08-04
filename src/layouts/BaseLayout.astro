@@ -20,8 +20,9 @@ interface Props {
   // les fiches ne sont pas traduites) : noindex, mais toujours suivies (follow).
   noindex?: boolean;
   // Page qui n'existe que dans une langue et ne prétend à aucune équivalence
-  // (ex. /genealogie, français seul) : déclare sa langue via hreflang sans
-  // réciproque — cas distinct de urlAutreLangue, qui suppose une paire FR/EN.
+  // (cas transitoire de /genealogie avant sa traduction anglaise) : déclare sa
+  // langue via hreflang sans réciproque — cas distinct de urlAutreLangue, qui
+  // suppose une paire FR/EN réelle.
   hreflangSeul?: 'fr' | 'en';
 }
 
@@ -108,7 +109,7 @@ const jsonLdSite = {
         <ul>
           <li><a href={`${prefix}/`}>{t('nav.accueil')}</a></li>
           <li><a href={`${prefix}/${segmentCommuns(lang)}/`}>{t('nav.ressources')}</a></li>
-          <li><a href="/genealogie/" hreflang="fr">{t('nav.genea')}{lang === 'en' ? ' (in French)' : ''}</a></li>
+          <li><a href={lang === 'fr' ? '/genealogie/' : '/en/genealogy/'} hreflang={lang}>{t('nav.genea')}</a></li>
           <li><a href={`${prefix}/a-propos/`}>{t('nav.apropos')}</a></li>
         </ul>
         <p class="langues" aria-label={lang === 'fr' ? 'Langue du site' : 'Site language'}>

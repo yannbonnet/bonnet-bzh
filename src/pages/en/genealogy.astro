@@ -1,51 +1,52 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
-// Page hors collection ressources (§ brief) : pas un commun, pas de filtre,
-// pas de flux RSS. Traduite intégralement en anglais (/en/genealogy/, §
-// traduction anglaise de la page généalogique). Ancienne page d'accueil de
-// genea.bonnet.bzh, qui redirige désormais ici en 301 (redirection à poser
-// côté hébergement, hors de ce dépôt : genea.bonnet.bzh vit dans son propre
-// dossier OVH, cf. CLAUDE.md §9).
-const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis, de 1527 à nos jours, et sur le lien de parenté avec le naturaliste John James Audubon.";
+// Traduction intégrale de /genealogie, relue et approuvée section par
+// section. Mêmes règles hors collection ressources que la version FR : pas de
+// flux RSS, pas de filtre, pas de page de thème.
+const DESCRIPTION = "A genealogical investigation into 426 ancestors from the pays d'Ancenis, traced from 1527 to the present day, and their kinship with the naturalist John James Audubon.";
 ---
 
 <BaseLayout
-  lang="fr"
-  title="De la terre et de la forge aux oiseaux d'Amérique"
+  lang="en"
+  title="From the Land and the Forge to the Birds of America"
   description={DESCRIPTION}
-  urlAutreLangue="/en/genealogy/"
+  urlAutreLangue="/genealogie/"
 >
-
 
 <div class="hero">
   <div class="wrap">
-    <div class="eyebrow">Enquête généalogique · août 2026</div>
-    <h1>De la terre<br>et de la forge<br>aux <em>oiseaux d'Amérique</em></h1>
-    <p class="sous">Quatre cent vingt-six ancêtres d'une même famille du pays d'Ancenis,
-    reconstitués de 1527 à nos jours. Presque tous laboureurs, presque tous nés entre
-    l'Erdre et la Loire. Et, sur une branche latérale, une fille de laboureur des Touches
-    qui embarqua au début des années 1780 pour Saint-Domingue et dont le fils allait
-    devenir le plus célèbre
-    peintre d'oiseaux du monde.</p>
+    <div class="eyebrow">A genealogical investigation · August 2026</div>
+    <h1>From the land<br>and the forge<br>to the <em>birds of America</em></h1>
+    <p class="sous">Four hundred and twenty-six ancestors from a single family in the
+    <em>pays d'Ancenis</em> (the area around the town of Ancenis), traced from 1527 to
+    the present day. Almost all of them were <em>laboureurs</em> (well-off tenant
+    farmers who owned their own plough team — the top of the village social
+    hierarchy), almost all born between the Erdre and Loire rivers. And, on a side
+    branch, a laboureur's daughter from Les Touches who sailed for Saint-Domingue in
+    the early 1780s, and whose son would become the world's most famous painter of
+    birds.</p>
     <div class="chiffres">
-      <div class="chiffre"><b>426</b><span>ancêtres directs</span></div>
-      <div class="chiffre"><b>16</b><span>générations</span></div>
-      <div class="chiffre"><b>11</b><span>communes principales</span></div>
-      <div class="chiffre"><b>1527</b><span>ancêtre le plus ancien</span></div>
+      <div class="chiffre"><b>426</b><span>direct ancestors</span></div>
+      <div class="chiffre"><b>16</b><span>generations</span></div>
+      <div class="chiffre"><b>11</b><span>main communes</span></div>
+      <div class="chiffre"><b>1527</b><span>earliest ancestor</span></div>
     </div>
   </div>
 </div>
 <div class="wide">
 <section>
-  <div class="num-sec">I · Le pays</div>
-  <h2>Un mouchoir de poche</h2>
-  <p class="chapo">Sur les 426 ancêtres, l'écrasante majorité naît dans une poignée de
-  paroisses du nord de la Loire-Inférieure, entre l'Erdre et la Loire. Mésanger et
-  Les Touches à elles seules en fournissent quatre-vingt-treize.</p>
-  <div class="viz"><svg viewBox="0 0 940 560" role="img" aria-label="Carte des communes d'origine">
+  <div class="num-sec">I · The land</div>
+  <h2>A handkerchief of land</h2>
+  <p class="chapo">Of the 426 ancestors, the overwhelming majority were born in a
+  handful of <em>paroisses</em> (parishes — the basic civil and religious
+  administrative unit before the Revolution) in the north of <em>Loire-Inférieure</em>
+  (the department's name before its 1957 renaming to Loire-Atlantique), between the
+  Erdre and Loire rivers. Mésanger and Les Touches alone account for ninety-three of
+  them.</p>
+  <div class="viz"><svg viewBox="0 0 940 560" role="img" aria-label="Map of communes of origin">
 <circle cx="591.5" cy="238.9" r="248.7" class="ray"/>
-<text x="591.5" y="8.2" class="ray-t" text-anchor="middle">rayon de 25 km</text>
+<text x="591.5" y="8.2" class="ray-t" text-anchor="middle">25 km radius</text>
 <g transform="translate(36,526)">
 <line x1="0" y1="0" x2="99.5" y2="0" class="sc"/>
 <line x1="0" y1="-5" x2="0" y2="5" class="sc"/>
@@ -92,291 +93,303 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
 <text x="648.9" y="300.8" class="lb-ref">Ancenis</text>
 <circle cx="231.2" cy="464.0" r="5" class="pt-aud"/>
 <text x="241.2" y="463.0" class="lb-aud">Couëron</text>
-<text x="241.2" y="476.0" class="lb2">enfance d'Audubon</text>
+<text x="241.2" y="476.0" class="lb2">Audubon's childhood</text>
 </svg></div>
-  <p class="leg">Carte schématique. La taille des points est proportionnelle au nombre
-  d'ancêtres nés dans la commune. Nantes et Ancenis figurent comme repères ; Couëron,
-  en rouge, apparaîtra plus loin.</p>
+  <p class="leg">Schematic map. The size of each dot is proportional to the number of
+  ancestors born in that commune. Nantes and Ancenis are shown as landmarks;
+  Couëron, in red, will reappear later.</p>
   <div class="grid2" style="margin-top:56px">
     <div>
-      <p>Cette concentration n'a rien d'anecdotique. Elle raconte une société où l'on
-      épousait sa voisine, où la terre ne se quittait pas, et où les mêmes patronymes
-      reviennent de génération en génération. Les actes en portent la trace directe :
-      Pierre Ouary et Anne Ouarie, mariés vers 1730, étaient cousins. Toute la descendance
-      remonte donc deux fois au même ancêtre du XVI<sup>e</sup> siècle, par deux chemins
-      distincts.</p>
-      <p>Deux exceptions rompent ce cercle. Les Vavasseur, forgerons, viennent des confins
-      du Morbihan et des Côtes-d'Armor, à cent cinquante kilomètres de là. Et une branche
-      part pour l'Amérique — c'est l'objet de la sixième partie.</p>
-      <h3 style="margin-top:44px">De quoi vivait-on</h3>
-      <ul class="barres" style="max-width:520px"><li><span class="b">Laboureur<i style="width:100.0%"></i></span><span class="v">22</span></li><li><span class="b">Cultivatrice<i style="width:36.4%"></i></span><span class="v">8</span></li><li><span class="b">Cultivateur<i style="width:18.2%"></i></span><span class="v">4</span></li><li><span class="b">Forgeron<i style="width:13.6%"></i></span><span class="v">3</span></li><li><span class="b">Boulanger<i style="width:9.1%"></i></span><span class="v">2</span></li><li><span class="b">Aubergiste<i style="width:9.1%"></i></span><span class="v">2</span></li><li><span class="b">Maçon<i style="width:9.1%"></i></span><span class="v">2</span></li><li><span class="b">Métayer<i style="width:4.5%"></i></span><span class="v">1</span></li><li><span class="b">Menuisier<i style="width:4.5%"></i></span><span class="v">1</span></li><li><span class="b">Ménagère<i style="width:4.5%"></i></span><span class="v">1</span></li></ul>
-      <p class="leg">Métiers relevés sur les seuls ancêtres directs. « Laboureur » ne
-      désigne pas un journalier : c'est le paysan qui possède son attelage et ses charrues,
-      le haut de la hiérarchie villageoise.</p>
+      <p>This concentration is not incidental. It tells the story of a society where
+      one married one's neighbour, where the land was never left, and where the same
+      surnames return generation after generation. The parish records bear direct
+      witness to it: Pierre Ouary and Anne Ouarie, married around 1730, were cousins.
+      The whole line of descent therefore traces back twice to the same
+      sixteenth-century ancestor, by two distinct paths.</p>
+      <p>Two exceptions break this circle. The Vavasseur, blacksmiths, came from the
+      borderlands of Morbihan and Côtes-d'Armor, a hundred and fifty kilometres away.
+      And one branch left for America — the subject of Part Six.</p>
+      <h3 style="margin-top:44px">What people lived on</h3>
+      <ul class="barres" style="max-width:520px"><li><span class="b"><em>Laboureur</em><i style="width:100.0%"></i></span><span class="v">22</span></li><li><span class="b">Farmer (f.)<i style="width:36.4%"></i></span><span class="v">8</span></li><li><span class="b">Farmer (m.)<i style="width:18.2%"></i></span><span class="v">4</span></li><li><span class="b">Blacksmith<i style="width:13.6%"></i></span><span class="v">3</span></li><li><span class="b">Baker<i style="width:9.1%"></i></span><span class="v">2</span></li><li><span class="b">Innkeeper<i style="width:9.1%"></i></span><span class="v">2</span></li><li><span class="b">Mason<i style="width:9.1%"></i></span><span class="v">2</span></li><li><span class="b">Sharecropper<i style="width:4.5%"></i></span><span class="v">1</span></li><li><span class="b">Carpenter<i style="width:4.5%"></i></span><span class="v">1</span></li><li><span class="b">Housewife<i style="width:4.5%"></i></span><span class="v">1</span></li></ul>
+      <p class="leg">Occupations recorded for direct ancestors only. A
+      <em>laboureur</em> was not a day labourer: he was the peasant who owned his own
+      plough team and ploughs — the top of the village hierarchy.</p>
     </div>
     <div>
-      <h3>Les communes d'origine</h3>
+      <h3>Communes of origin</h3>
       <ul class="barres"><li><span class="b">Mésanger<i style="width:100.0%"></i></span><span class="v">56</span></li><li><span class="b">Les Touches<i style="width:66.1%"></i></span><span class="v">37</span></li><li><span class="b">Carquefou<i style="width:44.6%"></i></span><span class="v">25</span></li><li><span class="b">Ligné<i style="width:28.6%"></i></span><span class="v">16</span></li><li><span class="b">Riaillé<i style="width:28.6%"></i></span><span class="v">16</span></li><li><span class="b">Petit-Mars<i style="width:21.4%"></i></span><span class="v">12</span></li><li><span class="b">Saint-Herblon<i style="width:19.6%"></i></span><span class="v">11</span></li><li><span class="b">Teillé<i style="width:12.5%"></i></span><span class="v">7</span></li><li><span class="b">Bonnœuvre<i style="width:10.7%"></i></span><span class="v">6</span></li><li><span class="b">Grand-Auverné<i style="width:7.1%"></i></span><span class="v">4</span></li><li><span class="b">Pouillé-les-Côteaux<i style="width:7.1%"></i></span><span class="v">4</span></li></ul>
-      <h3 style="margin-top:44px">Les patronymes qui reviennent</h3>
+      <h3 style="margin-top:44px">The recurring surnames</h3>
       <div class="nuage"><span>OUARY <b>15</b></span><span>BONNET <b>9</b></span><span>MULOISE <b>9</b></span><span>DUTERTRE <b>9</b></span><span>JOURDON <b>8</b></span><span>GODARD <b>8</b></span><span>LEFEUVRE <b>8</b></span><span>LEDUC <b>7</b></span><span>SEBILLEAU <b>7</b></span><span>DAVODEAU <b>7</b></span><span>BLANCHET <b>6</b></span><span>LERAY <b>6</b></span><span>DELANOUE <b>6</b></span><span>RIGAUD <b>6</b></span></div>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="num-sec">II · Trois vies</div>
-  <h2>Sortir de l'anonymat<br>des registres</h2>
-  <p class="chapo">Un ancêtre paysan ne laisse en général que trois lignes : un baptême, un
-  mariage, une sépulture. Trois hommes de cette lignée font exception, parce qu'un
-  événement les a jetés dans les archives — une guerre civile, une industrie, une
-  photographie.</p>
+  <div class="num-sec">II · Three lives</div>
+  <h2>Leaving the anonymity<br>of the registers</h2>
+  <p class="chapo">A peasant ancestor generally leaves only three lines: a baptism, a
+  marriage, a burial. Three men in this line are the exception, because an event threw
+  them into the archives — a civil war, an industry, a photograph.</p>
 
   <div class="vies">
     <article class="vie">
-      <figure class="ph "><img src="/img/genealogie/linsurrection-des-chouans-jean-sorieul.jpg" alt="L&#x27;Insurrection des chouans, par Jean Sorieul"><figcaption>Une colonne de chouans en embuscade. Aucun portrait de Jacques Guérin n'existe : c'est le camp d'en face que la peinture du XIX<sup>e</sup> siècle a retenu. <span class="cr">Jean Sorieul, XIX<sup>e</sup> siècle, domaine public · <a href="https://commons.wikimedia.org/wiki/File:L%E2%80%99Insurrection_des_chouans_%28Jean_Sorieul%29.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
-      <div class="rang">7<sup>e</sup> génération</div>
+      <figure class="ph "><img src="/img/genealogie/linsurrection-des-chouans-jean-sorieul.jpg" alt="The Chouan insurrection, by Jean Sorieul"><figcaption>A column of Chouans in ambush. No portrait of Jacques Guérin exists: nineteenth-century painting remembered the other side instead. <span class="cr">Jean Sorieul, 19th century, public domain · <a href="https://commons.wikimedia.org/wiki/File:L%E2%80%99Insurrection_des_chouans_%28Jean_Sorieul%29.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+      <div class="rang">7th generation</div>
       <h3>Jacques Guérin</h3>
-      <div class="dates">vers 1747 — 7 juin 1794</div>
-      <div class="role">boulanger, aubergiste, officier municipal</div>
-      <p>Il tenait à Riaillé une boulangerie et l'auberge de <em>L'Écu de France</em>, et
-      servait la commune comme officier municipal. Dans la nuit du 6 au 7 juin 1794 — le
-      19 prairial an II —, les chouans du Segréen menés par Sarrazin font une incursion en
-      Loire-Inférieure : ils saccagent les forges et massacrent une trentaine de
-      républicains. Jacques Guérin est tué dans l'arrière-salle de sa boulangerie, en haut
-      du bourg.</p>
-      <p>Le registre le porte veuf de Jacquette Letort, âgé de quarante-sept ans. Son
-      beau-frère Jacques Letort, maire de Saint-Mars-la-Jaille, avait été fusillé par les
-      chouans six mois plus tôt. Le lieu de sa mort devint plus tard le café Delanoue —
-      du nom de ses propres descendants.</p>
+      <div class="dates">c. 1747 — 7 June 1794</div>
+      <div class="role">baker, innkeeper, municipal officer</div>
+      <p>He kept a bakery and the inn of <em>L'Écu de France</em> in Riaillé, and served
+      the commune as municipal officer. On the night of 6 to 7 June 1794 — 19 Prairial
+      Year II in the French Republican calendar — the <em>chouans</em> (royalist
+      insurgents of the Chouannerie, the counter-revolutionary uprising in western
+      France) from the Segré area, led by Sarrazin, raided Loire-Inférieure: they sacked
+      the forges and massacred some thirty republicans. Jacques Guérin was killed in the
+      back room of his bakery, at the top of the town.</p>
+      <p>The register records him as the widower of Jacquette Letort, aged
+      forty-seven. His brother-in-law Jacques Letort, mayor of Saint-Mars-la-Jaille, had
+      been shot by the chouans six months earlier. The site of his death later became
+      the Café Delanoue — named after his own descendants.</p>
     </article>
     <article class="vie">
-      <figure class="ph "><img src="/img/genealogie/bretagne-les-forges-des-salles-1671.jpg" alt="Le village sidérurgique des Forges des Salles" loading="lazy" decoding="async"><figcaption>Les Forges des Salles, en forêt de Quénécan. Logis, rangées ouvrières, halles à charbon : le village n'a plus bougé depuis 1877. <span class="cr">Wikimedia Commons, CC BY-SA · <a href="https://commons.wikimedia.org/wiki/File:Bretagne%2C_Les_Forges_des_Salles-1671.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
-      <div class="rang">9<sup>e</sup> génération</div>
+      <figure class="ph "><img src="/img/genealogie/bretagne-les-forges-des-salles-1671.jpg" alt="The ironworking village of Forges des Salles" loading="lazy" decoding="async"><figcaption>Les Forges des Salles, in the Quénécan forest. Manor house, workers' terraces, charcoal halls: the village has not changed since 1877. <span class="cr">Wikimedia Commons, CC BY-SA · <a href="https://commons.wikimedia.org/wiki/File:Bretagne%2C_Les_Forges_des_Salles-1671.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+      <div class="rang">9th generation</div>
       <h3>François Vavasseur</h3>
       <div class="dates">1699 — 1762</div>
-      <div class="role">forgeron aux Forges des Salles</div>
-      <p>Seule branche non paysanne de toute l'ascendance. Il épouse Marie Le Breton aux
-      Forges des Salles le 9 février 1728 et lui donne douze enfants, tous nés dans ce
-      village perdu au fond de la forêt de Quénécan. Cinq au moins n'atteindront pas
-      l'âge adulte.</p>
-      <p>Il y meurt en 1762, à soixante-trois ans. Son père Olivier était déjà forgeron,
-      son gendre Jacques Chauvel était marteleur : trois métiers du fer dans la même
-      maisonnée. La suite de cette histoire occupe la section suivante.</p>
+      <div class="role">blacksmith at Forges des Salles</div>
+      <p>The only non-peasant branch in the whole ancestry. He married Marie Le Breton
+      at Forges des Salles on 9 February 1728 and had twelve children with her, all
+      born in this village lost deep in the Quénécan forest. At least five would not
+      reach adulthood.</p>
+      <p>He died there in 1762, aged sixty-three. His father Olivier had already been a
+      blacksmith, his son-in-law Jacques Chauvel was a hammerman: three iron trades
+      under the same roof. The rest of this story fills the next section.</p>
     </article>
     <article class="vie">
-      <figure class="ph portrait"><img src="/img/genealogie/louis-frederic-bonnet.jpg" alt="Louis Frédéric Bonnet en tenue de brancardier, 1914-1918" loading="lazy" decoding="async"><figcaption>Louis Frédéric Bonnet en tenue, brassard au bras, pendant la Grande Guerre. <span class="cr">Collection familiale</span></figcaption></figure>
-      <div class="rang">3<sup>e</sup> génération</div>
+      <figure class="ph portrait"><img src="/img/genealogie/louis-frederic-bonnet.jpg" alt="Louis Frédéric Bonnet in stretcher-bearer's uniform, 1914-1918" loading="lazy" decoding="async"><figcaption>Louis Frédéric Bonnet in uniform, armband on his sleeve, during the Great War. <span class="cr">Family collection</span></figcaption></figure>
+      <div class="rang">3rd generation</div>
       <h3>Louis Frédéric Bonnet</h3>
       <div class="dates">1884 — 1957</div>
-      <div class="role">brancardier, valet de ferme, cultivateur</div>
-      <p>Brancardier pendant la Grande Guerre. Son frère Henri y est tué en 1915, à
-      vingt-neuf ans, dans l'attaque de Quennevières. Une photographie le montre en tenue,
-      brassard au bras.</p>
-      <p>Avant d'exploiter une très petite ferme à Carquefou, il fut employé — « valet »,
-      disait-on dans la famille — du marquis de Dion, probablement au château de Maubreuil.
-      Soit le même homme qui fonda les usines De Dion-Bouton, un temps premier constructeur
-      automobile du monde. L'écart entre les deux destins, dans le même champ de vision,
-      dit assez bien ce qu'était la société rurale de 1910.</p>
+      <div class="role">stretcher-bearer, farmhand, farmer</div>
+      <p>A stretcher-bearer during the Great War. His brother Henri was killed there in
+      1915, aged twenty-nine, in the attack at Quennevières. A photograph shows him in
+      uniform, armband on his sleeve.</p>
+      <p>Before farming a very small holding at Carquefou, he was employed — a
+      "valet," as the family called it — by the Marquis de Dion, probably at the
+      Château de Maubreuil. The same man who founded the De Dion-Bouton works, for a
+      time the world's leading car manufacturer. The gap between the two destinies,
+      within the same field of view, says a good deal about what rural society was
+      like in 1910.</p>
     </article>
   </div>
 
 
   <blockquote>
-    Nous René Chollet officier public préposé pour l'exécution de la loi du 20 septembre
-    1792 dans le territoire de la commune de Riaillé, département de la Loire-Inférieure,
-    district d'Ancenis, sur la déclaration qui nous a été faite par les veuves des
-    ci-dessous dénommés assassinés par les Brigands qui vinrent dans le bourg le samedi
-    29 prairial et y massacrèrent :
-    <cite>Registre d'état civil de Riaillé, 19 prairial an II</cite>
+    We, René Chollet, public officer appointed for the execution of the law of
+    20 September 1792 in the territory of the commune of Riaillé, department of
+    Loire-Inférieure, district of Ancenis, upon the declaration made to us by the
+    widows of those named below, murdered by the Brigands who came to the town on
+    Saturday 29 Prairial and there slaughtered:
+    <cite>Civil register of Riaillé, 19 Prairial Year II</cite>
   </blockquote>
-  <ul class="morts" style="margin-top:0;border-top:0"><li><span class="n">Mathieu Desvallets</span><span class="a">28 ans</span><span class="l">gendarme · mari de Marie Leconte</span></li><li><span class="n">Louis Bechu</span><span class="a">35 ans</span><span class="l">gendarme · mari de Marie Guillois</span></li><li><span class="n">Julien Quenelle</span><span class="a">46 ans</span><span class="l">gendarme · mari de Marie Guais</span></li><li><span class="n">Louis Jean</span><span class="a">35 ans</span><span class="l">gendarme</span></li><li><span class="n">Étienne Blanchard</span><span class="a">45 ans</span><span class="l">marchand · mari de Marie Coudoux</span></li><li><span class="n">Jacques Guérin</span><span class="a">47 ans</span><span class="l">boulanger, aubergiste et officier municipal · veuf de Jacquette Letort</span></li></ul>
+  <ul class="morts" style="margin-top:0;border-top:0"><li><span class="n">Mathieu Desvallets</span><span class="a">28</span><span class="l">gendarme · husband of Marie Leconte</span></li><li><span class="n">Louis Bechu</span><span class="a">35</span><span class="l">gendarme · husband of Marie Guillois</span></li><li><span class="n">Julien Quenelle</span><span class="a">46</span><span class="l">gendarme · husband of Marie Guais</span></li><li><span class="n">Louis Jean</span><span class="a">35</span><span class="l">gendarme</span></li><li><span class="n">Étienne Blanchard</span><span class="a">45</span><span class="l">merchant · husband of Marie Coudoux</span></li><li><span class="n">Jacques Guérin</span><span class="a">47</span><span class="l">baker, innkeeper and municipal officer · widower of Jacquette Letort</span></li></ul>
 
   <div class="grid2" style="margin-top:52px">
     <div>
-      <p>Ils sont six. Le massacre en fit une trentaine. L'écart n'est pas une contradiction :
-      l'officier public n'enregistre que les morts dont <strong>les veuves sont venues faire la
-      déclaration</strong>. Les célibataires, les veufs, ceux dont la famille n'a pas fait la
-      démarche ne figurent nulle part. Jacques Guérin y est parce qu'il était veuf lui-même, et
-      que ses descendants ont porté sa mort à l'état civil.</p>
-      <p>Suit la longue liste des habitants venus témoigner, avec pour chacun son âge, son
-      métier et le nom de sa femme : des laboureurs à bras, un journalier, un maçon, un marchand
-      de bœufs, et deux aubergistes du bourg de Saint-Mars-la-Jaille — le même métier que
-      celui du mort.</p>
-      <p>Un détail de copie, enfin. Le registre porte « le samedi 29 prairial », mais le
-      29 prairial an II tombait un mardi. Le 19, lui, était bien un samedi : le copiste a fauté
-      d'un chiffre.</p>
+      <p>There are six of them. The massacre claimed about thirty. The discrepancy is
+      not a contradiction: the public officer only recorded the deaths of those whose
+      <strong>widows came forward to make a declaration</strong>. The unmarried, the
+      widowers, those whose family never came forward, appear nowhere. Jacques Guérin
+      is there because he was a widower himself, and his descendants had his death
+      recorded in the civil register.</p>
+      <p>There follows a long list of residents who came to testify, each with his
+      age, occupation and wife's name: <em>laboureurs à bras</em> (labourers who worked
+      the land by hand, without a plough team — poorer than the ordinary laboureur), a
+      day labourer, a mason, a cattle merchant, and two innkeepers from the town of
+      Saint-Mars-la-Jaille — the same trade as the dead man.</p>
+      <p>One last copying detail. The register reads "Saturday 29 Prairial," but
+      29 Prairial Year II fell on a Tuesday. The 19th, however, was indeed a Saturday:
+      the copyist mistook one digit for another.</p>
     </div>
-    <div><figure class="ph haut"><img src="/img/genealogie/proces-verbal-riaille-1794.jpg" alt="Procès-verbal du massacre de Riaillé, 19 prairial an II" loading="lazy" decoding="async"><figcaption>La suite du procès-verbal : les témoins convoqués, avec leur âge, leur métier et le nom de leur femme. <span class="cr">Collection familiale</span></figcaption></figure></div>
+    <div><figure class="ph haut"><img src="/img/genealogie/proces-verbal-riaille-1794.jpg" alt="Official report of the Riaillé massacre, 19 Prairial Year II" loading="lazy" decoding="async"><figcaption>The rest of the official report: the witnesses summoned, with their age, occupation and wife's name. <span class="cr">Family collection</span></figcaption></figure></div>
   </div>
 </section>
 
 
 <section>
-  <div class="num-sec">III · La route du fer</div>
-  <h2>Deux cent quarante-huit kilomètres,<br>six générations</h2>
-  <p class="chapo">Les forgeurs bretons n'étaient pas des sédentaires. Une forge à bois
-  dévore sa forêt : quand le charbon manque, on éteint le haut fourneau le temps que les
-  taillis repoussent, et les familles s'en vont vers le site suivant. Les Vavasseur, puis
-  les Chauvel qu'ils ont épousés, ont ainsi suivi le fer pendant deux siècles — de la forêt
-  de Paimpont jusqu'au bocage de Riaillé.</p>
-  <div class="viz"><svg viewBox="0 0 940 520" role="img" aria-label="Itinéraire des forges">
+  <div class="num-sec">III · The road of iron</div>
+  <h2>Two hundred and forty-eight kilometres,<br>six generations</h2>
+  <p class="chapo">Breton ironworkers were not settled folk. A charcoal-fired
+  ironworks devours its forest: when the charcoal runs short, the blast furnace is
+  banked while the coppice regrows, and the families move on to the next site. The
+  Vavasseur, and then the Chauvel they married into, followed the iron this way for
+  two centuries — from the forest of Paimpont to the <em>bocage</em> (the hedgerow
+  farmland landscape typical of western France) of Riaillé.</p>
+  <div class="viz"><svg viewBox="0 0 940 520" role="img" aria-label="Map of the ironworks route">
 <polyline class="fer-l" points="484.4,207.4 446.1,130.0 245.0,137.6 651.4,301.3 695.0,390.0"/>
 <g transform="translate(34,492)"><line x1="0" y1="0" x2="66.4" y2="0" class="sc"/><line x1="0" y1="-5" x2="0" y2="5" class="sc"/><line x1="66.4" y1="-5" x2="66.4" y2="5" class="sc"/><text x="33.2" y="-11" class="sc-t" text-anchor="middle">20 km</text></g>
 <circle cx="484.4" cy="207.4" r="9" class="fer-h"/>
 <circle cx="484.4" cy="207.4" r="4.5" class="fer-p"/>
 <text x="468.4" y="195.4" class="fer-an" text-anchor="end">1663</text>
 <text x="468.4" y="211.4" class="fer-n" text-anchor="end">Paimpont</text>
-<text x="468.4" y="226.4" class="fer-t" text-anchor="end">Olivier Vavasseur y naît</text>
+<text x="468.4" y="226.4" class="fer-t" text-anchor="end">Olivier Vavasseur born here</text>
 <circle cx="446.1" cy="130.0" r="9" class="fer-h"/>
 <circle cx="446.1" cy="130.0" r="4.5" class="fer-p"/>
 <text x="462.1" y="118.0" class="fer-an" text-anchor="start">1699</text>
 <text x="462.1" y="134.0" class="fer-n" text-anchor="start">Saint-Launeuc</text>
-<text x="462.1" y="149.0" class="fer-t" text-anchor="start">Naissance de François</text>
+<text x="462.1" y="149.0" class="fer-t" text-anchor="start">Birth of François</text>
 <circle cx="245.0" cy="137.6" r="9" class="fer-h"/>
 <circle cx="245.0" cy="137.6" r="4.5" class="fer-p"/>
 <text x="229.0" y="125.6" class="fer-an" text-anchor="end">1728</text>
 <text x="229.0" y="141.6" class="fer-n" text-anchor="end">Forges des Salles</text>
-<text x="229.0" y="156.6" class="fer-t" text-anchor="end">Mariage de François, douze enfants</text>
+<text x="229.0" y="156.6" class="fer-t" text-anchor="end">François marries, twelve children</text>
 <circle cx="651.4" cy="301.3" r="9" class="fer-h"/>
 <circle cx="651.4" cy="301.3" r="4.5" class="fer-p"/>
 <text x="635.4" y="289.3" class="fer-an" text-anchor="end">1789</text>
 <text x="635.4" y="305.3" class="fer-n" text-anchor="end">Sion-les-Mines</text>
-<text x="635.4" y="320.3" class="fer-t" text-anchor="end">Anne et Marie y meurent</text>
+<text x="635.4" y="320.3" class="fer-t" text-anchor="end">Anne and Marie die here</text>
 <circle cx="695.0" cy="390.0" r="9" class="fer-h"/>
 <circle cx="695.0" cy="390.0" r="4.5" class="fer-p"/>
 <text x="679.0" y="378.0" class="fer-an" text-anchor="end">1875</text>
 <text x="679.0" y="394.0" class="fer-n" text-anchor="end">Riaillé</text>
-<text x="679.0" y="409.0" class="fer-t" text-anchor="end">Fermeture de la forge</text>
+<text x="679.0" y="409.0" class="fer-t" text-anchor="end">The forge closes</text>
 </svg></div>
-  <p class="leg">Carte schématique. Les dates correspondent à l'événement familial attesté
-  sur chaque site.</p>
+  <p class="leg">Schematic map. The dates correspond to the family event attested at
+  each site.</p>
 
   <div class="grid2" style="margin-top:52px">
     <div>
-      <p>Le tracé n'a rien d'une errance. Chacune de ces étapes est un site sidérurgique
-      majeur, et tous appartiennent au même monde : celui des forges à bois de la Bretagne
-      intérieure, là où le minerai affleure et où la forêt fournit le combustible. Paimpont
-      et ses huit mille hectares, la Hardouinais mentionnée dès 1570, Quénécan et ses trois
-      mille six cents hectares.</p>
-      <p>Ce que ces trajectoires ont de frappant, c'est qu'elles étaient la règle. Les
-      généalogistes de la région ont depuis longtemps repéré ces familles qui circulent
-      entre les massifs de Paimpont, de la Hardouinais, de Loudéac et de Quénécan, et
-      franchissent les limites de l'Ille-et-Vilaine, des Côtes-d'Armor et du Morbihan avant
-      de descendre vers la Loire-Atlantique — Héric, Orvault, Sautron et, précisément,
-      Sion-les-Mines. Les Vavasseur en sont un cas d'école.</p>
-      <p>Le métier lui-même se subdivisait : fondeur au fourneau, affineur, marteleur,
-      chauffeur, valet de bordeur. Jacques Chauvel, qui épouse Anne Vavasseur, est marteleur
-      — celui qui bat la loupe de fer sous le martelet hydraulique. On se mariait entre
-      familles de forge, et l'on transmettait la place avec le nom.</p>
+      <p>The route is anything but aimless wandering. Each of these stops is a major
+      ironworking site, and all belong to the same world: that of the charcoal-fired
+      ironworks of inland Brittany, where the ore surfaces and the forest supplies the
+      fuel. Paimpont and its eight thousand hectares, la Hardouinais mentioned as
+      early as 1570, Quénécan and its three thousand six hundred hectares.</p>
+      <p>What is striking about these trajectories is that they were the rule.
+      Genealogists of the region have long since identified these families
+      circulating between the Paimpont, la Hardouinais, Loudéac and Quénécan forest
+      massifs, crossing the boundaries of Ille-et-Vilaine, Côtes-d'Armor and Morbihan
+      before moving down into Loire-Atlantique — Héric, Orvault, Sautron and,
+      precisely, Sion-les-Mines. The Vavasseur are a textbook case.</p>
+      <p>The trade itself broke down further: <em>fondeur</em> (furnace smelter),
+      <em>affineur</em> (iron refiner), <em>marteleur</em> (hammerman),
+      <em>chauffeur</em> (furnace stoker), <em>valet de bordeur</em> (an edger's
+      assistant). Jacques Chauvel, who married Anne Vavasseur, was a marteleur — the
+      one who beat the iron bloom under the hydraulic trip hammer. Forge families
+      married among themselves, and the position passed down along with the name.</p>
     </div>
     <div>
-      <p>La dernière étape referme la boucle d'une manière que le hasard n'explique
-      qu'à moitié. En 1875, les forges de Riaillé s'arrêtent définitivement. Une note
-      familiale, reprise d'un site consacré à l'histoire des forges du bocage, indique que
-      leur dernier directeur s'appelait Chauvel. Olivier Chauvel, forgeron devenu aubergiste
-      et cabaretier, arrière-petit-fils de François Vavasseur, meurt à Riaillé le 14 mars de
-      cette même année 1875.</p>
-      <p>Le fichier n'établit pas que ce directeur soit lui : sa profession déclarée reste
-      « forgeron, aubergiste ». Mais la coïncidence de lieu, de nom et d'année vaut d'être
-      signalée, et mériterait une vérification aux archives.</p>
-      <p>Riaillé est aussi la commune où, quatre-vingts ans plus tôt, les chouans avaient
-      saccagé les forges et tué Jacques Guérin. Deux branches de la même ascendance, venues
-      l'une du bocage et l'autre des forêts du centre de la Bretagne, se rejoignent dans le
-      même village industriel.</p>
-      <p>Riaillé n'avait d'ailleurs pas une forge mais trois sites échelonnés sur le même
-      cours d'eau : le haut fourneau à la Poitevinière, la forge d'affinage en aval à la
-      Provostière, une fenderie en bout de course à la Vallée. Les deux étangs, soixante-quinze
-      et soixante-treize hectares, étaient les plus vastes de la région. On y coulait des
-      clous, des chaudrons, des plaques de cheminée et des boulets de canon.</p>
-      <p>Le haut fourneau de la Poitevinière tient toujours debout : huit mètres de haut sur
-      neuf de côté, bâti en schiste, cuve circulaire. Inscrit aux Monuments historiques le
-      1<sup>er</sup> avril 1986, il est le dernier survivant de l'aventure métallurgique du
-      Pays de la Mée. Le nom du lieu vient des familles amenées du Poitou pour exploiter le
-      minerai — encore une migration du fer, quatre siècles avant celle des Vavasseur.</p>
+      <p>The last stop closes the loop in a way that chance only half explains. In
+      1875, the Riaillé forges shut down for good. A family note, taken from a
+      website devoted to the history of the bocage's ironworks, records that their
+      last director was named Chauvel. Olivier Chauvel, a blacksmith turned innkeeper
+      and tavern-keeper, great-grandson of François Vavasseur, died at Riaillé on
+      14 March of that same year, 1875.</p>
+      <p>The file does not establish that this director was him: his declared
+      occupation remains "blacksmith, innkeeper." But the coincidence of place, name
+      and year is worth noting, and would deserve checking against the archives.</p>
+      <p>Riaillé is also the commune where, eighty years earlier, the chouans had
+      sacked the forges and killed Jacques Guérin. Two branches of the same
+      ancestry, one coming from the bocage and the other from the forests of central
+      Brittany, meet in the same industrial village.</p>
+      <p>Riaillé did not in fact have a single forge but three sites staggered along
+      the same waterway: the blast furnace at la Poitevinière, the finery forge
+      downstream at la Provostière, a slitting mill at the far end at la Vallée. The
+      two ponds, seventy-five and seventy-three hectares, were the largest in the
+      region. They cast nails, cauldrons, fireplace backs and cannonballs there.</p>
+      <p>The blast furnace at la Poitevinière still stands: eight metres high by
+      nine on a side, built of schist, with a circular hearth. Listed as a historic
+      monument (<em>Monument historique</em>) on 1 April 1986, it is the last
+      survivor of the Pays de la Mée's metallurgical adventure. The place's name
+      comes from the families brought from Poitou to work the ore — another
+      migration of iron, four centuries before that of the Vavasseur.</p>
     </div>
   </div>
 
   <div class="photos" style="margin-top:44px">
-    <figure class="ph wide-img"><img src="/img/genealogie/bretagne-les-forges-des-salles-1691.jpg" alt="Les Forges des Salles, bâtiments du village" loading="lazy" decoding="async"><figcaption>Le village n'a plus bougé depuis l'arrêt du haut fourneau, le 1<sup>er</sup> juillet 1877. <span class="cr">Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:Bretagne%2C_Les_Forges_des_Salles-1691.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
-    <figure class="ph wide-img"><img src="/img/genealogie/bretagne-les-forges-des-salles-1673.jpg" alt="Les Forges des Salles, bâtiments du village" loading="lazy" decoding="async"><figcaption>Fondé en 1623 par la famille de Rohan, le site a produit du fer pendant deux cent cinquante ans. <span class="cr">Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:Bretagne%2C_Les_Forges_des_Salles-1673.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
-    <figure class="ph wide-img"><img src="/img/genealogie/bretagne-les-forges-des-salles-1676.jpg" alt="Les Forges des Salles, bâtiments du village" loading="lazy" decoding="async"><figcaption>Logis du maître de forges, rangées ouvrières, cantine, école, chapelle, jardins en terrasses : inscrit aux Monuments historiques en 1980, l'ensemble se visite. <span class="cr">Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:Bretagne%2C_Les_Forges_des_Salles-1676.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/bretagne-les-forges-des-salles-1691.jpg" alt="Les Forges des Salles, village buildings" loading="lazy" decoding="async"><figcaption>The village has not changed since the blast furnace stopped, on 1 July 1877. <span class="cr">Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:Bretagne%2C_Les_Forges_des_Salles-1691.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/bretagne-les-forges-des-salles-1673.jpg" alt="Les Forges des Salles, village buildings" loading="lazy" decoding="async"><figcaption>Founded in 1623 by the Rohan family, the site produced iron for two hundred and fifty years. <span class="cr">Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:Bretagne%2C_Les_Forges_des_Salles-1673.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/bretagne-les-forges-des-salles-1676.jpg" alt="Les Forges des Salles, village buildings" loading="lazy" decoding="async"><figcaption>The ironmaster's manor house, workers' terraces, canteen, school, chapel, terraced gardens: listed as a historic monument in 1980, the whole site can be visited. <span class="cr">Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:Bretagne%2C_Les_Forges_des_Salles-1676.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
   </div>
 
-  <h3 style="margin-top:78px;font-size:26px">Au terme du voyage : la Poitevinière</h3>
+  <h3 style="margin-top:78px;font-size:26px">At journey's end: la Poitevinière</h3>
   <div class="grid2" style="margin-top:22px">
     <div>
-      <p>Le hameau de la Poitevinière, à Riaillé, où s'achève cette migration de deux siècles.
-      Le même étang actionnait les soufflets de la forge et les meules du moulin : quand le
-      haut fourneau s'est éteint, la minoterie a continué de tourner au pied de sa cheminée.</p>
-      <p>C'est cette cheminée que l'on voit encore, dressée au-dessus des toits du hameau,
-      cerclée de fer et sanglée d'une échelle. Elle est tout ce qui reste debout de l'ouvrage
-      qui a fait vivre les Chauvel pendant trois générations, et le dernier témoin de
-      l'aventure métallurgique du Pays de la Mée.</p>
-      <p>Un détail s'y ajoute, sans lien de parenté mais qui dit la densité de ces lieux : la
-      maison voisine du haut fourneau est celle où vécurent les ancêtres de Sophie Trébuchet —
-      la mère de Victor Hugo.</p>
+      <p>The hamlet of la Poitevinière, at Riaillé, where this two-century migration
+      comes to an end. The same pond powered both the forge's bellows and the mill's
+      grindstones: when the blast furnace went cold, the flour mill kept turning at
+      the foot of its chimney.</p>
+      <p>It is this chimney that can still be seen, rising above the hamlet's
+      rooftops, ringed in iron and strapped with a ladder. It is all that remains
+      standing of the works that supported the Chauvel for three generations, and
+      the last witness to the Pays de la Mée's metallurgical adventure.</p>
+      <p>One more detail belongs here, unrelated by blood but telling of how dense
+      these places were: the house next to the blast furnace is the one where the
+      ancestors of Sophie Trébuchet lived — the mother of Victor Hugo.</p>
     </div>
-    <div><figure class="ph haut"><img src="/img/genealogie/poiteviniere-cheminee.jpg" alt="La cheminée du haut fourneau de la Poitevinière" loading="lazy" decoding="async"><figcaption>La cheminée du haut fourneau, inscrite aux Monuments historiques le 1<sup>er</sup> avril 1986. <span class="cr">chouannerie.chez-alice.fr</span></figcaption></figure></div>
+    <div><figure class="ph haut"><img src="/img/genealogie/poiteviniere-cheminee.jpg" alt="The blast furnace chimney at la Poitevinière" loading="lazy" decoding="async"><figcaption>The blast furnace chimney, listed as a historic monument on 1 April 1986. <span class="cr">chouannerie.chez-alice.fr</span></figcaption></figure></div>
   </div>
   <div class="photos" style="margin-top:32px">
-    <figure class="ph wide-img"><img src="/img/genealogie/poiteviniere-1.jpg" alt="La minoterie de la Poitevinière et la cheminée du haut fourneau" loading="lazy" decoding="async"><figcaption>La minoterie et, derrière elle, la cheminée du haut fourneau. <span class="cr">chouannerie.chez-alice.fr</span></figcaption></figure>
-    <figure class="ph wide-img"><img src="/img/genealogie/poiteviniere-2.jpg" alt="Intérieur de la minoterie de la Poitevinière" loading="lazy" decoding="async"><figcaption>L'intérieur de la minoterie : poulies et courroies de transmission, encore en place sous le plancher. <span class="cr">chouannerie.chez-alice.fr</span></figcaption></figure>
-    <figure class="ph wide-img"><img src="/img/genealogie/poiteviniere-3.jpg" alt="La maison du commis, à la Poitevinière" loading="lazy" decoding="async"><figcaption>La maison du commis. C'est lui qui tenait les comptes de la forge, pesait le fer et payait les charbonniers — l'intermédiaire entre le maître de forges, souvent absent, et les ouvriers. <span class="cr">chouannerie.chez-alice.fr</span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/poiteviniere-1.jpg" alt="The flour mill at la Poitevinière and the blast furnace chimney" loading="lazy" decoding="async"><figcaption>The flour mill and, behind it, the blast furnace chimney. <span class="cr">chouannerie.chez-alice.fr</span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/poiteviniere-2.jpg" alt="Interior of the flour mill at la Poitevinière" loading="lazy" decoding="async"><figcaption>Inside the flour mill: pulleys and drive belts, still in place beneath the floor. <span class="cr">chouannerie.chez-alice.fr</span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/poiteviniere-3.jpg" alt="The clerk's house, at la Poitevinière" loading="lazy" decoding="async"><figcaption>The clerk's house. He was the one who kept the forge's accounts, weighed the iron and paid the charcoal-burners — the go-between for the often-absent ironmaster and the workers. <span class="cr">chouannerie.chez-alice.fr</span></figcaption></figure>
   </div>
 </section>
 
 
 <section>
   <div class="num-sec">IV · La Rigaudière</div>
-  <h2>L'auberge, la forge<br>et l'atelier</h2>
-  <p class="chapo">Un hameau de Riaillé, et quatre membres de la même parentèle qui y travaillent
-  en même temps. Auguste Juvin et sa femme Marie Rosalie Ouary y tiennent l'hôtel-restaurant.
-  Le frère de celle-ci, Olivier Ouary, y est forgeron. Leur gendre Joseph Muloise, qui épouse
-  leur fille Marguerite, y est menuisier. Le débit de boisson, la forge et l'atelier de bois
-  dans le même lieu-dit, aux mains d'une seule famille, sur deux générations.</p>
-  <p style="margin-top:24px">Le détail n'est pas anecdotique : il prolonge exactement l'histoire
-  précédente. Les Chauvel avaient suivi le fer jusqu'à Riaillé, où la forge s'éteint en 1875.
-  Le métier, lui, ne s'éteint pas — il se replie du haut fourneau vers l'enclume du village, et
-  c'est un Ouary qui le tient à la Rigaudière une génération plus tard.</p>
+  <h2>The inn, the forge<br>and the workshop</h2>
+  <p class="chapo">A hamlet of Riaillé, and four members of the same kinship group
+  working there at the same time. Auguste Juvin and his wife Marie Rosalie Ouary ran
+  the hotel-restaurant there. Her brother, Olivier Ouary, was a blacksmith there.
+  Their son-in-law Joseph Muloise, who married their daughter Marguerite, was a
+  carpenter there. The drinks trade, the forge and the woodworking shop, all in the
+  same hamlet, in the hands of a single family, across two generations.</p>
+  <p style="margin-top:24px">The detail is not incidental: it extends the previous
+  story exactly. The Chauvel had followed the iron all the way to Riaillé, where the
+  forge went cold in 1875. The trade itself did not die out — it retreated from the
+  blast furnace to the village anvil, and it was an Ouary who held it at la
+  Rigaudière a generation later.</p>
 
-  <h3 style="margin-top:64px;font-size:22px;font-weight:600">Cinq générations derrière un comptoir</h3>
-  <p style="margin-top:14px">L'auberge n'est jamais un métier seul. Elle vient toujours en second,
-  adossée à un état : on est boulanger <em>et</em> aubergiste, forgeron <em>et</em> cabaretier,
-  menuisier <em>et</em> cafetier. Dans un bourg de bocage, le débit de boisson était le revenu
-  d'appoint, et le lieu où passait tout le monde.</p>
-  <ul class="metiers"><li><span class="p"><b>Jacques Guérin</b><span>vers 1747 – 1794 · 7<sup>e</sup> génération</span></span><span class="m">boulanger</span><span class="a">aubergiste de <em>L'Écu de France</em>, Riaillé</span></li><li><span class="p"><b>Olivier Chauvel</b><span>1799 – 1875 · 6<sup>e</sup> génération</span></span><span class="m">forgeron</span><span class="a">aubergiste et cabaretier, Sion-les-Mines puis Riaillé</span></li><li><span class="p"><b>Anne Marie Morel</b><span>1806 – ? · 6<sup>e</sup> génération</span></span><span class="m">—</span><span class="a">aubergiste, Sion-les-Mines</span></li><li><span class="p"><b>Rosalie Richard</b><span>? – 1902 · 4<sup>e</sup> génération</span></span><span class="m">—</span><span class="a">aubergiste</span></li><li><span class="p"><b>Auguste Juvin</b><span>1855 – 1915 · 4<sup>e</sup> génération</span></span><span class="m">—</span><span class="a">cafetier et hôtelier, la Rigaudière</span></li><li><span class="p"><b>Marie Rosalie Ouary</b><span>1855 – 1939 · 4<sup>e</sup> génération</span></span><span class="m">—</span><span class="a">hôtel-restaurant de la Rigaudière</span></li><li><span class="p"><b>Joseph Muloise</b><span>1891 – 1945 · 3<sup>e</sup> génération</span></span><span class="m">menuisier</span><span class="a">cafetier, la Rigaudière</span></li><li><span class="p"><b>René Blanchet</b><span>1893 – 1964 · 3<sup>e</sup> génération</span></span><span class="m">menuisier</span><span class="a">cafetier, Teillé</span></li></ul>
-  <p style="margin-top:26px">Cela éclaire au passage un détail de la deuxième partie. Si Jacques
-  Guérin était officier municipal en 1794, ce n'est pas un hasard de tempérament : il tenait
-  l'auberge du bourg. Dans une commune de mille habitants, l'aubergiste voit passer les nouvelles,
-  les colporteurs et les gendarmes. C'est aussi ce qui en fait une cible : les chouans savaient
-  où le trouver.</p>
+  <h3 style="margin-top:64px;font-size:22px;font-weight:600">Five generations behind a counter</h3>
+  <p style="margin-top:14px">Running an inn was never a trade on its own. It always
+  came second, backed by another occupation: one was a baker <em>and</em> innkeeper,
+  a blacksmith <em>and</em> tavern-keeper, a carpenter <em>and</em> café-keeper. In a
+  bocage market town, the drinks trade was the supplementary income, and the place
+  everyone passed through.</p>
+  <ul class="metiers"><li><span class="p"><b>Jacques Guérin</b><span>c. 1747 – 1794 · 7<sup>th</sup> generation</span></span><span class="m">baker</span><span class="a">innkeeper of <em>L'Écu de France</em>, Riaillé</span></li><li><span class="p"><b>Olivier Chauvel</b><span>1799 – 1875 · 6<sup>th</sup> generation</span></span><span class="m">blacksmith</span><span class="a">innkeeper and tavern-keeper, Sion-les-Mines then Riaillé</span></li><li><span class="p"><b>Anne Marie Morel</b><span>1806 – ? · 6<sup>th</sup> generation</span></span><span class="m">—</span><span class="a">innkeeper, Sion-les-Mines</span></li><li><span class="p"><b>Rosalie Richard</b><span>? – 1902 · 4<sup>th</sup> generation</span></span><span class="m">—</span><span class="a">innkeeper</span></li><li><span class="p"><b>Auguste Juvin</b><span>1855 – 1915 · 4<sup>th</sup> generation</span></span><span class="m">—</span><span class="a">café-keeper and hotelier, la Rigaudière</span></li><li><span class="p"><b>Marie Rosalie Ouary</b><span>1855 – 1939 · 4<sup>th</sup> generation</span></span><span class="m">—</span><span class="a">hotel-restaurant at la Rigaudière</span></li><li><span class="p"><b>Joseph Muloise</b><span>1891 – 1945 · 3<sup>rd</sup> generation</span></span><span class="m">carpenter</span><span class="a">café-keeper, la Rigaudière</span></li><li><span class="p"><b>René Blanchet</b><span>1893 – 1964 · 3<sup>rd</sup> generation</span></span><span class="m">carpenter</span><span class="a">café-keeper, Teillé</span></li></ul>
+  <p style="margin-top:26px">This sheds light, in passing, on a detail from Part Two.
+  If Jacques Guérin was municipal officer in 1794, that was no accident of
+  temperament: he kept the town's inn. In a commune of a thousand inhabitants, the
+  innkeeper sees the news, the pedlars and the gendarmes go by. That is also what
+  makes him a target: the chouans knew where to find him.</p>
 
   <div class="reserve" style="margin-top:44px">
-    <h3>Ce que le métier déclaré ne dit pas</h3>
-    <p>Ces professions proviennent des actes d'état civil, où chacun se déclare comme il l'entend.
-    Un même homme peut être « laboureur » à son mariage et « aubergiste » au baptême de son
-    troisième enfant, sans avoir changé de vie : il a simplement mentionné l'autre moitié de son
-    activité. Les métiers relevés ici sont donc des instantanés, pas des carrières.</p>
+    <h3>What the declared occupation doesn't say</h3>
+    <p>These occupations come from civil-registration records, where each person
+    declares themselves as they see fit. The same man could be a "laboureur" at his
+    marriage and an "innkeeper" at his third child's baptism, without having changed
+    his life: he simply mentioned the other half of what he did. The occupations
+    recorded here are therefore snapshots, not careers.</p>
   </div>
 
-  <h3 style="margin-top:64px;font-size:22px;font-weight:600">Puis plus personne</h3>
-  <p style="margin-top:14px">Sur les quatre cent vingt-six ancêtres reconstitués, on compte
-  vingt-deux laboureurs, des cultivateurs, des forgerons, des menuisiers, des maçons, un cardeur
-  de laine, un meunier, une poignée d'aubergistes — et exactement deux métiers qui ne ressemblent
-  à aucun autre, tous deux à la première génération. Professeur d'histoire et journaliste ;
-  enseignante en sciences naturelles.</p>
-  <p>Quatre siècles de terre, de fer et de comptoir, et puis la première génération qui enseigne.
-  C'est en une génération que bascule ce que seize n'avaient pas déplacé.</p>
+  <h3 style="margin-top:64px;font-size:22px;font-weight:600">Then no one at all</h3>
+  <p style="margin-top:14px">Among the four hundred and twenty-six reconstructed
+  ancestors, there are twenty-two laboureurs, farmers, blacksmiths, carpenters,
+  masons, a wool carder, a miller, a handful of innkeepers — and exactly two
+  occupations that resemble no other, both at the first generation. A history
+  teacher and journalist; a natural-science teacher.</p>
+  <p>Four centuries of land, iron and the counter, and then the first generation to
+  teach. What sixteen generations had not shifted tips over in just one.</p>
 </section>
 
 <section>
   <div class="num-sec">V · 1914-1918</div>
-  <h2>Ceux qui sont morts,<br>celui qui a écrit</h2>
-  <p class="chapo">Deux hommes de cette ascendance sont morts au front. Ni l'un ni l'autre
-  n'est un ancêtre direct, et cela n'a rien d'un hasard : une lignée ne se transmet que par
-  ceux qui sont revenus. Ce sont deux frères d'ancêtres — celui de l'arrière-grand-père,
-  celui de l'arrière-arrière-grand-mère.</p>
-  <div class="viz"><svg viewBox="0 0 940 300" role="img" aria-label="Les cinq morts de 1914-1918">
+  <h2>Those who died,<br>the one who wrote</h2>
+  <p class="chapo">Two men of this ancestry died at the front. Neither is a direct
+  ancestor, and that is no coincidence: a line is only passed on by those who came
+  back. They are two brothers of ancestors — the great-grandfather's, and the
+  great-great-grandmother's.</p>
+  <div class="viz"><svg viewBox="0 0 940 300" role="img" aria-label="The five deaths of 1914-1918">
 <line x1="66" y1="150" x2="874" y2="150" class="fr-axe"/>
 <line x1="119.9" y1="143" x2="119.9" y2="157" class="fr-tick"/>
 <text x="119.9" y="176" class="fr-an" text-anchor="middle">1915</text>
@@ -385,59 +398,61 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
 <line x1="351.5" y1="150" x2="351.5" y2="110" class="fr-tige"/>
 <circle cx="351.5" cy="150" r="6" class="fr-p"/>
 <text x="351.5" y="76.0" class="fr-n" text-anchor="middle">Henri Bonnet</text>
-<text x="351.5" y="92.0" class="fr-t" text-anchor="middle">29 ans · 6 juin 1915</text>
+<text x="351.5" y="92.0" class="fr-t" text-anchor="middle">29 · 6 June 1915</text>
 <text x="351.5" y="108.0" class="fr-t2" text-anchor="middle">Quennevières, Oise</text>
 <line x1="701.6" y1="150" x2="701.6" y2="190" class="fr-tige"/>
 <circle cx="701.6" cy="150" r="6" class="fr-p"/>
 <text x="701.6" y="204.0" class="fr-n" text-anchor="middle">Jean Jumois</text>
-<text x="701.6" y="220.0" class="fr-t" text-anchor="middle">33 ans · 31 janv. 1916</text>
+<text x="701.6" y="220.0" class="fr-t" text-anchor="middle">33 · 31 Jan. 1916</text>
 <text x="701.6" y="236.0" class="fr-t2" text-anchor="middle">Tahure, Marne</text>
 </svg></div>
-  <ul class="morts" style="margin-top:44px"><li><span class="n">Henri Auguste Bonnet</span><span class="a">29 ans · 1915</span><span class="l">Quennevières, Oise</span></li><li><span class="n">Jean Marie Joseph Jumois</span><span class="a">33 ans · 1916</span><span class="l">Tahure, Marne</span></li></ul>
-  <p style="margin-top:26px">Henri Bonnet et Louis Frédéric, l'arrière-grand-père, étaient
-  frères, nés à un an d'écart. Tous deux sont partis ; l'un est rentré, a épousé Marie
-  Bernardeau en 1924 et exploité une ferme à Carquefou jusqu'en 1957. L'autre est tombé à
-  vingt-neuf ans à Quennevières, un nom de ferme de l'Oise qui désignait en juin 1915 une
-  offensive entière. Huit mois plus tard, Jean Jumois mourait à Tahure, en Champagne.</p>
+  <ul class="morts" style="margin-top:44px"><li><span class="n">Henri Auguste Bonnet</span><span class="a">29 · 1915</span><span class="l">Quennevières, Oise</span></li><li><span class="n">Jean Marie Joseph Jumois</span><span class="a">33 · 1916</span><span class="l">Tahure, Marne</span></li></ul>
+  <p style="margin-top:26px">Henri Bonnet and Louis Frédéric, the great-grandfather,
+  were brothers, born a year apart. Both went to war; one came back, married Marie
+  Bernardeau in 1924 and farmed a holding at Carquefou until 1957. The other fell at
+  twenty-nine at Quennevières, a farm name in the Oise that in June 1915 came to
+  designate an entire offensive. Eight months later, Jean Jumois died at Tahure, in
+  Champagne.</p>
 
-  <h3 style="margin-top:78px;font-size:26px">Les lettres de René Blanchet</h3>
-  <p style="margin-top:14px">Les deux arrière-grands-pères de cette lignée ont fait la guerre
-  et en sont revenus. Louis Frédéric Bonnet, brancardier, du côté paternel. René Joseph
-  Blanchet, né à Teillé le 20 mars 1893, du côté maternel — au 114<sup>e</sup> régiment
-  d'infanterie, 2<sup>e</sup> compagnie, secteur postal 166. De lui, la famille a conservé
-  des lettres, écrites presque chaque semaine à son père, menuisier à Teillé, et numérotées
-  pour qu'aucune ne se perde.</p>
-  <p>Elles ne racontent pas de batailles. Elles disent le prix du vin — trente-six à quarante
-  sous le litre, « bien trop cher pour des soldats » —, le cinéma et les chanteurs le soir
-  au cantonnement, la boue dans laquelle on marche le jour, et le bonheur de pouvoir dormir
-  une nuit entière. Le 20 janvier 1918, le régiment est au repos près de Blainville, en
-  Meurthe-et-Moselle : il vient de quitter la forêt de Parroy, où il tenait un secteur calme
-  depuis cinq mois.</p>
+  <h3 style="margin-top:78px;font-size:26px">The letters of René Blanchet</h3>
+  <p style="margin-top:14px">Both great-grandfathers of this line went to war and
+  came back. Louis Frédéric Bonnet, a stretcher-bearer, on the paternal side. René
+  Joseph Blanchet, born at Teillé on 20 March 1893, on the maternal side — in the
+  114<sup>th</sup> Infantry Regiment, 2<sup>nd</sup> Company, postal sector 166. Of
+  him, the family has kept letters, written almost every week to his father, a
+  carpenter at Teillé, and numbered so that none would be lost.</p>
+  <p>They do not tell of battles. They speak of the price of wine — thirty-six to
+  forty <em>sous</em> a litre, "far too expensive for soldiers" —, the cinema and
+  the singers of an evening at billets, the mud one walks through by day, and the
+  happiness of sleeping through a whole night. On 20 January 1918, the regiment is
+  resting near Blainville, in Meurthe-et-Moselle: it has just left the Forêt de
+  Parroy, where it had held a quiet sector for five months.</p>
 
   <div class="photos" style="margin-top:40px">
-    <figure class="ph wide-img"><img src="/img/genealogie/lettre-1918-01-20.jpg" alt="Lettre de René Blanchet du 20 janvier 1918" loading="lazy" decoding="async"><figcaption>Dimanche 20 janvier 1918, lettre n° 4. « Mon cher papa ». <span class="cr">Collection familiale</span></figcaption></figure>
-    <figure class="ph wide-img"><img src="/img/genealogie/lettre-1918-01-27.jpg" alt="Lettre de René Blanchet du 27 janvier 1918" loading="lazy" decoding="async"><figcaption>Dimanche 27 janvier 1918, lettre n° 6, avec son cachet postal. <span class="cr">Collection familiale</span></figcaption></figure>
-    <figure class="ph wide-img"><img src="/img/genealogie/lettre-1918-02-21.jpg" alt="Lettre de René Blanchet du 21 février 1918" loading="lazy" decoding="async"><figcaption>21 février 1918 : le récit d'une attaque à laquelle il n'a pas pris part. <span class="cr">Collection familiale</span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/lettre-1918-01-20.jpg" alt="Letter from René Blanchet, 20 January 1918" loading="lazy" decoding="async"><figcaption>Sunday 20 January 1918, letter no. 4. "My dear papa." <span class="cr">Family collection</span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/lettre-1918-01-27.jpg" alt="Letter from René Blanchet, 27 January 1918" loading="lazy" decoding="async"><figcaption>Sunday 27 January 1918, letter no. 6, with its postmark. <span class="cr">Family collection</span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/lettre-1918-02-21.jpg" alt="Letter from René Blanchet, 21 February 1918" loading="lazy" decoding="async"><figcaption>21 February 1918: the account of an attack he did not take part in. <span class="cr">Family collection</span></figcaption></figure>
   </div>
 
   <div class="grid2" style="margin-top:52px">
     <div>
-      <p>Puis vient juin 1918. Le 114<sup>e</sup> a quitté la Lorraine à Pâques pour la Somme,
-      et se retrouve engagé à Méry, dans l'Oise, face à l'offensive allemande. Pendant trois
-      jours — les 11, 12 et 13 juin — le régiment tient ; les 650 hommes qu'il y perd, dont
-      vingt-quatre officiers, lui vaudront la Croix de guerre. Mangin résumera l'affaire d'une
-      phrase sur « le vert inoubliable des blés du 11 juin et le rouge, celui du sang qui les
-      a teints ».</p>
-      <p>René Blanchet est de ceux-là. Blessé au flanc gauche le 12, évacué, il traverse Paris
-      en automobile et écrit le vendredi 14 juin depuis l'Hôpital auxiliaire n° 3 de
-      Fleury-Meudon. Sa lettre s'emploie surtout à rassurer : la blessure est moins grave qu'il
-      ne croyait, ce n'est plus rien, et surtout que son père ne vienne pas — il pourrait ne
-      plus être là.</p>
-      <p>Une ligne, au passage, dit l'ampleur de ce que la famille ignorait : huit cents blessés
-      arrivés à Paris en quarante-huit heures, dans des salles installées à la hâte, et cela
-      durait tout le temps.</p>
+      <p>Then comes June 1918. The 114<sup>th</sup> had left Lorraine at Easter for
+      the Somme, and found itself engaged at Méry, in the Oise, facing the German
+      offensive. For three days — the 11th, 12th and 13th of June — the regiment
+      held; the 650 men it lost there, including twenty-four officers, would earn it
+      the <em>Croix de guerre</em>. Mangin would sum up the affair in a line about
+      "the unforgettable green of the wheat on 11 June, and the red, that of the
+      blood that stained it."</p>
+      <p>René Blanchet was one of them. Wounded in the left side on the 12th,
+      evacuated, he crossed Paris by car and wrote on Friday 14 June from Auxiliary
+      Hospital No. 3 at Fleury-Meudon. His letter is mostly concerned with
+      reassurance: the wound is less serious than he thought, it's nothing now, and
+      above all his father should not come — he might not be there any more.</p>
+      <p>One line, in passing, reveals the scale of what the family did not know:
+      eight hundred wounded arriving in Paris within forty-eight hours, in wards set
+      up in haste, and it went on like that the whole time.</p>
     </div>
-    <div><figure class="ph haut"><img src="/img/genealogie/lettre-1918-06-14.jpg" alt="Lettre du 14 juin 1918, écrite de l&#x27;hôpital" loading="lazy" decoding="async"><figcaption>Vendredi 14 juin 1918, écrite de l'Hôpital auxiliaire n° 3 de Fleury-Meudon, deux jours après sa blessure. <span class="cr">Collection familiale</span></figcaption></figure></div>
+    <div><figure class="ph haut"><img src="/img/genealogie/lettre-1918-06-14.jpg" alt="Letter of 14 June 1918, written from the hospital" loading="lazy" decoding="async"><figcaption>Friday 14 June 1918, written from Auxiliary Hospital No. 3 at Fleury-Meudon, two days after he was wounded. <span class="cr">Family collection</span></figcaption></figure></div>
   </div>
 </section>
 </div>
@@ -445,28 +460,29 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
 <div class="aud">
 <div class="wide">
 <section style="border-top:0">
-  <div class="num-sec">VI · Le cousin d'Amérique</div>
+  <div class="num-sec">VI · The American cousin</div>
   <h2>John James Audubon</h2>
-  <p class="chapo">Le plus célèbre peintre d'oiseaux du monde est né Jean Rabin, le
-  26 avril 1785 aux Cayes, à Saint-Domingue. Sa mère, Jeanne Rabine, était née vingt-sept
-  ans plus tôt au hameau des Mazures, commune des Touches — dans la paroisse même où les
-  Ouary labouraient depuis deux siècles. Les deux lignées partent du même homme.</p>
+  <p class="chapo">The world's most famous painter of birds was born Jean Rabin, on
+  26 April 1785 at Les Cayes, in Saint-Domingue. His mother, Jeanne Rabine, had been
+  born twenty-seven years earlier in the hamlet of Les Mazures, commune of Les
+  Touches — in the very parish where the Ouary had been laboureurs for two
+  centuries. Both lines trace back to the same man.</p>
 
   <div class="photos" style="margin-top:44px">
-    <figure class="ph "><img src="/img/genealogie/john-james-audubon-bird-naturalist-lccn2002700147.jpg" alt="Portrait de John James Audubon" loading="lazy" decoding="async"><figcaption>John James Audubon. Le naturaliste posa en trappeur pour servir sa légende américaine. <span class="cr">Library of Congress, domaine public · <a href="https://commons.wikimedia.org/wiki/File:John_James_Audubon%2C_bird_naturalist_LCCN2002700147.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
-    <figure class="ph "><img src="/img/genealogie/audubonjj.jpg" alt="John James Audubon" loading="lazy" decoding="async"><figcaption>Né Jean Rabin aux Cayes, mort John James Audubon à Manhattan : trois noms pour une seule vie. <span class="cr">Wikimedia Commons, domaine public · <a href="https://commons.wikimedia.org/wiki/File:AudubonJJ.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
-    <figure class="ph "><img src="/img/genealogie/john-james-audubon-1785-1851-head-and-shoulders-portrait-fac.jpg" alt="Portrait commémoratif d&#x27;Audubon entouré de vignettes d&#x27;oiseaux" loading="lazy" decoding="async"><figcaption>Portrait commémoratif, entouré de vignettes tirées de ses planches. <span class="cr">Library of Congress, domaine public · <a href="https://commons.wikimedia.org/wiki/File:John_James_Audubon%2C_1785-1851%2C_head-and-shoulders_portrait%2C_facing_right_in_oval_memorial_portrait_fringed_by_bird_vignettes_LCCN2005689323.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph "><img src="/img/genealogie/john-james-audubon-bird-naturalist-lccn2002700147.jpg" alt="Portrait of John James Audubon" loading="lazy" decoding="async"><figcaption>John James Audubon. The naturalist posed as a trapper to serve his American legend. <span class="cr">Library of Congress, public domain · <a href="https://commons.wikimedia.org/wiki/File:John_James_Audubon%2C_bird_naturalist_LCCN2002700147.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph "><img src="/img/genealogie/audubonjj.jpg" alt="John James Audubon" loading="lazy" decoding="async"><figcaption>Born Jean Rabin at Les Cayes, died John James Audubon in Manhattan: three names for one life. <span class="cr">Wikimedia Commons, public domain · <a href="https://commons.wikimedia.org/wiki/File:AudubonJJ.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph "><img src="/img/genealogie/john-james-audubon-1785-1851-head-and-shoulders-portrait-fac.jpg" alt="Memorial portrait of Audubon surrounded by bird vignettes" loading="lazy" decoding="async"><figcaption>Memorial portrait, surrounded by vignettes drawn from his plates. <span class="cr">Library of Congress, public domain · <a href="https://commons.wikimedia.org/wiki/File:John_James_Audubon%2C_1785-1851%2C_head-and-shoulders_portrait%2C_facing_right_in_oval_memorial_portrait_fringed_by_bird_vignettes_LCCN2005689323.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
   </div>
 
-  <h3 style="margin-top:78px;font-size:26px">Les deux branches</h3>
-  <p style="margin-top:14px">Guillaume Ouary, laboureur aux Touches, meurt en 1652. Deux de
-  ses enfants ouvrent deux histoires sans rapport : son fils Pierre reste au village, sa
-  fille Renée est à l'origine de la lignée qui mènera à Audubon. Onze générations d'un côté,
-  sept de l'autre.</p>
-  <div class="viz"><svg viewBox="0 0 940 832" role="img" aria-label="Les deux branches issues de Guillaume Ouary">
+  <h3 style="margin-top:78px;font-size:26px">The two branches</h3>
+  <p style="margin-top:14px">Guillaume Ouary, a laboureur at Les Touches, died in
+  1652. Two of his children opened two unrelated stories: his son Pierre stayed in
+  the village, his daughter Renée was the origin of the line that would lead to
+  Audubon. Eleven generations on one side, seven on the other.</p>
+  <div class="viz"><svg viewBox="0 0 940 832" role="img" aria-label="The two branches descending from Guillaume Ouary">
 <rect x="320" y="26" width="300" height="56" rx="3" class="bx-src"/>
 <text x="470" y="50" class="bt-src" text-anchor="middle">Guillaume Ouary</text>
-<text x="470" y="70" class="bt-src2" text-anchor="middle">vers 1566 – 1652 · Les Touches</text>
+<text x="470" y="70" class="bt-src2" text-anchor="middle">c. 1566 – 1652 · Les Touches</text>
 <path d="M470,82 L470,90 L244,90" class="bl"/>
 <path d="M470,82 L470,90 L696,90" class="bl"/>
 <line x1="244" y1="90" x2="244" y2="742" class="bl"/>
@@ -526,222 +542,231 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
 <text x="714" y="487" class="bt fin" text-anchor="start">John James Audubon</text>
 <text x="714" y="502" class="bt2" text-anchor="start">1785–1851</text>
 </svg></div>
-  <p class="leg">Cousinage au sixième degré, avec quatre générations d'écart.</p>
+  <p class="leg">Sixth-degree cousinship, four generations apart.</p>
 
-  <h3 style="margin-top:78px;font-size:26px">Jeanne Rabine, fille de chambre</h3>
+  <h3 style="margin-top:78px;font-size:26px">Jeanne Rabine, lady's maid</h3>
   <div class="grid2" style="margin-top:22px">
     <div>
-      <p>Baptisée aux Touches, à l'église Sainte-Mélaine, le 14 mars 1758. Le tanneur Cébron,
-      voisin du hameau des Mazures, la recommande à Jacques Pallon de la Bouverie, juge en
-      retraite devenu planteur. Elle embarque quai de la Fosse à Nantes sur
-      <em>Le Conquérant</em>, avec la famille Pallon, pour Saint-Domingue. Elle a un peu plus
-      de vingt ans et ne reverra jamais la Bretagne.</p>
-      <p>La date de ce départ n'est pas établie. La commune des Touches donne le 23 octobre
-      1781 ; la biographie d'Yvon Chatelain, reprise par les bases généalogiques, indique
-      septembre 1783. Deux ans d'écart entre deux sources de seconde main, qu'aucun document
-      d'archive consulté ici ne permet de départager. Les rôles d'armement conservés aux
-      Archives départementales de Loire-Atlantique trancheraient.</p>
-      <p>Le navire lui-même reste introuvable. Le nom revenait souvent dans l'armement
-      nantais — un <em>Conquérant</em> de Nantes figure dès 1746 parmi les prises saisies par
-      les Anglais — et rien ne permet d'identifier celui de Jeanne Rabine. Une certitude
-      toutefois : transportant un magistrat, son épouse, ses trois filles et leur domestique,
-      il naviguait « en droiture », la route directe vers la colonie, et non sur le circuit
-      triangulaire de la traite. Nuance qui compte, car l'homme qui la recueillit à
-      l'arrivée, lui, était capitaine négrier.</p>
-      <p>Aux Cayes, elle rencontre Jean Audubon, capitaine nantais, planteur et négrier,
-      marié en France. Elle meurt quelques mois après la naissance de son fils, emportée par
-      une fièvre tropicale. L'enfant est confié à Catherine Bouffard, compagne de son père,
-      puis ramené en France en 1788.</p>
-      <p>Il grandit à La Gerbetière, à Couëron, chez l'épouse légitime de son père. En 1794,
-      le couple l'adopte sous le prénom de <em>Fougère</em> — le nom du jour de sa naissance
-      au calendrier républicain. En 1803, muni d'un faux passeport destiné à lui éviter la
-      conscription, il embarque pour les États-Unis sous le nom de John James Audubon.</p>
+      <p>Baptised at Les Touches, at the church of Sainte-Mélaine, on 14 March
+      1758. Cébron the tanner, a neighbour from the hamlet of Les Mazures,
+      recommended her to Jacques Pallon de la Bouverie, a retired judge turned
+      planter. She embarked at the Quai de la Fosse in Nantes aboard <em>Le
+      Conquérant</em>, with the Pallon family, for Saint-Domingue. She was a little
+      over twenty, and would never see Brittany again.</p>
+      <p>The date of this departure is not settled. The commune of Les Touches
+      gives 23 October 1781; Yvon Chatelain's biography, repeated by the
+      genealogical databases, states September 1783. Two years apart between two
+      secondhand sources, which no archival document consulted here can resolve.
+      The ships' muster rolls held at the Archives départementales de
+      Loire-Atlantique would settle it.</p>
+      <p>The ship itself cannot be traced. The name recurred often among Nantes
+      shipowners — a <em>Conquérant</em> of Nantes appears as early as 1746 among
+      the prizes seized by the English — and nothing allows Jeanne Rabine's ship to
+      be identified. One thing is certain, however: carrying a magistrate, his
+      wife, his three daughters and their servant, it sailed <em>en droiture</em>,
+      the direct route to the colony, rather than the triangular circuit of the
+      slave trade. A nuance that matters, since the man who took her in on arrival
+      was himself a slave-ship captain.</p>
+      <p>At Les Cayes, she met Jean Audubon, a Nantes sea captain, planter and
+      slave trader, married in France. She died a few months after her son's
+      birth, carried off by a tropical fever. The child was entrusted to Catherine
+      Bouffard, his father's companion, then brought back to France in 1788.</p>
+      <p>He grew up at La Gerbetière, in Couëron, with his father's lawful wife.
+      In 1794, the couple adopted him under the first name <em>Fougère</em> — the
+      name of the day of his birth in the French Republican calendar. In 1803,
+      equipped with a false passport meant to spare him conscription, he sailed
+      for the United States under the name John James Audubon.</p>
     </div>
-    <div><figure class="ph "><img src="/img/genealogie/w1318-touches-stemelaine-xviii1849-1861-1895-51530.jpg" alt="Église Sainte-Mélaine des Touches" loading="lazy" decoding="async"><figcaption>L'église Sainte-Mélaine des Touches, paroisse de baptême de Jeanne Rabine en 1758. <span class="cr">Llann Wé², CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:W1318-Touches_SteMelaine_XVIII%C2%B01849-1861-1895_51530.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure></div>
+    <div><figure class="ph "><img src="/img/genealogie/w1318-touches-stemelaine-xviii1849-1861-1895-51530.jpg" alt="Sainte-Mélaine church at Les Touches" loading="lazy" decoding="async"><figcaption>The Sainte-Mélaine church at Les Touches, the parish where Jeanne Rabine was baptised in 1758. <span class="cr">Llann Wé², CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:W1318-Touches_SteMelaine_XVIII%C2%B01849-1861-1895_51530.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure></div>
   </div>
-  <div class="viz" style="margin-top:44px"><svg viewBox="0 0 940 176" role="img" aria-label="Itinéraire de Jeanne Rabine et de son fils">
+  <div class="viz" style="margin-top:44px"><svg viewBox="0 0 940 176" role="img" aria-label="Route of Jeanne Rabine and her son">
 <line x1="70" y1="66" x2="870" y2="66" class="rt"/>
 <circle cx="70" cy="66" r="9" class="rn cle"/>
 <text x="70" y="40" class="rl" text-anchor="middle">Les Touches</text>
 <text x="70" y="56" class="rd" text-anchor="middle">1758</text>
-<text x="70" y="92" class="rt2" text-anchor="middle">Naissance au hameau des</text>
-<text x="70" y="106" class="rt2" text-anchor="middle">Mazures</text>
+<text x="70" y="92" class="rt2" text-anchor="middle">Born in the hamlet of</text>
+<text x="70" y="106" class="rt2" text-anchor="middle">Les Mazures</text>
 <circle cx="270" cy="66" r="6" class="rn"/>
 <text x="270" y="40" class="rl" text-anchor="middle">Nantes</text>
-<text x="270" y="56" class="rd" text-anchor="middle">1781 ou 1783</text>
-<text x="270" y="92" class="rt2" text-anchor="middle">Embarquement quai de la</text>
-<text x="270" y="106" class="rt2" text-anchor="middle">Fosse sur Le Conquérant</text>
+<text x="270" y="56" class="rd" text-anchor="middle">1781 or 1783</text>
+<text x="270" y="92" class="rt2" text-anchor="middle">Embarks at the Quai de la</text>
+<text x="270" y="106" class="rt2" text-anchor="middle">Fosse aboard Le Conquérant</text>
 <circle cx="470" cy="66" r="9" class="rn cle"/>
 <text x="470" y="40" class="rl" text-anchor="middle">Les Cayes</text>
-<text x="470" y="56" class="rd" text-anchor="middle">26 avril 1785</text>
-<text x="470" y="92" class="rt2" text-anchor="middle">Naissance de Jean Rabin à</text>
+<text x="470" y="56" class="rd" text-anchor="middle">26 April 1785</text>
+<text x="470" y="92" class="rt2" text-anchor="middle">Jean Rabin born in</text>
 <text x="470" y="106" class="rt2" text-anchor="middle">Saint-Domingue</text>
 <circle cx="670" cy="66" r="6" class="rn"/>
 <text x="670" y="40" class="rl" text-anchor="middle">Couëron</text>
 <text x="670" y="56" class="rd" text-anchor="middle">1788</text>
-<text x="670" y="92" class="rt2" text-anchor="middle">Enfance à La Gerbetière,</text>
-<text x="670" y="106" class="rt2" text-anchor="middle">près de Nantes</text>
+<text x="670" y="92" class="rt2" text-anchor="middle">Childhood at La Gerbetière,</text>
+<text x="670" y="106" class="rt2" text-anchor="middle">near Nantes</text>
 <circle cx="870" cy="66" r="6" class="rn"/>
 <text x="870" y="40" class="rl" text-anchor="middle">New York</text>
 <text x="870" y="56" class="rd" text-anchor="middle">1803</text>
-<text x="870" y="92" class="rt2" text-anchor="middle">Départ pour les États-Unis</text>
-<text x="870" y="106" class="rt2" text-anchor="middle">sous un faux passeport</text>
+<text x="870" y="92" class="rt2" text-anchor="middle">Leaves for the United States</text>
+<text x="870" y="106" class="rt2" text-anchor="middle">under a false passport</text>
 </svg></div>
 
-  <h3 style="margin-top:78px;font-size:26px">Une vie</h3>
-  <ul class="chrono"><li><span class="an">1785</span><span class="tx">Naissance aux Cayes, à Saint-Domingue, sous le nom de Jean Rabin. Sa mère meurt quelques mois plus tard.</span></li><li><span class="an">1788</span><span class="tx">Son père l'emmène en France. Il grandit à La Gerbetière, à Couëron, chez l'épouse légitime de celui-ci.</span></li><li><span class="an">1794</span><span class="tx">Adopté sous le prénom de Fougère, nom du jour de sa naissance au calendrier républicain.</span></li><li><span class="an">1803</span><span class="tx">Départ pour les États-Unis avec un faux passeport, destiné à lui éviter la conscription napoléonienne.</span></li><li><span class="an">1808</span><span class="tx">Épouse Lucy Bakewell. Le couple part tenter sa chance sur la frontière du Kentucky.</span></li><li><span class="an">1819</span><span class="tx">Faillite, prison pour dettes. Il n'a plus que son crayon pour vivre et se met au portrait.</span></li><li><span class="an">1826</span><span class="tx">Embarque pour l'Angleterre avec 250 dessins, cherche graveurs et souscripteurs.</span></li><li><span class="an">1827</span><span class="tx">Première livraison de <em>The Birds of America</em>. La gravure commence à Édimbourg chez Lizars, puis passe à Londres chez Havell.</span></li><li><span class="an">1838</span><span class="tx">Dernière planche. Onze ans de parution, 435 planches, 1 065 oiseaux.</span></li><li><span class="an">1851</span><span class="tx">Meurt à Manhattan, dans le domaine qui deviendra le quartier d'Audubon Park.</span></li></ul>
+  <h3 style="margin-top:78px;font-size:26px">A life</h3>
+  <ul class="chrono"><li><span class="an">1785</span><span class="tx">Born at Les Cayes, in Saint-Domingue, under the name Jean Rabin. His mother dies a few months later.</span></li><li><span class="an">1788</span><span class="tx">His father brings him to France. He grows up at La Gerbetière, in Couëron, with his father's lawful wife.</span></li><li><span class="an">1794</span><span class="tx">Adopted under the first name Fougère, the name of the day of his birth in the French Republican calendar.</span></li><li><span class="an">1803</span><span class="tx">Leaves for the United States with a false passport, meant to spare him Napoleonic conscription.</span></li><li><span class="an">1808</span><span class="tx">Marries Lucy Bakewell. The couple set off to try their luck on the Kentucky frontier.</span></li><li><span class="an">1819</span><span class="tx">Bankruptcy, debtors' prison. He has nothing left to live on but his pencil, and takes up portraiture.</span></li><li><span class="an">1826</span><span class="tx">Sails for England with 250 drawings, seeking engravers and subscribers.</span></li><li><span class="an">1827</span><span class="tx">First instalment of <em>The Birds of America</em>. Engraving begins in Edinburgh with Lizars, then moves to London with Havell.</span></li><li><span class="an">1838</span><span class="tx">Final plate. Eleven years of publication, 435 plates, 1,065 birds.</span></li><li><span class="an">1851</span><span class="tx">Dies in Manhattan, on the estate that will become the Audubon Park neighbourhood.</span></li></ul>
 
-  <h3 style="margin-top:78px;font-size:26px">L'œuvre</h3>
-  <p style="margin-top:14px"><em>The Birds of America</em> est une folie technique autant
-  qu'artistique. Audubon exige que chaque oiseau soit représenté grandeur nature : il faut
-  donc du papier « double éléphant », le plus grand format disponible, et le flamant rose
-  doit courber le cou pour tenir dans la page. Chaque planche est gravée à l'eau-forte et
-  à l'aquatinte, puis coloriée à la main, une par une.</p>
-  <div class="faits"><div class="fait"><b>435</b><span>planches gravées, coloriées à la main, publiées de 1827 à 1838</span></div><div class="fait"><b>1 065</b><span>oiseaux représentés, tous à taille réelle</span></div><div class="fait"><b>97 × 66</b><span>centimètres : le format « double éléphant », imposé par la taille du héron</span></div><div class="fait"><b>11,5</b><span>millions de dollars, record mondial pour un livre imprimé, Sotheby's 2010</span></div></div>
+  <h3 style="margin-top:78px;font-size:26px">The work</h3>
+  <p style="margin-top:14px"><em>The Birds of America</em> is as much a technical
+  folly as an artistic one. Audubon insisted that every bird be shown life-size:
+  this called for "double elephant" paper, the largest format available, and the
+  flamingo had to bend its neck to fit on the page. Every plate was etched and
+  aquatinted, then coloured by hand, one at a time.</p>
+  <div class="faits"><div class="fait"><b>435</b><span>plates engraved, hand-coloured, published from 1827 to 1838</span></div><div class="fait"><b>1,065</b><span>birds depicted, all life-size</span></div><div class="fait"><b>97 × 66</b><span>centimetres: the "double elephant" format, dictated by the size of the heron</span></div><div class="fait"><b>$11.5</b><span>million, a world record for a printed book, Sotheby's 2010</span></div></div>
   <div class="photos" style="margin-top:44px">
-    <figure class="ph tall"><img src="/img/genealogie/audubon-birds-of-america.jpg" alt="The Birds of America" loading="lazy" decoding="async"><figcaption><em>The Birds of America</em>, l'ouvrage de toute une vie, publié à ses frais pendant onze ans. <span class="cr">Wikimedia Commons, domaine public · <a href="https://commons.wikimedia.org/wiki/File:Audubon_Birds_of_America.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
-    <figure class="ph tall"><img src="/img/genealogie/the-birds-of-america-livraison-1-plate-i-great-american-cock.jpg" alt="Planche I : le dindon sauvage" loading="lazy" decoding="async"><figcaption>Planche I : le dindon sauvage, gravé par W. H. Lizars à Édimbourg. Audubon fit du « gobbler » son sceau personnel, avec la devise <em>America my country</em>. <span class="cr">BnF via Wikimedia Commons, domaine public · <a href="https://commons.wikimedia.org/wiki/File:The_birds_of_America._%28Livraison%29_1%2C_Plate_I%2C_Great_American_Cock_Male_%3B_Vulgo_Wild_Turkey_-_estampe_-_Drawn_by_J._J._Audubon_%3B_Engraved_by_W._H._Lizars_Edin.r_-_btv1b53144013v.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
-    <figure class="ph tall"><img src="/img/genealogie/the-birds-of-america-livraison-1-plate-v-bonaparte-flycatche.jpg" alt="Planche V : la paruline du Canada" loading="lazy" decoding="async"><figcaption>Planche V, première livraison. Chaque oiseau est peint grandeur nature, sur sa plante nourricière. <span class="cr">BnF via Wikimedia Commons, domaine public · <a href="https://commons.wikimedia.org/wiki/File:The_birds_of_America._%28Livraison_1%29%2C_Plate_V%2C_Bonaparte_Flycatcher_%28i.e._Canada_warbler%29_%3B_Plant_seed_pud_-_estampe_-_Drawn_by_J._J._Audubon_%3B_Engraved_by_W._H._Lizars_Edin.r_-_btv1b53143985q.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph tall"><img src="/img/genealogie/audubon-birds-of-america.jpg" alt="The Birds of America" loading="lazy" decoding="async"><figcaption><em>The Birds of America</em>, the work of a lifetime, published at his own expense over eleven years. <span class="cr">Wikimedia Commons, public domain · <a href="https://commons.wikimedia.org/wiki/File:Audubon_Birds_of_America.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph tall"><img src="/img/genealogie/the-birds-of-america-livraison-1-plate-i-great-american-cock.jpg" alt="Plate I: the wild turkey" loading="lazy" decoding="async"><figcaption>Plate I: the wild turkey, engraved by W. H. Lizars in Edinburgh. Audubon made the "gobbler" his personal seal, with the motto <em>America my country</em>. <span class="cr">BnF via Wikimedia Commons, public domain · <a href="https://commons.wikimedia.org/wiki/File:The_birds_of_America._%28Livraison%29_1%2C_Plate_I%2C_Great_American_Cock_Male_%3B_Vulgo_Wild_Turkey_-_estampe_-_Drawn_by_J._J._Audubon_%3B_Engraved_by_W._H._Lizars_Edin.r_-_btv1b53144013v.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph tall"><img src="/img/genealogie/the-birds-of-america-livraison-1-plate-v-bonaparte-flycatche.jpg" alt="Plate V: the Canada warbler" loading="lazy" decoding="async"><figcaption>Plate V, first instalment. Every bird is painted life-size, on its host plant. <span class="cr">BnF via Wikimedia Commons, public domain · <a href="https://commons.wikimedia.org/wiki/File:The_birds_of_America._%28Livraison_1%29%2C_Plate_V%2C_Bonaparte_Flycatcher_%28i.e._Canada_warbler%29_%3B_Plant_seed_pud_-_estampe_-_Drawn_by_J._J._Audubon_%3B_Engraved_by_W._H._Lizars_Edin.r_-_btv1b53143985q.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
   </div>
-  <p style="margin-top:36px">Le financement se fait par souscription, planche après planche,
-  pendant onze ans. L'entreprise coûte à Audubon 115 640 dollars de l'époque — plus de deux
-  millions d'aujourd'hui — qu'il finance en vendant des copies à l'huile, des portraits et
-  des peaux d'animaux chassés en route. Moins de cent vingt exemplaires complets subsistent.
-  En décembre 2010, l'un d'eux est adjugé 11,5 millions de dollars chez Sotheby's à Londres :
-  le prix le plus élevé jamais payé pour un livre imprimé.</p>
+  <p style="margin-top:36px">Funding came through subscription, plate after plate,
+  over eleven years. The undertaking cost Audubon $115,640 of the day's money —
+  more than two million today — which he financed by selling oil copies, portraits
+  and the skins of animals shot along the way. Fewer than a hundred and twenty
+  complete copies survive. In December 2010, one of them sold for $11.5 million at
+  Sotheby's in London: the highest price ever paid for a printed book.</p>
 
-  <h3 style="margin-top:78px;font-size:26px">Celle qui a payé</h3>
+  <h3 style="margin-top:78px;font-size:26px">The one who paid</h3>
   <div class="grid2" style="margin-top:22px">
     <div>
-      <p>Ces cent quinze mille dollars, quelqu'un les a gagnés. Lucy Bakewell avait seize ans
-      et Audubon dix-huit quand il débarqua en 1803 à Mill Grove, la propriété de son père,
-      mitoyenne de Fatland Ford où vivaient les Bakewell. Ils étaient voisins avant d'être
-      époux ; ils se marièrent le 5 avril 1808.</p>
-      <p>Après la faillite de 1819, c'est elle qui devient le soutien de la famille, pour
-      libérer son mari et lui permettre de se consacrer aux oiseaux. Elle part pour la
-      Louisiane en 1821 et enseigne, d'abord contre le gîte et le couvert, puis pour son
-      compte. De 1823 à 1830, elle tient des classes de jeunes filles à Beech Woods puis à
-      Beech Grove — dans cette même paroisse de West Feliciana où Audubon peignait à Oakley
-      et où le pont porte aujourd'hui son nom à lui.</p>
-      <p>Elle fonde deux écoles à une époque où les femmes n'avaient pratiquement pas le droit
-      de gagner un salaire. Elle obtient de son père une avance de huit mille dollars sur son
-      héritage, et parvient à économiser trois mille dollars pour envoyer Audubon publier son
-      livre en Europe. Pendant qu'il est absent des mois, parfois des années, elle élève leurs
-      fils, gère les affaires, expédie les peaux et les plantes qu'il réclame, tient les
-      souscriptions et coordonne le travail des graveurs.</p>
-      <p>Quatre enfants, dont deux filles mortes en bas âge — Lucy en 1817, Rosa en 1820. Elle
-      survivra à son mari et à ses deux fils, et mourra en 1874, à quatre-vingt-sept ans, dans
-      le Kentucky.</p>
+      <p>Someone earned those hundred and fifteen thousand dollars. Lucy Bakewell
+      was sixteen and Audubon eighteen when he landed in 1803 at Mill Grove, his
+      father's property, adjoining Fatland Ford where the Bakewells lived. They
+      were neighbours before they were husband and wife; they married on 5 April
+      1808.</p>
+      <p>After the 1819 bankruptcy, it was she who became the family's
+      breadwinner, to free her husband and let him devote himself to the birds.
+      She left for Louisiana in 1821 and taught, first for board and lodging, then
+      on her own account. From 1823 to 1830, she ran classes for young girls at
+      Beech Woods and then at Beech Grove — in that same parish of West Feliciana
+      where Audubon painted at Oakley, and where the bridge today bears his name.</p>
+      <p>She founded two schools at a time when women had practically no right to
+      earn a wage. She obtained an eight-thousand-dollar advance on her
+      inheritance from her father, and managed to save three thousand dollars to
+      send Audubon to publish his book in Europe. While he was away for months,
+      sometimes years, she raised their sons, ran the household's affairs, shipped
+      the skins and plants he asked for, kept the subscriptions and coordinated
+      the engravers' work.</p>
+      <p>Four children, of whom two daughters died in infancy — Lucy in 1817, Rosa
+      in 1820. She would outlive her husband and both her sons, and would die in
+      1874, aged eighty-seven, in Kentucky.</p>
       <blockquote style="margin-top:26px">
-        Si j'étais jalouse, je passerais un mauvais moment, car chaque oiseau est ma rivale.
+        If I were jealous, I should have a bad time of it, for every bird is my rival.
         <cite>Lucy Bakewell Audubon</cite>
       </blockquote>
     </div>
-    <div><figure class="ph haut"><img src="/img/genealogie/mrs-audubon-wife-of-james-audubon.jpg" alt="Portrait de Lucy Bakewell Audubon" loading="lazy" decoding="async"><figcaption>Lucy Bakewell Audubon (1787-1874). Sans elle, aucune planche n'aurait été gravée. <span class="cr">Wikimedia Commons, domaine public · <a href="https://commons.wikimedia.org/wiki/File:Mrs._Audubon_-_wife_of_James_Audubon.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure></div>
+    <div><figure class="ph haut"><img src="/img/genealogie/mrs-audubon-wife-of-james-audubon.jpg" alt="Portrait of Lucy Bakewell Audubon" loading="lazy" decoding="async"><figcaption>Lucy Bakewell Audubon (1787-1874). Without her, not a single plate would have been engraved. <span class="cr">Wikimedia Commons, public domain · <a href="https://commons.wikimedia.org/wiki/File:Mrs._Audubon_-_wife_of_James_Audubon.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure></div>
   </div>
 
-  <h3 style="margin-top:78px;font-size:26px">Trois anecdotes</h3>
+  <h3 style="margin-top:78px;font-size:26px">Three anecdotes</h3>
   <div class="grid2" style="margin-top:22px">
     <div>
-      <p><strong>Le fil d'argent.</strong> Au printemps 1804, à Mill Grove en Pennsylvanie,
-      Audubon noue un fil d'argent à la patte de cinq oisillons — des moucherolles phébi —
-      pour savoir si les oiseaux reviennent nicher où ils sont nés. Il affirme en avoir
-      retrouvé deux l'année suivante. L'histoire lui vaut le titre de premier bagueur
-      d'oiseaux d'Amérique. Elle est aujourd'hui contestée : un taux de retour de 40 %
-      est vingt fois supérieur à ce qu'observent les ornithologues modernes, et une
-      reconstitution des dates montre qu'il n'était pas en Pennsylvanie au printemps 1805.</p>
-      <p><strong>Le canular des poissons.</strong> En 1818, le naturaliste Constantine
-      Rafinesque séjourne chez lui dans le Kentucky. Une nuit, croyant capturer une
-      chauve-souris d'espèce nouvelle, il fracasse le violon favori de son hôte. Audubon se
-      venge en lui décrivant des poissons et des mammifères de l'Ohio entièrement imaginaires,
-      que Rafinesque publie sérieusement comme espèces nouvelles.</p>
+      <p><strong>The silver thread.</strong> In the spring of 1804, at Mill Grove
+      in Pennsylvania, Audubon tied a silver thread to the leg of five fledglings —
+      eastern phoebes — to find out whether birds return to nest where they were
+      born. He claimed to have found two of them again the following year. The
+      story earned him the title of America's first bird bander. It is disputed
+      today: a 40% return rate is twenty times higher than what modern
+      ornithologists observe, and a reconstruction of the dates shows he was not
+      in Pennsylvania in the spring of 1805.</p>
+      <p><strong>The fish hoax.</strong> In 1818, the naturalist Constantine
+      Rafinesque stayed with him in Kentucky. One night, believing he was catching
+      a bat of a new species, he smashed his host's favourite violin. Audubon took
+      his revenge by describing to him entirely imaginary fish and mammals of the
+      Ohio, which Rafinesque seriously published as new species.</p>
     </div>
     <div>
-      <p><strong>L'aigle qui n'existait pas.</strong> Sa carrière décolle avec la
-      « Bird of Washington », un aigle géant qu'il dit avoir observé et dont il fait une
-      planche spectaculaire. Aucun spécimen n'a jamais été retrouvé, aucune observation
-      indépendante n'est venue la confirmer, et les travaux récents concluent à une
-      fabrication. L'oiseau qui l'a rendu célèbre n'a probablement jamais volé.</p>
-      <p>Ces trois épisodes ne retirent rien à l'œuvre. Ils rappellent qu'Audubon était
-      aussi un entrepreneur en quête de souscripteurs, dans un milieu scientifique où la
-      découverte d'une espèce valait une réputation.</p>
+      <p><strong>The eagle that never existed.</strong> His career took off with
+      the "Bird of Washington," a giant eagle he claimed to have observed and of
+      which he made a spectacular plate. No specimen has ever been found, no
+      independent observation ever confirmed it, and recent scholarship concludes
+      it was fabricated. The bird that made him famous probably never flew.</p>
+      <p>These three episodes take nothing away from the work. They are a
+      reminder that Audubon was also an entrepreneur in search of subscribers, in
+      a scientific world where discovering a species was worth a reputation.</p>
     </div>
   </div>
 
-  <h3 style="margin-top:78px;font-size:26px">Ce qui porte son nom</h3>
+  <h3 style="margin-top:78px;font-size:26px">What bears his name</h3>
   <div class="grid2" style="margin-top:22px">
     <div>
-      <p>Une montagne du Colorado, d'abord : le <strong>mont Audubon</strong>, 4 032 mètres,
-      dans les Indian Peaks du Front Range, au nord-ouest de Boulder. Un quartier de
-      Manhattan ensuite, Audubon Park, bâti sur le domaine où il finit ses jours. Plusieurs
-      oiseaux enfin — la paruline d'Audubon, l'oriole d'Audubon, le puffin d'Audubon.</p>
-      <p>Et surtout la <strong>National Audubon Society</strong>, fondée en 1905, plus d'un
-      demi-siècle après sa mort et sans aucun lien avec sa famille. C'est aujourd'hui la
-      plus ancienne et la plus vaste organisation de protection des oiseaux des États-Unis.</p>
-      <p>Deux ouvrages portent aussi son nom, et disent bien ce qu'il est devenu là-bas. À
-      Henderson, dans le Kentucky, où il tint boutique de 1810 à 1819, un musée bâti en 1938
-      abrite l'une des plus grandes collections de ses originaux — dans un bâtiment de style
-      normand français élevé en hommage à ses origines, dont la tour comporte des niches
-      creusées exprès pour que les oiseaux y nichent.</p>
-      <p>Et sur le Mississippi, entre les paroisses de Pointe Coupee et de West Feliciana,
-      le <strong>pont John James Audubon</strong>, ouvert en mai 2011. Sa travée centrale de
-      482 mètres en fit à sa mise en service le plus long pont à haubans de l'hémisphère
-      occidental. Il remplace un bac et reste le seul franchissement du fleuve sur cent
-      cinquante kilomètres. Il enjambe le fleuve à quelques milles d'Oakley Plantation, où
-      Audubon peignit une partie de ses oiseaux en 1821.</p>
+      <p>A mountain in Colorado, first: the <strong>Mount Audubon</strong>,
+      4,032 metres, in the Indian Peaks of the Front Range, north-west of Boulder.
+      A Manhattan neighbourhood next, Audubon Park, built on the estate where he
+      ended his days. Several birds, finally — Audubon's warbler, Audubon's
+      oriole, Audubon's shearwater.</p>
+      <p>And above all the <strong>National Audubon Society</strong>, founded in
+      1905, more than half a century after his death and with no connection to
+      his family. It is today the oldest and largest bird protection organisation
+      in the United States.</p>
+      <p>Two structures also bear his name, and say a good deal about what he
+      became over there. At Henderson, in Kentucky, where he kept a shop from
+      1810 to 1819, a museum built in 1938 houses one of the largest collections
+      of his originals — in a building in French Norman style raised in tribute
+      to his origins, whose tower has niches cut specially for birds to nest in.</p>
+      <p>And on the Mississippi, between the parishes of Pointe Coupee and West
+      Feliciana, the <strong>John James Audubon Bridge</strong>, opened in May
+      2011. Its 482-metre main span made it, on opening, the longest cable-stayed
+      bridge in the Western Hemisphere. It replaces a ferry and remains the only
+      river crossing for a hundred and fifty kilometres. It spans the river a few
+      miles from Oakley Plantation, where Audubon painted some of his birds in
+      1821.</p>
     </div>
     <div>
-      <p>Ce nom fait débat. Audubon possédait des esclaves — neuf personnes travaillaient
-      dans sa maison — les a vendus lors de sa faillite, en a racheté dans les années 1820,
-      et s'est publiquement opposé à l'abolition. Le 15 mars 2023, après plus d'un an de
-      consultation, le conseil d'administration de la National Audubon Society a voté le
-      maintien du nom, estimant que l'organisation « dépasse le nom d'une seule personne »,
-      tout en engageant 25 millions de dollars pour ses programmes de diversité.</p>
+      <p>This name is contested. Audubon owned slaves — nine people worked in his
+      household — sold them at his bankruptcy, bought more in the 1820s, and
+      publicly opposed abolition. On 15 March 2023, after more than a year of
+      consultation, the National Audubon Society's board of directors voted to
+      keep the name, judging that the organisation "is bigger than the name of
+      one person," while committing $25 million to its diversity programmes.</p>
     </div>
   </div>
 
   <div class="photos deux" style="margin-top:40px">
-    <figure class="ph wide-img"><img src="/img/genealogie/john-james-audubon-state-park-museum.jpg" alt="Le musée du John James Audubon State Park" loading="lazy" decoding="async"><figcaption>Le musée de Henderson, Kentucky, bâti en 1938 dans un style normand français en hommage à ses origines. Sa tour est percée de niches où les oiseaux peuvent nicher. <span class="cr">Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:John_James_Audubon_State_Park_Museum.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
-    <figure class="ph wide-img"><img src="/img/genealogie/john-james-bridge-5.jpg" alt="Le pont John James Audubon sur le Mississippi" loading="lazy" decoding="async"><figcaption>Le pont John James Audubon, ouvert en 2011 : 482 mètres de travée centrale, le plus long pont à haubans de l'hémisphère occidental à sa mise en service. <span class="cr">Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:John_James_Bridge_5.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/john-james-audubon-state-park-museum.jpg" alt="The museum at John James Audubon State Park" loading="lazy" decoding="async"><figcaption>The museum at Henderson, Kentucky, built in 1938 in a French Norman style in tribute to his origins. Its tower is pierced with niches where birds can nest. <span class="cr">Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:John_James_Audubon_State_Park_Museum.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/john-james-bridge-5.jpg" alt="The John James Audubon Bridge over the Mississippi" loading="lazy" decoding="async"><figcaption>The John James Audubon Bridge, opened in 2011: a 482-metre main span, the longest cable-stayed bridge in the Western Hemisphere on opening. <span class="cr">Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:John_James_Bridge_5.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
   </div>
 
-  <h3 style="margin-top:78px;font-size:26px">Sa descendance</h3>
-  <p style="margin-top:14px">Ses deux fils survivants, Victor Gifford et John Woodhouse,
-  épousèrent les deux filles de John Bachman, le pasteur-naturaliste de Charleston qui
-  collabora aux <em>Quadrupèdes vivipares d'Amérique</em> : Maria Rebecca et Mary Eliza,
-  mortes toutes deux avant trente ans, à un an d'intervalle. Les deux frères se
-  remarièrent.</p>
-  <p>La lignée masculine américaine s'est ensuite presque éteinte. Selon le biographe
-  Francis Hobart Herrick, William Bakewell Audubon (1847-1932), petit-fils du peintre,
-  émigra en Australie ; son fils Leonard Benjamin, né en 1888, resta l'unique représentant
-  mâle de la branche américaine des Audubon.</p>
+  <h3 style="margin-top:78px;font-size:26px">His descendants</h3>
+  <p style="margin-top:14px">His two surviving sons, Victor Gifford and John
+  Woodhouse, married the two daughters of John Bachman, the naturalist-pastor of
+  Charleston who collaborated on <em>The Viviparous Quadrupeds of North
+  America</em>: Maria Rebecca and Mary Eliza, both of whom died before thirty, a
+  year apart. Both brothers remarried.</p>
+  <p>The American male line then very nearly died out. According to the biographer
+  Francis Hobart Herrick, William Bakewell Audubon (1847-1932), the painter's
+  grandson, emigrated to Australia; his son Leonard Benjamin, born in 1888,
+  remained the sole male representative of the American branch of the Audubons.</p>
 </section>
 </div>
 </div>
 
 <div class="wide">
 <section>
-  <div class="num-sec">VII · Le pays aujourd'hui</div>
+  <div class="num-sec">VII · The land today</div>
   <h2>Les Touches</h2>
-  <p class="chapo">Deux mille six cent trente-huit habitants en 2023, canton de
-  Nort-sur-Erdre. Le hameau des Mazures existe toujours. L'église Sainte-Mélaine, où
-  Jeanne Rabine fut baptisée en 1758, a été reconstruite au XIX<sup>e</sup> siècle, mais
-  la commune entretient la mémoire de celle qui en est partie.</p>
+  <p class="chapo">Two thousand six hundred and thirty-eight inhabitants in 2023,
+  canton of Nort-sur-Erdre. The hamlet of Les Mazures still exists. The church of
+  Sainte-Mélaine, where Jeanne Rabine was baptised in 1758, was rebuilt in the
+  nineteenth century, but the commune keeps alive the memory of the woman who left
+  it.</p>
   <div class="photos" style="margin-top:40px">
-    <figure class="ph wide-img"><img src="/img/genealogie/panorama-du-mont-juillet-les-touches.jpg" alt="Panorama depuis le Mont-Juillet aux Touches" loading="lazy" decoding="async"><figcaption>Le bocage vu du Mont-Juillet : le paysage de neuf générations sur seize. <span class="cr">Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:Panorama_du_Mont-Juillet_%28Les_Touches%29.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
-    <figure class="ph wide-img"><img src="/img/genealogie/les-touches-cassini.jpg" alt="Les Touches sur la carte de Cassini" loading="lazy" decoding="async"><figcaption>Les Touches sur la carte de Cassini, levée peu avant le départ de Jeanne Rabine. <span class="cr">Wikimedia Commons, domaine public · <a href="https://commons.wikimedia.org/wiki/File:Les_Touches_-_Cassini.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
-    <figure class="ph wide-img"><img src="/img/genealogie/w1318-touches-stemelaine-xviii1849-1861-1895-51530.jpg" alt="Église Sainte-Mélaine des Touches" loading="lazy" decoding="async"><figcaption>L'église Sainte-Mélaine, reconstruite au XIX<sup>e</sup> siècle. <span class="cr">Llann Wé², CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:W1318-Touches_SteMelaine_XVIII%C2%B01849-1861-1895_51530.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/panorama-du-mont-juillet-les-touches.jpg" alt="Panorama from Mont-Juillet at Les Touches" loading="lazy" decoding="async"><figcaption>The bocage seen from Mont-Juillet: the landscape of nine generations out of sixteen. <span class="cr">Wikimedia Commons · <a href="https://commons.wikimedia.org/wiki/File:Panorama_du_Mont-Juillet_%28Les_Touches%29.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/les-touches-cassini.jpg" alt="Les Touches on the Cassini map" loading="lazy" decoding="async"><figcaption>Les Touches on the Cassini map, surveyed shortly before Jeanne Rabine's departure. <span class="cr">Wikimedia Commons, public domain · <a href="https://commons.wikimedia.org/wiki/File:Les_Touches_-_Cassini.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
+    <figure class="ph wide-img"><img src="/img/genealogie/w1318-touches-stemelaine-xviii1849-1861-1895-51530.jpg" alt="Sainte-Mélaine church at Les Touches" loading="lazy" decoding="async"><figcaption>The Sainte-Mélaine church, rebuilt in the nineteenth century. <span class="cr">Llann Wé², CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File:W1318-Touches_SteMelaine_XVIII%C2%B01849-1861-1895_51530.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>
   </div>
-</section>
-
 <section>
-  <div class="num-sec">VIII · L'arbre</div>
-  <h2>Quatre cent vingt-six personnes,<br>rangées en cercles</h2>
-  <p class="chapo">Chaque anneau est une génération, chaque secteur un ancêtre. Le vert
-  signale une personne identifiée, le beige une case restée vide. Les noms n'apparaissent
-  que sur les quatre premiers anneaux : au-delà, ils deviendraient illisibles, mais le
-  dessin continue de dire l'essentiel.</p>
-  <div class="viz"><svg viewBox="0 0 784 784" class="fan" role="img" aria-label="Éventail des ancêtres">
+  <div class="num-sec">VIII · The tree</div>
+  <h2>Four hundred and twenty-six people,<br>arranged in circles</h2>
+  <p class="chapo">Each ring is a generation, each sector an ancestor. Green marks
+  an identified person, beige an empty slot. Names appear only on the first four
+  rings: beyond that, they would become illegible, but the drawing continues to
+  tell the essential story.</p>
+  <div class="viz"><svg viewBox="0 0 784 784" class="fan" role="img" aria-label="Fan chart of ancestors">
 <circle cx="392" cy="392" r="46" class="fan-hub"/>
 <text x="392" y="388" class="fan-hub-t" text-anchor="middle">Yann</text>
 <text x="392" y="406" class="fan-hub-t2" text-anchor="middle">Bonnet · 1981</text>
@@ -1105,26 +1130,24 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
 <text x="392" y="109.4" class="fan-g" text-anchor="middle">G6</text>
 <text x="392" y="66.6" class="fan-g" text-anchor="middle">G7</text>
 </svg></div>
-</section>
-
 <section>
-  <div class="num-sec">IX · Ce que la mémoire retient</div>
-  <h2>L'échelle des générations</h2>
-  <p class="chapo">Chaque génération double le nombre théorique d'ancêtres : 2 parents,
-  4 grands-parents, 8 arrière-grands-parents. À la seizième, il en faudrait 65 536. Le
-  tableau confronte ce que la théorie exige à ce que les registres ont livré. La chute est
-  le sujet même de toute généalogie.</p>
-  <div class="viz scroll"><svg viewBox="0 0 940 590" role="img" aria-label="Ancêtres connus par génération">
-<text x="0" y="14" class="ax">génération</text>
-<text x="176" y="14" class="ax" text-anchor="end">connus</text>
-<text x="274" y="14" class="ax" text-anchor="end">théoriques</text>
-<text x="300" y="14" class="ax">part retrouvée</text>
+  <div class="num-sec">IX · What memory retains</div>
+  <h2>The scale of generations</h2>
+  <p class="chapo">Each generation doubles the theoretical number of ancestors: 2
+  parents, 4 grandparents, 8 great-grandparents. By the sixteenth, it would take
+  65,536. The chart sets what theory demands against what the registers have
+  actually delivered. That collapse is the very subject of genealogy itself.</p>
+  <div class="viz scroll"><svg viewBox="0 0 940 590" role="img" aria-label="Known ancestors by generation">
+<text x="0" y="14" class="ax">generation</text>
+<text x="176" y="14" class="ax" text-anchor="end">known</text>
+<text x="274" y="14" class="ax" text-anchor="end">theoretical</text>
+<text x="300" y="14" class="ax">share found</text>
 <text x="0" y="47" class="gen">G1</text>
 <text x="176" y="47" class="num" text-anchor="end">2</text>
 <text x="274" y="47" class="num dim" text-anchor="end">2</text>
 <rect class="sq on" x="300.0" y="36.5" width="13.0" height="13.0" rx="1.5"/>
 <rect class="sq on" x="316.0" y="36.5" width="13.0" height="13.0" rx="1.5"/>
-<text x="872" y="47" class="num dim" text-anchor="end">100 %</text>
+<text x="872" y="47" class="num dim" text-anchor="end">100%</text>
 <text x="0" y="81" class="gen">G2</text>
 <text x="176" y="81" class="num" text-anchor="end">4</text>
 <text x="274" y="81" class="num dim" text-anchor="end">4</text>
@@ -1132,7 +1155,7 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
 <rect class="sq on" x="316.0" y="70.5" width="13.0" height="13.0" rx="1.5"/>
 <rect class="sq on" x="332.0" y="70.5" width="13.0" height="13.0" rx="1.5"/>
 <rect class="sq on" x="348.0" y="70.5" width="13.0" height="13.0" rx="1.5"/>
-<text x="872" y="81" class="num dim" text-anchor="end">100 %</text>
+<text x="872" y="81" class="num dim" text-anchor="end">100%</text>
 <text x="0" y="115" class="gen">G3</text>
 <text x="176" y="115" class="num" text-anchor="end">8</text>
 <text x="274" y="115" class="num dim" text-anchor="end">8</text>
@@ -1144,7 +1167,7 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
 <rect class="sq on" x="380.0" y="104.5" width="13.0" height="13.0" rx="1.5"/>
 <rect class="sq on" x="396.0" y="104.5" width="13.0" height="13.0" rx="1.5"/>
 <rect class="sq on" x="412.0" y="104.5" width="13.0" height="13.0" rx="1.5"/>
-<text x="872" y="115" class="num dim" text-anchor="end">100 %</text>
+<text x="872" y="115" class="num dim" text-anchor="end">100%</text>
 <text x="0" y="149" class="gen">G4</text>
 <text x="176" y="149" class="num" text-anchor="end">14</text>
 <text x="274" y="149" class="num dim" text-anchor="end">16</text>
@@ -1164,7 +1187,7 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
 <rect class="sq on" x="508.0" y="138.5" width="13.0" height="13.0" rx="1.5"/>
 <rect class="sq off" x="524.0" y="138.5" width="13.0" height="13.0" rx="1.5"/>
 <rect class="sq off" x="540.0" y="138.5" width="13.0" height="13.0" rx="1.5"/>
-<text x="872" y="149" class="num dim" text-anchor="end">88 %</text>
+<text x="872" y="149" class="num dim" text-anchor="end">88%</text>
 <text x="0" y="183" class="gen">G5</text>
 <text x="176" y="183" class="num" text-anchor="end">16</text>
 <text x="274" y="183" class="num dim" text-anchor="end">32</text>
@@ -1200,7 +1223,7 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
 <rect class="sq off" x="764.0" y="172.5" width="13.0" height="13.0" rx="1.5"/>
 <rect class="sq off" x="780.0" y="172.5" width="13.0" height="13.0" rx="1.5"/>
 <rect class="sq off" x="796.0" y="172.5" width="13.0" height="13.0" rx="1.5"/>
-<text x="872" y="183" class="num dim" text-anchor="end">50 %</text>
+<text x="872" y="183" class="num dim" text-anchor="end">50%</text>
 <text x="0" y="217" class="gen">G6</text>
 <text x="176" y="217" class="num" text-anchor="end">24</text>
 <text x="274" y="217" class="num dim" text-anchor="end">64</text>
@@ -1268,82 +1291,82 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
 <rect class="sq off" x="833.8" y="209.6" width="6.8" height="6.8" rx="1.5"/>
 <rect class="sq off" x="842.5" y="209.6" width="6.8" height="6.8" rx="1.5"/>
 <rect class="sq off" x="851.2" y="209.6" width="6.8" height="6.8" rx="1.5"/>
-<text x="872" y="217" class="num dim" text-anchor="end">38 %</text>
+<text x="872" y="217" class="num dim" text-anchor="end">38%</text>
 <text x="0" y="251" class="gen">G7</text>
 <text x="176" y="251" class="num" text-anchor="end">34</text>
 <text x="274" y="251" class="num dim" text-anchor="end">128</text>
 <rect class="barbg" x="300" y="242.5" width="560" height="9" rx="4.5"/>
 <rect class="bar" x="300" y="242.5" width="148.8" height="9" rx="4.5"/>
-<text x="872" y="251" class="num dim" text-anchor="end">26,6 %</text>
+<text x="872" y="251" class="num dim" text-anchor="end">26.6%</text>
 <text x="0" y="285" class="gen">G8</text>
 <text x="176" y="285" class="num" text-anchor="end">38</text>
 <text x="274" y="285" class="num dim" text-anchor="end">256</text>
 <rect class="barbg" x="300" y="276.5" width="560" height="9" rx="4.5"/>
 <rect class="bar" x="300" y="276.5" width="83.1" height="9" rx="4.5"/>
-<text x="872" y="285" class="num dim" text-anchor="end">14,8 %</text>
+<text x="872" y="285" class="num dim" text-anchor="end">14.8%</text>
 <text x="0" y="319" class="gen">G9</text>
 <text x="176" y="319" class="num" text-anchor="end">45</text>
 <text x="274" y="319" class="num dim" text-anchor="end">512</text>
 <rect class="barbg" x="300" y="310.5" width="560" height="9" rx="4.5"/>
 <rect class="bar" x="300" y="310.5" width="49.2" height="9" rx="4.5"/>
-<text x="872" y="319" class="num dim" text-anchor="end">8,8 %</text>
+<text x="872" y="319" class="num dim" text-anchor="end">8.8%</text>
 <text x="0" y="353" class="gen">G10</text>
 <text x="176" y="353" class="num" text-anchor="end">58</text>
-<text x="274" y="353" class="num dim" text-anchor="end">1 024</text>
+<text x="274" y="353" class="num dim" text-anchor="end">1,024</text>
 <rect class="barbg" x="300" y="344.5" width="560" height="9" rx="4.5"/>
 <rect class="bar" x="300" y="344.5" width="31.7" height="9" rx="4.5"/>
-<text x="872" y="353" class="num dim" text-anchor="end">5,7 %</text>
+<text x="872" y="353" class="num dim" text-anchor="end">5.7%</text>
 <text x="0" y="387" class="gen">G11</text>
 <text x="176" y="387" class="num" text-anchor="end">59</text>
-<text x="274" y="387" class="num dim" text-anchor="end">2 048</text>
+<text x="274" y="387" class="num dim" text-anchor="end">2,048</text>
 <rect class="barbg" x="300" y="378.5" width="560" height="9" rx="4.5"/>
 <rect class="bar" x="300" y="378.5" width="16.1" height="9" rx="4.5"/>
-<text x="872" y="387" class="num dim" text-anchor="end">2,9 %</text>
+<text x="872" y="387" class="num dim" text-anchor="end">2.9%</text>
 <text x="0" y="421" class="gen">G12</text>
 <text x="176" y="421" class="num" text-anchor="end">51</text>
-<text x="274" y="421" class="num dim" text-anchor="end">4 096</text>
+<text x="274" y="421" class="num dim" text-anchor="end">4,096</text>
 <rect class="barbg" x="300" y="412.5" width="560" height="9" rx="4.5"/>
 <rect class="bar" x="300" y="412.5" width="7.0" height="9" rx="4.5"/>
-<text x="872" y="421" class="num dim" text-anchor="end">1,2 %</text>
+<text x="872" y="421" class="num dim" text-anchor="end">1.2%</text>
 <text x="0" y="455" class="gen">G13</text>
 <text x="176" y="455" class="num" text-anchor="end">40</text>
-<text x="274" y="455" class="num dim" text-anchor="end">8 192</text>
+<text x="274" y="455" class="num dim" text-anchor="end">8,192</text>
 <rect class="barbg" x="300" y="446.5" width="560" height="9" rx="4.5"/>
 <rect class="bar" x="300" y="446.5" width="2.7" height="9" rx="4.5"/>
-<text x="872" y="455" class="num dim" text-anchor="end">0,5 %</text>
+<text x="872" y="455" class="num dim" text-anchor="end">0.5%</text>
 <text x="0" y="489" class="gen">G14</text>
 <text x="176" y="489" class="num" text-anchor="end">22</text>
-<text x="274" y="489" class="num dim" text-anchor="end">16 384</text>
+<text x="274" y="489" class="num dim" text-anchor="end">16,384</text>
 <rect class="barbg" x="300" y="480.5" width="560" height="9" rx="4.5"/>
 <rect class="bar" x="300" y="480.5" width="2.2" height="9" rx="4.5"/>
-<text x="872" y="489" class="num dim" text-anchor="end">0,1 %</text>
+<text x="872" y="489" class="num dim" text-anchor="end">0.1%</text>
 <text x="0" y="523" class="gen">G15</text>
 <text x="176" y="523" class="num" text-anchor="end">9</text>
-<text x="274" y="523" class="num dim" text-anchor="end">32 768</text>
+<text x="274" y="523" class="num dim" text-anchor="end">32,768</text>
 <rect class="barbg" x="300" y="514.5" width="560" height="9" rx="4.5"/>
 <rect class="bar" x="300" y="514.5" width="2.2" height="9" rx="4.5"/>
-<text x="872" y="523" class="num dim" text-anchor="end">&lt; 0,1 %</text>
+<text x="872" y="523" class="num dim" text-anchor="end">&lt; 0.1%</text>
 <text x="0" y="557" class="gen">G16</text>
 <text x="176" y="557" class="num" text-anchor="end">2</text>
-<text x="274" y="557" class="num dim" text-anchor="end">65 536</text>
+<text x="274" y="557" class="num dim" text-anchor="end">65,536</text>
 <rect class="barbg" x="300" y="548.5" width="560" height="9" rx="4.5"/>
 <rect class="bar" x="300" y="548.5" width="2.2" height="9" rx="4.5"/>
-<text x="872" y="557" class="num dim" text-anchor="end">&lt; 0,1 %</text>
+<text x="872" y="557" class="num dim" text-anchor="end">&lt; 0.1%</text>
 </svg></div>
-  <p style="margin-top:30px">Jusqu'à la quatrième génération, la mémoire tient : quatorze
-  arrière-arrière-grands-parents sur seize. Puis les registres paroissiaux prennent le
-  relais et le rendement s'effondre — 27 % à la septième génération, 3 % à la onzième.
-  Le maximum absolu se situe à la onzième génération, avec cinquante-neuf ancêtres
-  identifiés : c'est la limite pratique des registres de Loire-Atlantique, dont les plus
-  anciens remontent au milieu du XVI<sup>e</sup> siècle.</p>
+  <p style="margin-top:30px">Up to the fourth generation, memory holds: fourteen
+  great-great-grandparents out of sixteen. Then the parish registers take over and
+  the yield collapses — 27% at the seventh generation, 3% at the eleventh. The
+  absolute maximum is reached at the eleventh generation, with fifty-nine
+  identified ancestors: that is the practical limit of the Loire-Atlantique
+  registers, the oldest of which go back to the mid-sixteenth century.</p>
 </section>
 
 <section>
-  <div class="num-sec">X · Vivre et mourir</div>
-  <h2>Une espérance de vie qui recule<br>avant de bondir</h2>
-  <p class="chapo">Âge moyen au décès, calculé sur les 1 158 personnes de l'arbre dont on
-  connaît à la fois la naissance et la mort, regroupées par demi-siècle de naissance.</p>
-  <div class="viz scroll"><svg viewBox="0 0 940 300" role="img" aria-label="Âge moyen au décès">
+  <div class="num-sec">X · Living and dying</div>
+  <h2>A life expectancy that declines<br>before it leaps</h2>
+  <p class="chapo">Average age at death, calculated on the 1,158 people in the
+  tree for whom both birth and death are known, grouped by half-century of birth.</p>
+  <div class="viz scroll"><svg viewBox="0 0 940 300" role="img" aria-label="Average age at death">
 <line class="grid" x1="58" y1="226.0" x2="920" y2="226.0"/>
 <text x="48" y="230.0" class="num dim" text-anchor="end">40</text>
 <line class="grid" x1="58" y1="168.3" x2="920" y2="168.3"/>
@@ -1354,81 +1377,83 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
 <text x="48" y="56.9" class="num dim" text-anchor="end">70</text>
 <polyline class="line" points="111.9,102.5 219.6,156.2 327.4,157.3 435.1,170.6 542.9,157.3 650.6,189.6 758.4,146.4 866.1,37.3"/>
 <circle class="dot" cx="111.9" cy="102.5" r="5"/>
-<text x="111.9" y="88.5" class="num" text-anchor="middle">61,4</text>
+<text x="111.9" y="88.5" class="num" text-anchor="middle">61.4</text>
 <text x="111.9" y="254" class="ax" text-anchor="middle">1550-1599</text>
 <text x="111.9" y="270" class="ax dim" text-anchor="middle">n=59</text>
 <circle class="dot" cx="219.6" cy="156.2" r="5"/>
-<text x="219.6" y="142.2" class="num" text-anchor="middle">52,1</text>
+<text x="219.6" y="142.2" class="num" text-anchor="middle">52.1</text>
 <text x="219.6" y="254" class="ax" text-anchor="middle">1600-1649</text>
 <text x="219.6" y="270" class="ax dim" text-anchor="middle">n=164</text>
 <circle class="dot" cx="327.4" cy="157.3" r="5"/>
-<text x="327.4" y="143.3" class="num" text-anchor="middle">51,9</text>
+<text x="327.4" y="143.3" class="num" text-anchor="middle">51.9</text>
 <text x="327.4" y="254" class="ax" text-anchor="middle">1650-1699</text>
 <text x="327.4" y="270" class="ax dim" text-anchor="middle">n=212</text>
 <circle class="dot" cx="435.1" cy="170.6" r="5"/>
-<text x="435.1" y="156.6" class="num" text-anchor="middle">49,6</text>
+<text x="435.1" y="156.6" class="num" text-anchor="middle">49.6</text>
 <text x="435.1" y="254" class="ax" text-anchor="middle">1700-1749</text>
 <text x="435.1" y="270" class="ax dim" text-anchor="middle">n=196</text>
 <circle class="dot" cx="542.9" cy="157.3" r="5"/>
-<text x="542.9" y="143.3" class="num" text-anchor="middle">51,9</text>
+<text x="542.9" y="143.3" class="num" text-anchor="middle">51.9</text>
 <text x="542.9" y="254" class="ax" text-anchor="middle">1750-1799</text>
 <text x="542.9" y="270" class="ax dim" text-anchor="middle">n=198</text>
 <circle class="dot" cx="650.6" cy="189.6" r="5"/>
-<text x="650.6" y="175.6" class="num" text-anchor="middle">46,3</text>
+<text x="650.6" y="175.6" class="num" text-anchor="middle">46.3</text>
 <text x="650.6" y="254" class="ax" text-anchor="middle">1800-1849</text>
 <text x="650.6" y="270" class="ax dim" text-anchor="middle">n=155</text>
 <circle class="dot" cx="758.4" cy="146.4" r="5"/>
-<text x="758.4" y="132.4" class="num" text-anchor="middle">53,8</text>
+<text x="758.4" y="132.4" class="num" text-anchor="middle">53.8</text>
 <text x="758.4" y="254" class="ax" text-anchor="middle">1850-1899</text>
 <text x="758.4" y="270" class="ax dim" text-anchor="middle">n=119</text>
 <circle class="dot" cx="866.1" cy="37.3" r="5"/>
-<text x="866.1" y="23.3" class="num" text-anchor="middle">72,7</text>
+<text x="866.1" y="23.3" class="num" text-anchor="middle">72.7</text>
 <text x="866.1" y="254" class="ax" text-anchor="middle">1900-1949</text>
 <text x="866.1" y="270" class="ax dim" text-anchor="middle">n=48</text>
 </svg></div>
-  <p style="margin-top:30px">La courbe se dégrade régulièrement du XVII<sup>e</sup> au début
-  du XIX<sup>e</sup> siècle, avec un creux marqué pour la génération née entre 1800 et 1849 —
-  celle qui atteint l'âge adulte dans une campagne appauvrie et affronte les épidémies de
-  choléra. Le redressement du XX<sup>e</sup> siècle est spectaculaire : plus de vingt-six
-  années gagnées en un siècle.</p>
+  <p style="margin-top:30px">The curve declines steadily from the seventeenth
+  century to the early nineteenth, with a marked dip for the generation born
+  between 1800 and 1849 — the one that reached adulthood in an impoverished
+  countryside and faced the cholera epidemics. The twentieth-century recovery is
+  spectacular: more than twenty-six years gained in a century.</p>
   <div class="reserve">
-    <h3>Une réserve sur le premier point</h3>
-    <p>Les 61 ans affichés pour la cohorte 1550-1599 sont un mirage statistique. Pour cette
-    période, seules les personnes ayant vécu longtemps — donc laissé plusieurs actes — ont
-    pu être identifiées. Les nourrissons morts sans baptême inscrit n'apparaissent nulle
-    part. Le chiffre mesure la survie des documents, pas celle des gens.</p>
+    <h3>A caveat on the first point</h3>
+    <p>The 61 years shown for the 1550-1599 cohort are a statistical mirage. For
+    that period, only people who lived long — and so left several records — could
+    be identified. Infants who died without a recorded baptism appear nowhere.
+    The figure measures the survival of documents, not of people.</p>
   </div>
-  <p style="margin-top:30px"><strong>Onze pour cent des personnes datées meurent avant cinq
-  ans.</strong> Le chiffre réel était bien supérieur : ces enfants-là sont précisément ceux
-  que les registres oublient le plus.</p>
+  <p style="margin-top:30px"><strong>Eleven per cent of the dated individuals die
+  before the age of five.</strong> The real figure was far higher: those are
+  precisely the children the registers forget most.</p>
 </section>
 </div>
 
 <div class="wide">
 <section>
-  <div class="num-sec">XI · Les sources</div>
-  <h2>Le fichier, et une archive filmée</h2>
-  <p class="chapo">Tout ce qui précède provient d'une base généalogique que chacun peut
-  reprendre, vérifier et corriger. Elle est mise à disposition au format GEDCOM, le standard
-  d'échange en généalogie, lisible par tous les logiciels du domaine.</p>
+  <div class="num-sec">XI · The sources</div>
+  <h2>The file, and a filmed archive</h2>
+  <p class="chapo">Everything above comes from a genealogical database that
+  anyone can take up, verify and correct. It is made available in GEDCOM format,
+  the standard exchange format in genealogy, readable by every piece of software
+  in the field.</p>
 
   <div class="grid2" style="margin-top:40px">
     <div>
-      <p><a href="/genealogie-bonnet-public.ged" download><strong>Télécharger le fichier GEDCOM</strong></a>
-      — 2 169 individus, 668 familles, 1,8 Mo.
-      <span class="mono" style="display:block;font-size:12.5px;color:var(--ardoise-7);margin-top:6px">Version expurgée des personnes vivantes.</span></p>
-      <p>Cette version a été corrigée puis dédoublonnée : encodage réparé, dates normalisées,
-      noms de communes harmonisés, quatre-vingt-deux fiches en double fusionnées. Les personnes
-      nées il y a moins de cent ans et dont le décès n'est pas établi y figurent sous le nom
-      « Vivant », sans date ni lieu — convention de publication qui protège les vivants tout en
-      préservant la structure de l'arbre. Les liens vers les photographies de famille ont été
-      retirés.</p>
-      <p style="font-size:16px;color:var(--ardoise-5)">Les erreurs qui subsistent sont signalées comme
-      telles dans les pages qui précèdent. Toute correction appuyée sur un acte est la bienvenue.</p>
+      <p><a href="/genealogie-bonnet-public.ged" download><strong>Download the GEDCOM file</strong></a>
+      — 2,169 individuals, 668 families, 1.8 MB.
+      <span class="mono" style="display:block;font-size:12.5px;color:var(--ardoise-7);margin-top:6px">Version with living persons redacted.</span></p>
+      <p>This version has been corrected and deduplicated: broken encoding
+      fixed, dates normalised, commune names harmonised, eighty-two duplicate
+      records merged. People born less than a hundred years ago whose death is
+      not established appear here under the name "Living," with no date or place
+      — a publication convention that protects the living while preserving the
+      structure of the tree. Links to family photographs have been removed.</p>
+      <p style="font-size:16px;color:var(--ardoise-5)">Any remaining errors are
+      flagged as such in the pages above. Any correction backed by a record is
+      welcome.</p>
     </div>
     <div>
-      <h3 style="font-size:20px;font-weight:600">Archive filmée</h3>
-      <p style="margin-top:14px"><a href="https://drive.google.com/file/d/1NXbqo0ZiaKAyF2x33D9cgGWwatRBPlpw/view" target="_blank" rel="noopener">Voir l'archive filmée sur Google Drive</a></p>
+      <h3 style="font-size:20px;font-weight:600">Filmed archive</h3>
+      <p style="margin-top:14px"><a href="https://drive.google.com/file/d/1NXbqo0ZiaKAyF2x33D9cgGWwatRBPlpw/view" target="_blank" rel="noopener">View the filmed archive on Google Drive</a></p>
     </div>
   </div>
 </section>
@@ -1438,38 +1463,38 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
   <div class="wide">
     <div class="fgrid">
       <div>
-        <h3>Méthode</h3>
+        <h3>Method</h3>
         <ul>
-          <li>Base de 2 169 individus et 668 familles, issue d'un export MyHeritage corrigé et dédoublonné</li>
-          <li>Contre-épreuve sur une base GeneWeb indépendante de 2020, qui aboutit au même ancêtre commun par un autre chemin</li>
-          <li>Chaque chiffre cité provient d'un décompte direct sur le fichier et reste recalculable</li>
-          <li>Les personnes nées il y a moins de cent ans et dont le décès n'est pas établi ne sont pas nommées</li>
+          <li>Database of 2,169 individuals and 668 families, from a MyHeritage export, corrected and deduplicated</li>
+          <li>Cross-checked against an independent 2020 GeneWeb database, which arrives at the same common ancestor by a different path</li>
+          <li>Every figure cited comes from a direct count on the file and remains recalculable</li>
+          <li>People born less than a hundred years ago whose death is not established are not named</li>
         </ul>
       </div>
       <div>
         <h3>Sources</h3>
         <ul>
-          <li>Archives de Loire-Atlantique, registres paroissiaux des Touches, Mésanger, Riaillé, Ligné</li>
-          <li>Commune des Touches, notice « Jean-Jacques Audubon, naturaliste »</li>
+          <li>Archives départementales de Loire-Atlantique, parish registers of Les Touches, Mésanger, Riaillé, Ligné</li>
+          <li>Commune of Les Touches, note "Jean-Jacques Audubon, naturaliste"</li>
           <li>F. H. Herrick, <em>Audubon the Naturalist</em>, 1917</li>
           <li>Y. Chatelain, <em>Audubon, peintre, naturaliste, aventurier</em>, 2001</li>
-          <li>M. J. Halley, « Audubon's famous banding experiment: fact or fiction? », <em>Archives of Natural History</em>, 2018</li>
-          <li>National Audubon Society, lettre ouverte du 16 mars 2023</li>
+          <li>M. J. Halley, "Audubon's famous banding experiment: fact or fiction?", <em>Archives of Natural History</em>, 2018</li>
+          <li>National Audubon Society, open letter of 16 March 2023</li>
         </ul>
       </div>
       <div>
         <h3>Illustrations</h3>
         <ul>
-          <li>Planches de <em>The Birds of America</em> et portraits : domaine public, via Wikimedia Commons et la Bibliothèque du Congrès</li>
-          <li>Vues des Touches : Wikimedia Commons</li>
-          <li>Graphiques et cartes : établis pour ce rapport à partir des données généalogiques</li>
+          <li>Plates from <em>The Birds of America</em> and portraits: public domain, via Wikimedia Commons and the Library of Congress</li>
+          <li>Views of Les Touches: Wikimedia Commons</li>
+          <li>Charts and maps: produced for this report from the genealogical data</li>
         </ul>
       </div>
     </div>
     <p style="margin-top:46px;font-size:13px;color:var(--ardoise-8);max-width:none">
-      Enquête établie en août 2026. Les filiations anciennes reposent sur des relevés
-      d'actes paroissiaux et restent, comme toute généalogie, susceptibles d'être corrigées
-      par un retour aux registres.</p>
+      Investigation compiled in August 2026. The older filiations rest on
+      transcriptions of parish records and remain, like any genealogy,
+      susceptible to correction by a return to the registers.</p>
   </div>
 </div>
 
