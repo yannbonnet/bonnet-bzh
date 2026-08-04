@@ -45,3 +45,6 @@ is not a failure of foresight so much as a mismatch of calendars — but the Eur
 regulation had to be reopened in 2023 to bring these objects within its scope, which is a
 fair measure of how far an ethical framework tied to a given state of the art can travel
 in time.
+
+The twin document on [investment](/en/commons/hleg-policy-investment-2019/), published two
+months later, has aged worse still.

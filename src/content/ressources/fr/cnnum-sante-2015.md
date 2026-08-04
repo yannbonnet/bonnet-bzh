@@ -30,7 +30,7 @@ patients et sur le caractère collectif de ces données. Deux dispositifs majeur
 depuis : la plateforme des données de santé en 2019 et l'espace numérique de santé généralisé
 en 2022.
 
-Cette fiche se lit avec celle du rapport Villani, dont le premier axe reprenait explicitement
+Cette fiche se lit avec celle du [rapport Villani](/communs/rapport-villani-2018/), dont le premier axe reprenait explicitement
 l'idée d'une centralisation des données de santé au service de la recherche — et la justifiait
 par la souveraineté. Trois ans séparent les deux textes et ils poussent dans le même sens.
 

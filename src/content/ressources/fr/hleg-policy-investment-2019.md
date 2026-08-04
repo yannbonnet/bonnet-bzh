@@ -21,7 +21,7 @@ resume: "Recommandations adressées à la Commission et aux États membres sur l
 aVerifier: true
 ---
 
-C'est le document jumeau des lignes directrices éthiques, et le plus mal vieilli des deux.
+C'est le document jumeau des [lignes directrices éthiques](/communs/hleg-ethics-guidelines-2019/), et le plus mal vieilli des deux.
 L'un disait les principes, l'autre la politique industrielle — et c'est la politique
 industrielle qui a échoué.
 

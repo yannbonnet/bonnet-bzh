@@ -132,6 +132,10 @@ objective without specifying its technical conditions, and it assumed that the w
 sovereignty would be enough to steer infrastructure choices. It was not enough. That is
 a design flaw in the report, not an accident of implementation.
 
+The 2015 report on [health, a common good of the digital society](/en/commons/cnnum-sante-2015/)
+made the same case on the same ground, three years earlier: the two texts push in the
+same direction, and share the same underlying vulnerability.
+
 ## Governance
 
 The harshest criticism does not come from us. In its thematic public report of
@@ -151,8 +155,10 @@ recommended. We described a destination without sizing the vehicle.
 
 In 2018, alongside my duties at ANSSI (the French national cybersecurity agency), I
 joined the European Commission's High-Level Expert Group on Artificial Intelligence on
-a voluntary basis; its work fed first into the white paper and then into the AI Act.
-Voluntary, on top of a full-time job. It was my own choice and I make no complaint of
+a voluntary basis. Its two texts, the [ethics guidelines](/en/commons/hleg-ethics-guidelines-2019/)
+and the [policy and investment recommendations](/en/commons/hleg-policy-investment-2019/),
+are reviewed elsewhere on this site; their work fed first into the white paper and then
+into the AI Act. Voluntary, on top of a full-time job. It was my own choice and I make no complaint of
 it, but the mechanics are worth noting: France's presence in the room where European AI
 regulation was being shaped rested, in part, on evenings given up by people who had
 another job to do. The administrations that carried real weight on that text had

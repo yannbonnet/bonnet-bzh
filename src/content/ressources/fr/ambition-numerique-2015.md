@@ -49,3 +49,7 @@ qu'elle visait — l'asymétrie d'information entre les plateformes et tout le m
 aujourd'hui traité, mais par la voie européenne et par un autre mécanisme : les obligations
 de transparence et d'audit du règlement sur les services numériques. Le diagnostic était bon,
 l'instrument et l'échelle ne l'étaient pas.
+
+Le même écart entre un bon diagnostic et un mauvais échelon d'action se retrouve dans l'avis
+de 2014 sur la [neutralité des plateformes](/communs/cnnum-neutralite-plateformes-2014/) :
+national quand le sujet ne l'était déjà plus.

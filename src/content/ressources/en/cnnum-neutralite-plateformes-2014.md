@@ -41,5 +41,7 @@ addressed to a French Prime Minister, on a subject where the national level had 
 purchase at all: no obligation imposed by France alone on major structuring platforms
 would have been enforceable, and later attempts confirmed as much. We had the right
 concept and the wrong addressee. This error of level recurs across several pieces of
-work from this period, and it deserves naming: producing national opinions on
-transnational objects absorbed a share of French public energy through the 2010s.
+work from this period — [Digital Ambition](/en/commons/ambition-numerique-2015/) offers
+another example, on the platform rating agency —, and it deserves naming: producing
+national opinions on transnational objects absorbed a share of French public energy
+through the 2010s.

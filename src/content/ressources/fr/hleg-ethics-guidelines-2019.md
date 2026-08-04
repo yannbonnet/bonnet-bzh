@@ -48,3 +48,6 @@ question aujourd'hui : les modèles à usage général, l'échelle de calcul, le
 émergentes. Ce n'est pas un manque de clairvoyance, c'est un décalage de calendrier — mais il
 a fallu réouvrir le règlement européen en 2023 pour y intégrer ces objets, ce qui mesure assez
 bien la portée temporelle d'un cadre éthique adossé à un état de l'art.
+
+Le texte jumeau sur les [investissements](/communs/hleg-policy-investment-2019/), publié
+deux mois plus tard, a moins bien vieilli encore.

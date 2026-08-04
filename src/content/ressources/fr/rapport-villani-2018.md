@@ -131,6 +131,10 @@ il a formulé un objectif sans en spécifier les conditions techniques, et il a 
 volonté de souveraineté suffirait à orienter les choix d'infrastructure. Elle n'a pas suffi.
 C'est un défaut de conception du rapport, non un accident de mise en œuvre.
 
+Le rapport de 2015 sur la [santé, bien commun de la société numérique](/communs/cnnum-sante-2015/)
+portait la même idée sur le même terrain, trois ans plus tôt : les deux textes poussent dans
+le même sens, et partagent la même vulnérabilité de fond.
+
 ## Le pilotage
 
 La critique la plus sévère ne vient pas de nous. Dans son rapport public thématique de
@@ -148,9 +152,11 @@ recommandé. Nous avons décrit une destination sans dimensionner le véhicule.
 ## Un détail qui dit beaucoup
 
 En 2018, parallèlement à mes fonctions à l'ANSSI, j'ai rejoint à titre bénévole le groupe
-d'experts de haut niveau de la Commission européenne sur l'intelligence artificielle, dont
-les travaux ont nourri le livre blanc puis le règlement sur l'IA. Bénévolement, en plus d'un
-poste à temps plein. C'était mon choix et je n'en tire aucune plainte, mais la mécanique
+d'experts de haut niveau de la Commission européenne sur l'intelligence artificielle. Ses deux
+textes, les [lignes directrices éthiques](/communs/hleg-ethics-guidelines-2019/) et les
+[recommandations d'investissement](/communs/hleg-policy-investment-2019/), sont commentés
+ailleurs sur ce site ; leurs travaux ont nourri le livre blanc puis le règlement sur l'IA.
+Bénévolement, en plus d'un poste à temps plein. C'était mon choix et je n'en tire aucune plainte, mais la mécanique
 mérite d'être notée : la présence française dans l'enceinte où se dessinait la régulation
 européenne de l'IA reposait, pour partie, sur du temps donné le soir par des gens ayant un
 autre métier. Les administrations qui ont pesé sur ce texte y avaient délégué des personnes

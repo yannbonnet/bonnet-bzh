@@ -40,6 +40,8 @@ La vraie leçon porte sur le niveau d'action, non sur le diagnostic. L'avis éta
 Premier ministre français, sur un sujet où l'échelon national n'avait aucune prise : aucune
 obligation imposée par la France seule aux plateformes structurantes n'aurait été applicable,
 et les tentatives ultérieures l'ont confirmé. Nous avions le bon concept et le mauvais
-destinataire. Cette erreur de niveau se retrouve dans plusieurs travaux de cette période, et
-elle mérite d'être nommée : la production d'avis nationaux sur des objets transnationaux a
-occupé une partie de l'énergie publique française des années 2010.
+destinataire. Cette erreur de niveau se retrouve dans plusieurs travaux de cette période —
+[Ambition numérique](/communs/ambition-numerique-2015/) en offre un autre exemple, sur
+l'agence de notation des plateformes —, et elle mérite d'être nommée : la production d'avis
+nationaux sur des objets transnationaux a occupé une partie de l'énergie publique française
+des années 2010.

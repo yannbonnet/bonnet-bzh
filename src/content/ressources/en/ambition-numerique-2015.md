@@ -49,3 +49,7 @@ targeted — the information asymmetry between platforms and everyone else — i
 today, but through the European route and by a different mechanism: the transparency
 and audit obligations of the Digital Services Act. The diagnosis was right; the
 instrument and the scale were not.
+
+The same gap between a sound diagnosis and the wrong level of action recurs in the 2014
+opinion on [platform neutrality](/en/commons/cnnum-neutralite-plateformes-2014/): national,
+when the subject had already stopped being one.
