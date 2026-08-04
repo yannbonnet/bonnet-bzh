@@ -12,6 +12,15 @@ RewriteRule ^(.*)$ https://bonnet.bzh/$1 [R=301,L]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
+# Barre oblique finale, écrite explicitement avant que mod_dir n'intervienne :
+# UseCanonicalName et UseCanonicalPhysicalPort ne sont pas autorisées en
+# .htaccess (configuration serveur uniquement, inaccessible sur mutualisé
+# OVH), et la redirection implicite de mod_dir y ajoute le port physique du
+# listener (:443) dans le Location. URL absolue sans port, donc écrite en dur.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ https://bonnet.bzh/$1/ [R=301,L]
+
 ErrorDocument 404 /404.html
 
 <IfModule mod_headers.c>

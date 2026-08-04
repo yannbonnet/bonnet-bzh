@@ -41,7 +41,7 @@ const typesUtilises = ORDRE_TYPES.filter((type) => typesPresents.has(type));
     <ul class="filtres-themes">
       <li>
         <a
-          href={`${prefix}/ressources`}
+          href={`${prefix}/ressources/`}
           data-theme-lien=""
           class={!themeActif ? 'actif' : ''}
           aria-current={!themeActif ? 'true' : undefined}
@@ -52,7 +52,7 @@ const typesUtilises = ORDRE_TYPES.filter((type) => typesPresents.has(type));
       {themesUtilises.map((theme) => (
         <li>
           <a
-            href={`${prefix}/ressources/theme/${theme}`}
+            href={`${prefix}/ressources/theme/${theme}/`}
             data-theme-lien={theme}
             class={themeActif === theme ? 'actif' : ''}
             aria-current={themeActif === theme ? 'true' : undefined}

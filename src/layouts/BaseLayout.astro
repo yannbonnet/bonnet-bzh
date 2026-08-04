@@ -32,7 +32,7 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
     <title>{titreComplet}</title>
     <meta name="description" content={descriptionOg} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate" type="application/rss+xml" title="bonnet.bzh — Bibliothèque" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="bonnet.bzh — Ressources" href="/rss.xml" />
 
     <meta property="og:title" content={titreComplet} />
     <meta property="og:description" content={descriptionOg} />
@@ -55,8 +55,8 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
         <a href={`${prefix}/`}>bonnet.bzh</a>
         <ul>
           <li><a href={`${prefix}/`}>{t('nav.accueil')}</a></li>
-          <li><a href={`${prefix}/ressources`}>{t('nav.ressources')}</a></li>
-          <li><a href={`${prefix}/a-propos`}>{t('nav.apropos')}</a></li>
+          <li><a href={`${prefix}/ressources/`}>{t('nav.ressources')}</a></li>
+          <li><a href={`${prefix}/a-propos/`}>{t('nav.apropos')}</a></li>
           <li><a href="https://genea.bonnet.bzh">{t('nav.genea')}</a></li>
         </ul>
       </nav>
@@ -68,7 +68,7 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
 
     <footer>
       <p>{t('footer.licence')}</p>
-      <p><a href="/mentions-legales">{t('footer.mentions')}</a></p>
+      <p><a href="/mentions-legales/">{t('footer.mentions')}</a></p>
     </footer>
   </body>
 </html>

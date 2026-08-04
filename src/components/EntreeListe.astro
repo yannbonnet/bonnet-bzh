@@ -12,7 +12,7 @@ const { lang, entry, hidden = false } = Astro.props;
 const { titre, annee, type, cadre, resume, themes } = entry.data;
 const prefix = lang === 'fr' ? '' : '/en';
 const slug = entry.id.replace(/^(fr|en)\//, '');
-const href = `${prefix}/ressources/${slug}`;
+const href = `${prefix}/ressources/${slug}/`;
 ---
 
 <li class="entree" data-type={type} data-themes={themes.join(' ')} hidden={hidden}>
