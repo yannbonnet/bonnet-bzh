@@ -26,9 +26,6 @@ const {
   annee,
   type,
   themes,
-  lienCanonique,
-  lienArchive,
-  copieLocale,
   liensComplementaires,
   resume,
 } = entry.data;
@@ -78,12 +75,6 @@ const debutTitre = motsTitre.join(' ');
       <div class="notice">
         <slot />
       </div>
-
-      <footer class="liens">
-        {lienCanonique && <p><a href={lienCanonique}>{t('meta.lienCanonique')}</a></p>}
-        {lienArchive && <p><a href={lienArchive}>{t('meta.lienArchive')}</a></p>}
-        {copieLocale && <p><a href={copieLocale}>{t('meta.copieLocale')}</a></p>}
-      </footer>
     </div>
   </article>
 </BaseLayout>
@@ -121,13 +112,5 @@ const debutTitre = motsTitre.join(' ');
 
   .resume {
     font-weight: var(--graisse-demi);
-  }
-
-  .liens {
-    margin-block-start: var(--espace-4);
-    padding-block-start: var(--espace-3);
-    border-block-start: 1px solid var(--papier-3);
-    font-family: var(--police-mono);
-    font-size: var(--taille-petite);
   }
 </style>

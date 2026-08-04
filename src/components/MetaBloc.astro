@@ -10,7 +10,19 @@ interface Props {
 
 const { lang, data } = Astro.props;
 const t = useTranslations(lang);
-const { annee, dateExacte, type, cadre, role, coAuteurs, licence, accesRestreint } = data;
+const {
+  annee,
+  dateExacte,
+  type,
+  cadre,
+  role,
+  coAuteurs,
+  lienCanonique,
+  copieLocale,
+  lienArchive,
+  licence,
+  accesRestreint,
+} = data;
 
 const SEUIL_COAUTEURS = 5;
 const coAuteursVisibles = coAuteurs.slice(0, SEUIL_COAUTEURS);
@@ -52,6 +64,21 @@ const etAutres = t('meta.etAutres').replace('{n}', String(coAuteursRepliés.leng
             </details>
           )}
         </dd>
+      </div>
+    )}
+    {lienCanonique && (
+      <div class="meta-champ">
+        <dd><a href={lienCanonique}>{t('meta.lienCanonique')}</a></dd>
+      </div>
+    )}
+    {copieLocale && (
+      <div class="meta-champ meta-champ-large">
+        <dd class="lien-local"><a href={copieLocale}>{t('meta.copieLocale')}</a></dd>
+      </div>
+    )}
+    {lienArchive && (
+      <div class="meta-champ">
+        <dd><a href={lienArchive}>{t('meta.lienArchive')}</a></dd>
       </div>
     )}
     {licence && (
@@ -115,6 +142,27 @@ const etAutres = t('meta.etAutres').replace('{n}', String(coAuteursRepliés.leng
   dd {
     margin: 0;
     color: var(--papier);
+  }
+
+  /* Liens de document : --encre (couleur de lien par défaut du site) est
+     illisible sur --ardoise, et --fougere (survol) n'y passe pas non plus
+     (2,38:1, cf. tokens.css) — on reste en --papier avec un soulignement
+     permanent plutôt qu'un changement de couleur au survol. */
+  .meta-bloc a {
+    color: var(--papier);
+    text-decoration: underline;
+  }
+
+  .meta-bloc a:hover {
+    text-decoration: none;
+  }
+
+  /* Copie locale : le lien que la plupart des lecteurs suivront, mis en
+     évidence par la taille plutôt que par la graisse — seule la graisse 400
+     de Plex Mono est chargée (CLAUDE.md §9), une 500 serait simulée par le
+     navigateur. */
+  .lien-local a {
+    font-size: var(--taille-base);
   }
 
   details {
