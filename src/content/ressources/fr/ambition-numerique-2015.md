@@ -7,7 +7,15 @@ type: rapport
 cadre: "Conseil national du numérique — rapport au Premier ministre"
 externe: false
 role: coordinateur
-coAuteurs: [Benoît Thieulin ; Yann Bonnet ; Somalina Pa ; Daniel Kaplan ; Marie Ekeland ; Valérie Peugeot ; Stéphane Distinguin ; Marc Tessier]
+coAuteurs:
+  - "Benoît Thieulin"
+  - "Yann Bonnet"
+  - "Somalina Pa"
+  - "Daniel Kaplan"
+  - "Marie Ekeland"
+  - "Valérie Peugeot"
+  - "Stéphane Distinguin"
+  - "Marc Tessier"
 langueDocument: fr
 groupe: ambition-numerique-2015
 themes:

@@ -5,7 +5,10 @@ type: avis
 cadre: "Conseil national du numérique"
 externe: false
 role: co-auteur
-coAuteurs: [Godefroy Beauvallet ; Yann Bonnet ; Mathilde Bras]
+coAuteurs:
+  - "Godefroy Beauvallet"
+  - "Yann Bonnet"
+  - "Mathilde Bras"
 langueDocument: fr
 groupe: cnnum-fiscalite-numerique-2013
 themes:

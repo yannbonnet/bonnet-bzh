@@ -5,7 +5,13 @@ type: rapport
 cadre: "Conseil national du numérique"
 externe: false
 role: co-auteur
-coAuteurs: [Virginie Fauvel ; Benoît Thieulin ; Somalina Pa ; Camille Hartmann ; Charly Berthet ; Yann Bonnet]
+coAuteurs:
+  - "Virginie Fauvel"
+  - "Benoît Thieulin"
+  - "Somalina Pa"
+  - "Camille Hartmann"
+  - "Charly Berthet"
+  - "Yann Bonnet"
 langueDocument: fr
 groupe: cnnum-sante-2015
 themes:

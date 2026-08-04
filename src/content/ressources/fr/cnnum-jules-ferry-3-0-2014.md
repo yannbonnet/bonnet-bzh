@@ -7,7 +7,11 @@ type: rapport
 cadre: "Conseil national du numérique"
 externe: false
 role: co-auteur
-coAuteurs: [Sophie Pène ; Benoît Thieulin ; Somalina Pa ; Yann Bonnet]
+coAuteurs:
+  - "Sophie Pène"
+  - "Benoît Thieulin"
+  - "Somalina Pa"
+  - "Yann Bonnet"
 langueDocument: fr
 groupe: cnnum-jules-ferry-3-0-2014
 themes:

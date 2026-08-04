@@ -6,7 +6,12 @@ type: avis
 cadre: "Conseil national du numérique"
 externe: false
 role: co-auteur
-coAuteurs: [Francis Jutand ; Benoît Thieulin ; Yann Bonnet ; Judith Herzog ; Charly Berthet]
+coAuteurs:
+  - "Francis Jutand"
+  - "Benoît Thieulin"
+  - "Yann Bonnet"
+  - "Judith Herzog"
+  - "Charly Berthet"
 langueDocument: fr
 groupe: cnnum-neutralite-plateformes-2014
 themes:

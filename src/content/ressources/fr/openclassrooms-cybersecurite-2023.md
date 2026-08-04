@@ -7,7 +7,9 @@ type: cours
 cadre: "OpenClassrooms"
 externe: false
 role: co-auteur
-coAuteurs: [Pauline K., Yann Bonnet]
+coAuteurs:
+  - "Pauline K."
+  - "Yann Bonnet"
 langueDocument: fr
 groupe: openclassrooms-cybersecurite-2023
 themes:

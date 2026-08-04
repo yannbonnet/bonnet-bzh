@@ -5,7 +5,10 @@ type: avis
 cadre: "Conseil national du numérique"
 externe: false
 role: co-auteur
-coAuteurs: [Yann Bonnet ; Mathilde Bras ; Benoît Thieulin]
+coAuteurs:
+  - "Yann Bonnet"
+  - "Mathilde Bras"
+  - "Benoît Thieulin"
 langueDocument: fr
 groupe: cnnum-ptci-numerique-2014
 themes:

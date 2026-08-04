@@ -6,7 +6,14 @@ type: rapport
 cadre: "Conseil national du numérique — rapport remis à la ministre du Travail"
 externe: false
 role: co-auteur
-coAuteurs: [Nathalie Andireux ; Benoît Thieulin ; Yann Bonnet ; Somalina Pa ; Judith Herzog ; François Levin ; Mathilde Bras]
+coAuteurs:
+  - "Nathalie Andireux"
+  - "Benoît Thieulin"
+  - "Yann Bonnet"
+  - "Somalina Pa"
+  - "Judith Herzog"
+  - "François Levin"
+  - "Mathilde Bras"
 langueDocument: fr
 groupe: cnnum-travail-emploi-2016
 themes:
