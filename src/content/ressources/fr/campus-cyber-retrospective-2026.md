@@ -5,8 +5,8 @@ annee: 2026
 type: note
 cadre: "Rédigé pour bonnet.bzh"
 externe: false
-role: co-auteur
-coAuteurs: [Michel Van Den Berghe ; Yann Bonnet ; Charly Berthet ; Faustine Saunier ; Christian Daviot ; Nicolas Arpagian ; Jean-Baptiste Demaison ; Magali Marques ; Barbara Milia]
+role: auteur
+coAuteurs: []
 langueDocument: fr
 groupe: campus-cyber-retrospective-2026
 themes:
@@ -25,16 +25,23 @@ n'est donc pas une évaluation indépendante, et il faut la lire ainsi.*
 
 ## Ce qui a été construit
 
-L'intuition est née en 2020 à l'ANSSI, avec Guillaume Poupard : le risque cyber ne se maîtrise
-pas par la seule action de l'État, il faut faire levier sur l'écosystème. Une mission de
-préfiguration a été confiée à Michel Van Den Berghe, et le Campus Cyber a été inauguré en
-février 2022 — vingt-six mille mètres carrés à La Défense, une société détenue conjointement
-par des acteurs publics et privés, sans autorité hiérarchique sur ses membres.
+L'intuition est née en 2019-2020 à l'ANSSI, avec Guillaume Poupard : face à une menace
+croissante, le risque cyber ne se maîtrise pas par la seule action de l'État, il faut
+activer l'écosystème. Une mission de préfiguration a été confiée à Michel Van Den Berghe,
+que j'ai accompagné à ce titre comme cofondateur — concevoir la gouvernance, rédiger les
+statuts avec les avocats, chercher les financements publics et privés, convaincre les
+indécis. Vingt-neuf millions d'euros levés, et tout à construire depuis une feuille
+blanche. Le Campus Cyber a été inauguré en février 2022 : vingt-six mille mètres carrés
+à La Défense, une société détenue conjointement par des acteurs publics et privés, sans
+autorité hiérarchique sur ses membres.
 
 Trois ans après l'ouverture, le lieu réunissait plus de trois cents organisations, dont
-soixante pour cent des entreprises du CAC 40. Environ sept cent cinquante contributeurs,
-réunis en groupes de travail, ont produit une trentaine de ressources mutualisées mises à
-disposition gratuitement de tout l'écosystème. Cinq campus régionaux ont ouvert. Un consortium
+soixante pour cent des entreprises du CAC 40. Le Studio des Communs a réuni environ sept cent cinquante contributeurs en groupes de
+travail et produit une trentaine de ressources mutualisées, mises gratuitement à
+disposition de tout l'écosystème, sur l'IA appliquée à la cybersécurité, le renseignement
+sur la menace, la cryptographie post-quantique et l'écoconception. Cinq campus
+territoriaux ont été labellisés — Hauts-de-France, Nouvelle-Aquitaine, Normandie,
+Bretagne, Région Sud. Un consortium
 européen sur l'IA et la cybersécurité a été confié au Campus par la Commission et la région
 Île-de-France, et un consortium sur les talents financé par France 2030 a associé Radio
 France, l'ONISEP, Pix et le CNED.
@@ -53,9 +60,12 @@ transposables indépendamment du reste.
 La diversité des acteurs, incluant délibérément des membres qui ne sont pas des spécialistes
 de la cybersécurité.
 
-La dissociation de l'apport en capital et du pouvoir de décision — un actionnaire majoritaire
-n'y détient pas une voix proportionnelle. C'est la condition qui a rendu la participation de
-l'État acceptable au secteur privé, et celle du secteur privé acceptable à l'État.
+La dissociation de l'apport en capital et du pouvoir de décision — un actionnaire
+majoritaire n'y détient pas une voix proportionnelle. Le raisonnement était écologique :
+un terrain produit quand aucune espèce n'y domine, et un acteur trop dominant marque le
+début de la pollution qui casse la chaîne de fertilité. C'est la condition qui a rendu la
+participation de l'État acceptable au secteur privé, et celle du secteur privé acceptable
+à l'État.
 
 Et la production de communs, plutôt que la prestation de services : le Campus ne vend pas, il
 fabrique avec ses membres ce qu'aucun n'aurait fabriqué seul.
