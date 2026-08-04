@@ -25,18 +25,18 @@ const t = useTranslations('en');
     <p class="surtitre">{t('accueil.surtitre')}</p>
     <h1>Yann Bonnet</h1>
     <p class="chapeau">
-      I work on digital policy, AI governance, cybersecurity, innovation and deeptech.
+      I work on public policy for digital technology, innovation and deep tech.
     </p>
     <p class="chapeau">
-      This site brings together the reports, opinions and notes I have contributed to
-      since 2013, each accompanied by a critical review — what they aimed to do, what they
-      produced, and what has aged badly.
+      This site brings together knowledge commons — reports, formal opinions, courses and
+      notes — I have contributed to since 2013, each with a critical review: what it set
+      out to do, what it achieved, and what has aged badly.
     </p>
   </Bandeau>
 
   <div class="corps-clair">
     <section aria-labelledby="commons-title">
-      <h2 id="commons-title">{t('ressources.titre')}</h2>
+      <h2 id="commons-title">{t('accueil.communsTitre')}</h2>
       <ul class="liste-ressources">
         {recentes.map((entry) => <EntreeListe lang="en" entry={entry} />)}
       </ul>
