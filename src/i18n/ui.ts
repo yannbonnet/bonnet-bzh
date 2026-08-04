@@ -35,6 +35,10 @@ export const ui = {
     'meta.etAutres': 'et {n} autres',
     'sommaire.titre': 'Sommaire',
     'accueil.genea': 'Une bibliothèque voisine, tenue avec la même exigence :',
+    'accueil.surtitre': 'bonnet.bzh',
+    'stats.ressources': 'Ressources',
+    'stats.periode': 'Période couverte',
+    'stats.institutions': 'Institutions représentées',
   },
   en: {
     'nav.accueil': 'Home',
@@ -65,5 +69,9 @@ export const ui = {
     'meta.etAutres': 'and {n} more',
     'sommaire.titre': 'Contents',
     'accueil.genea': 'A neighbouring library, held to the same standard:',
+    'accueil.surtitre': 'bonnet.bzh',
+    'stats.ressources': 'Resources',
+    'stats.periode': 'Period covered',
+    'stats.institutions': 'Institutions represented',
   },
 } as const;

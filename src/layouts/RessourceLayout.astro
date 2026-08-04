@@ -35,13 +35,20 @@ const {
 
 const t = useTranslations(lang);
 const prefix = lang === 'fr' ? '' : '/en';
+
+// Fragment de titre en --fougere-cl (§ correction palette) : le dernier mot,
+// seul repère mécanique disponible en l'absence d'un balisage éditorial dans
+// `titre` — pas de jugement sémantique sur quel mot « compte ».
+const motsTitre = titre.trim().split(' ');
+const dernierMot = motsTitre.pop() ?? '';
+const debutTitre = motsTitre.join(' ');
 ---
 
 <BaseLayout lang={lang} title={titre} description={resume}>
   <article>
     <Bandeau>
       <p class="surtitre">{labelType(type, lang)} · {annee}</p>
-      <h1>{titre}</h1>
+      <h1>{debutTitre}{debutTitre ? ' ' : ''}<span class="fragment">{dernierMot}</span></h1>
       {sousTitre && <p class="chapeau">{sousTitre}</p>}
       <MetaBloc lang={lang} data={entry.data} />
     </Bandeau>
@@ -82,24 +89,6 @@ const prefix = lang === 'fr' ? '' : '/en';
 </BaseLayout>
 
 <style>
-  .surtitre {
-    font-family: var(--police-mono);
-    font-size: var(--taille-petite);
-    color: var(--papier-3);
-    font-variant-caps: all-small-caps;
-    letter-spacing: 0.08em;
-    margin-block-end: var(--espace-1);
-  }
-
-  .chapeau {
-    font-family: var(--police-corps);
-    font-style: italic;
-    font-weight: 300;
-    font-size: var(--taille-h2);
-    color: var(--fougere-cl);
-    margin-block: 0 var(--espace-2);
-  }
-
   /* Rupture nette vers le registre clair (§ correction palette) : un espace de
      respiration après le bandeau, rien de plus — pas de fondu. */
   .corps-clair {

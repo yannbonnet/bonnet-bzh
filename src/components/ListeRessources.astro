@@ -152,10 +152,11 @@ const typesUtilises = ORDRE_TYPES.filter((type) => typesPresents.has(type));
   }
 
   .filtres-groupe {
+    /* Le libellé est toujours au-dessus de sa rangée, pour Thème comme pour
+       Type — pas d'alignement en ligne qui dépend de la longueur du contenu. */
     display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: var(--espace-1) var(--espace-2);
+    flex-direction: column;
+    gap: var(--espace-1);
   }
 
   .filtres-groupe + .filtres-groupe {

@@ -3,15 +3,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Bandeau from '../../components/Bandeau.astro';
 import ListeRessources from '../../components/ListeRessources.astro';
 import { getCollection } from 'astro:content';
+import { useTranslations } from '../../i18n/utils';
+
+const DESCRIPTION = 'Bibliothèque de ressources sur les politiques publiques du numérique.';
 
 const ressources = (
   await getCollection('ressources', (entry) => entry.id.startsWith('fr/'))
 ).sort((a, b) => b.data.annee - a.data.annee);
+
+const t = useTranslations('fr');
+
+const annees = ressources.map((r) => r.data.annee);
+const periode = `${Math.min(...annees)}–${Math.max(...annees)}`;
+const institutions = new Set(ressources.map((r) => r.data.cadre));
 ---
 
-<BaseLayout lang="fr" title="Ressources" description="Bibliothèque de ressources sur les politiques publiques du numérique.">
+<BaseLayout lang="fr" title="Ressources" description={DESCRIPTION}>
   <Bandeau>
+    <p class="surtitre">{t('ressources.tousLesThemes')}</p>
     <h1>Bibliothèque</h1>
+    <p class="chapeau">{DESCRIPTION}</p>
+    <dl class="chiffres">
+      <div class="chiffre">
+        <dd>{ressources.length}</dd>
+        <dt>{t('stats.ressources')}</dt>
+      </div>
+      <div class="chiffre">
+        <dd>{periode}</dd>
+        <dt>{t('stats.periode')}</dt>
+      </div>
+      <div class="chiffre">
+        <dd>{institutions.size}</dd>
+        <dt>{t('stats.institutions')}</dt>
+      </div>
+    </dl>
   </Bandeau>
   <div class="corps-clair">
     <ListeRessources lang="fr" entries={ressources} />

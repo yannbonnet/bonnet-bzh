@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Bandeau from '../components/Bandeau.astro';
 import EntreeListe from '../components/EntreeListe.astro';
 import { getCollection } from 'astro:content';
 import { useTranslations } from '../i18n/utils';
@@ -19,26 +20,36 @@ const t = useTranslations('fr');
   title="Accueil"
   description="Bibliothèque d'archives commentées sur les politiques publiques du numérique, la gouvernance de l'IA et la cybersécurité."
 >
-  <p>
-    [Présentation à rédiger — deux lignes maximum : poste actuel de Yann Bonnet, puis à
-    quoi sert ce site. Contrainte stricte, cf. CLAUDE.md §5 : pas de biographie ici, elle
-    va dans /a-propos.]
-  </p>
+  <Bandeau>
+    <p class="surtitre">{t('accueil.surtitre')}</p>
+    <h1>Yann Bonnet</h1>
+    <p class="chapeau">
+      [Présentation à rédiger — deux lignes maximum : poste actuel de Yann Bonnet, puis à
+      quoi sert ce site. Contrainte stricte, cf. CLAUDE.md §5 : pas de biographie ici, elle
+      va dans /a-propos.]
+    </p>
+  </Bandeau>
 
-  <section aria-labelledby="bibliotheque-titre">
-    <h2 id="bibliotheque-titre">Bibliothèque</h2>
-    <ul class="liste-ressources">
-      {recentes.map((entry) => <EntreeListe lang="fr" entry={entry} />)}
-    </ul>
-    <p><a href="/ressources">{t('ressources.voirTout')} →</a></p>
-  </section>
+  <div class="corps-clair">
+    <section aria-labelledby="bibliotheque-titre">
+      <h2 id="bibliotheque-titre">Bibliothèque</h2>
+      <ul class="liste-ressources">
+        {recentes.map((entry) => <EntreeListe lang="fr" entry={entry} />)}
+      </ul>
+      <p><a href="/ressources">{t('ressources.voirTout')} →</a></p>
+    </section>
 
-  <p class="orientation-genea">
-    {t('accueil.genea')} <a href="https://genea.bonnet.bzh">genea.bonnet.bzh</a>
-  </p>
+    <p class="orientation-genea">
+      {t('accueil.genea')} <a href="https://genea.bonnet.bzh">genea.bonnet.bzh</a>
+    </p>
+  </div>
 </BaseLayout>
 
 <style>
+  .corps-clair {
+    padding-block-start: var(--espace-4);
+  }
+
   .liste-ressources {
     list-style: none;
     padding: 0;

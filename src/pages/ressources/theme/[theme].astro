@@ -27,6 +27,7 @@ const titreTheme = labelTheme(theme as Parameters<typeof labelTheme>[0], 'fr');
 
 <BaseLayout lang="fr" title={`${t('ressources.titre')} — ${titreTheme}`}>
   <Bandeau>
+    <p class="surtitre">{titreTheme}</p>
     <h1>{t('ressources.titre')}</h1>
   </Bandeau>
   <div class="corps-clair">

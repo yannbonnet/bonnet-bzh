@@ -20,10 +20,14 @@
   /* Emplois vérifiés (ratio WCAG) :
      - papier / ardoise      : 12.07:1 — texte courant du bandeau (h1, valeurs MetaBloc)
      - papier-3 / ardoise    : 8.71:1  — texte atténué du bandeau (surtitre, libellés)
-     - fougere-cl / ardoise  : 4.07:1  — grande taille uniquement (chapeau), sous 4,5:1
-     - encre / papier        : 14.42:1 — texte courant de la surface de lecture
+     - fougere-cl / ardoise  : 4.07:1  — grande taille uniquement (chapeau, fragment de
+                                         titre), sous 4,5:1 — fougere seul (2.38:1) n'y
+                                         passe pas, à ne jamais utiliser sur ardoise
+     - encre / papier        : 14.42:1 — texte courant, marque, nav, titres d'entrées
      - fer / papier          : 5.33:1  — surtitres de section (Sommaire, filtres, h2/h3)
-     - fougere / papier      : 5.07:1  — liens
+     - fougere / papier      : 5.07:1  — survol des liens et état actif des filtres
+                                         uniquement (§8 : parcimonie), jamais la couleur
+                                         de base d'un lien
      - ardoise-3 / papier    : 5.56:1  — texte atténué (métadonnées de liste)
      - ardoise-4 / ardoise   : 3.93:1  — filet interne du bandeau (décoratif)
      - papier-3 / papier     : 1.39:1  — filet clair (décoratif, hors texte) */
@@ -70,6 +74,16 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Le bandeau sombre casse volontairement hors de la colonne de lecture
+     (Bandeau.astro, width: 100vw) : 100vw inclut la largeur de la barre de
+     défilement, ce qui peut décaler le bandeau de quelques pixels par
+     rapport à `header`/`main`/`footer` (centrés sans unité vw). On absorbe
+     ce léger débord plutôt que de laisser une barre de défilement
+     horizontale ou un décalage visible. */
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   color: var(--encre);
@@ -84,11 +98,19 @@ body {
   font-optical-sizing: auto;
 }
 
+/* Une seule couleur d'accent, employée avec parcimonie (§8) : --fougere
+   n'apparaît qu'au survol, à l'état actif d'un filtre, et sur les fragments
+   de titre du bandeau sombre (cf. .fragment ci-dessous) — jamais comme
+   couleur de base d'un lien, d'un titre d'entrée ou de la marque. */
 a {
-  color: var(--fougere);
+  color: var(--encre);
 }
 
 a:visited {
+  color: var(--encre);
+}
+
+a:hover {
   color: var(--fougere);
 }
 
@@ -135,7 +157,18 @@ header {
 }
 
 main {
-  padding-block: var(--espace-4);
+  /* Pas de padding-block-start ici : un bandeau sombre en tête de page (voir
+     .bandeau) doit toucher `header` sans bande claire intercalée. Les pages
+     sans bandeau retrouvent cette respiration via la règle suivante. */
+  padding-block-end: var(--espace-4);
+}
+
+main > :first-child {
+  margin-block-start: var(--espace-4);
+}
+
+main > .bandeau:first-child {
+  margin-block-start: 0;
 }
 
 footer {
@@ -207,4 +240,69 @@ p,
 ul,
 ol {
   margin-block: 0 var(--espace-2);
+}
+
+/* Composition du bandeau sombre (Bandeau.astro), partagée par la fiche,
+   la bibliothèque/pages de thème et l'accueil : surtitre en Plex Mono petites
+   capitales très espacées, titre en Bricolage (h1, déjà stylé plus haut),
+   chapeau en Newsreader d'un corps supérieur au texte courant. */
+.surtitre {
+  font-family: var(--police-mono);
+  font-size: var(--taille-petite);
+  color: var(--papier-3);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.08em;
+  margin-block-end: var(--espace-1);
+}
+
+.chapeau {
+  font-family: var(--police-corps);
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--taille-h2);
+  color: var(--fougere-cl);
+  margin-block: 0 var(--espace-2);
+}
+
+/* Fragment de titre isolé dans le bandeau sombre : la seule autre occurrence
+   de --fougere (en réalité --fougere-cl, seule variante lisible en grande
+   taille sur --ardoise, cf. tableau de contrastes) en dehors du survol et de
+   l'état actif d'un filtre (§8, parcimonie). */
+.fragment {
+  color: var(--fougere-cl);
+}
+
+/* Rangée de chiffres clés du bandeau de /ressources, sur le modèle de genea :
+   nombres en Bricolage gras, légendes en mono atténué, filets fins entre
+   chaque chiffre. */
+.chiffres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espace-4);
+  margin-block-start: var(--espace-3);
+  padding: 0;
+}
+
+.chiffre {
+  padding-inline-start: var(--espace-4);
+  border-inline-start: 1px solid var(--ardoise-4);
+}
+
+.chiffre:first-child {
+  padding-inline-start: 0;
+  border-inline-start: none;
+}
+
+.chiffre dd {
+  margin: 0;
+  font-family: var(--police-titres);
+  font-weight: var(--graisse-forte);
+  font-size: var(--taille-h2);
+  color: var(--papier);
+}
+
+.chiffre dt {
+  font-family: var(--police-mono);
+  font-size: var(--taille-petite);
+  color: var(--papier-3);
 }
