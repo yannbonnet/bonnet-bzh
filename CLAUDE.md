@@ -147,22 +147,31 @@ sont morts ou instables (dissolution d'institutions, refonte de sites). Marquer,
 deviner. Ne jamais fabriquer une URL plausible : si le lien canonique n'est pas confirmé,
 laisser vide et passer `aVerifier: true`.
 
-**Listes du front-matter : toujours à tirets, jamais entre crochets.** `coAuteurs`,
-`themes`, `liensComplementaires` — toute liste YAML s'écrit un élément par ligne, précédé
-d'un tiret :
+**RÈGLE ABSOLUE, sans exception : toute liste du front-matter s'écrit à tirets, jamais
+entre crochets.** `coAuteurs`, `themes`, `liensComplementaires` — un élément par ligne,
+quelle que soit la longueur de la liste :
 ```yaml
 coAuteurs:
   - "Daniel Kaplan"
   - "Jan Krewer"
 ```
-jamais `coAuteurs: [Daniel Kaplan, Jan Krewer]`. C'est la troisième fois que la forme entre
-crochets casse la validation : elle se rompt dès qu'un éditeur enroule la ligne sur
-plusieurs lignes (repli invalide en YAML dans un contexte de mapping bloc, cf. incidents
-sur `blueprint-multinational-ai-2025.md` et `intaic-evidence-gap-2026.md`) ou qu'un
-séparateur autre que la virgule s'y glisse silencieusement — sans erreur de schéma, mais
-avec un tableau à un seul élément au lieu de plusieurs (incident sur
-`cnnum-convergence-transitions-2015.md`, `;` au lieu de `,`). La forme à tirets ne connaît
-pas ces deux pannes.
+jamais `coAuteurs: [Daniel Kaplan, Jan Krewer]` — même courte, même sur une seule ligne,
+même séparée par des virgules régulières. Si tu écris ou modifies une fiche et que tu
+rencontres une liste entre crochets, convertis-la avant de continuer, sans attendre qu'on
+te le demande.
+
+**Pourquoi ce n'est pas négociable :** la forme entre crochets a cassé silencieusement,
+sans erreur de schéma et donc sans que `npm run check` le détecte, sur **huit fiches**
+relevées à ce jour lors de balayages successifs — la plupart avec des noms séparés par des
+points-virgules, parsés comme une chaîne unique au lieu d'une liste de plusieurs
+co-auteurs (incidents sur `rapport-villani-2018.md`, `ambition-numerique-2015.md`,
+`cnnum-fiscalite-numerique-2013.md`, `cnnum-jules-ferry-3-0-2014.md`,
+`cnnum-neutralite-plateformes-2014.md`, `cnnum-ptci-numerique-2014.md`,
+`cnnum-sante-2015.md`, `cnnum-travail-emploi-2016.md`), et deux fois par un repli de ligne
+invalide en YAML de bloc (`blueprint-multinational-ai-2025.md`,
+`intaic-evidence-gap-2026.md`). Le nombre de récidives, malgré la règle déjà documentée
+ici, est la preuve que la vérifier une fois ne suffit pas : à chaque intervention sur une
+fiche existante, vérifier aussi ses autres listes, pas seulement celle qu'on modifie.
 
 **Champ `copieLocale` :** un PDF par fiche dans `public/pdf/` (recopié tel quel dans
 `dist/` par Astro), nommé strictement `<groupe>.pdf` (ex. `intaic-evidence-gap-2026.pdf`),

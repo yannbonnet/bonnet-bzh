@@ -7,7 +7,14 @@ type: rapport
 cadre: "Mission confiée à Cédric Villani par le Premier ministre"
 externe: false
 role: co-pilote
-coAuteurs: [Cédric Villani ; Marc Schoenauer ; Yann Bonnet ; Charly Berthet ; Anne-Charlotte Cornut ; François Levin ; Bertrand Rondepierre]
+coAuteurs:
+  - "Cédric Villani"
+  - "Marc Schoenauer"
+  - "Yann Bonnet"
+  - "Charly Berthet"
+  - "Anne-Charlotte Cornut"
+  - "François Levin"
+  - "Bertrand Rondepierre"
 langueDocument: fr
 groupe: rapport-villani-2018
 themes:
