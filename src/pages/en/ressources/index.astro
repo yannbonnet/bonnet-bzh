@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Bandeau from '../../../components/Bandeau.astro';
 import ListeRessources from '../../../components/ListeRessources.astro';
 import { getCollection } from 'astro:content';
 
@@ -9,6 +10,16 @@ const ressources = (
 ---
 
 <BaseLayout lang="en" title="Resources" description="A library of resources on digital policy.">
-  <h1 class="titre-page">Library</h1>
-  <ListeRessources lang="en" entries={ressources} />
+  <Bandeau>
+    <h1>Library</h1>
+  </Bandeau>
+  <div class="corps-clair">
+    <ListeRessources lang="en" entries={ressources} />
+  </div>
 </BaseLayout>
+
+<style>
+  .corps-clair {
+    padding-block-start: var(--espace-4);
+  }
+</style>

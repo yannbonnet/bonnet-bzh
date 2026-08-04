@@ -1,11 +1,32 @@
 :root {
-  /* Couleurs — cf. CLAUDE.md §2 et §8 : même teinte que genea.bonnet.bzh,
-     un seul accent, utilisé avec parcimonie. */
-  --couleur-texte: #1a1f24;
-  --couleur-texte-attenue: #5b6570;
-  --couleur-fond: #faf9f6;
-  --couleur-accent: #222b33;
-  --couleur-bordure: #d8d5cd;
+  /* Couleurs — palette et noms de tokens repris de genea.bonnet.bzh (CLAUDE.md §2).
+     Deux registres, pas un site sombre : --papier est la surface de lecture
+     (§8), --ardoise n'habille que le bandeau de tête des fiches et de la
+     bibliothèque (cf. RessourceLayout.astro, Bandeau.astro). Chaque paire
+     texte/fond est vérifiée au calculateur de contraste avant usage — voir les
+     commentaires d'usage ci-dessous et en phase 3 (repli d'agent, palette). */
+  --encre: #161c22;
+  --papier: #eeebe4;
+  --fougere: #476b4e;
+  --ardoise: #222b33;
+  --papier-2: #e0dcd2;
+  --fougere-cl: #6d9174;
+  --ardoise-2: #33414d;
+  --papier-3: #cfc9bc;
+  --fer: #8a5136;
+  --ardoise-3: #4d5f6d;
+  --ardoise-4: #7d8790;
+
+  /* Emplois vérifiés (ratio WCAG) :
+     - papier / ardoise      : 12.07:1 — texte courant du bandeau (h1, valeurs MetaBloc)
+     - papier-3 / ardoise    : 8.71:1  — texte atténué du bandeau (surtitre, libellés)
+     - fougere-cl / ardoise  : 4.07:1  — grande taille uniquement (chapeau), sous 4,5:1
+     - encre / papier        : 14.42:1 — texte courant de la surface de lecture
+     - fer / papier          : 5.33:1  — surtitres de section (Sommaire, filtres, h2/h3)
+     - fougere / papier      : 5.07:1  — liens
+     - ardoise-3 / papier    : 5.56:1  — texte atténué (métadonnées de liste)
+     - ardoise-4 / ardoise   : 3.93:1  — filet interne du bandeau (décoratif)
+     - papier-3 / papier     : 1.39:1  — filet clair (décoratif, hors texte) */
 
   /* Typographie — trois rôles distincts (CLAUDE.md « Typographie — décidée,
      ne pas rediscuter ») : corps de lecture, titres et navigation, métadonnées
@@ -51,8 +72,8 @@
 
 body {
   margin: 0;
-  color: var(--couleur-texte);
-  background-color: var(--couleur-fond);
+  color: var(--encre);
+  background-color: var(--papier);
   font-family: var(--police-corps);
   font-size: var(--taille-base);
   line-height: var(--interligne-corps);
@@ -64,17 +85,20 @@ body {
 }
 
 a {
-  color: var(--couleur-accent);
+  color: var(--fougere);
 }
 
 a:visited {
-  color: var(--couleur-accent);
+  color: var(--fougere);
 }
 
 a:focus-visible,
 button:focus-visible,
+summary:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--couleur-accent);
+  /* currentColor plutôt qu'une teinte fixe : le bandeau sombre et la surface
+     de lecture claire n'ont pas la même couleur de texte ambiante. */
+  outline: 2px solid currentColor;
   outline-offset: 2px;
 }
 
@@ -84,8 +108,8 @@ button:focus-visible,
   top: 0;
   z-index: 10;
   padding: var(--espace-1) var(--espace-2);
-  background-color: var(--couleur-fond);
-  color: var(--couleur-accent);
+  background-color: var(--papier);
+  color: var(--encre);
   font-family: var(--police-titres);
 }
 
@@ -107,7 +131,7 @@ footer {
 
 header {
   padding-block: var(--espace-2);
-  border-block-end: 1px solid var(--couleur-bordure);
+  border-block-end: 1px solid var(--papier-3);
 }
 
 main {
@@ -173,14 +197,10 @@ h3 {
 h2,
 h3 {
   font-weight: var(--graisse-demi);
-}
-
-/* Titre de page utilitaire (ex. « Bibliothèque » sur /ressources et les pages de
-   thème) : un h1 pour la hiérarchie de document, mais qui ne doit pas dominer les
-   titres d'entrée de la liste qui suit (cf. brief phase 3, correction de rendu). */
-.titre-page {
-  font-size: var(--taille-h2);
-  margin-block: var(--espace-2) var(--espace-3);
+  /* Surtitres de section, y compris hors bandeau (§ correction palette) :
+     l'accent chaud du registre clair, jamais utilisé sur le bandeau sombre
+     (h1 y hérite --papier de .bandeau, cf. Bandeau.astro). */
+  color: var(--fer);
 }
 
 p,

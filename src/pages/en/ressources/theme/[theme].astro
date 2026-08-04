@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Bandeau from '../../../../components/Bandeau.astro';
 import ListeRessources from '../../../../components/ListeRessources.astro';
 import { getCollection } from 'astro:content';
 import { useTranslations } from '../../../../i18n/utils';
@@ -25,6 +26,16 @@ const titreTheme = labelTheme(theme as Parameters<typeof labelTheme>[0], 'en');
 ---
 
 <BaseLayout lang="en" title={`${t('ressources.titre')} — ${titreTheme}`}>
-  <h1 class="titre-page">{t('ressources.titre')}</h1>
-  <ListeRessources lang="en" entries={entries} themeActif={theme} />
+  <Bandeau>
+    <h1>{t('ressources.titre')}</h1>
+  </Bandeau>
+  <div class="corps-clair">
+    <ListeRessources lang="en" entries={entries} themeActif={theme} />
+  </div>
 </BaseLayout>
+
+<style>
+  .corps-clair {
+    padding-block-start: var(--espace-4);
+  }
+</style>

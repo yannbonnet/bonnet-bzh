@@ -71,11 +71,14 @@ const etAutres = t('meta.etAutres').replace('{n}', String(coAuteursRepliés.leng
 
 <style>
   .meta-bloc {
+    /* Vit désormais dans le bandeau sombre (Bandeau.astro) : un seul filet en
+       tête suffit à le séparer du chapeau, la rupture nette vers le clair qui
+       suit s'occupe de le refermer visuellement. */
     font-family: var(--police-mono);
     font-size: var(--taille-petite);
-    border-block: 1px solid var(--couleur-bordure);
-    padding-block: var(--espace-2);
-    margin-block: var(--espace-3);
+    border-block-start: 1px solid var(--ardoise-4);
+    padding-block-start: var(--espace-2);
+    margin-block-start: var(--espace-3);
   }
 
   dl {
@@ -104,14 +107,14 @@ const etAutres = t('meta.etAutres').replace('{n}', String(coAuteursRepliés.leng
   }
 
   dt {
-    color: var(--couleur-texte-attenue);
+    color: var(--papier-3);
     font-variant-caps: all-small-caps;
     letter-spacing: 0.04em;
   }
 
   dd {
     margin: 0;
-    color: var(--couleur-texte);
+    color: var(--papier);
   }
 
   details {
@@ -121,7 +124,7 @@ const etAutres = t('meta.etAutres').replace('{n}', String(coAuteursRepliés.leng
   summary {
     display: inline;
     cursor: pointer;
-    color: var(--couleur-texte-attenue);
+    color: var(--papier-3);
   }
 
   details ul {

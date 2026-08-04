@@ -1,0 +1,30 @@
+---
+// Bandeau de tête sombre (--ardoise), sur la fiche et sur la bibliothèque —
+// deuxième registre du site, cf. CLAUDE.md §2 et §8 : la surface de lecture
+// reste claire (--papier), seul ce bandeau bascule au registre sombre. Casse
+// volontairement hors de la colonne de lecture (`main` la contraint déjà) pour
+// occuper toute la largeur de la fenêtre, puis une rupture nette vers le clair
+// juste après.
+---
+
+<div class="bandeau">
+  <div class="bandeau-interieur">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .bandeau {
+    background-color: var(--ardoise);
+    color: var(--papier);
+    width: 100vw;
+    margin-inline-start: calc(50% - 50vw);
+  }
+
+  .bandeau-interieur {
+    max-width: calc(var(--mesure-ligne) + 2 * var(--espace-4));
+    margin-inline: auto;
+    padding-inline: var(--espace-3);
+    padding-block: var(--espace-4);
+  }
+</style>

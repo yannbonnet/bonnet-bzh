@@ -146,7 +146,7 @@ const typesUtilises = ORDRE_TYPES.filter((type) => typesPresents.has(type));
     gap: var(--espace-2);
     margin-block-end: var(--espace-4);
     padding-block: var(--espace-2);
-    border-block: 1px solid var(--couleur-bordure);
+    border-block: 1px solid var(--papier-3);
     font-family: var(--police-titres);
     font-size: var(--taille-petite);
   }
@@ -160,12 +160,12 @@ const typesUtilises = ORDRE_TYPES.filter((type) => typesPresents.has(type));
 
   .filtres-groupe + .filtres-groupe {
     padding-block-start: var(--espace-2);
-    border-block-start: 1px solid var(--couleur-bordure);
+    border-block-start: 1px solid var(--papier-3);
   }
 
   .filtres-label {
     font-family: var(--police-mono);
-    color: var(--couleur-texte-attenue);
+    color: var(--fer);
     font-variant-caps: all-small-caps;
     letter-spacing: 0.04em;
     flex: 0 0 auto;
@@ -185,14 +185,14 @@ const typesUtilises = ORDRE_TYPES.filter((type) => typesPresents.has(type));
     background: none;
     border: none;
     font: inherit;
-    color: var(--couleur-texte-attenue);
+    color: var(--ardoise-3);
     cursor: pointer;
     padding: 0;
   }
 
   .filtres a.actif,
   .filtres button[aria-pressed='true'] {
-    color: var(--couleur-accent);
+    color: var(--fougere);
     font-weight: var(--graisse-demi);
   }
 

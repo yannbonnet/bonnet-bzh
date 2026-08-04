@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
+import Bandeau from '../components/Bandeau.astro';
 import MetaBloc from '../components/MetaBloc.astro';
 import Sommaire from '../components/Sommaire.astro';
 import { useTranslations } from '../i18n/utils';
@@ -24,7 +25,6 @@ const {
   sousTitre,
   annee,
   type,
-  cadre,
   themes,
   lienCanonique,
   lienArchive,
@@ -39,61 +39,71 @@ const prefix = lang === 'fr' ? '' : '/en';
 
 <BaseLayout lang={lang} title={titre} description={resume}>
   <article>
-    <header>
-      <p class="meta-courte">{labelType(type, lang)} · {annee} · {cadre}</p>
+    <Bandeau>
+      <p class="surtitre">{labelType(type, lang)} · {annee}</p>
       <h1>{titre}</h1>
-      {sousTitre && <p class="sous-titre">{sousTitre}</p>}
+      {sousTitre && <p class="chapeau">{sousTitre}</p>}
+      <MetaBloc lang={lang} data={entry.data} />
+    </Bandeau>
+
+    <div class="corps-clair">
       <ul class="themes">
         {themes.map((theme) => (
           <li><a href={`${prefix}/ressources/theme/${theme}`}>{labelTheme(theme, lang)}</a></li>
         ))}
       </ul>
-    </header>
 
-    <MetaBloc lang={lang} data={entry.data} />
+      {liensComplementaires.length > 0 && (
+        <div class="liens-complementaires">
+          <p class="liens-complementaires-titre">{t('meta.liensComplementaires')}</p>
+          <ul>
+            {liensComplementaires.map((lien) => (
+              <li><a href={lien.url}>{lien.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
 
-    {liensComplementaires.length > 0 && (
-      <div class="liens-complementaires">
-        <p class="liens-complementaires-titre">{t('meta.liensComplementaires')}</p>
-        <ul>
-          {liensComplementaires.map((lien) => (
-            <li><a href={lien.url}>{lien.label}</a></li>
-          ))}
-        </ul>
+      <Sommaire lang={lang} headings={headings} />
+
+      <p class="resume">{resume}</p>
+
+      <div class="notice">
+        <slot />
       </div>
-    )}
 
-    <Sommaire lang={lang} headings={headings} />
-
-    <p class="resume">{resume}</p>
-
-    <div class="notice">
-      <slot />
+      <footer class="liens">
+        {lienCanonique && <p><a href={lienCanonique}>{t('meta.lienCanonique')}</a></p>}
+        {lienArchive && <p><a href={lienArchive}>{t('meta.lienArchive')}</a></p>}
+        {copieLocale && <p><a href={copieLocale}>{t('meta.copieLocale')}</a></p>}
+      </footer>
     </div>
-
-    <footer class="liens">
-      {lienCanonique && <p><a href={lienCanonique}>{t('meta.lienCanonique')}</a></p>}
-      {lienArchive && <p><a href={lienArchive}>{t('meta.lienArchive')}</a></p>}
-      {copieLocale && <p><a href={copieLocale}>{t('meta.copieLocale')}</a></p>}
-    </footer>
   </article>
 </BaseLayout>
 
 <style>
-  .meta-courte {
+  .surtitre {
     font-family: var(--police-mono);
     font-size: var(--taille-petite);
-    color: var(--couleur-texte-attenue);
+    color: var(--papier-3);
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.08em;
     margin-block-end: var(--espace-1);
   }
 
-  .sous-titre {
+  .chapeau {
     font-family: var(--police-corps);
     font-style: italic;
     font-weight: 300;
-    font-size: var(--taille-h3);
-    color: var(--couleur-texte-attenue);
+    font-size: var(--taille-h2);
+    color: var(--fougere-cl);
     margin-block: 0 var(--espace-2);
+  }
+
+  /* Rupture nette vers le registre clair (§ correction palette) : un espace de
+     respiration après le bandeau, rien de plus — pas de fondu. */
+  .corps-clair {
+    padding-block-start: var(--espace-4);
   }
 
   .themes {
@@ -114,7 +124,7 @@ const prefix = lang === 'fr' ? '' : '/en';
   .liens-complementaires-titre {
     font-family: var(--police-mono);
     font-size: var(--taille-petite);
-    color: var(--couleur-texte-attenue);
+    color: var(--fer);
     font-variant-caps: all-small-caps;
     letter-spacing: 0.04em;
     margin-block-end: var(--espace-1);
@@ -127,7 +137,7 @@ const prefix = lang === 'fr' ? '' : '/en';
   .liens {
     margin-block-start: var(--espace-4);
     padding-block-start: var(--espace-3);
-    border-block-start: 1px solid var(--couleur-bordure);
+    border-block-start: 1px solid var(--papier-3);
     font-family: var(--police-mono);
     font-size: var(--taille-petite);
   }
