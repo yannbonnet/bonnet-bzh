@@ -14,6 +14,8 @@ themes:
   - education
   - politiques-publiques
 lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/144000614.pdf"
+copieLocale: "/pdf/cnnum-jules-ferry-3-0-2014.pdf"
+licence: "CC BY-SA 3.0 FR — Conseil national du numérique"
 resume: "Rapport sur le numérique éducatif, proposant notamment l'enseignement de l'informatique comme discipline et une refonte de la formation des enseignants."
 aVerifier: true
 ---

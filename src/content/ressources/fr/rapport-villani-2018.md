@@ -15,6 +15,8 @@ themes:
   - politiques-publiques
   - souverainete
 lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/184000159.pdf"
+copieLocale: "/pdf/rapport-villani-2018.pdf"
+licence: "CC BY-SA — Mission Villani"
 liensComplementaires:
   - url: "https://mediatheque.univ-paris1.fr/video/3256-410-quel-sens-donner-a-lia-le-rapport-villani-5-ans-apres/"
     label: "« Quel sens donner à l'IA ? Le rapport Villani, cinq ans après » — séminaire de l'Observatoire de l'intelligence artificielle, université Paris 1 Panthéon-Sorbonne, 22 juin 2022 (16 min, CC BY-NC-SA 4.0)"

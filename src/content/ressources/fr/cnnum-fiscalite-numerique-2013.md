@@ -12,6 +12,8 @@ themes:
   - politiques-publiques
   - souverainete
 lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/134000602.pdf"
+copieLocale: "/pdf/cnnum-fiscalite-numerique-2013.pdf"
+licence: "CC BY-SA 3.0 FR — Conseil national du numérique"
 resume: "Avis sur l'imposition des activités numériques et sur l'inadéquation des règles fiscales territoriales aux modèles d'affaires des grandes plateformes."
 aVerifier: true
 ---

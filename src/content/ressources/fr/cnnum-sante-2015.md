@@ -12,6 +12,8 @@ themes:
   - sante
   - politiques-publiques
 lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/154000719.pdf"
+copieLocale: "/pdf/cnnum-sante-2015.pdf"
+licence: "CC BY-SA 3.0 FR — Conseil national du numérique"
 resume: "Rapport sur la place du numérique dans le système de santé, la gouvernance des données de santé et la construction d'une confiance des patients."
 aVerifier: true
 ---

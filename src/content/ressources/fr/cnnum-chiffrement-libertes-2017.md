@@ -15,6 +15,8 @@ themes:
   - politiques-publiques
   - cybersecurite
 lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/174000700.pdf"
+copieLocale: "/pdf/cnnum-chiffrement-libertes-2017.pdf"
+licence: "CC BY-SA 3.0 FR — Conseil national du numérique"
 resume: "Avis du Conseil national du numérique sur les usages prédictifs des données et sur la protection du chiffrement des communications."
 aVerifier: false
 ---

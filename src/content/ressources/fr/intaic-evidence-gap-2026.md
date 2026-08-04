@@ -35,6 +35,7 @@ themes:
   - cybersecurite
   - politiques-publiques
 lienCanonique: "https://parispeaceforum.org/publications/bridging-the-evidence-gap-on-ai-misuse-in-cyberspace/"
+copieLocale: "/pdf/intaic-evidence-gap-2026.pdf"
 liensComplementaires:
   - url: "https://parispeaceforum.org/app/uploads/2026/07/ppf-intaic-white-paper-july-2026.pdf"
     label: "Texte intégral du livre blanc (PDF)"

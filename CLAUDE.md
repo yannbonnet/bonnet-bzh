@@ -164,14 +164,15 @@ avec un tableau à un seul élément au lieu de plusieurs (incident sur
 `cnnum-convergence-transitions-2015.md`, `;` au lieu de `,`). La forme à tirets ne connaît
 pas ces deux pannes.
 
-**Champ `copieLocale` :** les PDF rehébergés vivent dans `public/pdf/` (recopié tel quel
-dans `dist/` par Astro). Convention de nommage : `groupe` de la fiche suivi de `.pdf`
-(ex. `intaic-evidence-gap-2026.pdf`), et le champ prend la forme `/pdf/<groupe>.pdf`.
-Rappel §10 : ne jamais déposer de copie sans avoir vérifié la licence du document, et
-renseigner `licence` sur la fiche en conséquence. Dans le bloc de métadonnées
-(`MetaBloc.astro`), quand `copieLocale` est renseigné, il est mis en évidence
-typographique par rapport à `lienCanonique` et `lienArchive` : c'est le lien que la
-plupart des lecteurs suivront.
+**Champ `copieLocale` :** un PDF par fiche dans `public/pdf/` (recopié tel quel dans
+`dist/` par Astro), nommé strictement `<groupe>.pdf` (ex. `intaic-evidence-gap-2026.pdf`),
+référencé par `copieLocale: "/pdf/<groupe>.pdf"`. Dans le bloc de métadonnées
+(`MetaBloc.astro`), ce lien est mis en évidence typographique par rapport à
+`lienCanonique` et `lienArchive` : c'est celui que la plupart des lecteurs suivront.
+**`licence` devient obligatoire dès qu'une copie locale est servie** — pas une simple
+recommandation : héberger un document sans indiquer sous quelle licence serait une
+négligence, sur un site qui publie ses propres notices en CC BY 4.0 (§10). Vérifier la
+licence avant le dépôt du PDF, jamais après.
 
 **Vérification obligatoire :** Zod ne peut pas rendre la notice obligatoire puisqu'elle
 n'est plus un champ du schéma. `npm run check` doit donc, en plus de `astro check`,

@@ -14,6 +14,8 @@ themes:
   - politiques-publiques
   - souverainete
 lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/154000400.pdf"
+copieLocale: "/pdf/ambition-numerique-2015.pdf"
+licence: "CC BY-SA 3.0 FR — Conseil national du numérique"
 resume: "Rapport remis au Premier ministre au terme d'une concertation nationale ayant recueilli près de 15 000 contributions, ayant nourri la loi pour une République numérique."
 aVerifier: true
 ---

@@ -14,6 +14,8 @@ themes:
   - politiques-publiques
   - souverainete
 lienCanonique: "https://digital-strategy.ec.europa.eu/en/library/policy-and-investment-recommendations-trustworthy-artificial-intelligence"
+copieLocale: "/pdf/hleg-policy-investment-2019.pdf"
+licence: "© Union européenne, 2019 — reproduction autorisée avec mention de la source"
 resume: "Recommandations adressées à la Commission et aux États membres sur les investissements, les compétences et les infrastructures nécessaires à une IA européenne de confiance."
 aVerifier: true
 ---

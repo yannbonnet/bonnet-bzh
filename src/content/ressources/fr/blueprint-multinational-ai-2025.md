@@ -42,6 +42,7 @@ themes:
   - souverainete
   - politiques-publiques
 lienCanonique: "https://aigi.ox.ac.uk/wp-content/uploads/2025/11/blueprint_for_multinational_ai_development.pdf"
+copieLocale: "/pdf/blueprint-multinational-ai-2025.pdf"
 resume: "Note proposant une architecture de coopération multinationale pour le développement des systèmes d'IA avancés, alternative à la concurrence entre États et laboratoires privés."
 aVerifier: true
 ---

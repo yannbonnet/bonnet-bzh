@@ -13,6 +13,8 @@ themes:
   - travail
   - politiques-publiques
 lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/164000018.pdf"
+copieLocale: "/pdf/cnnum-travail-emploi-2016.pdf"
+licence: "CC BY-SA 3.0 FR — Conseil national du numérique"
 resume: "Rapport remis à Myriam El Khomri le 6 janvier 2016, destiné à nourrir le projet de loi sur le travail, sur les transformations de l'emploi liées au numérique."
 aVerifier: true
 ---

@@ -13,6 +13,8 @@ themes:
   - politiques-publiques
   - souverainete
 lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/144000332.pdf"
+copieLocale: "/pdf/cnnum-neutralite-plateformes-2014.pdf"
+licence: "CC BY-SA 3.0 FR — Conseil national du numérique"
 resume: "Avis proposant d'étendre le principe de neutralité au-delà des réseaux, vers les plateformes structurantes de l'accès à l'information et aux services."
 aVerifier: true
 ---

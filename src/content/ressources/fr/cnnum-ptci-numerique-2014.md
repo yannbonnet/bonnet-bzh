@@ -12,6 +12,8 @@ themes:
   - politiques-publiques
   - souverainete
 lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/144000300.pdf"
+copieLocale: "/pdf/cnnum-ptci-numerique-2014.pdf"
+licence: "CC BY-SA 3.0 FR — Conseil national du numérique"
 resume: "Avis sur les enjeux numériques de la négociation commerciale transatlantique, portant notamment sur les flux de données, la protection des données personnelles et l'exception culturelle."
 aVerifier: true
 ---

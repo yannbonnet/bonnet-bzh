@@ -2,7 +2,9 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const lienComplementaire = z.object({
-  url: z.string().url(),
+  // Pas de .url() : accueille aussi bien une URL externe qu'un chemin local
+  // (/pdf/xxx.pdf), sur le même principe que `copieLocale`.
+  url: z.string(),
   label: z.string(),
   type: z.enum(['video', 'article', 'conference', 'page', 'donnees']).optional(),
 });

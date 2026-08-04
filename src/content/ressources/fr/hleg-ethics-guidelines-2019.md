@@ -14,6 +14,12 @@ themes:
   - ia
   - politiques-publiques
 lienCanonique: "https://digital-strategy.ec.europa.eu/fr/library/ethics-guidelines-trustworthy-ai"
+copieLocale: "/pdf/hleg-ethics-guidelines-2019.pdf"
+licence: "© Union européenne, 2019 — reproduction autorisée avec mention de la source"
+liensComplementaires:
+  - url: "/pdf/hleg-ethics-guidelines-2019-fr.pdf"
+    label: "Traduction française officielle (PDF, 56 p.)"
+    type: page
 resume: "Lignes directrices définissant sept exigences pour une intelligence artificielle digne de confiance, socle conceptuel des travaux préparatoires au règlement européen sur l'IA."
 aVerifier: true
 ---

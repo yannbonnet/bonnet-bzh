@@ -18,6 +18,8 @@ themes:
   - environnement
   - politiques-publiques
 lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/184000224.pdf"
+copieLocale: "/pdf/cnnum-convergence-transitions-2015.pdf"
+licence: "CC BY-SA 3.0 FR — Conseil national du numérique"
 resume: "Appel à engagements de 19 pages, lancé cinq jours avant l'ouverture de la COP21, pour rapprocher les acteurs de la transition numérique et ceux de la transition écologique."
 aVerifier: false
 ---

@@ -31,7 +31,7 @@ export const ui = {
     'meta.liensComplementaires': 'Liens complémentaires',
     'meta.lienCanonique': 'Lien vers la ressource',
     'meta.lienArchive': "Copie d'archive",
-    'meta.copieLocale': 'Copie locale',
+    'meta.copieLocale': 'Copie sur ce site (PDF)',
     'meta.etAutres': 'et {n} autres',
     'sommaire.titre': 'Sommaire',
     'accueil.genea': 'Une bibliothèque voisine, tenue avec la même exigence :',
