@@ -12,6 +12,16 @@ interface Props {
 const { lang, title, description } = Astro.props;
 const t = useTranslations(lang);
 const prefix = lang === 'fr' ? '' : '/en';
+
+const DESCRIPTION_PAR_DEFAUT = lang === 'fr'
+  ? "Bibliothèque d'archives commentées sur les politiques publiques du numérique, la gouvernance de l'IA et la cybersécurité."
+  : 'A commented archive of reports and notes on digital policy, AI governance and cybersecurity.';
+
+const titreComplet = `${title} — bonnet.bzh`;
+const descriptionOg = description ?? DESCRIPTION_PAR_DEFAUT;
+const urlCanonique = new URL(Astro.url.pathname, Astro.site);
+const urlOgImage = new URL('/og.png', Astro.site);
+const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
 ---
 
 <!doctype html>
@@ -19,9 +29,23 @@ const prefix = lang === 'fr' ? '' : '/en';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} — bonnet.bzh</title>
-    {description && <meta name="description" content={description} />}
+    <title>{titreComplet}</title>
+    <meta name="description" content={descriptionOg} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" type="application/rss+xml" title="bonnet.bzh — Bibliothèque" href="/rss.xml" />
+
+    <meta property="og:title" content={titreComplet} />
+    <meta property="og:description" content={descriptionOg} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={urlCanonique} />
+    <meta property="og:image" content={urlOgImage} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:site_name" content="bonnet.bzh" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={titreComplet} />
+    <meta name="twitter:description" content={descriptionOg} />
+    <meta name="twitter:image" content={urlOgImage} />
   </head>
   <body>
     <a class="lien-evitement" href="#contenu">{t('nav.eviter')}</a>

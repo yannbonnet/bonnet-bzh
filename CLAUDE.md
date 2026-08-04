@@ -270,6 +270,13 @@ n'utiliser que ceux-là.
   contact, directeur de la publication, et hébergeur — OVH SAS, 2 rue Kellermann,
   59100 Roubaix. Mentionner le SIRET si une activité de conseil ou de conférence est
   présentée sur le site.
+  **Contenu actuel de `src/pages/mentions-legales.astro`** (phase 4) : éditeur et
+  directeur de la publication Yann Bonnet (contact `yann@bonnet.bzh`) ; hébergeur OVH SAS ;
+  propriété intellectuelle (notices et textes originaux en CC BY 4.0, documents référencés
+  sous leurs licences respectives, indiquées fiche par fiche) ; données personnelles
+  (aucun cookie, aucun traceur, aucune mesure d'audience, aucun formulaire, polices
+  auto-hébergées donc aucune requête tierce) ; absence de bandeau de consentement motivée
+  explicitement par l'absence de tout traitement de données qui le rendrait nécessaire.
 - **Rehébergement des PDF** : ne pas déposer une copie locale sans vérifier la licence.
   Les documents publics français relèvent souvent de la Licence Ouverte 2.0 (Etalab)
   mais pas systématiquement ; les documents de la Commission européenne sont
@@ -307,8 +314,16 @@ Une phase par session, un commit par phase. Ne pas anticiper sur la phase suivan
    confirmé avec `aVerifier: true`.
 3. **Design** — mise en forme, échelle typographique, composants de fiche, filtres,
    états vides, responsive.
-4. **Périphérie** — RSS, sitemap, OpenGraph, 404, mentions légales, `.htaccess`,
-   version anglaise.
+4. **Périphérie** — *faite, hors version anglaise.* RSS (`/rss.xml`, seize fiches FR,
+   titre/`resume`/lien vers la fiche, sans le corps de la notice), sitemap
+   (`@astrojs/sitemap`, `sitemap-index.xml`), OpenGraph et Twitter Card par page
+   (`BaseLayout.astro`, `og.png` 1200×630 généré), 404 (`src/pages/404.astro`),
+   mentions légales rédigées (`src/pages/mentions-legales.astro`, contenu au §10),
+   `public/.htaccess` (redirections www et domaine technique OVH vers l'apex, forçage
+   HTTPS, page 404, en-têtes de sécurité dont une CSP `script-src 'self'` sans
+   `unsafe-inline` — script des filtres sorti en fichier externe
+   `public/scripts/filtres.js` pour la rendre possible). **Version anglaise non traitée**
+   dans cette phase : reste à faire quand le contenu EN existera.
 5. **Déploiement** — GitHub Action, test sur un sous-domaine de préproduction avant
    bascule de `bonnet.bzh`.
 6. **Audit** — accessibilité, Lighthouse, vérification manuelle de chaque lien externe.

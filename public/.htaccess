@@ -1,0 +1,26 @@
+# Redirection du www vers l'apex
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.bonnet\.bzh$ [NC]
+RewriteRule ^(.*)$ https://bonnet.bzh/$1 [R=301,L]
+
+# Redirection du domaine technique OVH vers l'apex : il sert aujourd'hui le
+# même contenu et constitue du contenu dupliqué (CLAUDE.md §9).
+RewriteCond %{HTTP_HOST} ^bonnetbzvo\.cluster011\.ovh\.net$ [NC]
+RewriteRule ^(.*)$ https://bonnet.bzh/$1 [R=301,L]
+
+# Forçage HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # 'unsafe-inline' sur style-src uniquement : Astro compile les styles de
+  # composants en balises <style> intégrées à chaque page (pas de contenu
+  # tiers, pas de script) ; script-src reste strict, sans exception, puisque
+  # le script des filtres est un fichier externe (public/scripts/filtres.js).
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'"
+</IfModule>
