@@ -3,6 +3,7 @@ titre: "Bridging the Evidence Gap on AI Misuse in Cyberspace"
 sousTitre: "Premier livre blanc de la coalition INTAiC"
 annee: 2026
 dateExacte: "2026-07-10"
+dateNotice: "2026-08"
 type: rapport
 cadre: "INTAiC — Integrated Network for Trusted AI in Cyberspace, Forum de Paris sur la Paix"
 externe: false
@@ -36,6 +37,7 @@ themes:
   - politiques-publiques
 lienCanonique: "https://parispeaceforum.org/publications/bridging-the-evidence-gap-on-ai-misuse-in-cyberspace/"
 copieLocale: "/pdf/intaic-evidence-gap-2026.pdf"
+licence: "CC BY-SA"
 liensComplementaires:
   - url: "https://parispeaceforum.org/app/uploads/2026/07/ppf-intaic-white-paper-july-2026.pdf"
     label: "Texte intégral du livre blanc (PDF)"

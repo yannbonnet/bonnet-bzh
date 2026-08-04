@@ -2,6 +2,7 @@
 titre: "Travail, emploi, numérique : les nouvelles trajectoires"
 annee: 2016
 dateExacte: "2016-01-06"
+dateNotice: "2026-08"
 type: rapport
 cadre: "Conseil national du numérique — rapport remis à la ministre du Travail"
 externe: false

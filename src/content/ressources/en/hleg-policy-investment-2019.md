@@ -2,6 +2,7 @@
 titre: "Policy and Investment Recommendations for Trustworthy AI"
 annee: 2019
 dateExacte: "2019-06-26"
+dateNotice: "2026-08"
 type: guidelines
 cadre: "High-Level Expert Group on Artificial Intelligence, European Commission"
 externe: false

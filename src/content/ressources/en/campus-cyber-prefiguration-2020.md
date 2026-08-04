@@ -3,6 +3,7 @@ titre: "Campus Cyber : fédérer et faire rayonner l'écosystème de la cybersé
 sousTitre: "[Campus Cyber: uniting and promoting the cybersecurity ecosystem — pre-figuration report to the Prime Minister, January 2020]"
 annee: 2020
 dateExacte: "2020-01-07"
+dateNotice: "2026-08"
 type: rapport
 cadre: "Pre-figuration mission entrusted by the Prime Minister to Michel Van Den Berghe"
 externe: false
@@ -21,6 +22,8 @@ themes:
   - souverainete
   - politiques-publiques
 lienCanonique: "https://www.vie-publique.fr/rapport/276766-campus-cyber-federer-et-faire-rayonner-lecosysteme-de-la-cybersecurit"
+copieLocale: "/pdf/campus-cyber-prefiguration-2020.pdf"
+licence: "CC BY-SA"
 resume: "Pre-figuration report submitted to the Prime Minister on 7 January 2020, at the end of a mission assigned in July 2019 and nearly sixty hearings, proposing the operating model for the future Campus Cyber."
 aVerifier: true
 ---

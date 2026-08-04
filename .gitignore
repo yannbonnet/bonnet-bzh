@@ -2,6 +2,11 @@
 dist/
 .astro/
 
+# PDF dont l'autorisation de republication n'est pas établie — hors de
+# public/ pour ne pas être servis ni indexés, hors du dépôt pour ne pas être
+# republiés par erreur avant qu'une licence ne soit confirmée.
+pdf-en-attente/
+
 # dépendances
 node_modules/
 

@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Historique complet nécessaire : le sitemap dérive lastmod du
+          # dernier commit de chaque fichier de contenu (git log), pas
+          # seulement du HEAD superficiel que checkout récupère par défaut.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:

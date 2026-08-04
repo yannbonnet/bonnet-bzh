@@ -3,6 +3,7 @@ titre: "Pour une convergence des transitions écologique et numérique"
 sousTitre: "Appel à engagements"
 annee: 2015
 dateExacte: "2015-11-25"
+dateNotice: "2026-08"
 type: appel
 cadre: "Conseil national du numérique, avec l'IDDRI et Place to B"
 externe: false

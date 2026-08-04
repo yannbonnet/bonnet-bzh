@@ -2,6 +2,7 @@
 titre: "Ce que la construction du Campus Cyber apprend sur la coopération public-privé"
 sousTitre: "[What building the Campus Cyber teaches about public-private cooperation — retrospective note, 2026]"
 annee: 2026
+dateNotice: "2026-08"
 type: note
 cadre: "Written for bonnet.bzh"
 externe: false

@@ -3,6 +3,7 @@ titre: "Ambition numérique"
 sousTitre: "Pour une politique française et européenne de la transition numérique"
 annee: 2015
 dateExacte: "2015-06-18"
+dateNotice: "2026-08"
 type: rapport
 cadre: "Conseil national du numérique — rapport au Premier ministre"
 externe: false

@@ -3,6 +3,7 @@ titre: "Donner un sens à l'intelligence artificielle"
 sousTitre: "Pour une stratégie nationale et européenne"
 annee: 2018
 dateExacte: "2018-03-28"
+dateNotice: "2026-08"
 type: rapport
 cadre: "Mission confiée à Cédric Villani par le Premier ministre"
 externe: false

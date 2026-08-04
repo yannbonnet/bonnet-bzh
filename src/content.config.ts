@@ -16,6 +16,10 @@ const ressources = defineCollection({
     sousTitre: z.string().optional(),
     annee: z.number(),
     dateExacte: z.string().optional(),
+    // Date de rédaction de LA NOTICE (ce texte-ci), pas du document commenté :
+    // annee/dateExacte décrivent le document, dateNotice la relecture critique
+    // qui l'accompagne — les deux peuvent différer de plusieurs décennies.
+    dateNotice: z.string().optional(),
 
     type: z.enum([
       'rapport', 'avis', 'note', 'article', 'tribune',

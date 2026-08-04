@@ -1,6 +1,7 @@
 ---
 titre: "Fiscalité du numérique"
 annee: 2013
+dateNotice: "2026-08"
 type: avis
 cadre: "Conseil national du numérique"
 externe: false

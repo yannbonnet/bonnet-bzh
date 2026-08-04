@@ -3,6 +3,7 @@ titre: "Pour une convergence des transitions écologique et numérique"
 sousTitre: "[Towards convergence between the ecological and digital transitions — call for commitments, Conseil national du numérique (French national digital council) with IDDRI and Place to B, November 2015]"
 annee: 2015
 dateExacte: "2015-11-25"
+dateNotice: "2026-08"
 type: appel
 cadre: "Conseil national du numérique (French national digital council), with IDDRI and Place to B"
 externe: false

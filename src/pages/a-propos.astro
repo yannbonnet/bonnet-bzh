@@ -1,8 +1,29 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Pas de jobTitle : choix délibéré, la page ne nomme aucun employeur pour ne
+// pas se périmer (§6, CLAUDE.md) — le déclarer en données structurées
+// contredirait ce choix.
+const jsonLdPersonne = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://bonnet.bzh/a-propos/#personne',
+  name: 'Yann Bonnet',
+  description: "Je travaille sur les politiques publiques du numérique, la gouvernance de l'intelligence artificielle, la cybersécurité, l'innovation et la deeptech.",
+  alumniOf: { '@type': 'CollegeOrUniversity', name: 'ISEP' },
+  sameAs: [
+    'https://fr.linkedin.com/in/yannbonnet',
+    'https://fr.wikipedia.org/wiki/Yann_Bonnet',
+    'https://www.vie-publique.fr/auteur/3505-yann-bonnet',
+    'https://shs.cairn.info/publications-de-yann-bonnet--659973',
+  ],
+};
 ---
 
 <BaseLayout lang="fr" title="À propos" description="Parcours de Yann Bonnet." urlAutreLangue="/en/a-propos/">
+  <Fragment slot="jsonld">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdPersonne)} is:inline />
+  </Fragment>
   <h1>À propos</h1>
   <p>
     Je travaille sur les politiques publiques du numérique, la gouvernance de

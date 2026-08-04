@@ -3,6 +3,7 @@ titre: "Jules Ferry 3.0"
 sousTitre: "[Jules Ferry 3.0: building a creative and fair school in a digital world — Conseil national du numérique (French national digital council) report, October 2014]"
 annee: 2014
 dateExacte: "2014-10"
+dateNotice: "2026-08"
 type: rapport
 cadre: "Conseil national du numérique (French national digital council)"
 externe: false

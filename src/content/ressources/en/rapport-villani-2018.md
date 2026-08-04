@@ -3,6 +3,7 @@ titre: "Donner un sens à l'intelligence artificielle"
 sousTitre: "[For a meaningful artificial intelligence: a national and European strategy — mission report to the Prime Minister, March 2018, widely known in English as the Villani report]"
 annee: 2018
 dateExacte: "2018-03-28"
+dateNotice: "2026-08"
 type: rapport
 cadre: "Mission entrusted to Cédric Villani by the Prime Minister"
 externe: false

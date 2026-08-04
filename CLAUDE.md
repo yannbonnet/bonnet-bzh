@@ -120,6 +120,16 @@ d'indentation pénible, alors que le corps Markdown s'écrit naturellement (para
 liens, emphase). Le front-matter porte uniquement les métadonnées et `resume` ; le corps
 du fichier porte la notice.
 
+**`dateNotice` et `annee`/`dateExacte` décrivent deux choses différentes, à ne jamais
+confondre : `annee`/`dateExacte` datent le document commenté, `dateNotice` date la
+rédaction de la notice elle-même (ce texte-ci).** Les deux peuvent être très éloignées —
+une notice écrite en août 2026 sur un avis de 2013 porte `annee: 2013` et
+`dateNotice: "2026-08"`. Champ ajouté a posteriori pour les données structurées JSON-LD de chaque fiche
+(`Article.datePublished`, dans `RessourceLayout.astro`) : sans lui, la seule date
+disponible était celle du document, et l'attribuer à la notice aurait affirmé qu'elle
+datait de 2013 alors qu'elle vient d'être écrite. Optionnel dans le schéma, mais renseigné sur les dix-sept
+ressources actuelles à `"2026-08"`, la date réelle de leur rédaction.
+
 ```ts
 // src/content.config.ts
 import { defineCollection, z } from 'astro:content';
@@ -132,6 +142,7 @@ const ressources = defineCollection({
     sousTitre: z.string().optional(),
     annee: z.number(),
     dateExacte: z.string().optional(),            // ISO, si connue
+    dateNotice: z.string().optional(),             // rédaction de LA NOTICE, pas du document
     type: z.enum(['rapport', 'avis', 'note', 'article', 'tribune',
                   'guidelines', 'audition']),
     cadre: z.string(),                             // institution commanditaire

@@ -3,6 +3,7 @@ titre: "Jules Ferry 3.0"
 sousTitre: "Bâtir une école créative et juste dans un monde numérique"
 annee: 2014
 dateExacte: "2014-10"
+dateNotice: "2026-08"
 type: rapport
 cadre: "Conseil national du numérique"
 externe: false

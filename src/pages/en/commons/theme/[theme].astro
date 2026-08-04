@@ -26,7 +26,7 @@ const titreTheme = labelTheme(theme as Parameters<typeof labelTheme>[0], 'en');
 const urlAutreLangue = await urlJumelleTheme('en', theme);
 ---
 
-<BaseLayout lang="en" title={`${t('ressources.titre')} — ${titreTheme}`} urlAutreLangue={urlAutreLangue}>
+<BaseLayout lang="en" title={titreTheme} urlAutreLangue={urlAutreLangue}>
   <Bandeau>
     <p class="surtitre">{titreTheme}</p>
     <h1>{t('ressources.titre')}</h1>

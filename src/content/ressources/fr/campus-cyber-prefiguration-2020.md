@@ -3,6 +3,7 @@ titre: "Campus Cyber : fédérer et faire rayonner l'écosystème de la cybersé
 sousTitre: "Pour un nouveau centre de gravité de la sécurité et de la confiance numériques en France et en Europe"
 annee: 2020
 dateExacte: "2020-01-07"
+dateNotice: "2026-08"
 type: rapport
 cadre: "Mission de préfiguration confiée par le Premier ministre à Michel Van Den Berghe"
 externe: false
@@ -21,6 +22,8 @@ themes:
   - souverainete
   - politiques-publiques
 lienCanonique: "https://www.vie-publique.fr/rapport/276766-campus-cyber-federer-et-faire-rayonner-lecosysteme-de-la-cybersecurit"
+copieLocale: "/pdf/campus-cyber-prefiguration-2020.pdf"
+licence: "CC BY-SA"
 resume: "Rapport de préfiguration remis au Premier ministre le 7 janvier 2020, au terme d'une mission confiée en juillet 2019 et de près de soixante auditions, proposant le modèle opérationnel du futur Campus Cyber."
 aVerifier: true
 ---

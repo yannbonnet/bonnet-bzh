@@ -3,6 +3,7 @@ titre: "Ethics Guidelines for Trustworthy AI"
 sousTitre: "Lignes directrices du groupe d'experts de haut niveau sur l'IA"
 annee: 2019
 dateExacte: "2019-04-08"
+dateNotice: "2026-08"
 type: guidelines
 cadre: "Groupe d'experts de haut niveau sur l'IA, Commission européenne"
 externe: false

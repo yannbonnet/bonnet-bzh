@@ -2,6 +2,7 @@
 titre: "Neutralité des plateformes"
 sousTitre: "Réunir les conditions d'un environnement numérique ouvert et soutenable"
 annee: 2014
+dateNotice: "2026-08"
 type: avis
 cadre: "Conseil national du numérique"
 externe: false

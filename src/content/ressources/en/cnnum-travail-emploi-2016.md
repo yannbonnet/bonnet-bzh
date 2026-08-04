@@ -3,6 +3,7 @@ titre: "Travail, emploi, numérique : les nouvelles trajectoires"
 sousTitre: "[Work, employment and digital technology: new trajectories — Conseil national du numérique (French national digital council) report to the Minister of Labour, January 2016]"
 annee: 2016
 dateExacte: "2016-01-06"
+dateNotice: "2026-08"
 type: rapport
 cadre: "Conseil national du numérique (French national digital council) — report submitted to the Minister of Labour"
 externe: false

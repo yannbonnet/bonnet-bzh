@@ -6,6 +6,10 @@ import { useTranslations, segmentCommuns } from '../i18n/utils';
 interface Props {
   lang: 'fr' | 'en';
   title: string;
+  // Titre <title> complet, sans le suffixe automatique « — bonnet.bzh » —
+  // usage exceptionnel (accueil) quand le nom du site doit venir en tête
+  // plutôt qu'en queue, pour porter les mots-clés en premier.
+  titreExact?: string;
   description?: string;
   // URL de la page équivalente dans l'autre langue. Absente = pas de jumelle
   // réelle : le sélecteur de langue replie alors sur l'accueil de l'autre
@@ -17,7 +21,7 @@ interface Props {
   noindex?: boolean;
 }
 
-const { lang, title, description, urlAutreLangue, noindex = false } = Astro.props;
+const { lang, title, titreExact, description, urlAutreLangue, noindex = false } = Astro.props;
 const t = useTranslations(lang);
 const prefix = lang === 'fr' ? '' : '/en';
 const langCible = lang === 'fr' ? 'en' : 'fr';
@@ -27,7 +31,7 @@ const DESCRIPTION_PAR_DEFAUT = lang === 'fr'
   ? "Bibliothèque d'archives commentées sur les politiques publiques du numérique, la gouvernance de l'IA et la cybersécurité."
   : 'A commented archive of reports and notes on digital policy, AI governance and cybersecurity.';
 
-const titreComplet = `${title} — bonnet.bzh`;
+const titreComplet = titreExact ?? `${title} — bonnet.bzh`;
 const descriptionOg = description ?? DESCRIPTION_PAR_DEFAUT;
 const urlCanonique = new URL(Astro.url.pathname, Astro.site);
 const urlOgImage = new URL('/og.png', Astro.site);

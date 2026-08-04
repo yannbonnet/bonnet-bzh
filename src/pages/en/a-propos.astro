@@ -1,8 +1,29 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// No jobTitle: deliberate choice, the page names no employer so it doesn't
+// go stale (§6, CLAUDE.md) — declaring one in structured data would
+// contradict that choice.
+const jsonLdPersonne = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://bonnet.bzh/a-propos/#personne',
+  name: 'Yann Bonnet',
+  description: 'I work on digital policy, artificial intelligence governance, cybersecurity, innovation and deeptech.',
+  alumniOf: { '@type': 'CollegeOrUniversity', name: 'ISEP' },
+  sameAs: [
+    'https://fr.linkedin.com/in/yannbonnet',
+    'https://fr.wikipedia.org/wiki/Yann_Bonnet',
+    'https://www.vie-publique.fr/auteur/3505-yann-bonnet',
+    'https://shs.cairn.info/publications-de-yann-bonnet--659973',
+  ],
+};
 ---
 
 <BaseLayout lang="en" title="About" description="Yann Bonnet's background." urlAutreLangue="/a-propos/">
+  <Fragment slot="jsonld">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdPersonne)} is:inline />
+  </Fragment>
   <h1>About</h1>
   <p>
     I work on digital policy, artificial intelligence governance, cybersecurity,

@@ -25,6 +25,7 @@ const {
   sousTitre,
   annee,
   dateExacte,
+  dateNotice,
   type,
   cadre,
   themes,
@@ -43,9 +44,8 @@ const brouillonNonRelu = entry.body?.includes('TODO') ?? false;
 
 // Article = la notice (ce texte-ci) ; CreativeWork = le document qu'elle
 // commente. Les deux dates ne se confondent pas : la notice peut dater de
-// 2026 quand le document commenté date de 2013. Aucune date de rédaction de
-// notice n'existe dans le schéma aujourd'hui — plutôt que d'en inventer une
-// ou de recopier celle du document, datePublished est omis sur l'Article.
+// 2026 quand le document commenté date de 2013 — datePublished de l'Article
+// vient de dateNotice (§6, CLAUDE.md), jamais de annee/dateExacte.
 const personneId = 'https://bonnet.bzh/a-propos/#personne';
 const jsonLdArticle = {
   '@context': 'https://schema.org',
@@ -53,6 +53,7 @@ const jsonLdArticle = {
   headline: titre,
   description: resume,
   inLanguage: lang,
+  ...(dateNotice ? { datePublished: dateNotice } : {}),
   author: { '@type': 'Person', '@id': personneId, name: 'Yann Bonnet' },
   ...(licence ? { license: { '@type': 'CreativeWork', name: licence } } : {}),
   about: {

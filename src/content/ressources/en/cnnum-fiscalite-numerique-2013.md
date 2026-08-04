@@ -2,6 +2,7 @@
 titre: "Fiscalité du numérique"
 sousTitre: "[Taxation of the digital economy — Conseil national du numérique (French national digital council) opinion, 2013]"
 annee: 2013
+dateNotice: "2026-08"
 type: avis
 cadre: "Conseil national du numérique (French national digital council)"
 externe: false

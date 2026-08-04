@@ -2,6 +2,7 @@
 titre: "Prédictions, chiffrement et libertés"
 sousTitre: "[Predictive analytics, encryption and civil liberties — Conseil national du numérique (French national digital council) opinion, 2017]"
 annee: 2017
+dateNotice: "2026-08"
 type: avis
 cadre: "Conseil national du numérique (French national digital council)"
 externe: false

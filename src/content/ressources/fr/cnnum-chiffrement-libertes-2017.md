@@ -1,6 +1,7 @@
 ---
 titre: "Prédictions, chiffrement et libertés"
 annee: 2017
+dateNotice: "2026-08"
 type: avis
 cadre: "Conseil national du numérique"
 externe: false

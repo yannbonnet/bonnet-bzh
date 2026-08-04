@@ -1,6 +1,7 @@
 ---
 titre: "A Blueprint for Multinational Advanced AI Development"
 annee: 2025
+dateNotice: "2026-08"
 type: note
 cadre: "Oxford Martin AI Governance Initiative and Paris Peace Forum"
 externe: false
@@ -42,7 +43,6 @@ themes:
   - souverainete
   - politiques-publiques
 lienCanonique: "https://aigi.ox.ac.uk/wp-content/uploads/2025/11/blueprint_for_multinational_ai_development.pdf"
-copieLocale: "/pdf/blueprint-multinational-ai-2025.pdf"
 resume: "Note proposing a multinational cooperation architecture for the development of advanced AI systems, an alternative to competition between states and private labs."
 aVerifier: true
 ---

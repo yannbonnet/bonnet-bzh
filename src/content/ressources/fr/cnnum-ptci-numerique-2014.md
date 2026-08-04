@@ -1,6 +1,7 @@
 ---
 titre: "Volet numérique du partenariat transatlantique de commerce et d'investissement"
 annee: 2014
+dateNotice: "2026-08"
 type: avis
 cadre: "Conseil national du numérique"
 externe: false

@@ -3,6 +3,7 @@ titre: "Découvrez l'univers de la cybersécurité"
 sousTitre: "[Discover the world of cybersecurity — free online course, OpenClassrooms, 2023]"
 annee: 2023
 dateExacte: "2023-05-25"
+dateNotice: "2026-08"
 type: cours
 cadre: "OpenClassrooms"
 externe: false

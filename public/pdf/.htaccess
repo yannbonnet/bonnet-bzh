@@ -9,8 +9,8 @@
   <Files "ambition-numerique-2015.pdf">
     Header set Link "<https://bonnet.bzh/communs/ambition-numerique-2015/>; rel=\"canonical\""
   </Files>
-  <Files "blueprint-multinational-ai-2025.pdf">
-    Header set Link "<https://bonnet.bzh/communs/blueprint-multinational-ai-2025/>; rel=\"canonical\""
+  <Files "campus-cyber-prefiguration-2020.pdf">
+    Header set Link "<https://bonnet.bzh/communs/campus-cyber-prefiguration-2020/>; rel=\"canonical\""
   </Files>
   <Files "cnnum-chiffrement-libertes-2017.pdf">
     Header set Link "<https://bonnet.bzh/communs/cnnum-chiffrement-libertes-2017/>; rel=\"canonical\""
@@ -37,6 +37,9 @@
     Header set Link "<https://bonnet.bzh/communs/cnnum-travail-emploi-2016/>; rel=\"canonical\""
   </Files>
   <Files "hleg-ethics-guidelines-2019.pdf">
+    Header set Link "<https://bonnet.bzh/communs/hleg-ethics-guidelines-2019/>; rel=\"canonical\""
+  </Files>
+  <Files "hleg-ethics-guidelines-2019-fr.pdf">
     Header set Link "<https://bonnet.bzh/communs/hleg-ethics-guidelines-2019/>; rel=\"canonical\""
   </Files>
   <Files "hleg-policy-investment-2019.pdf">
