@@ -5,15 +5,18 @@ type: avis
 cadre: "Conseil national du numérique"
 externe: false
 role: co-auteur
-coAuteurs: []
+coAuteurs:
+  - "Rand Hindi"
+  - "Yann Bonnet"
+  - "Charly Berthet"
 langueDocument: fr
 groupe: cnnum-chiffrement-libertes-2017
 themes:
   - politiques-publiques
   - cybersecurite
-lienCanonique: "https://www.conseil-ia-numerique.fr/files/archive/files/2017-10/CNNum_avis_prédiction_chiffrement_libertés_sept2017.pdf"
+lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/174000700.pdf"
 resume: "Avis du Conseil national du numérique sur les usages prédictifs des données et sur la protection du chiffrement des communications."
-aVerifier: true
+aVerifier: false
 ---
 
 C'est l'avis de la série qui a le mieux résisté, et il faut le dire sans complaisance :
