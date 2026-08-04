@@ -20,10 +20,10 @@ aVerifier: true
 
 Le rapport est celui du collège du Conseil, pas le mien : j'en ai coordonné la concertation
 et la production comme secrétaire général. Cette distinction n'est pas formelle, elle
-explique la nature du document — une synthèse négociée entre trente membres, non une thèse
+explique la nature du document — une synthèse négociée entre 30 membres, non une thèse
 d'auteur.
 
-L'innovation tenait moins au contenu qu'à la méthode. Près de quinze mille contributions
+L'innovation tenait moins au contenu qu'à la méthode. Près de 15 000 contributions
 recueillies en 2015 dans une consultation ouverte, sur un sujet de politique publique non
 identitaire : le dispositif était sans précédent en France, et il n'a pas été reconduit à
 cette échelle depuis. Les consultations en ligne ultérieures ont généralement servi à

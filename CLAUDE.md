@@ -214,6 +214,19 @@ hauteur, badges colorés multiples.
 définie explicitement, mesure de ligne entre 62 et 72 caractères. Ne pas utiliser la
 police Marianne (usage réservé à l'État).
 
+**Nombres, dans le corps des notices :** les nombres qui constituent une donnée —
+montants, effectifs, surfaces, pourcentages, années — s'écrivent en chiffres, jamais en
+lettres : « dix virgule quarante-cinq milliards » est illisible, « 10,45 milliards »
+se lit d'un coup d'œil. Séparateur de milliers : une espace insécable fine (` `),
+jamais un point ni une virgule (`107 000 emplois`, pas `107.000` ni `107,000`).
+Séparateur décimal : la virgule (`21,3 milliards`, jamais `21.3`). Les nombres qui ne sont
+*pas* une donnée — une approximation assumée (« une trentaine de ressources », « une
+cinquantaine de délégations »), un dénombrement rhétorique de petite quantité (« trois
+choses », « cinq campus territoriaux », « deux registres »), ou une durée narrative
+(« trois ans après l'ouverture », « cinq jours avant ») — restent en toutes lettres : les
+convertir en chiffres ferait paraître précis ce qui ne l'est pas, ou alourdirait une
+tournure qui n'a pas vocation à l'être.
+
 **Filtres** : sur ~20 entrées, pas de framework JS. Astro + un peu de JavaScript vanille
 sur des attributs `data-`. Les filtres doivent fonctionner sans JS (liens vers des pages
 de thème préfiltrées) et refléter leur état dans l'URL.

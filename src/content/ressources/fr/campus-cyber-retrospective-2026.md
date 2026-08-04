@@ -30,13 +30,13 @@ croissante, le risque cyber ne se maîtrise pas par la seule action de l'État, 
 activer l'écosystème. Une mission de préfiguration a été confiée à Michel Van Den Berghe,
 que j'ai accompagné à ce titre comme cofondateur — concevoir la gouvernance, rédiger les
 statuts avec les avocats, chercher les financements publics et privés, convaincre les
-indécis. Vingt-neuf millions d'euros levés, et tout à construire depuis une feuille
-blanche. Le Campus Cyber a été inauguré en février 2022 : vingt-six mille mètres carrés
+indécis. 29 millions d'euros levés, et tout à construire depuis une feuille
+blanche. Le Campus Cyber a été inauguré en février 2022 : 26 000 m²
 à La Défense, une société détenue conjointement par des acteurs publics et privés, sans
 autorité hiérarchique sur ses membres.
 
-Trois ans après l'ouverture, le lieu réunissait plus de trois cents organisations, dont
-soixante pour cent des entreprises du CAC 40. Le Studio des Communs a réuni environ sept cent cinquante contributeurs en groupes de
+Trois ans après l'ouverture, le lieu réunissait plus de 300 organisations, dont
+60 % des entreprises du CAC 40. Le Studio des Communs a réuni environ 750 contributeurs en groupes de
 travail et produit une trentaine de ressources mutualisées, mises gratuitement à
 disposition de tout l'écosystème, sur l'IA appliquée à la cybersécurité, le renseignement
 sur la menace, la cryptographie post-quantique et l'écoconception. Cinq campus
@@ -72,18 +72,18 @@ fabrique avec ses membres ce qu'aucun n'aurait fabriqué seul.
 
 ## L'objectif de 2025 : ni tenu ni manqué
 
-La stratégie nationale d'accélération pour la cybersécurité, dotée d'un milliard d'euros dont
-sept cent vingt millions de financements publics, fixait deux objectifs chiffrés à l'horizon
-2025 : porter les emplois de la filière de trente-sept mille à soixante-quinze mille, et son
-chiffre d'affaires de sept virgule trois à vingt-cinq milliards d'euros. Le Campus Cyber était
+La stratégie nationale d'accélération pour la cybersécurité, dotée de 1 milliard d'euros dont
+720 millions de financements publics, fixait deux objectifs chiffrés à l'horizon
+2025 : porter les emplois de la filière de 37 000 à 75 000, et son
+chiffre d'affaires de 7,3 à 25 milliards d'euros. Le Campus Cyber était
 présenté comme le fer de lance de cette stratégie.
 
 Le bilan dépend entièrement du périmètre retenu, ce qui est en soi le résultat le plus
 intéressant. Sur le périmètre cyber au sens strict, la direction générale des entreprises
-mesurait en 2023 une filière à cinquante mille emplois et dix virgule quarante-cinq milliards
+mesurait en 2023 une filière à 50 000 emplois et 10,45 milliards
 d'euros : la trajectoire ne permettait pas d'atteindre la cible. Sur le périmètre plus large
 de la confiance numérique, l'observatoire de l'Alliance pour la confiance numérique mesure en
-2024 cent sept mille emplois et vingt et un virgule trois milliards de revenus : la cible est
+2024 107 000 emplois et 21,3 milliards de revenus : la cible est
 dépassée.
 
 Deux comptages, deux conclusions opposées, aucune malhonnêteté nécessaire. Quand une politique

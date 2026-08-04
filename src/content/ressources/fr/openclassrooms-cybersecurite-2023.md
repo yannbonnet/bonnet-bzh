@@ -30,25 +30,24 @@ de métiers coexistent dans le secteur, dont beaucoup de non techniques.
 Trois ans plus tard, les chiffres que j'y donnais méritent d'être confrontés au réel, et le
 résultat n'est pas flatteur pour la manière dont ce secteur parle de lui-même.
 
-Je citais quarante-quatre mille emplois et quinze mille postes non pourvus en France, avec un
-objectif public de soixante-quinze mille emplois à l'horizon 2025. Cet objectif figurait dans
-la stratégie nationale d'accélération pour la cybersécurité, qui partait de trente-sept mille
+Je citais 44 000 emplois et 15 000 postes non pourvus en France, avec un
+objectif public de 75 000 emplois à l'horizon 2025. Cet objectif figurait dans
+la stratégie nationale d'accélération pour la cybersécurité, qui partait de 37 000
 emplois en 2019. Il est aujourd'hui évaluable, et la réponse dépend du périmètre : sur un
-périmètre cyber strict, la direction générale des entreprises mesurait cinquante mille emplois
+périmètre cyber strict, la direction générale des entreprises mesurait 50 000 emplois
 en 2023 et la cible n'était pas atteignable ; sur le périmètre plus large de la confiance
-numérique, l'observatoire de l'Alliance pour la confiance numérique mesure cent sept mille
+numérique, l'observatoire de l'Alliance pour la confiance numérique mesure 107 000
 emplois en 2024 et la cible est largement dépassée. Deux comptages, deux conclusions inverses.
 
-Je citais aussi une attaque toutes les onze secondes dans le monde et un coût annuel de cinq
-mille cinq cents milliards de dollars. Ces chiffres circulent partout dans le secteur, y
+Je citais aussi une attaque toutes les 11 secondes dans le monde et un coût annuel de 5 500 milliards de dollars. Ces chiffres circulent partout dans le secteur, y
 compris dans des documents officiels, et leur construction méthodologique ne résiste pas à
 l'examen. Je les ai repris sans les vérifier. Un discours de sensibilisation qui s'appuie sur
 des ordres de grandeur invérifiables se fragilise lui-même, et la cybersécurité n'a pas besoin
 d'être exagérée pour être un vrai problème.
 
 Sur un point, la trajectoire est réelle mais lente. Je notais que les femmes représentaient
-onze pour cent des effectifs. L'observatoire des métiers de la cybersécurité porté par l'ANSSI
-mesurait en 2025 une profession composée à quatre-vingt-cinq pour cent d'hommes. Quatre points
+11 % des effectifs. L'observatoire des métiers de la cybersécurité porté par l'ANSSI
+mesurait en 2025 une profession composée à 85 % d'hommes. 4 points
 en deux ans, sur un objectif de mixité affiché comme prioritaire par tout le secteur : cela dit
 à peu près tout de l'écart entre les intentions déclarées et les mécanismes réellement à
 l'œuvre.

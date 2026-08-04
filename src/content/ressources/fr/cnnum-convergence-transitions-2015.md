@@ -18,14 +18,14 @@ themes:
   - environnement
   - politiques-publiques
 lienCanonique: "https://www.vie-publique.fr/rapport/37289-pour-une-convergence-des-transitions-ecologique-et-numerique-appel-e"
-resume: "Appel à engagements de dix-neuf pages, lancé cinq jours avant l'ouverture de la COP21, pour rapprocher les acteurs de la transition numérique et ceux de la transition écologique."
+resume: "Appel à engagements de 19 pages, lancé cinq jours avant l'ouverture de la COP21, pour rapprocher les acteurs de la transition numérique et ceux de la transition écologique."
 aVerifier: true
 ---
 
 Cette fiche n'est pas un rapport, et c'est tout son intérêt.
 
 Le CNNum a publié en dix ans des avis et des rapports argumentés. Ici, avec l'IDDRI et
-Place to B, il a lancé un appel à engagements de dix-neuf pages, cinq jours avant
+Place to B, il a lancé un appel à engagements de 19 pages, cinq jours avant
 l'ouverture de la COP21. C'est l'instrument le plus faible de la boîte à outils : un appel
 ne contraint personne, ne recommande rien de précis, et son efficacité se mesure au nombre
 de signataires qui font ensuite ce qu'ils ont annoncé.
@@ -37,7 +37,7 @@ politique publique, et l'appel tenait lieu de mise à l'agenda.
 
 Le reste est instructif par comparaison. En juillet 2020, le CNNum a remis à la ministre de
 la Transition écologique et au secrétaire d'État au Numérique une feuille de route de
-cinquante mesures sur l'environnement et le numérique. Un vrai instrument, avec des
+50 mesures sur l'environnement et le numérique. Un vrai instrument, avec des
 recommandations chiffrées — et je n'y ai pris aucune part, ayant quitté le Conseil deux ans
 plus tôt. Cinq ans séparent l'appel de la feuille de route, et il a fallu attendre une loi,
 en 2021, pour que des obligations existent.
