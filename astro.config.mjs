@@ -44,6 +44,7 @@ function fichierPourChemin(pathname) {
   if ((m = pathname.match(/^\/en\/commons\/([^/]+)\/$/))) {
     return `src/content/ressources/en/${m[1]}.md`;
   }
+  if (pathname === '/genealogie/') return 'src/pages/genealogie.astro';
   if (pathname === '/communs/') return 'src/pages/communs/index.astro';
   if (pathname === '/en/commons/') return 'src/pages/en/commons/index.astro';
   if (pathname === '/en/a-propos/') return 'src/pages/en/a-propos.astro';

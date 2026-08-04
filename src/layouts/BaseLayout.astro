@@ -19,9 +19,13 @@ interface Props {
   // Pages sans contenu réel encore (ex. liste de ressources EN vide tant que
   // les fiches ne sont pas traduites) : noindex, mais toujours suivies (follow).
   noindex?: boolean;
+  // Page qui n'existe que dans une langue et ne prétend à aucune équivalence
+  // (ex. /genealogie, français seul) : déclare sa langue via hreflang sans
+  // réciproque — cas distinct de urlAutreLangue, qui suppose une paire FR/EN.
+  hreflangSeul?: 'fr' | 'en';
 }
 
-const { lang, title, titreExact, description, urlAutreLangue, noindex = false } = Astro.props;
+const { lang, title, titreExact, description, urlAutreLangue, noindex = false, hreflangSeul } = Astro.props;
 const t = useTranslations(lang);
 const prefix = lang === 'fr' ? '' : '/en';
 const langCible = lang === 'fr' ? 'en' : 'fr';
@@ -77,6 +81,7 @@ const jsonLdSite = {
         <link rel="alternate" hreflang="x-default" href={urlFr} />
       </>
     )}
+    {hreflangSeul && <link rel="alternate" hreflang={hreflangSeul} href={urlCanonique} />}
 
     <meta property="og:title" content={titreComplet} />
     <meta property="og:description" content={descriptionOg} />
@@ -103,7 +108,7 @@ const jsonLdSite = {
         <ul>
           <li><a href={`${prefix}/`}>{t('nav.accueil')}</a></li>
           <li><a href={`${prefix}/${segmentCommuns(lang)}/`}>{t('nav.ressources')}</a></li>
-          <li><a href="https://genea.bonnet.bzh">{t('nav.genea')}</a></li>
+          <li><a href="/genealogie/" hreflang="fr">{t('nav.genea')}{lang === 'en' ? ' (in French)' : ''}</a></li>
           <li><a href={`${prefix}/a-propos/`}>{t('nav.apropos')}</a></li>
         </ul>
         <p class="langues" aria-label={lang === 'fr' ? 'Langue du site' : 'Site language'}>

@@ -63,9 +63,19 @@ anglaise). Pas les recruteurs — le CV PDF existe pour ça.
 /communs/theme/[theme]  Page de thème préfiltrée (repli sans JS des filtres, §8)
 /a-propos               Parcours factuel + lien vers le CV PDF
 /mentions-legales       Obligatoire (LCEN)
+/genealogie             Enquête généalogique (ex-genea.bonnet.bzh), français seul
 /en/...                 Miroir anglais de / et /communs au minimum
                         (/en/commons, /en/commons/[slug], /en/commons/theme/[theme])
 ```
+
+**`/genealogie` n'est pas un commun.** Page intégrée depuis l'ancien site
+`genea.bonnet.bzh`, hors de la collection `ressources` : absente du flux RSS, des
+filtres, des pages de thème. Français seul, sans lien dans la navigation anglaise autre
+qu'un renvoi marqué « (in French) ». Déclare sa langue via un `hreflang="fr"` sans
+réciproque (prop `hreflangSeul` de `BaseLayout.astro`) — cas distinct d'une vraie paire
+FR/EN. La redirection 301 de `genea.bonnet.bzh` vers cette page **ne se fait pas dans ce
+dépôt** : ce sous-domaine vit dans son propre dossier sur l'hébergement OVH (§9), la
+règle doit être posée côté serveur, hors du `.htaccess` de `bonnet.bzh`.
 
 Section renommée « Ressources » → « Communs » en cours de phase 4 (URL et libellés) ;
 le dossier de contenu `src/content/ressources/` et la clé de collection Astro
