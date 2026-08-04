@@ -243,9 +243,17 @@ n'utiliser que ceux-là.
   entrée multisite dédiée pour `bonnet.bzh` + `www`, SSL Let's Encrypt via l'interface
   OVH. `genea.bonnet.bzh` reste inchangé sur son propre dossier.
 - **Déploiement** : GitHub Action sur `main` → `npm ci && npm run build` → dépôt FTP du
-  dossier `dist/` (action `SamKirkland/FTP-Deploy-Action`). Identifiants dans les
-  *secrets* du dépôt (`FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`) — **jamais** en clair
-  dans un fichier ni dans une conversation.
+  dossier `dist/` (action `SamKirkland/FTP-Deploy-Action`, `local-dir: ./dist/`,
+  `server-dir: ./www/`). Identifiants dans les *secrets* du dépôt (`FTP_SERVER`,
+  `FTP_USERNAME`, `FTP_PASSWORD`) — **jamais** en clair dans un fichier ni dans une
+  conversation.
+  **Mécanique à connaître :** l'action tient un fichier d'état
+  (`.ftp-deploy-sync-state.json`) à l'intérieur de `server-dir` sur le serveur ; à chaque
+  déploiement, elle compare le contenu de `local-dir` à cet état et **supprime sur le
+  serveur** tout fichier précédemment déployé qui n'est plus présent localement. Toutes
+  ses opérations (dépôt, comparaison, suppression) sont bornées à `server-dir` — elle ne
+  peut jamais toucher un dossier frère comme celui de `genea.bonnet.bzh`, tant que
+  `server-dir` reste `./www/`.
 - **`.htaccess`** à produire : redirection `www` → apex (ou l'inverse, à trancher),
   forçage HTTPS, page 404 personnalisée, en-têtes de sécurité de base
   (`X-Content-Type-Options`, `Referrer-Policy`, CSP restrictive puisqu'aucun script tiers).
