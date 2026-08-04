@@ -1,0 +1,50 @@
+---
+titre: "A Blueprint for Multinational Advanced AI Development"
+annee: 2025
+type: note
+cadre: "Oxford Martin AI Governance Initiative and Paris Peace Forum"
+externe: false
+role: co-auteur
+coAuteurs:
+  - "Yoshua Bengio"
+  - "Yann Bonnet"
+  - "Adrien Abécassis"
+  - "Jonathan Barry"
+  - "Ima Bello"
+  - "Antonin Bergeaud"
+  - "Philipp Hacker"
+  - "Ben Harack"
+  - "Sophia Hatz"
+  - "Joachim Henkel"
+  - "Holger H. Hoos"
+  - "Kit Kitamura"
+  - "Ranjit Lall"
+  - "Yann Lechelle"
+  - "Constance de Leusse"
+  - "Charles Martinet"
+  - "Nicolas Miailhe"
+  - "Julia C. Morse"
+  - "Maximilian Negele"
+  - "Kyung Ryul Park"
+  - "Miro Pluckebaum"
+  - "Murielle Popa-Fabre"
+  - "Benjamin Prud’homme"
+  - "Yohann Ralle"
+  - "Mark Robinson"
+  - "Charbel-Raphael Segerie"
+  - "José-Ignacio Torreblanca"
+  - "Lucia Velasco"
+  - "K. VijayRaghavan"
+langueDocument: en
+groupe: blueprint-multinational-ai-2025
+themes:
+  - ia
+  - souverainete
+  - politiques-publiques
+lienCanonique: "https://aigi.ox.ac.uk/wp-content/uploads/2025/11/blueprint_for_multinational_ai_development.pdf"
+copieLocale: "/pdf/blueprint-multinational-ai-2025.pdf"
+resume: "Note proposing a multinational cooperation architecture for the development of advanced AI systems, an alternative to competition between states and private labs."
+aVerifier: true
+---
+
+TODO: rédiger la notice critique.

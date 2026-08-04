@@ -84,14 +84,26 @@ avant tout le reste.
 quand elle existe, une fiche EN — deux fichiers Markdown distincts, pas des champs
 imbriqués `{ fr, en }`. Ils vivent dans
 `src/content/ressources/fr/<slug>.md` et `src/content/ressources/en/<slug>.md`, reliés
-par un champ `groupe` commun aux deux fichiers. **Les deux slugs peuvent différer**
-(ex. `rapport-villani-2018` en FR, `villani-report-2018` en EN) : sur un site bilingue,
-une URL qui se lit naturellement dans sa langue vaut mieux qu'un identifiant unique
-forcé. Le slug de chaque fiche est celui de son nom de fichier ; `groupe` est le seul
-champ qui les relie (retrouver le pendant EN d'une fiche FR, générer les liens
-hreflang, etc.). Absence de fichier dans `en/` = pas encore de traduction : c'est le
-signal lui-même, pas un champ vide à gérer — cas fréquent puisque la version française
-est toujours rédigée en premier.
+par un champ `groupe` commun aux deux fichiers. **Les deux slugs peuvent différer**, mais
+seulement pour suivre le nom du document, pas la langue de la fiche : un document
+français garde son nom propre dans l'URL anglaise, exactement comme dans son titre (voir
+plus bas) — `rapport-villani-2018` reste `rapport-villani-2018` en EN, il ne devient pas
+`villani-report-2018`. Seuls les documents nativement anglais (HLEG, *Blueprint*, INTAiC)
+peuvent porter un slug d'apparence anglaise, et ils l'ont déjà côté FR puisque c'est leur
+vrai nom. En pratique, sur les dix-sept ressources actuelles, aucune ne justifie un slug
+EN distinct du slug FR — y compris `rapport-villani-2018` : « the Villani report » est
+bien la désignation anglaise établie, mais une exception unique sur dix-sept coûte plus
+en incohérence qu'elle n'apporte en exactitude, et a été écartée pour cette raison. Le
+slug de chaque fiche est celui de son nom de fichier ; `groupe` est le seul champ qui les
+relie (retrouver le pendant EN d'une fiche FR, générer les liens hreflang, etc.). Absence
+de fichier dans `en/` = pas encore de traduction : c'est le signal lui-même, pas un champ
+vide à gérer — cas fréquent puisque la version française est toujours rédigée en premier.
+
+**`groupe` reste indispensable même quand les dix-sept slugs FR et EN coïncident.**
+Ce champ peut sembler redondant avec le nom de fichier tant que l'égalité est parfaite —
+elle ne le restera pas : `groupe` redevient la seule clé d'appariement dès qu'une
+ressource future n'existe que dans une langue, ou qu'un slug doit changer d'un seul côté
+sans casser le lien FR/EN. Ne pas le supprimer au prétexte de simplifier.
 
 **`resume` (front-matter) et notice critique (corps Markdown) sont deux choses
 différentes et ne doivent jamais être fusionnées, ni paraphrasées l'une dans l'autre :**
@@ -146,6 +158,12 @@ EN *et* sur une éventuelle fiche FR qui le commente.
 sont morts ou instables (dissolution d'institutions, refonte de sites). Marquer, ne pas
 deviner. Ne jamais fabriquer une URL plausible : si le lien canonique n'est pas confirmé,
 laisser vide et passer `aVerifier: true`.
+
+**Traduction de `role: coordinateur` :** en anglais, ce libellé est **« Coordinator »**,
+pas « Coordinating author ». Ce n'est pas un oubli à corriger : la valeur désigne
+spécifiquement le fait d'avoir fait produire un texte sans le signer soi-même, et
+« Coordinating author » réintroduirait une paternité d'auteur que le rôle exclut
+justement. Un choix plus flatteur n'est pas un choix plus exact.
 
 **RÈGLE ABSOLUE, sans exception : toute liste du front-matter s'écrit à tirets, jamais
 entre crochets.** `coAuteurs`, `themes`, `liensComplementaires` — un élément par ligne,

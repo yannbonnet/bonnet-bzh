@@ -8,7 +8,7 @@ type Ressource = CollectionEntry<'ressources'>['data'];
 
 export const typeLabels: Record<Ressource['type'], Record<Lang, string>> = {
   rapport: { fr: 'Rapport', en: 'Report' },
-  avis: { fr: 'Avis', en: 'Opinion' },
+  avis: { fr: 'Avis', en: 'Formal opinion' },
   note: { fr: 'Note', en: 'Note' },
   article: { fr: 'Article', en: 'Article' },
   tribune: { fr: 'Tribune', en: 'Op-ed' },
