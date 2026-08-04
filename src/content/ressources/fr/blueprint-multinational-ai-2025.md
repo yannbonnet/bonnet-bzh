@@ -6,12 +6,12 @@ cadre: "Oxford Martin AI Governance Initiative et Forum de Paris sur la Paix"
 externe: false
 role: co-auteur
 coAuteurs:
+  - "Yoshua Bengio"
+  - "Yann Bonnet"
   - "Adrien Abécassis"
   - "Jonathan Barry"
   - "Ima Bello"
-  - "Yoshua Bengio"
   - "Antonin Bergeaud"
-  - "Yann Bonnet"
   - "Philipp Hacker"
   - "Ben Harack"
   - "Sophia Hatz"
