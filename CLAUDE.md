@@ -158,7 +158,7 @@ coAuteurs:
 jamais `coAuteurs: [Daniel Kaplan, Jan Krewer]`. C'est la troisième fois que la forme entre
 crochets casse la validation : elle se rompt dès qu'un éditeur enroule la ligne sur
 plusieurs lignes (repli invalide en YAML dans un contexte de mapping bloc, cf. incidents
-sur `blueprint-multinational-ai-2025.md` et `intaic-livre-blanc-2-2026.md`) ou qu'un
+sur `blueprint-multinational-ai-2025.md` et `intaic-evidence-gap-2026.md`) ou qu'un
 séparateur autre que la virgule s'y glisse silencieusement — sans erreur de schéma, mais
 avec un tableau à un seul élément au lieu de plusieurs (incident sur
 `cnnum-convergence-transitions-2015.md`, `;` au lieu de `,`). La forme à tirets ne connaît
