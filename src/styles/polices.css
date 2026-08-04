@@ -1,0 +1,16 @@
+/* Polices auto-hébergées (Fontsource), pas de Google Fonts (CLAUDE.md §9).
+   Sous-ensemble `latin` uniquement (français et anglais couverts, y compris
+   é/è/à/ç/ê/ô/û/œ — tous dans U+0000–00FF et U+0152–0153) : `latin-ext` ne
+   sera jamais téléchargé par le navigateur, inutile de l'importer.
+
+   Bricolage Grotesque en `standard.css` (graisse ET taille optique variables,
+   axe 12–96 réellement utilisé du texte de nav aux grands titres). Newsreader
+   en `wght.css` seul (le corps de texte varie peu en taille visible, l'axe
+   optique y apporterait peu pour un coût élevé). IBM Plex Mono en 400
+   uniquement — la hiérarchie du bloc de métadonnées se fait par la casse et
+   la couleur, pas par une deuxième graisse. Arbitrage détaillé et chiffré
+   dans CLAUDE.md §9. */
+@import '@fontsource-variable/bricolage-grotesque/standard.css';
+@import '@fontsource-variable/newsreader/wght.css';
+@import '@fontsource-variable/newsreader/wght-italic.css';
+@import '@fontsource/ibm-plex-mono/400.css';

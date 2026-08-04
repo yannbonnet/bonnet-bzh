@@ -1,10 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import EntreeListe from '../../components/EntreeListe.astro';
 import { getCollection } from 'astro:content';
+import { useTranslations } from '../../i18n/utils';
+
+const NOMBRE_RECENTES = 5;
 
 const ressources = (
   await getCollection('ressources', (entry) => entry.id.startsWith('en/'))
 ).sort((a, b) => b.data.annee - a.data.annee);
+
+const recentes = ressources.slice(0, NOMBRE_RECENTES);
+const t = useTranslations('en');
 ---
 
 <BaseLayout
@@ -20,16 +27,30 @@ const ressources = (
 
   <section aria-labelledby="library-title">
     <h2 id="library-title">Library</h2>
-    <ul>
-      {
-        ressources.map((entry) => (
-          <li>
-            <a href={`/en/ressources/${entry.id.replace(/^en\//, '')}`}>{entry.data.titre}</a>
-            <p>{entry.data.resume}</p>
-          </li>
-        ))
-      }
+    <ul class="liste-ressources">
+      {recentes.map((entry) => <EntreeListe lang="en" entry={entry} />)}
     </ul>
-    <p><a href="/en/ressources">Browse the full library →</a></p>
+    <p><a href="/en/ressources">{t('ressources.voirTout')} →</a></p>
   </section>
+
+  <p class="orientation-genea">
+    {t('accueil.genea')} <a href="https://genea.bonnet.bzh">genea.bonnet.bzh</a>
+  </p>
 </BaseLayout>
+
+<style>
+  .liste-ressources {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .orientation-genea {
+    margin-block-start: var(--espace-5);
+    padding-block-start: var(--espace-3);
+    border-block-start: 1px solid var(--couleur-bordure);
+    font-family: var(--police-mono);
+    font-size: var(--taille-petite);
+    color: var(--couleur-texte-attenue);
+  }
+</style>

@@ -213,8 +213,16 @@ n'utiliser que ceux-là.
   (`X-Content-Type-Options`, `Referrer-Policy`, CSP restrictive puisqu'aucun script tiers).
 - **À générer aussi** : `sitemap.xml`, flux RSS de la bibliothèque, `robots.txt`,
   métadonnées OpenGraph par page, image `og.png`.
-- **Poids** : viser moins de 150 Ko par page hors PDF. Polices en `woff2` auto-hébergées
-  (pas de Google Fonts : requête tierce inutile et incohérente avec le propos).
+- **Poids** : deux budgets distincts, posés après mesure réelle en phase 3 (l'objectif
+  initial unique de 150 Ko/page avait été fixé en phase 1, avant tout chargement de
+  police, et s'est révélé incompatible avec trois familles typographiques) —
+  - HTML, CSS et JS : moins de 50 Ko par page (hors polices).
+  - Polices (Newsreader, Bricolage Grotesque, IBM Plex Mono, `woff2` auto-hébergées —
+    pas de Google Fonts : requête tierce inutile et incohérente avec le propos) :
+    environ 263 Ko pour l'ensemble du site, à tenir dès le premier chargement. Pas
+    d'amortissement par le cache à supposer : une bibliothèque d'archives reçoit
+    l'essentiel de son trafic depuis un moteur de recherche, sur une seule fiche,
+    souvent sans deuxième page vue.
 - **Pas d'analytics tiers.** Si une mesure d'audience est souhaitée un jour : Matomo
   auto-hébergé ou rien.
 

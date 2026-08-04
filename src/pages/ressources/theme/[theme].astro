@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ListeRessources from '../../../components/ListeRessources.astro';
+import { getCollection } from 'astro:content';
+import { useTranslations } from '../../../i18n/utils';
+import { labelTheme } from '../../../i18n/labels';
+
+export async function getStaticPaths() {
+  const entries = (
+    await getCollection('ressources', (entry) => entry.id.startsWith('fr/'))
+  ).sort((a, b) => b.data.annee - a.data.annee);
+
+  const themes = new Set(entries.flatMap((e) => e.data.themes));
+
+  return Array.from(themes).map((theme) => ({
+    params: { theme },
+    props: { entries },
+  }));
+}
+
+const { theme } = Astro.params;
+const { entries } = Astro.props;
+const t = useTranslations('fr');
+const titreTheme = labelTheme(theme as Parameters<typeof labelTheme>[0], 'fr');
+---
+
+<BaseLayout lang="fr" title={`${t('ressources.titre')} — ${titreTheme}`}>
+  <h1 class="titre-page">{t('ressources.titre')}</h1>
+  <ListeRessources lang="fr" entries={entries} themeActif={theme} />
+</BaseLayout>

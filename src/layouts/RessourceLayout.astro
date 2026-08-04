@@ -1,44 +1,69 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
+import MetaBloc from '../components/MetaBloc.astro';
+import Sommaire from '../components/Sommaire.astro';
+import { useTranslations } from '../i18n/utils';
+import { labelType, labelTheme } from '../i18n/labels';
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
 
 interface Props {
   lang: 'fr' | 'en';
   entry: CollectionEntry<'ressources'>;
+  headings: Heading[];
 }
 
-const { lang, entry } = Astro.props;
+const { lang, entry, headings } = Astro.props;
 const {
   titre,
   sousTitre,
   annee,
   type,
   cadre,
-  role,
-  coAuteurs,
   themes,
   lienCanonique,
   lienArchive,
-  licence,
-  aVerifier,
+  copieLocale,
+  liensComplementaires,
   resume,
 } = entry.data;
+
+const t = useTranslations(lang);
+const prefix = lang === 'fr' ? '' : '/en';
 ---
 
 <BaseLayout lang={lang} title={titre} description={resume}>
   <article>
     <header>
-      <p class="meta">{type} · {annee} · {cadre}</p>
+      <p class="meta-courte">{labelType(type, lang)} · {annee} · {cadre}</p>
       <h1>{titre}</h1>
       {sousTitre && <p class="sous-titre">{sousTitre}</p>}
-      <p class="role">
-        {role}
-        {coAuteurs.length > 0 && ` — ${coAuteurs.join(', ')}`}
-      </p>
       <ul class="themes">
-        {themes.map((theme) => <li>{theme}</li>)}
+        {themes.map((theme) => (
+          <li><a href={`${prefix}/ressources/theme/${theme}`}>{labelTheme(theme, lang)}</a></li>
+        ))}
       </ul>
     </header>
+
+    <MetaBloc lang={lang} data={entry.data} />
+
+    {liensComplementaires.length > 0 && (
+      <div class="liens-complementaires">
+        <p class="liens-complementaires-titre">{t('meta.liensComplementaires')}</p>
+        <ul>
+          {liensComplementaires.map((lien) => (
+            <li><a href={lien.url}>{lien.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <Sommaire lang={lang} headings={headings} />
 
     <p class="resume">{resume}</p>
 
@@ -47,16 +72,63 @@ const {
     </div>
 
     <footer class="liens">
-      {lienCanonique && (
-        <p><a href={lienCanonique}>{lang === 'fr' ? 'Lien canonique' : 'Canonical link'}</a></p>
-      )}
-      {lienArchive && (
-        <p><a href={lienArchive}>{lang === 'fr' ? "Copie d'archive" : 'Archived copy'}</a></p>
-      )}
-      {licence && <p>{lang === 'fr' ? 'Licence' : 'Licence'} : {licence}</p>}
-      {aVerifier && (
-        <p class="a-verifier">{lang === 'fr' ? '⚠ Information à vérifier' : '⚠ To be verified'}</p>
-      )}
+      {lienCanonique && <p><a href={lienCanonique}>{t('meta.lienCanonique')}</a></p>}
+      {lienArchive && <p><a href={lienArchive}>{t('meta.lienArchive')}</a></p>}
+      {copieLocale && <p><a href={copieLocale}>{t('meta.copieLocale')}</a></p>}
     </footer>
   </article>
 </BaseLayout>
+
+<style>
+  .meta-courte {
+    font-family: var(--police-mono);
+    font-size: var(--taille-petite);
+    color: var(--couleur-texte-attenue);
+    margin-block-end: var(--espace-1);
+  }
+
+  .sous-titre {
+    font-family: var(--police-corps);
+    font-style: italic;
+    font-weight: 300;
+    font-size: var(--taille-h3);
+    color: var(--couleur-texte-attenue);
+    margin-block: 0 var(--espace-2);
+  }
+
+  .themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-2);
+    list-style: none;
+    padding: 0;
+    margin-block-end: var(--espace-2);
+    font-family: var(--police-mono);
+    font-size: var(--taille-petite);
+  }
+
+  .liens-complementaires {
+    margin-block: var(--espace-3);
+  }
+
+  .liens-complementaires-titre {
+    font-family: var(--police-mono);
+    font-size: var(--taille-petite);
+    color: var(--couleur-texte-attenue);
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.04em;
+    margin-block-end: var(--espace-1);
+  }
+
+  .resume {
+    font-weight: var(--graisse-demi);
+  }
+
+  .liens {
+    margin-block-start: var(--espace-4);
+    padding-block-start: var(--espace-3);
+    border-block-start: 1px solid var(--couleur-bordure);
+    font-family: var(--police-mono);
+    font-size: var(--taille-petite);
+  }
+</style>

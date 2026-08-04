@@ -1,0 +1,55 @@
+---
+import { useTranslations } from '../i18n/utils';
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  lang: 'fr' | 'en';
+  headings: Heading[];
+}
+
+const { lang, headings } = Astro.props;
+const t = useTranslations(lang);
+const sections = headings.filter((h) => h.depth === 2);
+---
+
+{sections.length > 0 && (
+  <nav class="sommaire" aria-label={t('sommaire.titre')}>
+    <p class="sommaire-titre">{t('sommaire.titre')}</p>
+    <ol>
+      {sections.map((section) => (
+        <li><a href={`#${section.slug}`}>{section.text}</a></li>
+      ))}
+    </ol>
+  </nav>
+)}
+
+<style>
+  .sommaire {
+    font-family: var(--police-mono);
+    font-size: var(--taille-petite);
+    border-block: 1px solid var(--couleur-bordure);
+    padding-block: var(--espace-2);
+    margin-block: var(--espace-3);
+  }
+
+  .sommaire-titre {
+    color: var(--couleur-texte-attenue);
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.04em;
+    margin-block-end: var(--espace-1);
+  }
+
+  ol {
+    margin: 0;
+    padding-inline-start: 1.4em;
+  }
+
+  li {
+    margin-block-end: 0.3em;
+  }
+</style>

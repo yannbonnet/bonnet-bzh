@@ -1,0 +1,131 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { useTranslations } from '../i18n/utils';
+import { labelType, labelRole } from '../i18n/labels';
+
+interface Props {
+  lang: 'fr' | 'en';
+  data: CollectionEntry<'ressources'>['data'];
+}
+
+const { lang, data } = Astro.props;
+const t = useTranslations(lang);
+const { annee, dateExacte, type, cadre, role, coAuteurs, licence, accesRestreint } = data;
+
+const SEUIL_COAUTEURS = 5;
+const coAuteursVisibles = coAuteurs.slice(0, SEUIL_COAUTEURS);
+const coAuteursRepliés = coAuteurs.slice(SEUIL_COAUTEURS);
+const etAutres = t('meta.etAutres').replace('{n}', String(coAuteursRepliés.length));
+---
+
+<div class="meta-bloc">
+  <dl>
+    <div class="meta-champ">
+      <dt>{t('meta.annee')}</dt>
+      <dd>{dateExacte ?? annee}</dd>
+    </div>
+    <div class="meta-champ">
+      <dt>{t('meta.type')}</dt>
+      <dd>{labelType(type, lang)}</dd>
+    </div>
+    <div class="meta-champ">
+      <dt>{t('meta.cadre')}</dt>
+      <dd>{cadre}</dd>
+    </div>
+    {role && (
+      <div class="meta-champ">
+        <dt>{t('meta.role')}</dt>
+        <dd>{labelRole(role, lang)}</dd>
+      </div>
+    )}
+    {coAuteurs.length > 0 && (
+      <div class="meta-champ meta-champ-large">
+        <dt>{t('meta.coAuteurs')}</dt>
+        <dd>
+          {coAuteursVisibles.join(', ')}
+          {coAuteursRepliés.length > 0 && (
+            <details>
+              <summary>{etAutres}</summary>
+              <ul>
+                {coAuteursRepliés.map((nom) => <li>{nom}</li>)}
+              </ul>
+            </details>
+          )}
+        </dd>
+      </div>
+    )}
+    {licence && (
+      <div class="meta-champ">
+        <dt>{t('meta.licence')}</dt>
+        <dd>{licence}</dd>
+      </div>
+    )}
+    {accesRestreint && (
+      <div class="meta-champ">
+        <dt>{t('meta.accesRestreint')}</dt>
+        <dd>{t('meta.accesRestreint')}</dd>
+      </div>
+    )}
+  </dl>
+</div>
+
+<style>
+  .meta-bloc {
+    font-family: var(--police-mono);
+    font-size: var(--taille-petite);
+    border-block: 1px solid var(--couleur-bordure);
+    padding-block: var(--espace-2);
+    margin-block: var(--espace-3);
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: var(--espace-4);
+    row-gap: var(--espace-1);
+    margin: 0;
+  }
+
+  @media (min-width: 640px) {
+    dl {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .meta-champ-large {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .meta-champ {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    line-height: 1.5;
+  }
+
+  dt {
+    color: var(--couleur-texte-attenue);
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.04em;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--couleur-texte);
+  }
+
+  details {
+    display: inline;
+  }
+
+  summary {
+    display: inline;
+    cursor: pointer;
+    color: var(--couleur-texte-attenue);
+  }
+
+  details ul {
+    margin: var(--espace-1) 0 0;
+    padding-inline-start: 1.2em;
+  }
+</style>

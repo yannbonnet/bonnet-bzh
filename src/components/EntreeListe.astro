@@ -1,0 +1,60 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { labelType } from '../i18n/labels';
+
+interface Props {
+  lang: 'fr' | 'en';
+  entry: CollectionEntry<'ressources'>;
+  hidden?: boolean;
+}
+
+const { lang, entry, hidden = false } = Astro.props;
+const { titre, annee, type, cadre, resume, themes } = entry.data;
+const prefix = lang === 'fr' ? '' : '/en';
+const slug = entry.id.replace(/^(fr|en)\//, '');
+const href = `${prefix}/ressources/${slug}`;
+---
+
+<li class="entree" data-type={type} data-themes={themes.join(' ')} hidden={hidden}>
+  <p class="entree-titre"><a href={href}>{titre}</a></p>
+  <p class="entree-meta">{annee} · {labelType(type, lang)} · {cadre}</p>
+  <p class="entree-resume">{resume}</p>
+</li>
+
+<style>
+  .entree {
+    list-style: none;
+    border-block-end: 1px solid var(--couleur-bordure);
+    padding-block: var(--espace-3);
+  }
+
+  .entree:first-child {
+    padding-block-start: 0;
+  }
+
+  .entree-titre {
+    font-family: var(--police-titres);
+    font-weight: var(--graisse-demi);
+    font-size: var(--taille-h3);
+    margin-block-end: var(--espace-1);
+  }
+
+  .entree-titre a {
+    text-decoration: none;
+  }
+
+  .entree-titre a:hover {
+    text-decoration: underline;
+  }
+
+  .entree-meta {
+    font-family: var(--police-mono);
+    font-size: var(--taille-petite);
+    color: var(--couleur-texte-attenue);
+    margin-block-end: var(--espace-1);
+  }
+
+  .entree-resume {
+    margin-block-end: 0;
+  }
+</style>

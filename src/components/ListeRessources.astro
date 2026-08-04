@@ -1,0 +1,204 @@
+---
+// Liste bibliothèque partagée par /ressources et /ressources/theme/[theme] (§2 phase 3).
+// Le filtre thème est posé côté serveur (l'entrée non conforme au thème actif porte
+// `hidden` dès le rendu, donc le repli sans JS montre déjà la bonne sélection) ; le
+// script ne fait qu'ajouter l'interactivité par-dessus ce même attribut `hidden`.
+import type { CollectionEntry } from 'astro:content';
+import EntreeListe from './EntreeListe.astro';
+import { useTranslations } from '../i18n/utils';
+import { labelTheme, labelType } from '../i18n/labels';
+
+const ORDRE_THEMES = [
+  'ia', 'cybersecurite', 'souverainete',
+  'politiques-publiques', 'education', 'sante', 'travail',
+] as const;
+
+const ORDRE_TYPES = [
+  'rapport', 'avis', 'note', 'article', 'tribune',
+  'guidelines', 'audition', 'entretien', 'cours', 'reference',
+] as const;
+
+interface Props {
+  lang: 'fr' | 'en';
+  entries: CollectionEntry<'ressources'>[];
+  themeActif?: string;
+}
+
+const { lang, entries, themeActif } = Astro.props;
+const t = useTranslations(lang);
+const prefix = lang === 'fr' ? '' : '/en';
+
+const themesPresents = new Set(entries.flatMap((e) => e.data.themes));
+const themesUtilises = ORDRE_THEMES.filter((theme) => themesPresents.has(theme));
+
+const typesPresents = new Set(entries.map((e) => e.data.type));
+const typesUtilises = ORDRE_TYPES.filter((type) => typesPresents.has(type));
+---
+
+<nav class="filtres" aria-label={t('ressources.filtrerTheme')} data-filtres data-theme-actif={themeActif ?? ''}>
+  <div class="filtres-groupe">
+    <span class="filtres-label">{t('ressources.labelTheme')}</span>
+    <ul class="filtres-themes">
+      <li>
+        <a
+          href={`${prefix}/ressources`}
+          data-theme-lien=""
+          class={!themeActif ? 'actif' : ''}
+          aria-current={!themeActif ? 'true' : undefined}
+        >
+          {t('ressources.tousLesThemes')}
+        </a>
+      </li>
+      {themesUtilises.map((theme) => (
+        <li>
+          <a
+            href={`${prefix}/ressources/theme/${theme}`}
+            data-theme-lien={theme}
+            class={themeActif === theme ? 'actif' : ''}
+            aria-current={themeActif === theme ? 'true' : undefined}
+          >
+            {labelTheme(theme, lang)}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <div class="filtres-groupe" data-filtres-types hidden>
+    <span class="filtres-label">{t('ressources.labelType')}</span>
+    <ul class="filtres-types">
+      <li>
+        <button type="button" data-type-lien="" aria-pressed="true">{t('ressources.tousLesTypes')}</button>
+      </li>
+      {typesUtilises.map((type) => (
+        <li>
+          <button type="button" data-type-lien={type} aria-pressed="false">{labelType(type, lang)}</button>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<ul class="liste-ressources" data-liste>
+  {entries.map((entry) => (
+    <EntreeListe
+      lang={lang}
+      entry={entry}
+      hidden={Boolean(themeActif) && !entry.data.themes.some((theme) => theme === themeActif)}
+    />
+  ))}
+</ul>
+
+<script>
+  const nav = document.querySelector('[data-filtres]');
+  const liste = document.querySelector('[data-liste]');
+  if (nav instanceof HTMLElement && liste) {
+    const items = Array.from(liste.querySelectorAll<HTMLElement>('[data-type]'));
+    const themeLiens = Array.from(nav.querySelectorAll<HTMLAnchorElement>('[data-theme-lien]'));
+    const typesConteneur = nav.querySelector<HTMLElement>('[data-filtres-types]');
+    const typeBoutons = Array.from(nav.querySelectorAll<HTMLButtonElement>('[data-type-lien]'));
+
+    // Le filtre type n'existe qu'en amélioration JS (§2, brief) : masqué par défaut,
+    // révélé seulement une fois qu'on sait que ce script s'exécute.
+    typesConteneur?.removeAttribute('hidden');
+
+    let themeActif = nav.dataset.themeActif ?? '';
+    let typeActif = '';
+
+    function appliquerFiltres() {
+      for (const item of items) {
+        const themes = (item.dataset.themes ?? '').split(' ');
+        const type = item.dataset.type ?? '';
+        const okTheme = !themeActif || themes.includes(themeActif);
+        const okType = !typeActif || type === typeActif;
+        item.hidden = !(okTheme && okType);
+      }
+    }
+
+    for (const lien of themeLiens) {
+      lien.addEventListener('click', (event) => {
+        event.preventDefault();
+        themeActif = lien.dataset.themeLien ?? '';
+        for (const l of themeLiens) {
+          l.classList.toggle('actif', l === lien);
+          if (l === lien) l.setAttribute('aria-current', 'true');
+          else l.removeAttribute('aria-current');
+        }
+        appliquerFiltres();
+        const href = lien.getAttribute('href');
+        if (href) history.pushState({}, '', href);
+      });
+    }
+
+    for (const bouton of typeBoutons) {
+      bouton.addEventListener('click', () => {
+        typeActif = bouton.dataset.typeLien ?? '';
+        for (const b of typeBoutons) b.setAttribute('aria-pressed', String(b === bouton));
+        appliquerFiltres();
+      });
+    }
+  }
+</script>
+
+<style>
+  .filtres {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espace-2);
+    margin-block-end: var(--espace-4);
+    padding-block: var(--espace-2);
+    border-block: 1px solid var(--couleur-bordure);
+    font-family: var(--police-titres);
+    font-size: var(--taille-petite);
+  }
+
+  .filtres-groupe {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--espace-1) var(--espace-2);
+  }
+
+  .filtres-groupe + .filtres-groupe {
+    padding-block-start: var(--espace-2);
+    border-block-start: 1px solid var(--couleur-bordure);
+  }
+
+  .filtres-label {
+    font-family: var(--police-mono);
+    color: var(--couleur-texte-attenue);
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.04em;
+    flex: 0 0 auto;
+  }
+
+  .filtres ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espace-2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .filtres a,
+  .filtres button {
+    background: none;
+    border: none;
+    font: inherit;
+    color: var(--couleur-texte-attenue);
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .filtres a.actif,
+  .filtres button[aria-pressed='true'] {
+    color: var(--couleur-accent);
+    font-weight: var(--graisse-demi);
+  }
+
+  .liste-ressources {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+</style>

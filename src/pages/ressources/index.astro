@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ListeRessources from '../../components/ListeRessources.astro';
 import { getCollection } from 'astro:content';
 
 const ressources = (
@@ -8,16 +9,6 @@ const ressources = (
 ---
 
 <BaseLayout lang="fr" title="Ressources" description="Bibliothèque de ressources sur les politiques publiques du numérique.">
-  <h1>Bibliothèque</h1>
-  <!-- Filtres par thème (§8) : à ajouter en phase 3, sur données réelles. -->
-  <ul>
-    {
-      ressources.map((entry) => (
-        <li>
-          <a href={`/ressources/${entry.id.replace(/^fr\//, '')}`}>{entry.data.titre}</a>
-          <p>{entry.data.resume}</p>
-        </li>
-      ))
-    }
-  </ul>
+  <h1 class="titre-page">Bibliothèque</h1>
+  <ListeRessources lang="fr" entries={ressources} />
 </BaseLayout>

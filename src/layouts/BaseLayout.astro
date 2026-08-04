@@ -1,4 +1,5 @@
 ---
+import '../styles/polices.css';
 import '../styles/tokens.css';
 import { useTranslations } from '../i18n/utils';
 
@@ -23,19 +24,21 @@ const prefix = lang === 'fr' ? '' : '/en';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
+    <a class="lien-evitement" href="#contenu">{t('nav.eviter')}</a>
+
     <header>
       <nav aria-label={lang === 'fr' ? 'Navigation principale' : 'Main navigation'}>
         <a href={`${prefix}/`}>bonnet.bzh</a>
         <ul>
           <li><a href={`${prefix}/`}>{t('nav.accueil')}</a></li>
           <li><a href={`${prefix}/ressources`}>{t('nav.ressources')}</a></li>
-          <li><a href="/a-propos">{t('nav.apropos')}</a></li>
+          <li><a href={`${prefix}/a-propos`}>{t('nav.apropos')}</a></li>
           <li><a href="https://genea.bonnet.bzh">{t('nav.genea')}</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="contenu">
       <slot />
     </main>
 

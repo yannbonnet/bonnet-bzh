@@ -2,14 +2,22 @@
   /* Couleurs — cf. CLAUDE.md §2 et §8 : même teinte que genea.bonnet.bzh,
      un seul accent, utilisé avec parcimonie. */
   --couleur-texte: #1a1f24;
+  --couleur-texte-attenue: #5b6570;
   --couleur-fond: #faf9f6;
   --couleur-accent: #222b33;
   --couleur-bordure: #d8d5cd;
 
-  /* Typographie — pile de secours en attendant les polices woff2
-     auto-hébergées (Source Serif / Newsreader) posées en phase 3. */
-  --police-corps: Georgia, 'Times New Roman', serif;
-  --police-interface: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Typographie — trois rôles distincts (CLAUDE.md « Typographie — décidée,
+     ne pas rediscuter ») : corps de lecture, titres et navigation, métadonnées
+     et code. Polices auto-hébergées via Fontsource (src/styles/polices.css),
+     reliées ici par leur nom de famille. */
+  --police-corps: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+  --police-titres: 'Bricolage Grotesque Variable', 'Helvetica Neue', Arial, sans-serif;
+  --police-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  --graisse-normale: 400;
+  --graisse-demi: 600;
+  --graisse-forte: 800;
 
   --taille-base: 1.125rem;
   --echelle-typo: 1.25;
@@ -17,6 +25,9 @@
   --taille-h3: calc(var(--taille-base) * var(--echelle-typo));
   --taille-h2: calc(var(--taille-h3) * var(--echelle-typo));
   --taille-h1: calc(var(--taille-h2) * var(--echelle-typo));
+
+  --interligne-corps: 1.6;
+  --interligne-titres: 1.2;
 
   /* Mesure de ligne du corps de texte : 62–72 caractères (§8) */
   --mesure-ligne: 68ch;
@@ -26,6 +37,10 @@
   --espace-3: 1.5rem;
   --espace-4: 2.5rem;
   --espace-5: 4rem;
+
+  /* Seul point de rupture du site (§4 phase 3) : au-dessus, le bloc de
+     métadonnées passe en grille 2 colonnes (cf. MetaBloc.astro). */
+  --point-rupture: 640px;
 }
 
 *,
@@ -40,7 +55,12 @@ body {
   background-color: var(--couleur-fond);
   font-family: var(--police-corps);
   font-size: var(--taille-base);
-  line-height: 1.6;
+  line-height: var(--interligne-corps);
+  /* Axe de taille optique de Bricolage Grotesque (12–96) : comportement par
+     défaut du navigateur, posé ici explicitement pour documenter l'intention
+     plutôt que de la laisser implicite (cf. CLAUDE.md §9 et le brief de
+     phase 3 : « utilise réellement l'axe de taille optique »). */
+  font-optical-sizing: auto;
 }
 
 a {
@@ -49,6 +69,29 @@ a {
 
 a:visited {
   color: var(--couleur-accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--couleur-accent);
+  outline-offset: 2px;
+}
+
+.lien-evitement {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10;
+  padding: var(--espace-1) var(--espace-2);
+  background-color: var(--couleur-fond);
+  color: var(--couleur-accent);
+  font-family: var(--police-titres);
+}
+
+.lien-evitement:focus {
+  left: var(--espace-2);
+  top: var(--espace-2);
 }
 
 /* Colonne de lecture centrée (§8 : mesure de ligne 62–72 caractères).
@@ -64,6 +107,7 @@ footer {
 
 header {
   padding-block: var(--espace-2);
+  border-block-end: 1px solid var(--couleur-bordure);
 }
 
 main {
@@ -72,16 +116,71 @@ main {
 
 footer {
   padding-block: var(--espace-3);
-  font-family: var(--police-interface);
+  font-family: var(--police-titres);
   font-size: var(--taille-petite);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espace-2) var(--espace-4);
+  font-family: var(--police-titres);
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav > a {
+  font-weight: var(--graisse-forte);
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espace-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--police-corps);
-  line-height: 1.25;
+  font-family: var(--police-titres);
+  font-weight: var(--graisse-forte);
+  line-height: var(--interligne-titres);
   margin-block: var(--espace-4) var(--espace-2);
+}
+
+h1 {
+  font-size: var(--taille-h1);
+}
+
+h2 {
+  font-size: var(--taille-h2);
+}
+
+h3 {
+  font-size: var(--taille-h3);
+}
+
+h2,
+h3 {
+  font-weight: var(--graisse-demi);
+}
+
+/* Titre de page utilitaire (ex. « Bibliothèque » sur /ressources et les pages de
+   thème) : un h1 pour la hiérarchie de document, mais qui ne doit pas dominer les
+   titres d'entrée de la liste qui suit (cf. brief phase 3, correction de rendu). */
+.titre-page {
+  font-size: var(--taille-h2);
+  margin-block: var(--espace-2) var(--espace-3);
 }
 
 p,
