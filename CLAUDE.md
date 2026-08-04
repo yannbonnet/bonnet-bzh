@@ -419,6 +419,17 @@ n'utiliser que ceux-là.
   de page. Le code sous licence libre dans le dépôt.
 - **RGPD** : aucun cookie, aucun formulaire, aucun traceur → pas de bandeau de consentement.
   C'est un choix de conception, à préserver.
+- **Fichier GEDCOM de `/genealogie`** (`public/genealogie-bonnet-public.ged`) : version
+  déjà expurgée des personnes vivantes avant dépôt (nées il y a moins de cent ans et dont
+  le décès n'est pas établi, figurant sous le nom « Vivant », sans date ni lieu) — ne
+  jamais déposer une version non expurgée à sa place. Le lien de téléchargement porte une
+  mention de ce fait à côté de lui ; ne pas la retirer si le fichier est un jour remplacé.
+- **Crédits des images de `/genealogie`** : huit des dix-sept images reprises de Wikimedia
+  Commons imposent une attribution nommée (licences CC BY / CC BY-SA), les neuf autres
+  sont du domaine public. La liste complète (auteur, licence, lien vers la page Commons)
+  vit dans `src/data/credits-images-genealogie.json` — toute image ajoutée à cette page
+  doit y porter sa mention avant d'être déposée dans `public/img/genealogie/`, sur le
+  même principe que la licence obligatoire d'un `copieLocale` de fiche (ci-dessus).
 
 ## 11. Accessibilité
 

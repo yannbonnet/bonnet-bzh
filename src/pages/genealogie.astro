@@ -1414,14 +1414,15 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
   <div class="grid2" style="margin-top:40px">
     <div>
       <p><a href="/genealogie-bonnet-public.ged" download><strong>Télécharger le fichier GEDCOM</strong></a>
-      — 2 169 individus, 668 familles, 1,8 Mo.</p>
+      — 2 169 individus, 668 familles, 1,8 Mo.
+      <span class="mono" style="display:block;font-size:12.5px;color:var(--ardoise-7);margin-top:6px">Version expurgée des personnes vivantes.</span></p>
       <p>Cette version a été corrigée puis dédoublonnée : encodage réparé, dates normalisées,
       noms de communes harmonisés, quatre-vingt-deux fiches en double fusionnées. Les personnes
       nées il y a moins de cent ans et dont le décès n'est pas établi y figurent sous le nom
       « Vivant », sans date ni lieu — convention de publication qui protège les vivants tout en
       préservant la structure de l'arbre. Les liens vers les photographies de famille ont été
       retirés.</p>
-      <p style="font-size:16px;color:#5f6a73">Les erreurs qui subsistent sont signalées comme
+      <p style="font-size:16px;color:var(--ardoise-5)">Les erreurs qui subsistent sont signalées comme
       telles dans les pages qui précèdent. Toute correction appuyée sur un acte est la bienvenue.</p>
     </div>
     <div>
@@ -1464,14 +1465,13 @@ const DESCRIPTION = "Enquête généalogique sur 426 ancêtres du pays d'Ancenis
         </ul>
       </div>
     </div>
-    <p style="margin-top:46px;font-size:13px;color:#78838b;max-width:none">
+    <p style="margin-top:46px;font-size:13px;color:var(--ardoise-8);max-width:none">
       Enquête établie en août 2026. Les filiations anciennes reposent sur des relevés
       d'actes paroissiaux et restent, comme toute généalogie, susceptibles d'être corrigées
       par un retour aux registres.</p>
   </div>
 </div>
 
-  <script is:inline src="/scripts/genealogie-images.js"></script>
 </BaseLayout>
 
 <style>
@@ -1493,7 +1493,7 @@ a{color:var(--fer)}
   text-transform:uppercase;color:var(--ardoise-3)}
 .hero h1{font-size:clamp(42px,7.2vw,92px);margin:20px 0 0;color:var(--papier)}
 .hero h1 em{font-style:normal;color:var(--fougere-cl)}
-.hero .sous{max-width:66ch;margin:26px 0 0;font-size:20px;color:#c8cdd2}
+.hero .sous{max-width:66ch;margin:26px 0 0;font-size:20px;color:var(--ardoise-12)}
 .chiffres{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ardoise-2);
   margin:56px 0 0;border-top:1px solid var(--ardoise-2)}
 .chiffre{background:var(--ardoise);padding:26px 22px 30px}
@@ -1513,7 +1513,7 @@ figure{margin:0}
 .viz{margin:38px 0 0;overflow-x:auto}
 .viz svg{width:100%;height:auto;display:block}
 .viz.scroll svg{min-width:660px}
-.leg{font-size:14.5px;color:#66707a;margin:14px 0 0;max-width:74ch;
+.leg{font-size:14.5px;color:var(--ardoise-6);margin:14px 0 0;max-width:74ch;
   font-family:"IBM Plex Mono",monospace;line-height:1.6}
 
 svg .gen,svg .num{font-family:"IBM Plex Mono",monospace;font-size:12.5px;fill:var(--encre)}
@@ -1534,8 +1534,8 @@ svg .fan-hub-t{fill:var(--papier);font-family:"Bricolage Grotesque",sans-serif;
 svg .fan-hub-t2{fill:var(--ardoise-4);font-family:"IBM Plex Mono",monospace;font-size:10px}
 svg .fan-c.on{fill:var(--fougere);opacity:.9}
 svg .fan-c.off{fill:var(--papier-2)}
-svg .fan-t{fill:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:600}
-svg .fan-t2{fill:#d6e2d8;font-family:"IBM Plex Mono",monospace}
+svg .fan-t{fill:var(--papier);font-family:"Bricolage Grotesque",sans-serif;font-weight:600}
+svg .fan-t2{fill:var(--fougere-pale-2);font-family:"IBM Plex Mono",monospace}
 svg .fan-g{fill:var(--ardoise-4);font-family:"IBM Plex Mono",monospace;font-size:10px}
 
 svg .ray{fill:none;stroke:var(--fer);stroke-width:1;stroke-dasharray:5 5;opacity:.55}
@@ -1560,13 +1560,13 @@ svg .fr-p{fill:var(--fer)}
 svg .fr-an{font-family:"IBM Plex Mono",monospace;font-size:12px;fill:var(--ardoise-4)}
 svg .fr-n{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:15px;fill:var(--encre)}
 svg .fr-t{font-family:"IBM Plex Mono",monospace;font-size:11.5px;fill:var(--fer)}
-svg .fr-t2{font-family:"Newsreader",Georgia,serif;font-size:12.5px;fill:#66707a}
+svg .fr-t2{font-family:"Newsreader",Georgia,serif;font-size:12.5px;fill:var(--ardoise-6)}
 svg .fer-l{fill:none;stroke:var(--fer);stroke-width:2.2;stroke-dasharray:7 5;opacity:.75}
 svg .fer-h{fill:var(--papier);stroke:var(--fer);stroke-width:1.5}
 svg .fer-p{fill:var(--fer)}
 svg .fer-an{font-family:"IBM Plex Mono",monospace;font-size:12px;fill:var(--fer)}
 svg .fer-n{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:15px;fill:var(--encre)}
-svg .fer-t{font-family:"Newsreader",Georgia,serif;font-size:12.5px;fill:#66707a}
+svg .fer-t{font-family:"Newsreader",Georgia,serif;font-size:12.5px;fill:var(--ardoise-6)}
 svg .bx-src{fill:var(--ardoise)}
 svg .bt-src{fill:var(--papier);font-family:"Bricolage Grotesque",sans-serif;
   font-weight:800;font-size:20px}
@@ -1586,14 +1586,14 @@ svg .rn.cle{fill:var(--fer);stroke:var(--fer)}
 svg .rl{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:15px;
   fill:var(--encre)}
 svg .rd{font-family:"IBM Plex Mono",monospace;font-size:11px;fill:var(--fer)}
-svg .rt2{font-family:"Newsreader",Georgia,serif;font-size:12.5px;fill:#66707a}
+svg .rt2{font-family:"Newsreader",Georgia,serif;font-size:12.5px;fill:var(--ardoise-6)}
 
 .barres{list-style:none;padding:0;margin:30px 0 0;max-width:560px}
 .barres li{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;
   padding:7px 0;border-bottom:1px solid var(--papier-2)}
 .barres .b i{display:block;height:8px;background:var(--fougere);border-radius:4px;
   margin-top:6px;opacity:.85}
-.barres .v{font-family:"IBM Plex Mono",monospace;font-size:13px;color:#6c757d}
+.barres .v{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ardoise-7)}
 .nuage{display:flex;flex-wrap:wrap;gap:9px;margin:30px 0 0}
 .nuage span{border:1px solid var(--papier-3);padding:5px 11px;
   font-family:"IBM Plex Mono",monospace;font-size:12.5px}
@@ -1613,10 +1613,10 @@ svg .rt2{font-family:"Newsreader",Georgia,serif;font-size:12.5px;fill:#66707a}
 .vie .rang{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--fer);
   letter-spacing:.16em;text-transform:uppercase}
 .vie h3{font-size:25px;margin:12px 0 0}
-.vie .dates{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:#6c757d;margin:8px 0 0}
+.vie .dates{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ardoise-7);margin:8px 0 0}
 .vie .role{font-size:15px;color:var(--fougere);margin:4px 0 0;font-style:italic}
 .vie p{font-size:16.5px;margin:18px 0 0}
-blockquote{margin:44px 0 0;padding:26px 34px;background:var(--ardoise);color:#d4dade;
+blockquote{margin:44px 0 0;padding:26px 34px;background:var(--ardoise);color:var(--ardoise-13);
   font-size:18px;font-style:italic;max-width:none}
 blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--ardoise-4);
   margin-top:14px;font-family:"IBM Plex Mono",monospace}
@@ -1626,9 +1626,9 @@ blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--ard
   border-bottom:1px solid var(--papier-2);align-items:baseline}
 .metiers .p{font-size:17px}
 .metiers .p b{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:16px}
-.metiers .p span{display:block;font-family:"IBM Plex Mono",monospace;font-size:12px;color:#6c757d}
+.metiers .p span{display:block;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ardoise-7)}
 .metiers .m{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--fer)}
-.metiers .a{font-size:15.5px;color:#5f6a73}
+.metiers .a{font-size:15.5px;color:var(--ardoise-5)}
 .video{position:relative;width:100%;padding-top:56.25%;background:var(--papier-2);
   border-radius:2px;overflow:hidden}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -1636,15 +1636,15 @@ blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--ard
 .morts li{display:grid;grid-template-columns:1.5fr .6fr 1.4fr;gap:18px;padding:13px 2px;
   border-bottom:1px solid var(--papier-2);align-items:baseline}
 .morts .n{font-size:17px}
-.morts .a,.morts .l{font-family:"IBM Plex Mono",monospace;font-size:13px;color:#6c757d}
+.morts .a,.morts .l{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ardoise-7)}
 
 .aud{background:var(--ardoise);color:var(--papier)}
 .aud .num-sec{color:var(--fougere-cl)}
 .aud h2,.aud h3{color:var(--papier)}
-.aud p{color:#c3cad0}
-.aud .chapo{color:#d6dce1}
+.aud p{color:var(--ardoise-11)}
+.aud .chapo{color:var(--ardoise-14)}
 .aud .leg{color:var(--ardoise-4)}
-.aud svg .bt{fill:#c3cad0}
+.aud svg .bt{fill:var(--ardoise-11)}
 .aud svg .bl{stroke:var(--ardoise-2)}
 .aud svg .bn{fill:var(--ardoise);stroke:var(--ardoise-4)}
 .aud svg .bn.d{stroke:var(--fougere-cl)}
@@ -1652,7 +1652,7 @@ blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--ard
 .aud svg .bn.d.fin{fill:var(--fougere-cl);stroke:var(--fougere-cl)}
 .aud svg .bt.fin{fill:var(--papier)}
 .aud svg .bx-src{fill:var(--fougere)}
-.aud svg .bt-src2{fill:#cfe0d3}
+.aud svg .bt-src2{fill:var(--fougere-pale)}
 .aud svg .rt{stroke:var(--ardoise-2)}
 .aud svg .rn{fill:var(--ardoise);stroke:var(--ardoise-4)}
 .aud svg .rl{fill:var(--papier)}
@@ -1664,23 +1664,23 @@ blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--ard
 .fait{background:var(--ardoise);padding:24px 20px 26px}
 .fait b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
   font-size:34px;line-height:1;color:var(--fougere-cl);letter-spacing:-.03em}
-.fait span{display:block;margin-top:10px;font-size:13.5px;color:#aab2b9;line-height:1.45}
+.fait span{display:block;margin-top:10px;font-size:13.5px;color:var(--ardoise-10);line-height:1.45}
 
 .chrono{list-style:none;padding:0;margin:40px 0 0}
 .chrono li{display:grid;grid-template-columns:100px 1fr;gap:26px;padding:15px 0;
   border-bottom:1px solid var(--ardoise-2)}
 .chrono .an{font-family:"IBM Plex Mono",monospace;font-size:15px;color:var(--fougere-cl)}
-.chrono .tx{font-size:16.5px;color:#c3cad0;max-width:70ch}
+.chrono .tx{font-size:16.5px;color:var(--ardoise-11);max-width:70ch}
 
 .photos{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin:44px 0 0}
 .photos.deux{grid-template-columns:1fr 1fr}
 .ph img{width:100%;display:block;background:var(--papier-2);border-radius:2px}
 .ph.tall img{height:520px;object-fit:contain;background:var(--papier)}
 .ph.wide-img img{height:280px;object-fit:cover}
-.ph figcaption{font-size:14px;color:#66707a;margin-top:11px;line-height:1.5}
+.ph figcaption{font-size:14px;color:var(--ardoise-6);margin-top:11px;line-height:1.5}
 .aud .ph figcaption{color:var(--ardoise-4)}
 .ph .cr{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;
-  color:#8d959c;margin-top:5px}
+  color:var(--ardoise-9);margin-top:5px}
 .ph.ko img{display:none}
 .ph.ko{border:1px dashed var(--papier-3);padding:20px}
 .aud .ph.ko{border-color:var(--ardoise-2)}
@@ -1691,7 +1691,7 @@ blockquote cite{display:block;font-style:normal;font-size:12.5px;color:var(--ard
 .reserve p{margin:6px 0 0;font-size:16.5px}
 .aud .reserve{border-color:var(--fougere-cl)}
 
-footer{background:var(--ardoise);color:#aab2b9;padding:56px 0 68px;font-size:15px;
+footer{background:var(--ardoise);color:var(--ardoise-10);padding:56px 0 68px;font-size:15px;
   border-top:1px solid var(--ardoise-2)}
 footer a{color:var(--fougere-cl)}
 footer h3{font-family:"Bricolage Grotesque",sans-serif;font-size:15px;color:var(--papier);

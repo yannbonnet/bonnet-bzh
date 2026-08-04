@@ -32,6 +32,31 @@
      - ardoise-4 / ardoise   : 3.93:1  — filet interne du bandeau (décoratif)
      - papier-3 / papier     : 1.39:1  — filet clair (décoratif, hors texte) */
 
+  /* Extension de la rampe ardoise/fougere pour /genealogie (intégration de
+     genea.bonnet.bzh) : dix nuances supplémentaires trouvées en dur dans la
+     page d'origine, toutes de la même famille chromatique bleu-gris que
+     --ardoise (vérifié canal par canal, B > G > R), ordonnées ici du plus
+     sombre au plus clair. Usage propre à cette page (légendes de graphiques,
+     crédits photo, texte sur fond sombre de la section Audubon) — pas
+     vérifiées comme les tokens ci-dessus, à auditer en phase 6 (§11). */
+  --ardoise-5: #5f6a73;
+  --ardoise-6: #66707a;    /* légendes .leg sur fond papier — contraste
+                              insuffisant au regard du §11, non corrigé ici */
+  --ardoise-7: #6c757d;
+  --ardoise-8: #78838b;    /* texte de pied de page sur fond ardoise —
+                              contraste insuffisant au regard du §11, non
+                              corrigé ici */
+  --ardoise-9: #8d959c;    /* crédits photo (.cr), y compris sur fond ardoise
+                              (section Audubon) — contraste insuffisant au
+                              regard du §11, non corrigé ici */
+  --ardoise-10: #aab2b9;
+  --ardoise-11: #c3cad0;
+  --ardoise-12: #c8cdd2;
+  --ardoise-13: #d4dade;
+  --ardoise-14: #d6dce1;
+  --fougere-pale: #cfe0d3;
+  --fougere-pale-2: #d6e2d8;
+
   /* Typographie — trois rôles distincts (CLAUDE.md « Typographie — décidée,
      ne pas rediscuter ») : corps de lecture, titres et navigation, métadonnées
      et code. Polices auto-hébergées via Fontsource (src/styles/polices.css),

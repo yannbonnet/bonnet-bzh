@@ -69,7 +69,7 @@ export const ui = {
     'meta.copieLocale': 'Local copy',
     'meta.etAutres': 'and {n} more',
     'sommaire.titre': 'Contents',
-    'accueil.genea': 'A neighbouring library, held to the same standard:',
+    'accueil.genea': "An investigation into 426 ancestors from the Ancenis area, traced from 1527 to the present day — including the Loire-Atlantique origins of John James Audubon's mother.",
     'accueil.surtitre': 'bonnet.bzh',
     'accueil.communsTitre': 'Knowledge commons',
     'stats.communs': 'Commons',
