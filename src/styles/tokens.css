@@ -212,6 +212,29 @@ nav ul {
   margin: 0;
 }
 
+/* Sélecteur de langue : discret, en mono petites capitales comme les
+   libellés de métadonnées — poussé à l'extrémité de la nav, jamais confondu
+   avec les liens de navigation eux-mêmes. */
+.langues {
+  margin: 0 0 0 auto;
+  font-family: var(--police-mono);
+  font-size: var(--taille-petite);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.04em;
+}
+
+.langues span {
+  color: var(--ardoise-3);
+}
+
+.langues a {
+  text-decoration: none;
+}
+
+.langues a:hover {
+  text-decoration: underline;
+}
+
 h1,
 h2,
 h3 {

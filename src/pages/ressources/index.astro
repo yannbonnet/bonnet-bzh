@@ -18,7 +18,7 @@ const periode = `${Math.min(...annees)}–${Math.max(...annees)}`;
 const institutions = new Set(ressources.map((r) => r.data.cadre));
 ---
 
-<BaseLayout lang="fr" title="Ressources" description={DESCRIPTION}>
+<BaseLayout lang="fr" title="Ressources" description={DESCRIPTION} urlAutreLangue="/en/ressources/">
   <Bandeau>
     <p class="surtitre">{t('ressources.tousLesThemes')}</p>
     <h1>Ressources</h1>

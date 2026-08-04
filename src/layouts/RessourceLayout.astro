@@ -4,7 +4,7 @@ import BaseLayout from './BaseLayout.astro';
 import Bandeau from '../components/Bandeau.astro';
 import MetaBloc from '../components/MetaBloc.astro';
 import Sommaire from '../components/Sommaire.astro';
-import { useTranslations } from '../i18n/utils';
+import { useTranslations, urlJumelleFiche } from '../i18n/utils';
 import { labelType, labelTheme } from '../i18n/labels';
 
 interface Heading {
@@ -32,6 +32,10 @@ const {
 
 const t = useTranslations(lang);
 const prefix = lang === 'fr' ? '' : '/en';
+const urlAutreLangue = await urlJumelleFiche(entry);
+// Brouillon non relu (§ traduction anglaise) : la notice porte encore son
+// marqueur TODO de tête, on ne l'indexe pas tant qu'elle n'a pas été validée.
+const brouillonNonRelu = entry.body?.includes('TODO') ?? false;
 
 // Fragment de titre en --fougere-cl (§ correction palette) : le dernier mot,
 // seul repère mécanique disponible en l'absence d'un balisage éditorial dans
@@ -41,7 +45,7 @@ const dernierMot = motsTitre.pop() ?? '';
 const debutTitre = motsTitre.join(' ');
 ---
 
-<BaseLayout lang={lang} title={titre} description={resume}>
+<BaseLayout lang={lang} title={titre} description={resume} urlAutreLangue={urlAutreLangue} noindex={brouillonNonRelu}>
   <article>
     <Bandeau>
       <p class="surtitre">{labelType(type, lang)} · {annee}</p>

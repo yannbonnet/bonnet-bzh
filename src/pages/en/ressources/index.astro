@@ -18,7 +18,13 @@ const periode = annees.length > 0 ? `${Math.min(...annees)}–${Math.max(...anne
 const institutions = new Set(ressources.map((r) => r.data.cadre));
 ---
 
-<BaseLayout lang="en" title="Resources" description={DESCRIPTION}>
+<BaseLayout
+  lang="en"
+  title="Resources"
+  description={DESCRIPTION}
+  urlAutreLangue="/ressources/"
+  noindex={ressources.length === 0}
+>
   <Bandeau>
     <p class="surtitre">{t('ressources.tousLesThemes')}</p>
     <h1>Library</h1>

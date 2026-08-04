@@ -1,0 +1,6 @@
+# Surcharge locale de public/.htaccess (§9, CLAUDE.md) : ErrorDocument est un
+# réglage unique par arborescence Apache — sans ce fichier, un chemin
+# inexistant sous /en/ afficherait la page 404 française. Les autres règles
+# (redirections, en-têtes de sécurité, CSP) restent héritées du .htaccess
+# racine, qu'Apache applique de toute façon à ce sous-répertoire.
+ErrorDocument 404 /en/404.html

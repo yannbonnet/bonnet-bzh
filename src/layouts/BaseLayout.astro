@@ -7,11 +7,21 @@ interface Props {
   lang: 'fr' | 'en';
   title: string;
   description?: string;
+  // URL de la page équivalente dans l'autre langue. Absente = pas de jumelle
+  // réelle : le sélecteur de langue replie alors sur l'accueil de l'autre
+  // langue pour l'affichage, mais aucune balise hreflang n'est émise (on ne
+  // déclare pas une équivalence qui n'existe pas).
+  urlAutreLangue?: string;
+  // Pages sans contenu réel encore (ex. liste de ressources EN vide tant que
+  // les fiches ne sont pas traduites) : noindex, mais toujours suivies (follow).
+  noindex?: boolean;
 }
 
-const { lang, title, description } = Astro.props;
+const { lang, title, description, urlAutreLangue, noindex = false } = Astro.props;
 const t = useTranslations(lang);
 const prefix = lang === 'fr' ? '' : '/en';
+const langCible = lang === 'fr' ? 'en' : 'fr';
+const prefixCible = lang === 'fr' ? '/en' : '';
 
 const DESCRIPTION_PAR_DEFAUT = lang === 'fr'
   ? "Bibliothèque d'archives commentées sur les politiques publiques du numérique, la gouvernance de l'IA et la cybersécurité."
@@ -22,6 +32,13 @@ const descriptionOg = description ?? DESCRIPTION_PAR_DEFAUT;
 const urlCanonique = new URL(Astro.url.pathname, Astro.site);
 const urlOgImage = new URL('/og.png', Astro.site);
 const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
+
+// Cible du sélecteur : la jumelle réelle si elle existe, sinon l'accueil de
+// l'autre langue. hreflang, lui, ne se base que sur une jumelle réelle.
+const cibleSelecteur = urlAutreLangue ?? `${prefixCible}/`;
+const urlAutreAbsolue = urlAutreLangue ? new URL(urlAutreLangue, Astro.site) : undefined;
+const urlFr = lang === 'fr' ? urlCanonique : urlAutreAbsolue;
+const urlEn = lang === 'en' ? urlCanonique : urlAutreAbsolue;
 ---
 
 <!doctype html>
@@ -31,8 +48,17 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{titreComplet}</title>
     <meta name="description" content={descriptionOg} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate" type="application/rss+xml" title="bonnet.bzh — Ressources" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title={`bonnet.bzh — ${t('ressources.titre')}`} href={`${prefix}/rss.xml`} />
+
+    {urlFr && urlEn && (
+      <>
+        <link rel="alternate" hreflang="fr" href={urlFr} />
+        <link rel="alternate" hreflang="en" href={urlEn} />
+        <link rel="alternate" hreflang="x-default" href={urlFr} />
+      </>
+    )}
 
     <meta property="og:title" content={titreComplet} />
     <meta property="og:description" content={descriptionOg} />
@@ -59,6 +85,17 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
           <li><a href="https://genea.bonnet.bzh">{t('nav.genea')}</a></li>
           <li><a href={`${prefix}/a-propos/`}>{t('nav.apropos')}</a></li>
         </ul>
+        <p class="langues" aria-label={lang === 'fr' ? 'Langue du site' : 'Site language'}>
+          {lang === 'fr' ? (
+            <>
+              <span aria-current="true">FR</span> / <a href={cibleSelecteur} hreflang={langCible}>EN</a>
+            </>
+          ) : (
+            <>
+              <a href={cibleSelecteur} hreflang={langCible}>FR</a> / <span aria-current="true">EN</span>
+            </>
+          )}
+        </p>
       </nav>
     </header>
 
@@ -68,7 +105,7 @@ const ogLocale = lang === 'fr' ? 'fr_FR' : 'en_US';
 
     <footer>
       <p>{t('footer.licence')}</p>
-      <p><a href="/mentions-legales/">{t('footer.mentions')}</a></p>
+      <p><a href={`${prefix}/mentions-legales/`}>{t('footer.mentions')}</a></p>
     </footer>
   </body>
 </html>

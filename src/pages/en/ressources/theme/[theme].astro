@@ -3,7 +3,7 @@ import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Bandeau from '../../../../components/Bandeau.astro';
 import ListeRessources from '../../../../components/ListeRessources.astro';
 import { getCollection } from 'astro:content';
-import { useTranslations } from '../../../../i18n/utils';
+import { useTranslations, urlJumelleTheme } from '../../../../i18n/utils';
 import { labelTheme } from '../../../../i18n/labels';
 
 export async function getStaticPaths() {
@@ -23,9 +23,10 @@ const { theme } = Astro.params;
 const { entries } = Astro.props;
 const t = useTranslations('en');
 const titreTheme = labelTheme(theme as Parameters<typeof labelTheme>[0], 'en');
+const urlAutreLangue = await urlJumelleTheme('en', theme);
 ---
 
-<BaseLayout lang="en" title={`${t('ressources.titre')} — ${titreTheme}`}>
+<BaseLayout lang="en" title={`${t('ressources.titre')} — ${titreTheme}`} urlAutreLangue={urlAutreLangue}>
   <Bandeau>
     <p class="surtitre">{titreTheme}</p>
     <h1>{t('ressources.titre')}</h1>

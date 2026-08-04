@@ -16,5 +16,16 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // La 404 racine (src/pages/404.astro) est déjà exclue automatiquement
+      // par l'intégration ; la 404 anglaise (src/pages/en/404.astro), route
+      // imbriquée ordinaire pour Astro, ne l'est pas — exclue ici à la main.
+      // Note : /en/ressources/ reste listée même tant qu'elle est vide (le
+      // filtre n'a pas accès aux collections de contenu à ce stade du build) ;
+      // la balise noindex de la page, elle, est correcte et dynamique — c'est
+      // elle qui empêche réellement l'indexation, indépendamment du sitemap.
+      filter: (page) => !page.includes('/404/'),
+    }),
+  ],
 });
