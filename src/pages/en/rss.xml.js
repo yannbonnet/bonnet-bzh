@@ -11,8 +11,8 @@ export async function GET(context) {
   ).sort((a, b) => dateDe(b).getTime() - dateDe(a).getTime());
 
   return rss({
-    title: 'bonnet.bzh — Resources',
-    description: 'Resources on digital policy.',
+    title: 'bonnet.bzh — Commons',
+    description: 'Knowledge commons on digital public policy.',
     site: context.site,
     items: ressources.map((entry) => ({
       title: entry.data.titre,

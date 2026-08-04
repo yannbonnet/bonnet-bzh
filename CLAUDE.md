@@ -57,13 +57,19 @@ anglaise). Pas les recruteurs — le CV PDF existe pour ça.
 ## 5. Architecture
 
 ```
-/                      Accueil — 2 lignes de présentation, orientation, rien de plus
-/ressources            Bibliothèque, filtrable et triable
-/ressources/[slug]     Fiche détaillée d'une ressource
-/a-propos              Parcours factuel + lien vers le CV PDF
-/mentions-legales      Obligatoire (LCEN)
-/en/...                Miroir anglais de / et /ressources au minimum
+/                       Accueil — 2 lignes de présentation, orientation, rien de plus
+/communs                Bibliothèque, filtrable et triable
+/communs/[slug]         Fiche détaillée d'une ressource
+/communs/theme/[theme]  Page de thème préfiltrée (repli sans JS des filtres, §8)
+/a-propos               Parcours factuel + lien vers le CV PDF
+/mentions-legales       Obligatoire (LCEN)
+/en/...                 Miroir anglais de / et /communs au minimum
+                        (/en/commons, /en/commons/[slug], /en/commons/theme/[theme])
 ```
+
+Section renommée « Ressources » → « Communs » en cours de phase 4 (URL et libellés) ;
+le dossier de contenu `src/content/ressources/` et la clé de collection Astro
+`ressources` gardent leur nom, chemins techniques invisibles du lecteur (§6).
 
 Plus un lien net et assumé vers `genea.bonnet.bzh` (projet distinct, sous-domaine
 distinct, pas de fusion).

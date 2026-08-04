@@ -11,8 +11,8 @@ export async function GET(context) {
   ).sort((a, b) => dateDe(b).getTime() - dateDe(a).getTime());
 
   return rss({
-    title: 'bonnet.bzh — Ressources',
-    description: 'Ressources sur les politiques publiques du numérique.',
+    title: 'bonnet.bzh — Communs',
+    description: 'Communs de la connaissance sur les politiques publiques du numérique.',
     site: context.site,
     items: ressources.map((entry) => ({
       title: entry.data.titre,

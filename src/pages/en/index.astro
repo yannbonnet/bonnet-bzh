@@ -35,8 +35,8 @@ const t = useTranslations('en');
   </Bandeau>
 
   <div class="corps-clair">
-    <section aria-labelledby="library-title">
-      <h2 id="library-title">Library</h2>
+    <section aria-labelledby="commons-title">
+      <h2 id="commons-title">{t('ressources.titre')}</h2>
       <ul class="liste-ressources">
         {recentes.map((entry) => <EntreeListe lang="en" entry={entry} />)}
       </ul>
