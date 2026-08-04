@@ -24,4 +24,36 @@ resume: "Free introductory course on the fundamentals and professions of cyberse
 aVerifier: false
 ---
 
-TODO: rédiger la notice critique.
+> TODO — traduction à relire par Yann Bonnet avant publication.
+
+This course has remained free and requires no prerequisites, which probably makes it
+the most useful resource in this library for a non-specialist reader. It set out to
+correct a perception: that of a technical profession reserved for engineers, when some
+forty different professions coexist in the sector, many of them non-technical.
+
+Three years on, the figures I gave in it deserve to be checked against reality, and the
+result is not flattering for the way this sector talks about itself.
+
+I cited 44,000 jobs and 15,000 unfilled positions in France, against a public target of
+75,000 jobs by 2025. That target came from the national cybersecurity acceleration
+strategy, which started from 37,000 jobs in 2019. It can be assessed today, and the
+answer depends on the scope used: within a strict cybersecurity scope, the direction
+générale des entreprises (the directorate general for enterprises) measured 50,000 jobs
+in 2023, and the target was not within reach; within the broader scope of digital
+trust, the observatory of the Alliance pour la confiance numérique (the digital trust
+industry alliance) measures 107,000 jobs in 2024, and the target is well exceeded. Two
+ways of counting, two opposite conclusions.
+
+I also cited an attack every 11 seconds worldwide and an annual cost of 5.5 trillion
+dollars. These figures circulate everywhere in the sector, including in official
+documents, and their methodological construction does not survive scrutiny. I repeated
+them without checking them. An awareness-raising discourse built on unverifiable orders
+of magnitude undermines itself, and cybersecurity does not need to be exaggerated to be
+a real problem.
+
+On one point, the trajectory is real but slow. I noted that women made up 11% of the
+workforce. The cybersecurity professions observatory run by ANSSI (the French national
+cybersecurity agency) measured a profession that was 85% male in 2025. Four points in
+two years, against a gender-balance target every part of the sector claims as a
+priority: that says almost everything about the gap between declared intentions and the
+mechanisms actually at work.

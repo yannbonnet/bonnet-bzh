@@ -25,4 +25,23 @@ resume: "Report on the place of digital technology in the health system, the gov
 aVerifier: true
 ---
 
-TODO: rédiger la notice critique.
+> TODO — traduction à relire par Yann Bonnet avant publication.
+
+The report argued for a governance of health data grounded in patient trust and in the
+collective nature of that data. Two major schemes have been created since: the Health
+Data Hub in 2019, and the nationwide roll-out of the espace numérique de santé (the
+personal digital health record) in 2022.
+
+This entry should be read alongside the Villani report, whose first strand explicitly
+took up the idea of centralising health data for research purposes — and justified it
+in the name of sovereignty. Three years separate the two texts, and they push in the
+same direction.
+
+The hardest test is therefore shared by both: the controversy over hosting the Health
+Data Hub with an American provider, and the legal challenges that followed. The
+question to ask is not who was right, but whether the 2015 report even asked it.
+
+What the report had not foreseen, no one had foreseen: digital health technology was
+deployed by the public-health constraints of 2020, not by planning. Practices installed
+in three months had resisted ten years of change-management efforts. That is a lesson
+about digital public policy in general, and it is not a comfortable one.

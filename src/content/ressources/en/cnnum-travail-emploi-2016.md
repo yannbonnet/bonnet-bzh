@@ -27,4 +27,30 @@ resume: "Report submitted to Myriam El Khomri on 6 January 2016, intended to fee
 aVerifier: true
 ---
 
-TODO: rédiger la notice critique.
+> TODO — traduction à relire par Yann Bonnet avant publication.
+
+The report was submitted to Myriam El Khomri on 6 January 2016 to feed into the labour
+law bill. That bill went on to become one of the most contested pieces of legislation
+of the presidential term, which is what makes this entry interesting well beyond its
+own content.
+
+The question it raises is that of the real weight of advisory work. A report submitted
+ahead of a bill that the streets contest six months later cannot be judged by how many
+of its recommendations were taken up. It has to be judged by what it managed to shift
+within a balance of power where analysis was no longer the deciding variable.
+
+On substance, two of the 2016 findings hold up, and one analytical framework has been
+superseded. The rise of multiple-job-holding and of atypical forms of employment,
+documented from the data available at the time, has been confirmed.
+
+The question of "uberisation", on the other hand, central to the report, no longer
+arises in the terms of 2016. The debate back then was about inventing some
+intermediate status between employment and self-employment. It was settled elsewhere
+and otherwise: through case law, which reclassified several platform-work
+relationships as employment contracts, and then through the European route, with the
+platform work directive. The report was looking for a third way that existing law
+ultimately absorbed.
+
+This shift deserves noting for what it has in common with other work from this period:
+the solution came from the courts and from Brussels, not from the French legislator we
+were advising.
