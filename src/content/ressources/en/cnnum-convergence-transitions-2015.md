@@ -24,8 +24,6 @@ resume: "A 19-page call for commitments, launched five days before the opening o
 aVerifier: false
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 This entry is not a report, and that is the whole point of it.
 
 Over ten years, the CNNum (Conseil national du numérique) published reasoned opinions

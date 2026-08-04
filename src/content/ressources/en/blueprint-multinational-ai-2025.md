@@ -47,8 +47,6 @@ resume: "Note proposing a multinational cooperation architecture for the develop
 aVerifier: true
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 A recent note: no retrospective is possible, and it would be dishonest to fake one.
 This entry therefore says three things only.
 

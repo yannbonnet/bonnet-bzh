@@ -38,8 +38,6 @@ resume: "Mission report submitted to the Prime Minister, the origin of France's 
 aVerifier: true
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 ## A Stanford library, October 2016
 
 The report did not begin as a political commission. It began with a conversation in a

@@ -20,8 +20,6 @@ resume: "Guidelines defining seven requirements for trustworthy artificial intel
 aVerifier: true
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 I was one of the group's fifty-two members, contributing to the economic and
 security-related strands, sitting on a voluntary basis alongside my duties at ANSSI
 (the French national cybersecurity agency). This text is not mine to claim; it is the

@@ -22,8 +22,6 @@ resume: "Opinion on the digital dimensions of the transatlantic trade negotiatio
 aVerifier: true
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 The subject of this opinion no longer exists: the transatlantic negotiation was
 suspended and then abandoned. That is precisely what gives it its archival value, and
 there is no point looking for a present-day relevance it does not have.

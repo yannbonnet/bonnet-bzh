@@ -27,8 +27,6 @@ resume: "Report submitted to Myriam El Khomri on 6 January 2016, intended to fee
 aVerifier: true
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 The report was submitted to Myriam El Khomri on 6 January 2016 to feed into the labour
 law bill. That bill went on to become one of the most contested pieces of legislation
 of the presidential term, which is what makes this entry interesting well beyond its

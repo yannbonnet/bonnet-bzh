@@ -25,8 +25,6 @@ resume: "Report on the place of digital technology in the health system, the gov
 aVerifier: true
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 The report argued for a governance of health data grounded in patient trust and in the
 collective nature of that data. Two major schemes have been created since: the Health
 Data Hub in 2019, and the nationwide roll-out of the espace numérique de santé (the

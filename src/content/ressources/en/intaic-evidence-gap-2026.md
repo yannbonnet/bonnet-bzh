@@ -44,8 +44,6 @@ resume: "INTAiC's first white paper: the governance challenge no longer lies in 
 aVerifier: false
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 A document published only a few weeks ago: no retrospective is possible, and it would
 be dishonest to fake one. This entry says three things.
 

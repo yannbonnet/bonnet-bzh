@@ -28,8 +28,6 @@ resume: "Report submitted to the Prime Minister following a national consultatio
 aVerifier: true
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 The report belongs to the Council's plenary body, not to me: I coordinated the
 consultation and the drafting process as secretary general. This distinction is not a
 formality — it explains the nature of the document, a negotiated synthesis among 30

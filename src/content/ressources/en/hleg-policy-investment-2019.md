@@ -20,8 +20,6 @@ resume: "Recommendations to the Commission and member states on the investments,
 aVerifier: true
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 This is the twin document to the ethics guidelines, and the one that has aged worse of
 the two. One set out the principles, the other the industrial policy — and it is the
 industrial policy that failed.

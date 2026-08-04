@@ -24,8 +24,6 @@ resume: "Free introductory course on the fundamentals and professions of cyberse
 aVerifier: false
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 This course has remained free and requires no prerequisites, which probably makes it
 the most useful resource in this library for a non-specialist reader. It set out to
 correct a perception: that of a technical profession reserved for engineers, when some

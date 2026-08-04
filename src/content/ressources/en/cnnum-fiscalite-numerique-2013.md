@@ -22,8 +22,6 @@ resume: "Opinion on the taxation of digital activities and on the mismatch betwe
 aVerifier: true
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 A rare case in this library where the recommendation was actually followed — six years
 later, and by a different route.
 

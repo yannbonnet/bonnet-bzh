@@ -22,8 +22,6 @@ resume: "Retrospective note on the design and early years of the Campus Cyber: w
 aVerifier: false
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 *An original note, written for this site. It covers a period I lived through from the
 inside, first at ANSSI, then as deputy chief executive of the Campus Cyber. This is
 therefore not an independent evaluation, and should be read as such.*

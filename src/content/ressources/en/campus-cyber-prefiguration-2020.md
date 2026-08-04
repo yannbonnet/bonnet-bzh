@@ -25,8 +25,6 @@ resume: "Pre-figuration report submitted to the Prime Minister on 7 January 2020
 aVerifier: true
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 This is the founding document, to be read alongside my 2026 retrospective note. It is
 the only pair in this library where a plan and its outcome can be set side by side, and
 I am a co-author of both — which needs to be said upfront: no one is well placed to

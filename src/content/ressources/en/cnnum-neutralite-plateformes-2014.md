@@ -24,8 +24,6 @@ resume: "Opinion proposing to extend the principle of neutrality beyond networks
 aVerifier: true
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 The concept has been vindicated by events. In 2014, the opinion proposed extending the
 neutrality requirement beyond networks, to platforms that had become mandatory
 gateways to information and services. Eight years later, the Digital Markets Act

@@ -22,8 +22,6 @@ resume: "Opinion of the Conseil national du numérique (French national digital 
 aVerifier: false
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 Of the whole series, this is the opinion that has aged best — and it needs saying
 without self-satisfaction: having been right is not the same as having had influence.
 

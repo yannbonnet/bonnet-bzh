@@ -24,8 +24,6 @@ resume: "Report on digital education, proposing in particular the teaching of co
 aVerifier: true
 ---
 
-> TODO — traduction à relire par Yann Bonnet avant publication.
-
 One recommendation succeeded: computer science became a taught discipline, through the
 "sciences numériques et technologie" course and then the "numérique et sciences
 informatiques" specialisation introduced toward the end of the decade. The outcome,
