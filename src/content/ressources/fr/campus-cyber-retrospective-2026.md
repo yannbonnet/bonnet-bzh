@@ -3,7 +3,7 @@ titre: "Ce que la construction du Campus Cyber apprend sur la coopération publi
 sousTitre: "Note rétrospective, 2020-2025"
 annee: 2026
 type: note
-cadre: "Note originale rédigée pour bonnet.bzh"
+cadre: "Rédigé pour bonnet.bzh"
 externe: false
 role: co-auteur
 coAuteurs: [Michel Van Den Berghe ; Yann Bonnet ; Charly Berthet ; Faustine Saunier ; Christian Daviot ; Nicolas Arpagian ; Jean-Baptiste Demaison ; Magali Marques ; Barbara Milia]

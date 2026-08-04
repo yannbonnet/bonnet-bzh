@@ -147,6 +147,23 @@ sont morts ou instables (dissolution d'institutions, refonte de sites). Marquer,
 deviner. Ne jamais fabriquer une URL plausible : si le lien canonique n'est pas confirmé,
 laisser vide et passer `aVerifier: true`.
 
+**Listes du front-matter : toujours à tirets, jamais entre crochets.** `coAuteurs`,
+`themes`, `liensComplementaires` — toute liste YAML s'écrit un élément par ligne, précédé
+d'un tiret :
+```yaml
+coAuteurs:
+  - "Daniel Kaplan"
+  - "Jan Krewer"
+```
+jamais `coAuteurs: [Daniel Kaplan, Jan Krewer]`. C'est la troisième fois que la forme entre
+crochets casse la validation : elle se rompt dès qu'un éditeur enroule la ligne sur
+plusieurs lignes (repli invalide en YAML dans un contexte de mapping bloc, cf. incidents
+sur `blueprint-multinational-ai-2025.md` et `intaic-livre-blanc-2-2026.md`) ou qu'un
+séparateur autre que la virgule s'y glisse silencieusement — sans erreur de schéma, mais
+avec un tableau à un seul élément au lieu de plusieurs (incident sur
+`cnnum-convergence-transitions-2015.md`, `;` au lieu de `,`). La forme à tirets ne connaît
+pas ces deux pannes.
+
 **Vérification obligatoire :** Zod ne peut pas rendre la notice obligatoire puisqu'elle
 n'est plus un champ du schéma. `npm run check` doit donc, en plus de `astro check`,
 échouer si le corps Markdown d'une fiche est vide ou contient encore `TODO` — c'est le
@@ -164,9 +181,17 @@ garde-fou qui remplace la contrainte Zod perdue.
 - **CNNum (2013-2018)** — *Ambition Numérique* (2015, rapport au Premier ministre) ;
   fiscalité du numérique (2013) ; volet numérique du PTCI (2014) ; neutralité des
   plateformes (2014) ; *Jules Ferry 3.0* / éducation (2014) ; santé (2015) ;
-  travail & emploi (2016) ; prédictions, chiffrement et libertés (2017).
+  travail & emploi (2016) ; prédictions, chiffrement et libertés (2017) ; *Pour une
+  convergence des transitions écologique et numérique*, appel à engagements avec l'IDDRI
+  et Place to B (2015, cinq jours avant l'ouverture de la COP21).
   → Regrouper : une fiche « série CNNum » ne suffit pas, mais huit fiches séparées
   déséquilibrent la bibliothèque. Proposer un arbitrage plutôt que de trancher seul.
+  → **Ne pas confondre** cet appel de 2015 avec la feuille de route « environnement et
+  numérique » remise par le CNNum en juillet 2020 : cinquante mesures chiffrées, un
+  instrument d'une tout autre nature, remise à une ministre de la Transition écologique et
+  un secrétaire d'État au Numérique — et à laquelle Yann Bonnet n'a pas participé, ayant
+  quitté le Conseil en 2018. Erreur factuelle facile à commettre, la fiche 2015 le
+  précise déjà dans sa notice.
 - **Cybersécurité & souveraineté** — positions et synthèses des périodes ANSSI
   (2018-2021) et Campus Cyber (2021-2025) : communs numériques, confiance, souveraineté
   technologique européenne.
@@ -256,7 +281,7 @@ Une phase par session, un commit par phase. Ne pas anticiper sur la phase suivan
 1. **Architecture** — squelette Astro, `content/config.ts`, layouts, routage, i18n,
    configuration Tailwind ou CSS. Aucune donnée réelle, deux fiches d'exemple.
    *À faire en mode plan, validé avant écriture.*
-2. **Contenu** — *terminé.* Quinze fiches FR dans `src/content/ressources/fr/`,
+2. **Contenu** — *terminé.* Seize fiches FR dans `src/content/ressources/fr/`,
    front-matter complet et notices critiques rédigées à la main par Yann Bonnet
    (3 à 6 lignes, §3.2). `scripts/check-notices.mjs` échoue si le corps Markdown d'une
    fiche est vide ou contient encore `TODO`, sauf pour les fiches `externe: true`

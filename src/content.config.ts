@@ -17,7 +17,7 @@ const ressources = defineCollection({
 
     type: z.enum([
       'rapport', 'avis', 'note', 'article', 'tribune',
-      'guidelines', 'audition', 'entretien', 'cours', 'reference',
+      'guidelines', 'audition', 'entretien', 'cours', 'reference', 'appel',
     ]),
 
     cadre: z.string(),
@@ -27,7 +27,7 @@ const ressources = defineCollection({
     role: z
       .enum([
         'auteur', 'co-auteur', 'coordinateur',
-        'contributeur', 'membre du groupe', 'interviewe',
+        'contributeur', 'membre du groupe', 'interviewe', 'co-pilote',
       ])
       .optional(),
 
@@ -38,7 +38,7 @@ const ressources = defineCollection({
       .array(
         z.enum([
           'ia', 'cybersecurite', 'souverainete',
-          'politiques-publiques', 'education', 'sante', 'travail',
+          'politiques-publiques', 'education', 'sante', 'travail', 'environnement',
         ]),
       )
       .min(1),

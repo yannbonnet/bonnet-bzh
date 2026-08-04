@@ -17,6 +17,7 @@ export const typeLabels: Record<Ressource['type'], Record<Lang, string>> = {
   entretien: { fr: 'Entretien', en: 'Interview' },
   cours: { fr: 'Cours', en: 'Course' },
   reference: { fr: 'Référence', en: 'Reference' },
+  appel: { fr: 'Appel à engagements', en: 'Call for commitments' },
 };
 
 export const roleLabels: Record<
@@ -29,6 +30,7 @@ export const roleLabels: Record<
   contributeur: { fr: 'Contributeur', en: 'Contributor' },
   'membre du groupe': { fr: 'Membre du groupe', en: 'Group member' },
   interviewe: { fr: 'Interviewé', en: 'Interviewee' },
+  'co-pilote': { fr: 'Co-pilote', en: 'Co-lead' },
 };
 
 export const themeLabels: Record<
@@ -42,6 +44,7 @@ export const themeLabels: Record<
   education: { fr: 'Éducation', en: 'Education' },
   sante: { fr: 'Santé', en: 'Health' },
   travail: { fr: 'Travail', en: 'Labour' },
+  environnement: { fr: 'Environnement', en: 'Environment' },
 };
 
 export function labelType(type: Ressource['type'], lang: Lang) {
