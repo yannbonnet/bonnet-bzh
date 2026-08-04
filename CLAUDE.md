@@ -213,7 +213,10 @@ garde-fou qui remplace la contrainte Zod perdue.
   précise déjà dans sa notice.
 - **Cybersécurité & souveraineté** — positions et synthèses des périodes ANSSI
   (2018-2021) et Campus Cyber (2021-2025) : communs numériques, confiance, souveraineté
-  technologique européenne.
+  technologique européenne. Deux fiches se répondent sur le Campus Cyber : le rapport de
+  préfiguration remis au Premier ministre (janvier 2020) et la note rétrospective écrite
+  pour ce site (2026) — la seule paire de la bibliothèque où projet et bilan sont tous
+  deux commentés par le même co-auteur.
 - **Articles & contributions** — publications académiques et en revue (Dauphine,
   I2D/Cairn), interventions institutionnelles.
 
@@ -328,7 +331,7 @@ Une phase par session, un commit par phase. Ne pas anticiper sur la phase suivan
 1. **Architecture** — squelette Astro, `content/config.ts`, layouts, routage, i18n,
    configuration Tailwind ou CSS. Aucune donnée réelle, deux fiches d'exemple.
    *À faire en mode plan, validé avant écriture.*
-2. **Contenu** — *terminé.* Seize fiches FR dans `src/content/ressources/fr/`,
+2. **Contenu** — *terminé.* Dix-sept fiches FR dans `src/content/ressources/fr/`,
    front-matter complet et notices critiques rédigées à la main par Yann Bonnet
    (3 à 6 lignes, §3.2). `scripts/check-notices.mjs` échoue si le corps Markdown d'une
    fiche est vide ou contient encore `TODO`, sauf pour les fiches `externe: true`
@@ -341,7 +344,7 @@ Une phase par session, un commit par phase. Ne pas anticiper sur la phase suivan
    confirmé avec `aVerifier: true`.
 3. **Design** — mise en forme, échelle typographique, composants de fiche, filtres,
    états vides, responsive.
-4. **Périphérie** — *faite, hors version anglaise.* RSS (`/rss.xml`, seize fiches FR,
+4. **Périphérie** — *faite, hors version anglaise.* RSS (`/rss.xml`, dix-sept fiches FR,
    titre/`resume`/lien vers la fiche, sans le corps de la notice), sitemap
    (`@astrojs/sitemap`, `sitemap-index.xml`), OpenGraph et Twitter Card par page
    (`BaseLayout.astro`, `og.png` 1200×630 généré), 404 (`src/pages/404.astro`),
