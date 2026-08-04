@@ -39,6 +39,20 @@ const cibleSelecteur = urlAutreLangue ?? `${prefixCible}/`;
 const urlAutreAbsolue = urlAutreLangue ? new URL(urlAutreLangue, Astro.site) : undefined;
 const urlFr = lang === 'fr' ? urlCanonique : urlAutreAbsolue;
 const urlEn = lang === 'en' ? urlCanonique : urlAutreAbsolue;
+
+// Personne minimale, référencée par @id depuis chaque page : le profil complet
+// (jobTitle, alumniOf, sameAs) n'est décrit qu'une fois, sur /a-propos — les
+// validateurs JSON-LD ne fusionnant pas les pages entre elles, chaque page
+// répète ce minimum (@id + name) plutôt qu'une simple référence pendante.
+const personneId = 'https://bonnet.bzh/a-propos/#personne';
+const jsonLdSite = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'bonnet.bzh',
+  url: 'https://bonnet.bzh/',
+  inLanguage: lang,
+  publisher: { '@type': 'Person', '@id': personneId, name: 'Yann Bonnet' },
+};
 ---
 
 <!doctype html>
@@ -72,6 +86,9 @@ const urlEn = lang === 'en' ? urlCanonique : urlAutreAbsolue;
     <meta name="twitter:title" content={titreComplet} />
     <meta name="twitter:description" content={descriptionOg} />
     <meta name="twitter:image" content={urlOgImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdSite)} is:inline />
+    <slot name="jsonld" />
   </head>
   <body>
     <a class="lien-evitement" href="#contenu">{t('nav.eviter')}</a>

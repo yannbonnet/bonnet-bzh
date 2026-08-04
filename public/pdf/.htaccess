@@ -1,0 +1,51 @@
+# En-tête Link rel="canonical" par PDF, vers la fiche qui le commente : sans
+# cet en-tête, un moteur de recherche peut indexer et servir le PDF nu à la
+# place de la notice qui l'accompagne, et le lecteur n'y voit jamais ce que
+# ce site apporte. mod_headers est déjà utilisé et vérifié disponible sur cet
+# hébergement mutualisé OVH (en-têtes de sécurité du .htaccess racine).
+# Une règle par fichier, écrite à la main plutôt que par un motif générique,
+# pour que la correspondance PDF ↔ fiche reste lisible et vérifiable ici même.
+<IfModule mod_headers.c>
+  <Files "ambition-numerique-2015.pdf">
+    Header set Link "<https://bonnet.bzh/communs/ambition-numerique-2015/>; rel=\"canonical\""
+  </Files>
+  <Files "blueprint-multinational-ai-2025.pdf">
+    Header set Link "<https://bonnet.bzh/communs/blueprint-multinational-ai-2025/>; rel=\"canonical\""
+  </Files>
+  <Files "cnnum-chiffrement-libertes-2017.pdf">
+    Header set Link "<https://bonnet.bzh/communs/cnnum-chiffrement-libertes-2017/>; rel=\"canonical\""
+  </Files>
+  <Files "cnnum-convergence-transitions-2015.pdf">
+    Header set Link "<https://bonnet.bzh/communs/cnnum-convergence-transitions-2015/>; rel=\"canonical\""
+  </Files>
+  <Files "cnnum-fiscalite-numerique-2013.pdf">
+    Header set Link "<https://bonnet.bzh/communs/cnnum-fiscalite-numerique-2013/>; rel=\"canonical\""
+  </Files>
+  <Files "cnnum-jules-ferry-3-0-2014.pdf">
+    Header set Link "<https://bonnet.bzh/communs/cnnum-jules-ferry-3-0-2014/>; rel=\"canonical\""
+  </Files>
+  <Files "cnnum-neutralite-plateformes-2014.pdf">
+    Header set Link "<https://bonnet.bzh/communs/cnnum-neutralite-plateformes-2014/>; rel=\"canonical\""
+  </Files>
+  <Files "cnnum-ptci-numerique-2014.pdf">
+    Header set Link "<https://bonnet.bzh/communs/cnnum-ptci-numerique-2014/>; rel=\"canonical\""
+  </Files>
+  <Files "cnnum-sante-2015.pdf">
+    Header set Link "<https://bonnet.bzh/communs/cnnum-sante-2015/>; rel=\"canonical\""
+  </Files>
+  <Files "cnnum-travail-emploi-2016.pdf">
+    Header set Link "<https://bonnet.bzh/communs/cnnum-travail-emploi-2016/>; rel=\"canonical\""
+  </Files>
+  <Files "hleg-ethics-guidelines-2019.pdf">
+    Header set Link "<https://bonnet.bzh/communs/hleg-ethics-guidelines-2019/>; rel=\"canonical\""
+  </Files>
+  <Files "hleg-policy-investment-2019.pdf">
+    Header set Link "<https://bonnet.bzh/communs/hleg-policy-investment-2019/>; rel=\"canonical\""
+  </Files>
+  <Files "intaic-evidence-gap-2026.pdf">
+    Header set Link "<https://bonnet.bzh/communs/intaic-evidence-gap-2026/>; rel=\"canonical\""
+  </Files>
+  <Files "rapport-villani-2018.pdf">
+    Header set Link "<https://bonnet.bzh/communs/rapport-villani-2018/>; rel=\"canonical\""
+  </Files>
+</IfModule>

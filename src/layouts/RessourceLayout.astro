@@ -24,9 +24,13 @@ const {
   titre,
   sousTitre,
   annee,
+  dateExacte,
   type,
+  cadre,
   themes,
   liensComplementaires,
+  lienCanonique,
+  licence,
   resume,
 } = entry.data;
 
@@ -37,6 +41,29 @@ const urlAutreLangue = await urlJumelleFiche(entry);
 // marqueur TODO de tête, on ne l'indexe pas tant qu'elle n'a pas été validée.
 const brouillonNonRelu = entry.body?.includes('TODO') ?? false;
 
+// Article = la notice (ce texte-ci) ; CreativeWork = le document qu'elle
+// commente. Les deux dates ne se confondent pas : la notice peut dater de
+// 2026 quand le document commenté date de 2013. Aucune date de rédaction de
+// notice n'existe dans le schéma aujourd'hui — plutôt que d'en inventer une
+// ou de recopier celle du document, datePublished est omis sur l'Article.
+const personneId = 'https://bonnet.bzh/a-propos/#personne';
+const jsonLdArticle = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: titre,
+  description: resume,
+  inLanguage: lang,
+  author: { '@type': 'Person', '@id': personneId, name: 'Yann Bonnet' },
+  ...(licence ? { license: { '@type': 'CreativeWork', name: licence } } : {}),
+  about: {
+    '@type': 'CreativeWork',
+    name: titre,
+    datePublished: dateExacte ?? String(annee),
+    publisher: { '@type': 'Organization', name: cadre },
+    ...(lienCanonique ? { url: lienCanonique } : {}),
+  },
+};
+
 // Fragment de titre en --fougere-cl (§ correction palette) : le dernier mot,
 // seul repère mécanique disponible en l'absence d'un balisage éditorial dans
 // `titre` — pas de jugement sémantique sur quel mot « compte ».
@@ -46,6 +73,9 @@ const debutTitre = motsTitre.join(' ');
 ---
 
 <BaseLayout lang={lang} title={titre} description={resume} urlAutreLangue={urlAutreLangue} noindex={brouillonNonRelu}>
+  <Fragment slot="jsonld">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdArticle)} is:inline />
+  </Fragment>
   <article>
     <Bandeau>
       <p class="surtitre">{labelType(type, lang)} · {annee}</p>
