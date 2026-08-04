@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { lang, entry, hidden = false } = Astro.props;
-const { titre, annee, type, cadre, resume, themes } = entry.data;
+const { titre, sousTitre, annee, type, cadre, resume, themes } = entry.data;
 const prefix = lang === 'fr' ? '' : '/en';
 const slug = entry.id.replace(/^(fr|en)\//, '');
 const href = `${prefix}/${segmentCommuns(lang)}/${slug}/`;
@@ -18,6 +18,7 @@ const href = `${prefix}/${segmentCommuns(lang)}/${slug}/`;
 
 <li class="entree" data-type={type} data-themes={themes.join(' ')} hidden={hidden}>
   <p class="entree-titre"><a href={href}>{titre}</a></p>
+  {sousTitre && <p class="entree-sous-titre">{sousTitre}</p>}
   <p class="entree-meta">{annee} · {labelType(type, lang)} · {cadre}</p>
   <p class="entree-resume">{resume}</p>
 </li>
@@ -48,6 +49,14 @@ const href = `${prefix}/${segmentCommuns(lang)}/${slug}/`;
 
   .entree-titre a:hover {
     text-decoration: underline;
+  }
+
+  .entree-sous-titre {
+    font-family: var(--police-corps);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ardoise-3);
+    margin-block-end: var(--espace-1);
   }
 
   .entree-meta {
