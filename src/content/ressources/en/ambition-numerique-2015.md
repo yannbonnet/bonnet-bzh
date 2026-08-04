@@ -4,7 +4,7 @@ sousTitre: "[Digital Ambition — report to the Prime Minister, June 2015]"
 annee: 2015
 dateExacte: "2015-06-18"
 type: rapport
-cadre: "French National Digital Council — report to the Prime Minister"
+cadre: "Conseil national du numérique (French national digital council) — report to the Prime Minister"
 externe: false
 role: coordinateur
 coAuteurs:

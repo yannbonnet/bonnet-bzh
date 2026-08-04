@@ -1,9 +1,9 @@
 ---
 titre: "Neutralité des plateformes"
-sousTitre: "[Platform neutrality: creating the conditions for an open and sustainable digital environment — French National Digital Council opinion, 2014]"
+sousTitre: "[Platform neutrality: creating the conditions for an open and sustainable digital environment — Conseil national du numérique (French national digital council) opinion, 2014]"
 annee: 2014
 type: avis
-cadre: "French National Digital Council"
+cadre: "Conseil national du numérique (French national digital council)"
 externe: false
 role: co-auteur
 coAuteurs:

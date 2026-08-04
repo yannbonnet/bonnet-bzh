@@ -1,9 +1,9 @@
 ---
 titre: "Volet numérique du partenariat transatlantique de commerce et d'investissement"
-sousTitre: "[The digital dimension of the Transatlantic Trade and Investment Partnership — French National Digital Council opinion, 2014]"
+sousTitre: "[The digital dimension of the Transatlantic Trade and Investment Partnership — Conseil national du numérique (French national digital council) opinion, 2014]"
 annee: 2014
 type: avis
-cadre: "French National Digital Council"
+cadre: "Conseil national du numérique (French national digital council)"
 externe: false
 role: co-auteur
 coAuteurs:

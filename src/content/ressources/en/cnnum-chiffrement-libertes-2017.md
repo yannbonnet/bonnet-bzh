@@ -1,9 +1,9 @@
 ---
 titre: "Prédictions, chiffrement et libertés"
-sousTitre: "[Predictive analytics, encryption and civil liberties — French National Digital Council opinion, 2017]"
+sousTitre: "[Predictive analytics, encryption and civil liberties — Conseil national du numérique (French national digital council) opinion, 2017]"
 annee: 2017
 type: avis
-cadre: "French National Digital Council"
+cadre: "Conseil national du numérique (French national digital council)"
 externe: false
 role: co-auteur
 coAuteurs:

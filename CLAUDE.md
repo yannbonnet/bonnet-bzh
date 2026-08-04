@@ -165,6 +165,26 @@ spécifiquement le fait d'avoir fait produire un texte sans le signer soi-même,
 « Coordinating author » réintroduirait une paternité d'auteur que le rôle exclut
 justement. Un choix plus flatteur n'est pas un choix plus exact.
 
+**Noms d'institutions dans les fiches EN (`cadre`, `sousTitre`, et tout champ qui les
+mentionne) : ne jamais forger une dénomination anglaise qui n'existe pas.** Deux cas,
+deux traitements :
+- **L'institution a une dénomination anglaise officielle** (celle qu'elle emploie
+  elle-même en anglais, pas une traduction qu'on lui invente) : on l'utilise directement.
+  Exemples : *Paris Peace Forum* (nom anglais officiel du Forum de Paris sur la Paix),
+  *High-Level Expert Group on Artificial Intelligence* / *European Commission* (la
+  Commission européenne publie en anglais sous ces noms).
+- **L'institution n'a pas de dénomination anglaise officielle** : on garde le nom
+  français, glosé en bas de casse entre parenthèses au premier usage — jamais une
+  traduction forgée. Le Conseil national du numérique n'a pas de nom anglais officiel ;
+  « French National Digital Council » serait une invention qui rendrait l'institution
+  introuvable pour qui chercherait sa trace. Écrire plutôt :
+  ```yaml
+  cadre: "Conseil national du numérique (French national digital council)"
+  ```
+  Même logique pour tout futur sigle ou institution française sans équivalent anglais
+  reconnu (`saisine`, `rapporteur général`, etc. suivent la même règle dans le corps des
+  notices, §13).
+
 **RÈGLE ABSOLUE, sans exception : toute liste du front-matter s'écrit à tirets, jamais
 entre crochets.** `coAuteurs`, `themes`, `liensComplementaires` — un élément par ligne,
 quelle que soit la longueur de la liste :

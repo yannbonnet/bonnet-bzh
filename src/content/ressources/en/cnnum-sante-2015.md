@@ -1,9 +1,9 @@
 ---
 titre: "La santé, bien commun de la société numérique"
-sousTitre: "[Health, a common good of the digital society — French National Digital Council report, 2015]"
+sousTitre: "[Health, a common good of the digital society — Conseil national du numérique (French national digital council) report, 2015]"
 annee: 2015
 type: rapport
-cadre: "French National Digital Council"
+cadre: "Conseil national du numérique (French national digital council)"
 externe: false
 role: co-auteur
 coAuteurs:
