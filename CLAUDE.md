@@ -182,8 +182,46 @@ deux traitements :
   cadre: "Conseil national du numérique (French national digital council)"
   ```
   Même logique pour tout futur sigle ou institution française sans équivalent anglais
-  reconnu (`saisine`, `rapporteur général`, etc. suivent la même règle dans le corps des
-  notices, §13).
+  reconnu, y compris dans le corps des notices (`saisine`, `rapporteur général`, etc.) —
+  voir le glossaire ci-dessous, qui recense les choix déjà faits pour ne pas les
+  retraduire différemment fiche après fiche.
+
+**Glossaire des termes institutionnels sans équivalent anglais officiel**, choix retenus
+en traduisant les dix-sept notices (à compléter à chaque nouveau terme rencontré, jamais
+à retraduire autrement une fois qu'il y figure) :
+- **ANSSI** → *ANSSI (the French national cybersecurity agency)*
+- **Conseil national du numérique / CNNum** → *Conseil national du numérique (French
+  national digital council)* ; ou, en cours de phrase après une première mention, *the
+  CNNum (Conseil national du numérique)* / *the Council*
+- **Cour des comptes** → *the Cour des comptes (France's national audit court)*
+- **Défenseur des droits** → *the Défenseur des droits (the French ombudsman)*
+- **saisine** → *a saisine (formal referral)*
+- **rapporteur** (poste de chargé de mission au CNNum, pas le sens onusien du terme) →
+  *a rapporteur — a staff policy officer — at the Conseil national du numérique*
+- **direction interministérielle du numérique (DINUM)** → *the direction
+  interministérielle du numérique (the interministerial digital directorate)*
+- **direction générale des entreprises (DGE)** → *the direction générale des
+  entreprises (the directorate general for enterprises)*
+- **Alliance pour la confiance numérique** → *the Alliance pour la confiance numérique
+  (the digital trust industry alliance)*
+- **Studio des Communs** (programme interne au Campus Cyber) → *the Studio des Communs
+  (the Campus's shared-commons studio)*
+- **Forum International de la Cybersécurité (FIC)** → *the Forum International de la
+  Cybersécurité (the International Cybersecurity Forum)*
+- **espace numérique de santé** → *the espace numérique de santé (the personal digital
+  health record)*
+
+Cas apparentés qui ne suivent **pas** cette règle, à ne pas confondre avec elle :
+- **Plateforme des données de santé** garde son propre nom de marque, déjà bilingue :
+  *Health Data Hub*, sans glose — ce n'est pas une traduction qu'on lui prête, c'est son
+  vrai nom.
+- **OCDE** se traduit directement en **OECD** : les deux sont les sigles officiels d'une
+  même organisation multilingue, pas une invention.
+- **règlement sur l'IA**, **règlement sur les services numériques**, **règlement sur les
+  marchés numériques** se traduisent directement par leurs noms anglais officiels — *the
+  AI Act*, *the Digital Services Act*, *the Digital Markets Act* — puisque ce sont des
+  actes de l'Union européenne dotés d'une dénomination anglaise propre, pas des
+  institutions françaises sans équivalent.
 
 **RÈGLE ABSOLUE, sans exception : toute liste du front-matter s'écrit à tirets, jamais
 entre crochets.** `coAuteurs`, `themes`, `liensComplementaires` — un élément par ligne,
