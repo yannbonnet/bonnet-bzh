@@ -15,7 +15,7 @@ themes:
   - politiques-publiques
 lienCanonique: "https://www.vie-publique.fr/files/rapport/pdf/276766.pdf"
 liensComplementaires:
-  - url: "/en/ressources/campus-cyber-prefiguration-2020/"
+  - url: "/en/commons/campus-cyber-prefiguration-2020/"
     label: "Campus Cyber pre-figuration report (2020)"
     type: page
 resume: "Retrospective note on the design and early years of the Campus Cyber: what the public-private cooperation model allows, and what it does not."

@@ -18,7 +18,7 @@ export async function GET(context) {
       title: entry.data.titre,
       description: entry.data.resume,
       pubDate: dateDe(entry),
-      link: `/en/ressources/${entry.id.replace(/^en\//, '')}/`,
+      link: `/en/commons/${entry.id.replace(/^en\//, '')}/`,
     })),
   });
 }

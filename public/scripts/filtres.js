@@ -1,4 +1,4 @@
-// Amélioration JS des filtres de /ressources et /ressources/theme/[theme] (§2 phase 3).
+// Amélioration JS des filtres de /communs et /communs/theme/[theme] (§2 phase 3).
 // Sorti en fichier externe (plutôt qu'un <script> inline dans ListeRessources.astro) pour
 // permettre une CSP script-src 'self' sans 'unsafe-inline' (phase 4, §12).
 const nav = document.querySelector('[data-filtres]');

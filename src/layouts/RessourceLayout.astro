@@ -4,7 +4,7 @@ import BaseLayout from './BaseLayout.astro';
 import Bandeau from '../components/Bandeau.astro';
 import MetaBloc from '../components/MetaBloc.astro';
 import Sommaire from '../components/Sommaire.astro';
-import { useTranslations, urlJumelleFiche } from '../i18n/utils';
+import { useTranslations, urlJumelleFiche, segmentCommuns } from '../i18n/utils';
 import { labelType, labelTheme } from '../i18n/labels';
 
 interface Heading {
@@ -57,7 +57,7 @@ const debutTitre = motsTitre.join(' ');
     <div class="corps-clair">
       <ul class="themes">
         {themes.map((theme) => (
-          <li><a href={`${prefix}/ressources/theme/${theme}/`}>{labelTheme(theme, lang)}</a></li>
+          <li><a href={`${prefix}/${segmentCommuns(lang)}/theme/${theme}/`}>{labelTheme(theme, lang)}</a></li>
         ))}
       </ul>
 

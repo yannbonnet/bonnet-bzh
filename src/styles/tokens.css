@@ -306,7 +306,7 @@ ol {
   color: var(--fougere-cl);
 }
 
-/* Rangée de chiffres clés du bandeau de /ressources, sur le modèle de genea :
+/* Rangée de chiffres clés du bandeau de /communs, sur le modèle de genea :
    nombres en Bricolage gras, légendes en mono atténué, filets fins entre
    chaque chiffre. */
 .chiffres {

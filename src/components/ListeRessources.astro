@@ -1,11 +1,11 @@
 ---
-// Liste bibliothèque partagée par /ressources et /ressources/theme/[theme] (§2 phase 3).
+// Liste bibliothèque partagée par /communs et /communs/theme/[theme] (§2 phase 3).
 // Le filtre thème est posé côté serveur (l'entrée non conforme au thème actif porte
 // `hidden` dès le rendu, donc le repli sans JS montre déjà la bonne sélection) ; le
 // script ne fait qu'ajouter l'interactivité par-dessus ce même attribut `hidden`.
 import type { CollectionEntry } from 'astro:content';
 import EntreeListe from './EntreeListe.astro';
-import { useTranslations } from '../i18n/utils';
+import { useTranslations, segmentCommuns } from '../i18n/utils';
 import { labelTheme, labelType } from '../i18n/labels';
 
 const ORDRE_THEMES = [
@@ -41,7 +41,7 @@ const typesUtilises = ORDRE_TYPES.filter((type) => typesPresents.has(type));
     <ul class="filtres-themes">
       <li>
         <a
-          href={`${prefix}/ressources/`}
+          href={`${prefix}/${segmentCommuns(lang)}/`}
           data-theme-lien=""
           class={!themeActif ? 'actif' : ''}
           aria-current={!themeActif ? 'true' : undefined}
@@ -52,7 +52,7 @@ const typesUtilises = ORDRE_TYPES.filter((type) => typesPresents.has(type));
       {themesUtilises.map((theme) => (
         <li>
           <a
-            href={`${prefix}/ressources/theme/${theme}/`}
+            href={`${prefix}/${segmentCommuns(lang)}/theme/${theme}/`}
             data-theme-lien={theme}
             class={themeActif === theme ? 'actif' : ''}
             aria-current={themeActif === theme ? 'true' : undefined}

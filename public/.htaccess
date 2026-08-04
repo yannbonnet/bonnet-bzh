@@ -12,6 +12,14 @@ RewriteRule ^(.*)$ https://bonnet.bzh/$1 [R=301,L]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
+# Renommage de la section « Ressources » en « Communs » (site en ligne depuis
+# quelques heures, aucune indexation Search Console à préserver). Placées avant
+# la barre oblique finale pour rediriger directement vers la forme canonique,
+# sans dépendre de l'existence du dossier ; le groupe capturé est optionnel
+# (« (/.*)? ») pour couvrir aussi bien l'URL avec slash final que sans.
+RewriteRule ^en/ressources(/.*)?$ /en/commons$1 [R=301,L]
+RewriteRule ^ressources(/.*)?$ /communs$1 [R=301,L]
+
 # Barre oblique finale, écrite explicitement avant que mod_dir n'intervienne :
 # UseCanonicalName et UseCanonicalPhysicalPort ne sont pas autorisées en
 # .htaccess (configuration serveur uniquement, inaccessible sur mutualisé

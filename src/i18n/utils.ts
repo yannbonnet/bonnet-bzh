@@ -23,6 +23,13 @@ export function prefixLangue(lang: Langue): string {
   return lang === 'fr' ? '' : '/en';
 }
 
+// Segment d'URL de la section « Communs », qui se traduit lui-même selon la
+// langue de la page — contrairement au dossier de contenu (src/content/ressources),
+// qui reste un identifiant technique invariant.
+export function segmentCommuns(lang: Langue): string {
+  return lang === 'fr' ? 'communs' : 'commons';
+}
+
 export function slugSansPrefixe(id: string): string {
   return id.replace(/^(fr|en)\//, '');
 }
@@ -44,7 +51,7 @@ export async function urlJumelleFiche(
   );
   const jumelle = jumelles[0];
   if (!jumelle) return undefined;
-  return `${prefixLangue(langCible)}/ressources/${slugSansPrefixe(jumelle.id)}/`;
+  return `${prefixLangue(langCible)}/${segmentCommuns(langCible)}/${slugSansPrefixe(jumelle.id)}/`;
 }
 
 /**
@@ -61,5 +68,5 @@ export async function urlJumelleTheme(
     (e) => e.id.startsWith(`${langCible}/`) && e.data.themes.includes(theme as never),
   );
   if (entrees.length === 0) return undefined;
-  return `${prefixLangue(langCible)}/ressources/theme/${theme}/`;
+  return `${prefixLangue(langCible)}/${segmentCommuns(langCible)}/theme/${theme}/`;
 }

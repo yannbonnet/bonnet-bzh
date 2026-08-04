@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { labelType } from '../i18n/labels';
+import { segmentCommuns } from '../i18n/utils';
 
 interface Props {
   lang: 'fr' | 'en';
@@ -12,7 +13,7 @@ const { lang, entry, hidden = false } = Astro.props;
 const { titre, annee, type, cadre, resume, themes } = entry.data;
 const prefix = lang === 'fr' ? '' : '/en';
 const slug = entry.id.replace(/^(fr|en)\//, '');
-const href = `${prefix}/ressources/${slug}/`;
+const href = `${prefix}/${segmentCommuns(lang)}/${slug}/`;
 ---
 
 <li class="entree" data-type={type} data-themes={themes.join(' ')} hidden={hidden}>
