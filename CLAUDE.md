@@ -462,16 +462,20 @@ Une phase par session, un commit par phase. Ne pas anticiper sur la phase suivan
    confirmé avec `aVerifier: true`.
 3. **Design** — mise en forme, échelle typographique, composants de fiche, filtres,
    états vides, responsive.
-4. **Périphérie** — *faite, hors version anglaise.* RSS (`/rss.xml`, dix-sept fiches FR,
-   titre/`resume`/lien vers la fiche, sans le corps de la notice), sitemap
-   (`@astrojs/sitemap`, `sitemap-index.xml`), OpenGraph et Twitter Card par page
-   (`BaseLayout.astro`, `og.png` 1200×630 généré), 404 (`src/pages/404.astro`),
-   mentions légales rédigées (`src/pages/mentions-legales.astro`, contenu au §10),
-   `public/.htaccess` (redirections www et domaine technique OVH vers l'apex, forçage
-   HTTPS, page 404, en-têtes de sécurité dont une CSP `script-src 'self'` sans
-   `unsafe-inline` — script des filtres sorti en fichier externe
-   `public/scripts/filtres.js` pour la rendre possible). **Version anglaise non traitée**
-   dans cette phase : reste à faire quand le contenu EN existera.
+4. **Périphérie** — *faite.* RSS (`/rss.xml`, titre/`resume`/lien vers la fiche, sans le
+   corps de la notice), sitemap (`@astrojs/sitemap`, `sitemap-index.xml`), OpenGraph et
+   Twitter Card par page (`BaseLayout.astro`, `og.png` 1200×630 généré), 404
+   (`src/pages/404.astro`), mentions légales rédigées (`src/pages/mentions-legales.astro`,
+   contenu au §10), `public/.htaccess` (redirections www et domaine technique OVH vers
+   l'apex, forçage HTTPS, page 404, en-têtes de sécurité dont une CSP `script-src 'self'`
+   sans `unsafe-inline` — script des filtres sorti en fichier externe
+   `public/scripts/filtres.js` pour la rendre possible). **Version anglaise construite au
+   fil des phases suivantes, au fur et à mesure que le contenu EN existait** — plus le
+   « hors version anglaise » que cette note portait à l'origine : `/en/rss.xml`
+   (`src/pages/en/rss.xml.js`), `/en/404` (`src/pages/en/404.astro`), mentions légales
+   anglaises (`src/pages/en/mentions-legales.astro`), `og:locale` dynamique selon la
+   langue dans `BaseLayout.astro`, et sitemap unique couvrant les deux langues (pas de
+   fichier séparé).
 5. **Déploiement** — GitHub Action, test sur un sous-domaine de préproduction avant
    bascule de `bonnet.bzh`.
 6. **Audit** — accessibilité, Lighthouse, vérification manuelle de chaque lien externe.
