@@ -33,11 +33,11 @@ const href = `${prefix}/ressources/${slug}`;
   }
 
   .entree-titre {
-    /* Volontairement sous --taille-h3 : un titre d'entrée ne doit pas
-       rivaliser avec un vrai titre de section (correction de rendu). */
+    /* À mi-chemin entre --taille-base et --taille-h3 : assez présent pour se
+       distinguer du résumé, sans rivaliser avec un vrai titre de section. */
     font-family: var(--police-titres);
     font-weight: var(--graisse-demi);
-    font-size: calc(var(--taille-base) * 1.1);
+    font-size: calc((var(--taille-base) + var(--taille-h3)) / 2);
     margin-block-end: var(--espace-1);
   }
 

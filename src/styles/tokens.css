@@ -50,9 +50,15 @@
   --taille-h3: calc(var(--taille-base) * var(--echelle-typo));
   --taille-h2: calc(var(--taille-h3) * var(--echelle-typo));
   --taille-h1: calc(var(--taille-h2) * var(--echelle-typo));
+  /* Titre du bandeau sombre uniquement (.bandeau h1 ci-dessous) : sur le
+     modèle de genea, il doit porter le bandeau, pas s'y loger discrètement —
+     de l'ordre du double de --taille-h1, quitte à courir sur deux ou trois
+     lignes. Les h1 hors bandeau (a-propos, mentions-légales) gardent --taille-h1. */
+  --taille-h1-bandeau: calc(var(--taille-h1) * 2);
 
   --interligne-corps: 1.6;
   --interligne-titres: 1.2;
+  --interligne-bandeau: 0.95;
 
   /* Mesure de ligne du corps de texte : 62–72 caractères (§8) */
   --mesure-ligne: 68ch;
@@ -246,6 +252,11 @@ ol {
    la bibliothèque/pages de thème et l'accueil : surtitre en Plex Mono petites
    capitales très espacées, titre en Bricolage (h1, déjà stylé plus haut),
    chapeau en Newsreader d'un corps supérieur au texte courant. */
+.bandeau h1 {
+  font-size: var(--taille-h1-bandeau);
+  line-height: var(--interligne-bandeau);
+}
+
 .surtitre {
   font-family: var(--police-mono);
   font-size: var(--taille-petite);
