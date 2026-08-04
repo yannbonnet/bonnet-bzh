@@ -20,4 +20,22 @@ resume: "Recommendations to the Commission and member states on the investments,
 aVerifier: true
 ---
 
-TODO: rédiger la notice critique.
+> TODO — traduction à relire par Yann Bonnet avant publication.
+
+This is the twin document to the ethics guidelines, and the one that has aged worse of
+the two. One set out the principles, the other the industrial policy — and it is the
+industrial policy that failed.
+
+The June 2019 recommendations correctly identified the levers: computing capacity, data
+access, skills, funding from seed stage through to growth. The error was not in the
+list but in the order of magnitude. The amounts envisaged were calibrated for a research
+economy, not for an infrastructure race. The comparison is a cruel one: France alone
+announced 109 billion euros in investment in February 2025, and the annual capital
+expenditure of the major American players now exceeds what Europe was contemplating for
+an entire decade.
+
+The document also rightly identifies Europe's dependence on non-European
+infrastructure. Seven years on, that dependence has only grown, including in
+investments presented as sovereign but mostly financed and operated from abroad. A set
+of recommendations that gets the diagnosis right without bearing on actual allocation
+decisions remains, in the end, an exercise in analysis.

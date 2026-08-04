@@ -47,4 +47,13 @@ resume: "Note proposing a multinational cooperation architecture for the develop
 aVerifier: true
 ---
 
-TODO: rédiger la notice critique.
+> TODO — traduction à relire par Yann Bonnet avant publication.
+
+A recent note: no retrospective is possible, and it would be dishonest to fake one.
+This entry therefore says three things only.
+
+The problem. The development of the most advanced AI systems is concentrated in a
+small number of private companies under two jurisdictions, within a race dynamic that
+discourages caution. Existing instruments of international cooperation — summit
+declarations, voluntary commitments, national safety institutes — create no
+interdependence capable of altering that dynamic.
