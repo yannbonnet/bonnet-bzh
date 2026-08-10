@@ -1,6 +1,6 @@
 ---
 titre: "Donner un sens à l'intelligence artificielle"
-sousTitre: "[For a meaningful artificial intelligence: a national and European strategy — mission report to the Prime Minister, March 2018, widely known in English as the Villani report]"
+sousTitre: "[For a meaningful artificial intelligence: a national and European strategy — mission report to the President of the Republic, March 2018, widely known in English as the Villani report]"
 annee: 2018
 dateExacte: "2018-03-28"
 dateNotice: "2026-08"
@@ -29,13 +29,7 @@ liensComplementaires:
   - url: "https://mediatheque.univ-paris1.fr/video/3256-410-quel-sens-donner-a-lia-le-rapport-villani-5-ans-apres/"
     label: "'What meaning to give to AI? The Villani report, five years on' — seminar of the AI Observatory, Université Paris 1 Panthéon-Sorbonne, 22 June 2022 (16 min, in French, CC BY-NC-SA 4.0)"
     type: video
-  - url: "https://www.youtube.com/watch?v=rX1XbyNBdaE"
-    label: "Report handover to the President of the Republic, Collège de France (in French)"
-    type: video
-  - url: "https://www.youtube.com/watch?v=ADi_8OL6vRk"
-    label: "Report handover at the Collège de France (English)"
-    type: video
-resume: "Mission report submitted to the Prime Minister, the origin of France's national artificial intelligence strategy and of an announced commitment of 1.5 billion euros."
+resume: "Mission report submitted to the President of the Republic, the origin of France's national artificial intelligence strategy and of an announced commitment of 1.5 billion euros."
 aVerifier: true
 ---
 
@@ -58,6 +52,28 @@ hundred hearings, a public consultation that gathered 1,639 participants, and a
 comparative review of policy in fifteen countries. In March 2018, at the Collège de
 France, the President of the Republic announced a national strategy backed by
 1.5 billion euros.
+
+<div class="video">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/xmhzO0k04mg?list=PLrKNY-H-j3t6BX3Tot3mJUEP02hWfvLKl"
+    title="Report handover to the President of the Republic, Collège de France (French version)"
+    loading="lazy"
+    allow="encrypted-media; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+</div>
+<p class="video-legende">Report handover to the President of the Republic, Collège de France — French version (full playlist).</p>
+
+<div class="video">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/ADi_8OL6vRk"
+    title="Report handover to the President of the Republic, Collège de France (English-dubbed version)"
+    loading="lazy"
+    allow="encrypted-media; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+</div>
+<p class="video-legende">Same ceremony — English-dubbed version.</p>
 
 I tell this genealogy because it contradicts the image one tends to have of how public
 policy gets made. Here, a 1.5-billion-euro national strategy originates in a worry

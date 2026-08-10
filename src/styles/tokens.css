@@ -378,3 +378,34 @@ ol {
   font-size: var(--taille-petite);
   color: var(--papier-3);
 }
+
+/* Embed vidéo respectueux de la vie privée (youtube-nocookie.com), pour le
+   corps des notices (.notice, RessourceLayout) : premier usage réel sur le
+   site — le seul autre gabarit ressemblant (.video de /genealogie) n'était
+   plus branché à aucun HTML. Conteneur 16:9 responsive par la technique du
+   padding-top ; frame-src doit autoriser youtube-nocookie.com dans la CSP
+   (public/.htaccess), sans quoi l'iframe est bloquée silencieusement. */
+.video {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: var(--papier-2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-block: var(--espace-3) var(--espace-1);
+}
+
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-legende {
+  font-family: var(--police-mono);
+  font-size: var(--taille-petite);
+  color: var(--ardoise-3);
+  margin-block-end: var(--espace-3);
+}

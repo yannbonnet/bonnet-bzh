@@ -39,5 +39,8 @@ ErrorDocument 404 /404.html
   # composants en balises <style> intégrées à chaque page (pas de contenu
   # tiers, pas de script) ; script-src reste strict, sans exception, puisque
   # le script des filtres est un fichier externe (public/scripts/filtres.js).
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'"
+  # frame-src : seule exception à default-src 'self', pour les deux embeds
+  # vidéo youtube-nocookie.com de la fiche rapport-villani-2018 — sans elle,
+  # le navigateur bloque silencieusement l'iframe malgré une src correcte.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'"
 </IfModule>
