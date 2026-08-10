@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Bandeau from '../components/Bandeau.astro';
 
 // Pas de jobTitle : choix délibéré, la page ne nomme aucun employeur pour ne
 // pas se périmer (§6, CLAUDE.md) — le déclarer en données structurées
@@ -9,6 +10,7 @@ const jsonLdPersonne = {
   '@type': 'Person',
   '@id': 'https://bonnet.bzh/a-propos/#personne',
   name: 'Yann Bonnet',
+  mainEntityOfPage: 'https://bonnet.bzh/a-propos/',
   description: "Je travaille sur les politiques publiques du numérique, la gouvernance de l'intelligence artificielle, la cybersécurité, l'innovation et la deeptech.",
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'ISEP' },
   sameAs: [
@@ -20,30 +22,41 @@ const jsonLdPersonne = {
 };
 ---
 
-<BaseLayout lang="fr" title="À propos" description="Parcours de Yann Bonnet." urlAutreLangue="/en/a-propos/">
+<BaseLayout lang="fr" title="Yann Bonnet" description="Parcours de Yann Bonnet." urlAutreLangue="/en/a-propos/">
   <Fragment slot="jsonld">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdPersonne)} is:inline />
   </Fragment>
-  <h1>À propos</h1>
-  <p>
-    Je travaille sur les politiques publiques du numérique, la gouvernance de
-    l'intelligence artificielle, la cybersécurité, l'innovation et la deeptech.
-  </p>
-  <p>
-    Cofondateur du Campus Cyber, j'en ai été directeur général délégué de 2021 à 2025.
-    Auparavant directeur de cabinet de Guillaume Poupard à l'Agence nationale de la
-    sécurité des systèmes d'information (2018-2021), et secrétaire général du Conseil
-    national du numérique (2015-2018), où j'étais entré comme rapporteur général en 2013.
-  </p>
-  <p>
-    J'ai été co-pilote de la mission sur l'intelligence artificielle confiée à Cédric
-    Villani par le Premier ministre en 2017, dont le rapport a défini la stratégie
-    nationale française en la matière. Membre du groupe d'experts de haut niveau sur l'IA
-    de la Commission européenne de 2018 à 2020, j'ai contribué aux travaux qui ont préparé
-    le règlement européen sur l'IA.
-  </p>
-  <p>
-    Ingénieur diplômé de l'ISEP. Né en 1981 à Nantes.
-  </p>
-  <p><a href="https://fr.linkedin.com/in/yannbonnet">Profil LinkedIn</a></p>
+  <Bandeau>
+    <p class="surtitre">Parcours</p>
+    <h1>Yann Bonnet</h1>
+  </Bandeau>
+  <div class="corps-clair">
+    <p>
+      Je travaille sur les politiques publiques du numérique, la gouvernance de
+      l'intelligence artificielle, la cybersécurité, l'innovation et la deeptech.
+    </p>
+    <p>
+      Cofondateur du Campus Cyber, j'en ai été directeur général délégué de 2021 à 2025.
+      Auparavant directeur de cabinet de Guillaume Poupard à l'Agence nationale de la
+      sécurité des systèmes d'information (2018-2021), et secrétaire général du Conseil
+      national du numérique (2015-2018), où j'étais entré comme rapporteur général en 2013.
+    </p>
+    <p>
+      J'ai été co-pilote de la mission sur l'intelligence artificielle confiée à Cédric
+      Villani par le Premier ministre en 2017, dont le rapport a défini la stratégie
+      nationale française en la matière. Membre du groupe d'experts de haut niveau sur l'IA
+      de la Commission européenne de 2018 à 2020, j'ai contribué aux travaux qui ont préparé
+      le règlement européen sur l'IA.
+    </p>
+    <p>
+      Ingénieur diplômé de l'ISEP. Né en 1981 à Nantes.
+    </p>
+    <p><a href="https://fr.linkedin.com/in/yannbonnet">Profil LinkedIn</a></p>
+  </div>
 </BaseLayout>
+
+<style>
+  .corps-clair {
+    padding-block-start: var(--espace-4);
+  }
+</style>

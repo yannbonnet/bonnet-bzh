@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Bandeau from '../../components/Bandeau.astro';
 
 // No jobTitle: deliberate choice, the page names no employer so it doesn't
 // go stale (§6, CLAUDE.md) — declaring one in structured data would
@@ -9,6 +10,7 @@ const jsonLdPersonne = {
   '@type': 'Person',
   '@id': 'https://bonnet.bzh/a-propos/#personne',
   name: 'Yann Bonnet',
+  mainEntityOfPage: 'https://bonnet.bzh/en/a-propos/',
   description: 'I work on digital policy, artificial intelligence governance, cybersecurity, innovation and deeptech.',
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'ISEP' },
   sameAs: [
@@ -20,29 +22,40 @@ const jsonLdPersonne = {
 };
 ---
 
-<BaseLayout lang="en" title="About" description="Yann Bonnet's background." urlAutreLangue="/a-propos/">
+<BaseLayout lang="en" title="Yann Bonnet" description="Yann Bonnet's background." urlAutreLangue="/a-propos/">
   <Fragment slot="jsonld">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdPersonne)} is:inline />
   </Fragment>
-  <h1>About</h1>
-  <p>
-    I work on digital policy, artificial intelligence governance, cybersecurity,
-    innovation and deeptech.
-  </p>
-  <p>
-    Co-founder of Campus Cyber, I was its deputy CEO from 2021 to 2025. Before that, I was
-    chief of staff to Guillaume Poupard at the French national cybersecurity agency
-    (ANSSI, 2018-2021), and secretary general of the French Digital Council (Conseil
-    national du numérique, 2015-2018), which I joined as rapporteur-general in 2013.
-  </p>
-  <p>
-    I was co-lead of the mission on artificial intelligence entrusted to Cédric Villani by
-    the Prime Minister in 2017, whose report defined France's national strategy on the
-    subject. A member of the European Commission's High-Level Expert Group on AI from 2018
-    to 2020, I contributed to the work that prepared the EU AI Act.
-  </p>
-  <p>
-    Engineering degree from ISEP. Born in 1981 in Nantes.
-  </p>
-  <p><a href="https://fr.linkedin.com/in/yannbonnet">LinkedIn profile</a></p>
+  <Bandeau>
+    <p class="surtitre">Background</p>
+    <h1>Yann Bonnet</h1>
+  </Bandeau>
+  <div class="corps-clair">
+    <p>
+      I work on digital policy, artificial intelligence governance, cybersecurity,
+      innovation and deeptech.
+    </p>
+    <p>
+      Co-founder of Campus Cyber, I was its deputy CEO from 2021 to 2025. Before that, I was
+      chief of staff to Guillaume Poupard at the French national cybersecurity agency
+      (ANSSI, 2018-2021), and secretary general of the French Digital Council (Conseil
+      national du numérique, 2015-2018), which I joined as rapporteur-general in 2013.
+    </p>
+    <p>
+      I was co-lead of the mission on artificial intelligence entrusted to Cédric Villani by
+      the Prime Minister in 2017, whose report defined France's national strategy on the
+      subject. A member of the European Commission's High-Level Expert Group on AI from 2018
+      to 2020, I contributed to the work that prepared the EU AI Act.
+    </p>
+    <p>
+      Engineering degree from ISEP. Born in 1981 in Nantes.
+    </p>
+    <p><a href="https://fr.linkedin.com/in/yannbonnet">LinkedIn profile</a></p>
+  </div>
 </BaseLayout>
+
+<style>
+  .corps-clair {
+    padding-block-start: var(--espace-4);
+  }
+</style>
