@@ -323,6 +323,19 @@ ol {
   margin-block: 0 var(--espace-2);
 }
 
+/* Un lien dans le chapeau héritait de la règle globale `a { color: var(--encre) }`
+   (pensée pour la surface claire), illisible sur --ardoise : --encre est presque
+   noir. Même variante --fougere-cl que le texte du chapeau, y compris visité ;
+   au survol, --papier plutôt que --fougere (2.38:1 sur --ardoise, sous le seuil). */
+.chapeau a,
+.chapeau a:visited {
+  color: var(--fougere-cl);
+}
+
+.chapeau a:hover {
+  color: var(--papier);
+}
+
 /* Fragment de titre isolé dans le bandeau sombre : la seule autre occurrence
    de --fougere (en réalité --fougere-cl, seule variante lisible en grande
    taille sur --ardoise, cf. tableau de contrastes) en dehors du survol et de
