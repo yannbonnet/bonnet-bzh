@@ -9,6 +9,15 @@ const lienComplementaire = z.object({
   type: z.enum(['video', 'article', 'conference', 'page', 'donnees']).optional(),
 });
 
+// Composition d'une mission par rôle (ex. CNNum : membre pilote, président,
+// rapporteurs, groupe de travail) — distinct du champ `role` ci-dessous, qui
+// décrit la contribution personnelle de Yann Bonnet, pas celle de l'équipe.
+// N'ajouter que les rôles réellement rencontrés, sur le modèle de `role`.
+const contribution = z.object({
+  role: z.enum(['membre-pilote', 'president', 'rapporteurs', 'groupe-de-travail']),
+  personnes: z.array(z.string()).min(1),
+});
+
 const ressources = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/ressources' }),
   schema: z.object({
@@ -28,6 +37,10 @@ const ressources = defineCollection({
 
     cadre: z.string(),
 
+    // Ampleur du document, en clair (« 119 pages · 40 recommandations · 8 axes ») —
+    // facultatif, affiché seulement quand renseigné.
+    volume: z.string().optional(),
+
     // Distinction contribution personnelle / référence externe.
     externe: z.boolean().default(false),
     role: z
@@ -38,6 +51,12 @@ const ressources = defineCollection({
       .optional(),
 
     coAuteurs: z.array(z.string()).default([]),
+    // Composition détaillée par rôle, quand une simple liste de co-auteurs ne
+    // rend pas compte de l'organisation d'une mission (§ contribution ci-dessus).
+    // Coexiste avec coAuteurs plutôt que de le remplacer dans le schéma : les
+    // fiches existantes gardent coAuteurs, une fiche donnée n'utilise que l'un
+    // des deux en pratique.
+    contributions: z.array(contribution).default([]),
     langueDocument: z.enum(['fr', 'en']),
     groupe: z.string(),
     themes: z
@@ -60,9 +79,19 @@ const ressources = defineCollection({
     aVerifier: z.boolean().default(false),
   })
   // Un travail personnel déclare son rôle ; une référence externe n'en a pas.
-  .refine((d) => d.externe === (d.role === undefined), {
-    message: 'role est obligatoire si externe: false, et interdit si externe: true',
-  }),
+  // Exception : quand `contributions` détaille déjà qui a fait quoi (une
+  // mission à plusieurs rôles, cf. § contribution ci-dessus), `role` devient
+  // facultatif plutôt que redondant avec une ligne de `contributions`.
+  .refine(
+    (d) => {
+      if (d.externe) return d.role === undefined;
+      return d.role !== undefined || d.contributions.length > 0;
+    },
+    {
+      message:
+        'role est interdit si externe: true ; obligatoire si externe: false, sauf si contributions renseigne déjà qui a fait quoi',
+    },
+  ),
 });
 
 // Jalons de la frise chronologique : pas d'auteur, pas de rôle, pas de notice.

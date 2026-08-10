@@ -241,6 +241,20 @@ en traduisant les dix-sept notices (à compléter à chaque nouveau terme rencon
   Cybersécurité (the International Cybersecurity Forum)*
 - **espace numérique de santé** → *the espace numérique de santé (the personal digital
   health record)*
+- **SNT (sciences numériques et technologie)** → *the SNT (sciences numériques et
+  technologie — digital sciences and technology) course*
+- **NSI (numérique et sciences informatiques)** → *the NSI (numérique et sciences
+  informatiques — digital and computer science) specialisation*
+- **ISN (informatique et sciences du numérique)** → *the ISN option (informatique et
+  sciences du numérique — information technology and digital sciences)*
+- **CAPES** → *the CAPES (the secondary-school teaching certification exam)*
+- **agrégation** (concours d'enseignement, pas le sens général du mot) → *the agrégation
+  (a more senior, competitive teaching qualification)*
+- **Société informatique de France** → *the Société informatique de France (France's
+  computer science learned society)*
+- **lycée / lycées** → gardé tel quel, glosé *(upper-secondary schools)* au premier
+  usage seulement — mot suffisamment passé dans l'usage anglais pour ne pas répéter la
+  glose à chaque occurrence, à la différence des sigles ci-dessus.
 
 Cas apparentés qui ne suivent **pas** cette règle, à ne pas confondre avec elle :
 - **Plateforme des données de santé** garde son propre nom de marque, déjà bilingue :

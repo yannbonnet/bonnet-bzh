@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { useTranslations } from '../i18n/utils';
-import { labelType, labelRole } from '../i18n/labels';
+import { labelType, labelRole, labelRoleContribution } from '../i18n/labels';
 
 interface Props {
   lang: 'fr' | 'en';
@@ -15,8 +15,10 @@ const {
   dateExacte,
   type,
   cadre,
+  volume,
   role,
   coAuteurs,
+  contributions,
   lienCanonique,
   copieLocale,
   lienArchive,
@@ -28,6 +30,12 @@ const SEUIL_COAUTEURS = 5;
 const coAuteursVisibles = coAuteurs.slice(0, SEUIL_COAUTEURS);
 const coAuteursRepliés = coAuteurs.slice(SEUIL_COAUTEURS);
 const etAutres = t('meta.etAutres').replace('{n}', String(coAuteursRepliés.length));
+
+const contributionsAffichees = contributions.map((c) => ({
+  ...c,
+  visibles: c.personnes.slice(0, SEUIL_COAUTEURS),
+  repliees: c.personnes.slice(SEUIL_COAUTEURS),
+}));
 ---
 
 <div class="meta-bloc">
@@ -44,6 +52,12 @@ const etAutres = t('meta.etAutres').replace('{n}', String(coAuteursRepliés.leng
       <dt>{t('meta.cadre')}</dt>
       <dd>{cadre}</dd>
     </div>
+    {volume && (
+      <div class="meta-champ">
+        <dt>{t('meta.volume')}</dt>
+        <dd>{volume}</dd>
+      </div>
+    )}
     {role && (
       <div class="meta-champ">
         <dt>{t('meta.role')}</dt>
@@ -66,6 +80,22 @@ const etAutres = t('meta.etAutres').replace('{n}', String(coAuteursRepliés.leng
         </dd>
       </div>
     )}
+    {contributionsAffichees.map((c) => (
+      <div class="meta-champ meta-champ-large">
+        <dt>{labelRoleContribution(c.role, lang)}</dt>
+        <dd>
+          {c.visibles.join(', ')}
+          {c.repliees.length > 0 && (
+            <details>
+              <summary>{t('meta.etAutres').replace('{n}', String(c.repliees.length))}</summary>
+              <ul>
+                {c.repliees.map((nom) => <li>{nom}</li>)}
+              </ul>
+            </details>
+          )}
+        </dd>
+      </div>
+    ))}
     {lienCanonique && (
       <div class="meta-champ">
         <dd><a href={lienCanonique}>{t('meta.lienCanonique')}</a></dd>

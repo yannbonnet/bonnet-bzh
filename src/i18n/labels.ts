@@ -33,6 +33,16 @@ export const roleLabels: Record<
   'co-pilote': { fr: 'Co-pilote', en: 'Co-lead' },
 };
 
+export const roleContributionLabels: Record<
+  Ressource['contributions'][number]['role'],
+  Record<Lang, string>
+> = {
+  'membre-pilote': { fr: 'Membre pilote', en: 'Lead member' },
+  president: { fr: 'Président', en: 'Chair' },
+  rapporteurs: { fr: 'Rapporteurs', en: 'Rapporteurs' },
+  'groupe-de-travail': { fr: 'Groupe de travail', en: 'Working group' },
+};
+
 export const themeLabels: Record<
   Ressource['themes'][number],
   Record<Lang, string>
@@ -53,6 +63,13 @@ export function labelType(type: Ressource['type'], lang: Lang) {
 
 export function labelRole(role: NonNullable<Ressource['role']>, lang: Lang) {
   return roleLabels[role][lang];
+}
+
+export function labelRoleContribution(
+  role: Ressource['contributions'][number]['role'],
+  lang: Lang,
+) {
+  return roleContributionLabels[role][lang];
 }
 
 export function labelTheme(theme: Ressource['themes'][number], lang: Lang) {
