@@ -29,13 +29,7 @@ liensComplementaires:
   - url: "https://mediatheque.univ-paris1.fr/video/3256-410-quel-sens-donner-a-lia-le-rapport-villani-5-ans-apres/"
     label: "« Quel sens donner à l'IA ? Le rapport Villani, cinq ans après » — séminaire de l'Observatoire de l'intelligence artificielle, université Paris 1 Panthéon-Sorbonne, 22 juin 2022 (16 min, CC BY-NC-SA 4.0)"
     type: video
-  - url: "https://www.youtube.com/watch?v=rX1XbyNBdaE"
-    label: "Remise du rapport au Président de la République, Collège de France"
-    type: video
-  - url: "https://www.youtube.com/watch?v=ADi_8OL6vRk"
-    label: "Report handover at the Collège de France (English)"
-    type: video
-resume: "Rapport de mission remis au Premier ministre, à l'origine de la stratégie nationale française en intelligence artificielle et d'un engagement annoncé de 1,5 milliard d'euros."
+resume: "Rapport de mission remis au Président de la République, à l'origine de la stratégie nationale française en intelligence artificielle et d'un engagement annoncé de 1,5 milliard d'euros."
 aVerifier: true
 ---
 
@@ -44,7 +38,7 @@ aVerifier: true
 Le rapport n'a pas commencé par une commande politique. Il a commencé par une conversation
 dans une bibliothèque de Stanford, en octobre 2016, entre François Levin, alors rapporteur
 au Conseil national du numérique, moi-même, et un entrepreneur français installé aux
-États-Unis, Gregory Renard. Renard nous décrivait deux choses en même temps : ce que ses
+États-Unis, Gregory Renard. Gregory Renard nous décrivait deux choses en même temps : ce que ses
 algorithmes savaient déjà faire, et sa peur de ce qu'ils feraient à l'emploi — des centaines
 de milliers de postes menacés dans certains secteurs, et la question de sa responsabilité
 envers la société qu'il laisserait à ses enfants. Venant de quelqu'un qui construisait ces
@@ -56,6 +50,28 @@ sur l'intelligence artificielle et nous demandait de l'accompagner. Six mois de 
 plus de quatre cents auditions, une consultation publique réunissant 1 639 participants, un
 examen comparé des politiques de quinze pays. En mars 2018, au Collège de France, le
 Président de la République annonçait une stratégie nationale dotée de 1,5 milliard d'euros.
+
+<div class="video">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/xmhzO0k04mg?list=PLrKNY-H-j3t6BX3Tot3mJUEP02hWfvLKl"
+    title="Remise du rapport au Président de la République, Collège de France (version française)"
+    loading="lazy"
+    allow="encrypted-media; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+</div>
+<p class="video-legende">Remise du rapport au Président de la République, Collège de France — version française (playlist complète).</p>
+
+<div class="video">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/ADi_8OL6vRk"
+    title="Remise du rapport au Président de la République, Collège de France (version doublée en anglais)"
+    loading="lazy"
+    allow="encrypted-media; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+</div>
+<p class="video-legende">Même cérémonie — version doublée en anglais.</p>
 
 Je raconte cette généalogie parce qu'elle contredit l'image qu'on se fait de la fabrique des
 politiques publiques. Une stratégie nationale à 1,5 milliard d'euros procède ici d'une
