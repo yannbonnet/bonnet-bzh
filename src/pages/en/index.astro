@@ -4,14 +4,19 @@ import Bandeau from '../../components/Bandeau.astro';
 import EntreeListe from '../../components/EntreeListe.astro';
 import { getCollection } from 'astro:content';
 import { useTranslations } from '../../i18n/utils';
+import { SELECTION_ACCUEIL } from '../../data/selection-accueil';
 
-const NOMBRE_RECENTES = 5;
+const ressources = await getCollection('ressources', (entry) => entry.id.startsWith('en/'));
+const parGroupe = new Map(ressources.map((entry) => [entry.data.groupe, entry]));
 
-const ressources = (
-  await getCollection('ressources', (entry) => entry.id.startsWith('en/'))
-).sort((a, b) => b.data.annee - a.data.annee);
+const recentes = SELECTION_ACCUEIL.map((groupe) => {
+  const entree = parGroupe.get(groupe);
+  if (!entree) {
+    throw new Error(`SELECTION_ACCUEIL: no EN entry for groupe "${groupe}".`);
+  }
+  return entree;
+});
 
-const recentes = ressources.slice(0, NOMBRE_RECENTES);
 const t = useTranslations('en');
 ---
 
