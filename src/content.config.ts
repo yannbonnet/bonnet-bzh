@@ -45,7 +45,7 @@ const ressources = defineCollection({
     externe: z.boolean().default(false),
     role: z
       .enum([
-        'auteur', 'co-auteur', 'coordinateur',
+        'auteur', 'co-auteur', 'coordinateur', 'cofondateur',
         'contributeur', 'membre du groupe', 'interviewe', 'co-pilote',
       ])
       .optional(),
@@ -77,6 +77,15 @@ const ressources = defineCollection({
     licence: z.string().optional(),
     resume: z.string().max(300),
     aVerifier: z.boolean().default(false),
+
+    // Déclenche le rendu de CarrouselCampusCyber.astro depuis RessourceLayout.
+    // Un booléen plutôt qu'un composant importé dans le Markdown : les fiches
+    // sont du Markdown pur (glob('**/*.md')), sans import ESM possible pour
+    // <Image /> d'astro:assets — la seule fiche qui a besoin d'un carrousel
+    // passe par ce drapeau, le contenu du carrousel reste codé en dur dans le
+    // composant (légendes trop spécifiques à cette fiche pour justifier un
+    // champ de schéma générique).
+    carrousel: z.boolean().default(false),
   })
   // Un travail personnel déclare son rôle ; une référence externe n'en a pas.
   // Exception : quand `contributions` détaille déjà qui a fait quoi (une

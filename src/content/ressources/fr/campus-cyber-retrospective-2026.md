@@ -6,7 +6,7 @@ dateNotice: "2026-08"
 type: note
 cadre: "Rédigé pour bonnet.bzh"
 externe: false
-role: auteur
+role: cofondateur
 coAuteurs: []
 langueDocument: fr
 groupe: campus-cyber-retrospective-2026
@@ -17,6 +17,7 @@ themes:
 
 resume: "Note rétrospective sur la conception et les premières années du Campus Cyber : ce que le modèle de coopération public-privé permet, et ce qu'il ne permet pas."
 aVerifier: false
+carrousel: true
 ---
 
 *Note originale, rédigée pour ce site. Elle porte sur une période que j'ai vécue de
@@ -51,6 +52,31 @@ confidentialité est un actif, des entreprises rivales ont accepté de produire 
 biens communs qu'elles ne pouvaient pas s'approprier. En 2017, l'approche par les communs
 passait pour idéologique ; en 2022, elle passait pour logique. Ce basculement en cinq ans est
 l'acquis le moins visible et le plus solide.
+
+## La genèse, en vidéo
+
+Deux entretiens de la série *Portrait Cyber* reviennent sur cette histoire, du point de vue
+de deux de ses acteurs.
+
+<div class="video">
+  <button type="button" class="video-facade" data-video-facade data-video-id="GVhmJ0ZJJLM" data-video-titre="Portrait Cyber | Yann Bonnet, Directeur général délégué du Campus Cyber">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+    <span class="video-facade-texte">Portrait Cyber — Yann Bonnet</span>
+  </button>
+</div>
+<p class="video-legende">Entretien de la série <em>Portrait Cyber</em>, avec Yann Bonnet, alors
+directeur général délégué du Campus Cyber.</p>
+
+<div class="video">
+  <button type="button" class="video-facade" data-video-facade data-video-id="7DLwUbE8gSo" data-video-titre="Portrait Cyber | Guillaume Poupard, Directeur Général Adjoint de Docaposte">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+    <span class="video-facade-texte">Portrait Cyber — Guillaume Poupard</span>
+  </button>
+</div>
+<p class="video-legende">Même série, avec Guillaume Poupard — directeur général de l’ANSSI au
+moment des faits, aujourd’hui directeur général adjoint de Docaposte.</p>
+
+<script is:inline src="/scripts/video-facade.js"></script>
 
 ## Trois spécificités de conception
 
@@ -111,12 +137,16 @@ diplomatique que n'a aucun dispositif administratif équivalent.
 
 ## Ce que le modèle ne permet pas
 
-**La décision.** Qu'est-ce qu'un consortium sans autorité hiérarchique ne peut structurellement pas décider.
+**L’impasse décisionnelle.** L’absence d’autorité hiérarchique verticale bride
+structurellement la capacité d’un tel consortium à trancher ou à imposer des choix forts.
 
-**Le coût de la coopération.** Réunir des concurrents produit des communs, mais à quel prix :
-combien de temps consacré à l'entretien du consensus, quels arbitrages évités, quelles ambitions rabotées pour préserver l'unanimité.
+**Le coût de la coopération.** Si réunir des concurrents permet de bâtir des communs, cette
+synergie a un prix. Elle implique une énergie considérable allouée au maintien du consensus,
+des arbitrages complexes souvent esquivés, et un nivellement régulier des ambitions pour
+garantir l’unanimité.
 
-**Le modèle économique.** trop basé sur l'immobilier
+**La fragilité du modèle économique.** Une dépendance excessive aux revenus de l’exploitation
+immobilière, au détriment d’autres leviers de valeur.
 
 
 ## Ce qui est transposable

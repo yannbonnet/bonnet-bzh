@@ -1,0 +1,273 @@
+---
+// Carrousel dédié à /communs/campus-cyber-retrospective-2026/, déclenché par le
+// drapeau `carrousel` du schéma (content.config.ts). Vit en composant plutôt que
+// dans le corps Markdown de la fiche : les fiches sont du Markdown pur, sans
+// import ESM possible, et <Image /> d'astro:assets en a besoin. Contenu (ordre,
+// légendes, alt) codé en dur ici : propre à cette seule fiche, pas un motif
+// réutilisable ailleurs sur le site.
+import { Picture } from 'astro:assets';
+import img1 from '../assets/campus-cyber/1757322652200.jpeg';
+import img2 from '../assets/campus-cyber/1757322987774.jpeg';
+import img3 from '../assets/campus-cyber/1757323246414.jpeg';
+import img4 from '../assets/campus-cyber/1757323641345.jpeg';
+import img5 from '../assets/campus-cyber/1757324356248.jpeg';
+import img6 from '../assets/campus-cyber/1757325787836.jpeg';
+import img7 from '../assets/campus-cyber/1757326398305.jpeg';
+import img8 from '../assets/campus-cyber/1757326662288.jpeg';
+import img9 from '../assets/campus-cyber/1757328500118.jpeg';
+import img10 from '../assets/campus-cyber/1757167016096.jpeg';
+
+interface Props {
+  lang: 'fr' | 'en';
+}
+
+const { lang } = Astro.props;
+
+const diapositives = [
+  {
+    image: img1,
+    dateFr: 'Janvier 2019',
+    dateEn: 'January 2019',
+    altFr: "Vue aérienne d’un chantier de construction à La Défense, avec deux grandes grues jaunes et des tours de bureaux en arrière-plan.",
+    altEn: 'Aerial view of a construction site at La Défense, with two large yellow cranes and office towers in the background.',
+    legendeFr: "Ça s’activait déjà sur le terrain… sans imaginer que quelques mois plus tard, des centaines de cyber-défenseurs se retrouveraient à Puteaux.",
+    legendeEn: 'Things were already moving on the ground… with no idea that, a few months later, hundreds of cyber-defenders would gather in Puteaux.',
+  },
+  {
+    image: img2,
+    dateFr: 'Juillet 2019',
+    dateEn: 'July 2019',
+    altFr: "Communiqué de presse du Premier ministre daté du 23 juillet 2019, annonçant la mission de préfiguration d’un campus de la cybersécurité confiée à Michel Van Den Berghe.",
+    altEn: "Prime Minister's press release dated 23 July 2019, announcing the pre-figuration mission for a cybersecurity campus entrusted to Michel Van Den Berghe.",
+    legendeFr: "Début de la mission de préfiguration confiée par le Premier ministre. Une joyeuse équipe se met en marche pour poser les bases du futur Campus Cyber.",
+    legendeEn: 'The pre-figuration mission entrusted by the Prime Minister gets under way. A cheerful team sets out to lay the groundwork for the future Campus Cyber.',
+  },
+  {
+    image: img3,
+    dateFr: 'Novembre 2019',
+    dateEn: 'November 2019',
+    altFr: "Quatre photos d’un atelier de co-design au Liberté Living-Lab : public assis en réunion, écran « Matinée spéciale Cyber Campus », tables de travail en petits groupes, et affiche présentant quatre ateliers thématiques.",
+    altEn: "Four photos of a co-design workshop at the Liberté Living-Lab: an audience seated for a talk, a screen reading “Matinée spéciale Cyber Campus”, small working-group tables, and a poster outlining four thematic workshops.",
+    legendeFr: "Les ateliers de co-design au Liberté Living-Lab : des échanges riches, une énergie collective et les premières pistes concrètes pour façonner le futur Campus Cyber.",
+    legendeEn: 'Co-design workshops at the Liberté Living-Lab: rich exchanges, collective energy, and the first concrete directions for shaping the future Campus Cyber.',
+  },
+  {
+    image: img4,
+    dateFr: 'Janvier 2020',
+    dateEn: 'January 2020',
+    altFr: "Couverture du rapport « Campus Cyber : fédérer et faire rayonner l’écosystème de la cybersécurité », de Michel Van Den Berghe, affichée sur un écran.",
+    altEn: "Cover of the report “Campus Cyber: fédérer et faire rayonner l'écosystème de la cybersécurité”, by Michel Van Den Berghe, shown on a screen.",
+    legendeFr: "On affine le rapport « Campus Cyber : fédérer et faire rayonner l’écosystème de cybersécurité ».",
+    legendeEn: 'Fine-tuning the report “Campus Cyber: uniting and showcasing the cybersecurity ecosystem”.',
+  },
+  {
+    image: img5,
+    dateFr: 'Automne 2020',
+    dateEn: 'Autumn 2020',
+    altFr: "Quatre photos du chantier du Campus Cyber à l’automne 2020 : façade en construction, visite de groupe casquée et masquée, équipe en gilets haute visibilité, et aménagement intérieur en cours.",
+    altEn: 'Four photos of the Campus Cyber construction site in autumn 2020: the façade under construction, a hard-hatted and masked group tour, a team in high-visibility vests, and interior fit-out work under way.',
+    legendeFr: "Besoin d’accélérer pour être dans les temps…",
+    legendeEn: 'Time to pick up the pace to stay on schedule…',
+  },
+  {
+    image: img6,
+    dateFr: 'Décembre 2020',
+    dateEn: 'December 2020',
+    altFr: "Deux photos de la réunion des premiers membres fondateurs : portrait de groupe dans un espace lounge, et réunion autour d’une grande table de conférence.",
+    altEn: 'Two photos of the first founding members meeting: a group portrait in a lounge area, and a meeting around a large conference table.',
+    legendeFr: "Les premiers membres « fondateurs » se réunissent.",
+    legendeEn: 'The first “founding” members come together.',
+  },
+  {
+    image: img7,
+    dateFr: 'Mars 2021',
+    dateEn: 'March 2021',
+    altFr: "Deux images d’un événement en ligne sur le Campus Cyber : plateau de tournage avec intervenants assis en cercle, et publication LinkedIn de Guillaume Poupard annonçant la session.",
+    altEn: 'Two images from an online Campus Cyber event: a broadcast set with panellists seated in a circle, and a LinkedIn post by Guillaume Poupard announcing the session.',
+    legendeFr: "Objectif : convaincre les derniers indécis. Nous sommes plus de 1 000 connectés en direct.",
+    legendeEn: 'The goal: win over the last sceptics. More than 1,000 people are watching live.',
+  },
+  {
+    image: img8,
+    dateFr: 'FIC 2021',
+    dateEn: 'FIC 2021',
+    altFr: "Foule masquée regardant à travers une vitrine la maquette architecturale du futur Campus Cyber, lors du Forum International de la Cybersécurité.",
+    altEn: 'A masked crowd looking through glass at the architectural model of the future Campus Cyber, at the International Cybersecurity Forum.',
+    legendeFr: "La maquette du Campus Cyber attise toutes les curiosités…",
+    legendeEn: 'The Campus Cyber model draws crowds of the curious…',
+  },
+  {
+    image: img9,
+    dateFr: '15 février 2022',
+    dateEn: '15 February 2022',
+    altFr: "Quatre photos du jour de l’inauguration : logo Campus Cyber projeté devant une assemblée, maquette du bâtiment entourée de visiteurs, vue depuis un bureau donnant sur le chantier, et grande salle comble avec écran géant.",
+    altEn: "Four photos from inauguration day: the Campus Cyber logo projected before an audience, the building's model surrounded by visitors, a view from an office over the construction site, and a packed hall with a giant screen.",
+    legendeFr: "L’inauguration !",
+    legendeEn: 'The inauguration!',
+  },
+  {
+    image: img10,
+    dateFr: null,
+    dateEn: null,
+    altFr: "Une équipe d’une dizaine de personnes sautant en l’air, bras levés, devant le bâtiment du Campus Cyber à La Défense.",
+    altEn: 'A team of around ten people jumping in the air, arms raised, in front of the Campus Cyber building at La Défense.',
+    legendeFr: "L’équipe du lancement du Campus Cyber.",
+    legendeEn: 'The Campus Cyber launch team.',
+  },
+];
+
+const titre = lang === 'fr'
+  ? 'Quelques photos souvenirs pour revivre les étapes clés de la création du Campus Cyber'
+  : "A few souvenir photos to revisit the key milestones of the Campus Cyber's creation";
+
+const precedentLabel = lang === 'fr' ? 'Photo précédente' : 'Previous photo';
+const suivantLabel = lang === 'fr' ? 'Photo suivante' : 'Next photo';
+const regionLabel = lang === 'fr' ? 'Carrousel de photos' : 'Photo carousel';
+---
+
+<section class="carrousel-section" aria-labelledby="carrousel-titre">
+  <h2 id="carrousel-titre">{titre}</h2>
+
+  <div class="carrousel" data-carrousel role="region" aria-label={regionLabel}>
+    <ul class="carrousel-piste" data-carrousel-piste>
+      {diapositives.map((d, i) => (
+        <li class="carrousel-diapo" data-carrousel-diapo aria-roledescription={lang === 'fr' ? 'diapositive' : 'slide'} aria-label={`${i + 1} / ${diapositives.length}`}>
+          <Picture
+            src={d.image}
+            alt={lang === 'fr' ? d.altFr : d.altEn}
+            width={900}
+            formats={['avif', 'webp']}
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+          <figcaption>
+            {(lang === 'fr' ? d.dateFr : d.dateEn) && (
+              <p class="carrousel-date">{lang === 'fr' ? d.dateFr : d.dateEn}</p>
+            )}
+            <p class="carrousel-legende">{lang === 'fr' ? d.legendeFr : d.legendeEn}</p>
+          </figcaption>
+        </li>
+      ))}
+    </ul>
+
+    <button type="button" class="carrousel-bouton carrousel-precedent" data-carrousel-precedent aria-label={precedentLabel}>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+    <button type="button" class="carrousel-bouton carrousel-suivant" data-carrousel-suivant aria-label={suivantLabel}>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+
+    <p class="carrousel-indicateur" data-carrousel-indicateur aria-live="polite">1 / {diapositives.length}</p>
+  </div>
+</section>
+
+<script is:inline src="/scripts/carrousel-campus-cyber.js"></script>
+
+<style>
+  .carrousel-section {
+    margin-block-start: var(--espace-5);
+  }
+
+  /* Repli sans JS : défilement horizontal natif par scroll-snap, chaque
+     diapositive occupant toute la largeur — les photos restent visibles et
+     navigables (tactile, molette, ou flèches sur un conteneur au focus)
+     même si le script ci-dessous n'est jamais exécuté. */
+  .carrousel {
+    position: relative;
+  }
+
+  .carrousel-piste {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--espace-2);
+    /* Barre de défilement visible mais discrète : seul indice de navigation
+       tactile/souris tant que le JS (boutons, indicateur) n'a pas pris le relais. */
+    scrollbar-width: thin;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .carrousel-piste {
+      scroll-behavior: auto;
+    }
+  }
+
+  .carrousel-diapo {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+
+  .carrousel-diapo :global(img) {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 2px;
+    background: var(--papier-2);
+  }
+
+  .carrousel-diapo figcaption {
+    margin-block-start: var(--espace-1);
+  }
+
+  .carrousel-date {
+    font-family: var(--police-mono);
+    font-size: var(--taille-petite);
+    color: var(--fer);
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.04em;
+    margin: 0 0 0.2em;
+  }
+
+  .carrousel-legende {
+    margin: 0;
+  }
+
+  /* Boutons et indicateur : amélioration JS pure. Restent dans le DOM sans JS
+     (dégradation neutre, cf. filtres.js) plutôt que masqués par défaut puis
+     révélés — un bouton inerte n'empêche pas le scroll natif au clic à côté. */
+  .carrousel-bouton {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--papier-3);
+    border-radius: 2px;
+    background: var(--papier);
+    color: var(--encre);
+    cursor: pointer;
+  }
+
+  .carrousel-bouton:hover,
+  .carrousel-bouton:focus-visible {
+    background: var(--papier-2);
+  }
+
+  .carrousel-bouton svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .carrousel-precedent {
+    left: var(--espace-1);
+  }
+
+  .carrousel-suivant {
+    right: var(--espace-1);
+  }
+
+  .carrousel-indicateur {
+    font-family: var(--police-mono);
+    font-size: var(--taille-petite);
+    color: var(--ardoise-3);
+    text-align: center;
+    margin-block: var(--espace-1) 0;
+  }
+</style>

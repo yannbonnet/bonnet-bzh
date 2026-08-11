@@ -27,6 +27,7 @@ export const roleLabels: Record<
   auteur: { fr: 'Auteur', en: 'Author' },
   'co-auteur': { fr: 'Co-auteur', en: 'Co-author' },
   coordinateur: { fr: 'Coordinateur', en: 'Coordinator' },
+  cofondateur: { fr: 'Cofondateur', en: 'Co-founder' },
   contributeur: { fr: 'Contributeur', en: 'Contributor' },
   'membre du groupe': { fr: 'Membre du groupe', en: 'Group member' },
   interviewe: { fr: 'Interviewé', en: 'Interviewee' },

@@ -6,7 +6,7 @@ dateNotice: "2026-08"
 type: note
 cadre: "Written for bonnet.bzh"
 externe: false
-role: auteur
+role: cofondateur
 coAuteurs: []
 langueDocument: fr
 groupe: campus-cyber-retrospective-2026
@@ -16,6 +16,7 @@ themes:
   - politiques-publiques
 resume: "Retrospective note on the design and early years of the Campus Cyber: what the public-private cooperation model allows, and what it does not."
 aVerifier: false
+carrousel: true
 ---
 
 *An original note, written for this site. It covers a period I lived through from the
@@ -50,6 +51,32 @@ confidentiality is an asset, rival companies agreed to jointly produce commons t
 could not appropriate for themselves. In 2017, the commons-based approach passed for
 ideological; by 2022, it passed for logical. That shift, in five years, is the least
 visible and the most solid of the gains made.
+
+## The founding story, on video
+
+Two interviews from the *Portrait Cyber* series revisit this story, from the perspective
+of two of the people who lived it.
+
+<div class="video">
+  <button type="button" class="video-facade" data-video-facade data-video-id="GVhmJ0ZJJLM" data-video-titre="Portrait Cyber | Yann Bonnet, Directeur général délégué du Campus Cyber">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+    <span class="video-facade-texte">Portrait Cyber — Yann Bonnet</span>
+  </button>
+</div>
+<p class="video-legende">An interview from the <em>Portrait Cyber</em> series, with Yann
+Bonnet, then deputy chief executive of the Campus Cyber (in French).</p>
+
+<div class="video">
+  <button type="button" class="video-facade" data-video-facade data-video-id="7DLwUbE8gSo" data-video-titre="Portrait Cyber | Guillaume Poupard, Directeur Général Adjoint de Docaposte">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+    <span class="video-facade-texte">Portrait Cyber — Guillaume Poupard</span>
+  </button>
+</div>
+<p class="video-legende">Same series, with Guillaume Poupard — director general of ANSSI
+(the French national cybersecurity agency) at the time, now deputy chief executive of
+Docaposte (in French).</p>
+
+<script is:inline src="/scripts/video-facade.js"></script>
 
 ## Three design choices
 
@@ -110,14 +137,17 @@ has a diplomatic effectiveness that no equivalent administrative arrangement has
 
 ## What the model does not make possible
 
-**Decision-making.** What a consortium with no hierarchical authority is structurally
-unable to decide.
+**The decision-making deadlock.** The absence of vertical hierarchical authority
+structurally limits such a consortium's ability to make hard calls or impose strong
+choices.
 
-**The cost of cooperation.** Bringing competitors together produces commons, but at
-what price: how much time spent maintaining consensus, which trade-offs avoided, which
-ambitions trimmed down to preserve unanimity.
+**The cost of cooperation.** Bringing competitors together makes it possible to build
+commons, but that synergy comes at a price. It requires considerable energy spent
+maintaining consensus, complex trade-offs that are often dodged, and a regular
+scaling-back of ambition to secure unanimity.
 
-**The business model.** too dependent on real estate
+**The fragility of the business model.** An excessive dependence on real-estate revenue,
+to the detriment of other sources of value.
 
 ## What is transferable
 

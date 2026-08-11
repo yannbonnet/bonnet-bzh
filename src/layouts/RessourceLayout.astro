@@ -4,6 +4,7 @@ import BaseLayout from './BaseLayout.astro';
 import Bandeau from '../components/Bandeau.astro';
 import MetaBloc from '../components/MetaBloc.astro';
 import Sommaire from '../components/Sommaire.astro';
+import CarrouselCampusCyber from '../components/CarrouselCampusCyber.astro';
 import { useTranslations, urlJumelleFiche, segmentCommuns } from '../i18n/utils';
 import { labelType, labelTheme } from '../i18n/labels';
 
@@ -33,6 +34,7 @@ const {
   lienCanonique,
   licence,
   resume,
+  carrousel,
 } = entry.data;
 
 const t = useTranslations(lang);
@@ -110,6 +112,8 @@ const debutTitre = motsTitre.join(' ');
       <div class="notice">
         <slot />
       </div>
+
+      {carrousel && <CarrouselCampusCyber lang={lang} />}
     </div>
   </article>
 </BaseLayout>

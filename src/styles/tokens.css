@@ -409,3 +409,45 @@ ol {
   color: var(--ardoise-3);
   margin-block-end: var(--espace-3);
 }
+
+/* Façade cliquable : alternative à l'iframe posée directement (choix fait sur
+   /communs/rapport-villani-2018/) — ici l'iframe ne se charge qu'au clic, pas
+   de requête tierce avant interaction. Fond --ardoise plutôt qu'une vignette
+   photographique : évite d'avoir à héberger une image tierce (même simple
+   requête, sans cookie) juste pour la façade, et reste dans le registre visuel
+   du bandeau sombre plutôt que de la photographie de stock (§8, CLAUDE.md). */
+.video-facade {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: var(--espace-3);
+  background: var(--ardoise);
+  color: var(--papier);
+  cursor: pointer;
+  font-family: var(--police-corps);
+  font-size: var(--taille-base);
+  text-align: center;
+}
+
+.video-facade:hover,
+.video-facade:focus-visible {
+  background: var(--ardoise-2);
+}
+
+.video-facade svg {
+  width: 2.75rem;
+  height: 2.75rem;
+  fill: var(--papier);
+  margin-block-end: var(--espace-2);
+}
+
+.video-facade-texte {
+  display: block;
+  max-width: 32ch;
+}
