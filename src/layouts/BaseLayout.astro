@@ -74,6 +74,7 @@ const jsonLdSite = {
     <meta name="description" content={descriptionOg} />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={urlCanonique} />
     <link rel="alternate" type="application/rss+xml" title={`bonnet.bzh — ${t('ressources.titre')}`} href={`${prefix}/rss.xml`} />
 
     {urlFr && urlEn && (
@@ -110,7 +111,6 @@ const jsonLdSite = {
         <ul>
           <li><a href={`${prefix}/`}>{t('nav.accueil')}</a></li>
           <li><a href={`${prefix}/${segmentCommuns(lang)}/`}>{t('nav.ressources')}</a></li>
-          <li><a href={lang === 'fr' ? '/genealogie/' : '/en/genealogy/'} hreflang={lang}>{t('nav.genea')}</a></li>
           <li><a href={`${prefix}/a-propos/`}>{t('nav.apropos')}</a></li>
         </ul>
         <p class="langues" aria-label={lang === 'fr' ? 'Langue du site' : 'Site language'}>
@@ -133,7 +133,10 @@ const jsonLdSite = {
 
     <footer>
       <p>{t('footer.licence')}</p>
-      <p><a href={`${prefix}/mentions-legales/`}>{t('footer.mentions')}</a></p>
+      <p>
+        <a href={lang === 'fr' ? '/genealogie/' : '/en/genealogy/'} hreflang={lang}>{t('nav.genea')}</a>
+        · <a href={`${prefix}/mentions-legales/`}>{t('footer.mentions')}</a>
+      </p>
     </footer>
   </body>
 </html>

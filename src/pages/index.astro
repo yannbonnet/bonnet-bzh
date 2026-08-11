@@ -30,14 +30,9 @@ const t = useTranslations('fr');
   <Bandeau>
     <h1>bonnet.bzh</h1>
     <p class="chapeau">
-      Ce site personnel rassemble des communs de la connaissance (rapports, avis, cours et
-      notes) auxquels j'ai contribué depuis 2013, chacun accompagné d'une relecture
-      critique, ce qu'ils visaient, ce qu'ils ont produit, et ce qui a mal vieilli.
-    </p>
-    <p class="chapeau">
-      Il porte aussi une enquête généalogique,
-      <a href="/genealogie/"><em>De la terre et de la forge aux oiseaux d'Amérique</em></a> :
-      426 ancêtres du pays d'Ancenis, de 1527 à nos jours.
+      Ce site rassemble des communs de la connaissance (rapports, avis, cours et notes)
+      auxquels j'ai contribué depuis 2013. Chacun est accompagné d'une relecture critique :
+      ce qu'il visait, ce qu'il a produit, et ce qui a mal vieilli.
     </p>
     <p class="chapeau">Yann Bonnet.</p>
   </Bandeau>
@@ -50,6 +45,12 @@ const t = useTranslations('fr');
       </ul>
       <p><a href="/communs/">{t('ressources.voirTout')} →</a></p>
     </section>
+
+    <p class="orientation-genea">
+      Ce site abrite aussi une enquête généalogique,
+      <em>De la terre et de la forge aux oiseaux d'Amérique</em> — 426 ancêtres du pays
+      d'Ancenis, de 1527 à nos jours. <a href="/genealogie/">Y accéder →</a>
+    </p>
   </div>
 </BaseLayout>
 
@@ -62,5 +63,14 @@ const t = useTranslations('fr');
     list-style: none;
     padding: 0;
     margin: 0;
+  }
+
+  .orientation-genea {
+    margin-block-start: var(--espace-5);
+    padding-block-start: var(--espace-3);
+    border-block-start: 1px solid var(--papier-3);
+    font-family: var(--police-mono);
+    font-size: var(--taille-petite);
+    color: var(--ardoise-3);
   }
 </style>
