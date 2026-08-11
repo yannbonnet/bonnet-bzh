@@ -1,5 +1,6 @@
 ---
-titre: "A Blueprint for Multinational Advanced AI Development"
+titre: "Coopération multinationale pour le développement des systèmes d’IA avancés"
+sousTitre: "A Blueprint for Multinational Advanced AI Development"
 annee: 2025
 dateNotice: "2026-08"
 type: note
