@@ -23,6 +23,8 @@ liensComplementaires:
     type: article
 resume: "Cours d'introduction gratuit aux fondamentaux et aux métiers de la cybersécurité, construit autour d'un cas pratique d'attaque contre un hôpital fictif."
 aVerifier: false
+licence: "Cours publié sous licence CC BY-SA 4.0"
+lienLicence: "https://creativecommons.org/licenses/by-sa/4.0/deed.fr"
 ---
 
 Ce cours est resté gratuit et sans prérequis, ce qui en fait probablement la ressource la plus
@@ -54,3 +56,18 @@ mesurait en 2025 une profession composée à 85 % d'hommes. 4 points
 en deux ans, sur un objectif de mixité affiché comme prioritaire par tout le secteur : cela dit
 à peu près tout de l'écart entre les intentions déclarées et les mécanismes réellement à
 l'œuvre.
+
+## En vidéo
+
+Une autre facette du même sujet, filmée cette fois au Campus Cyber.
+
+<div class="video">
+  <button type="button" class="video-facade" data-video-facade data-video-id="C7SMCH5SSRI" data-video-titre="Découvrez le Campus Cyber avec Yann Bonnet : un lieu clé de la cybersécurité en France">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+    <span class="video-facade-texte">Découvrez le Campus Cyber avec Yann Bonnet</span>
+  </button>
+</div>
+<p class="video-legende">« Découvrez le Campus Cyber avec Yann Bonnet : un lieu clé
+de la cybersécurité en France ».</p>
+
+<script is:inline src="/scripts/video-facade.js"></script>

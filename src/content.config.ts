@@ -75,6 +75,11 @@ const ressources = defineCollection({
     accesRestreint: z.boolean().default(false),
 
     licence: z.string().optional(),
+    // Lien vers le texte de la licence — optionnel, la licence peut rester un
+    // simple libellé (cas des dix-sept fiches existantes). N'ajoute pas de lien
+    // sur `licence` par défaut : certaines licences n'ont pas d'URL stable, et
+    // forcer le lien casserait ces fiches.
+    lienLicence: z.string().url().optional(),
     resume: z.string().max(300),
     aVerifier: z.boolean().default(false),
 

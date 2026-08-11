@@ -23,6 +23,8 @@ liensComplementaires:
     type: article
 resume: "Free introductory course on the fundamentals and professions of cybersecurity, built around a practical case study of an attack on a fictitious hospital."
 aVerifier: false
+licence: "Course published under a CC BY-SA 4.0 licence"
+lienLicence: "https://creativecommons.org/licenses/by-sa/4.0/deed.en"
 ---
 
 This course has remained free and requires no prerequisites, which probably makes it
@@ -56,3 +58,18 @@ cybersecurity agency) measured a profession that was 85% male in 2025. Four poin
 two years, against a gender-balance target every part of the sector claims as a
 priority: that says almost everything about the gap between declared intentions and the
 mechanisms actually at work.
+
+## On video
+
+Another angle on the same subject, filmed this time at the Campus Cyber.
+
+<div class="video">
+  <button type="button" class="video-facade" data-video-facade data-video-id="C7SMCH5SSRI" data-video-titre="Découvrez le Campus Cyber avec Yann Bonnet : un lieu clé de la cybersécurité en France">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+    <span class="video-facade-texte">Découvrez le Campus Cyber avec Yann Bonnet</span>
+  </button>
+</div>
+<p class="video-legende">“Découvrez le Campus Cyber avec Yann Bonnet: un lieu clé de la
+cybersécurité en France” (in French).</p>
+
+<script is:inline src="/scripts/video-facade.js"></script>

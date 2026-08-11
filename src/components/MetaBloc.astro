@@ -23,6 +23,7 @@ const {
   copieLocale,
   lienArchive,
   licence,
+  lienLicence,
   accesRestreint,
 } = data;
 
@@ -114,7 +115,7 @@ const contributionsAffichees = contributions.map((c) => ({
     {licence && (
       <div class="meta-champ">
         <dt>{t('meta.licence')}</dt>
-        <dd>{licence}</dd>
+        <dd>{lienLicence ? <a href={lienLicence}>{licence}</a> : licence}</dd>
       </div>
     )}
     {accesRestreint && (
