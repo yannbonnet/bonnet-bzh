@@ -303,6 +303,15 @@ ol {
 .bandeau h1 {
   font-size: var(--taille-h1-bandeau);
   line-height: var(--interligne-bandeau);
+  /* Garde-fou mobile : à cette taille fixe, un mot large (« communs »,
+     « bonnet.bzh », toutes lettres m/n comprises) peut dépasser la colonne
+     sous ~370px de large. hyphens tente une coupure avec trait d'union
+     (dictionnaire du navigateur, selon `lang` sur <html>) ; overflow-wrap
+     reste le filet de sécurité pour un mot que la coupure automatique ne
+     couvre pas (« bonnet.bzh » n'est pas un mot de dictionnaire). Aucun
+     effet sur le rendu normal, quand tout rentre déjà. */
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .surtitre {
