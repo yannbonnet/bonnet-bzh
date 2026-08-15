@@ -1,0 +1,702 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Étude de branche importée depuis _import/branche-muloise-riaille.html
+// (fonds MyHeritage « Bonnet — Muloise — Rattier »), reliée depuis la
+// section XI de /genealogie/. Document autonome, mise en page A4
+// « web-to-print » volontaire : CSS interne non touché, seul l'habillage
+// du site (BaseLayout : nav, pied de page, meta) a été ajouté.
+const DESCRIPTION = "Étude généalogique de la branche Muloise de Riaillé (Loire-Atlantique) : 368 ancêtres directs sur seize générations, de 1527 à 1953 — six générations de forgerons, le massacre du 19 prairial an II, et le cousinage avec le peintre John James Audubon.";
+---
+
+<BaseLayout lang="fr" title="La branche Muloise de Riaillé" description={DESCRIPTION}>
+<style>
+/* ==========================================================
+   LA BRANCHE MULOISE — Marie-Thérèse Muloise (1953)
+   Feuille de style « cahier de dépouillement »
+   Parti pris : le corps du texte en pleine mesure, les cotes
+   et l'appareil rejetés en notes de marge extérieure, en
+   machine à écrire. Le fer donne la couleur, et seulement lui.
+   ========================================================== */
+
+:root{
+  --ink:    #16181B;   /* charbon de bois */
+  --paper:  #E9EAE8;   /* cendre de forge */
+  --paper2: #DEE0DC;   /* encarts */
+  --slate:  #2F5A69;   /* bleu d'Erdre — accent principal */
+  --iron:   #8E3B1F;   /* oxyde de fer — le fer et les morts violentes, rien d'autre */
+  --grey:   #6E7476;
+  --rule:   #C2C6C4;
+}
+
+*{ box-sizing:border-box }
+html{ -webkit-text-size-adjust:100% }
+
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Spectral",Georgia,serif; font-weight:400;
+  font-size:10.5pt; line-height:1.62; hyphens:auto;
+}
+
+.sheet{ max-width:190mm; margin:0 auto; padding:14mm 11mm 20mm; }
+
+/* ---- grille : texte + marge extérieure ---- */
+.block{ display:grid; grid-template-columns:1fr 34mm; column-gap:9mm; align-items:start; }
+.block > .txt{ grid-column:1; min-width:0; }
+.note{
+  grid-column:2; font-family:"Courier Prime",ui-monospace,monospace;
+  font-size:6.8pt; line-height:1.55; color:var(--grey);
+  padding-top:.5em; hyphens:none;
+}
+.note b{ display:block; color:var(--slate); text-transform:uppercase; letter-spacing:.1em; font-size:6.2pt; margin-bottom:.35em; }
+.note .cote{ display:block; margin-top:.7em; padding-top:.6em; border-top:.4pt solid var(--rule); }
+
+/* ---- typo ---- */
+h1,h2,h3,h4{ font-weight:400; margin:0 }
+.eyebrow{
+  font-family:"Courier Prime",monospace; font-size:7pt; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--slate); margin:0 0 1em;
+}
+h2{ font-size:20pt; line-height:1.12; letter-spacing:-.014em; font-weight:300; margin-bottom:.2em }
+h2 em{ font-style:italic; font-weight:400 }
+h3{ font-size:13pt; font-weight:500; margin:1.9em 0 .4em; letter-spacing:-.006em }
+h3 em{ font-style:italic; font-weight:400 }
+h4{
+  font-family:"Courier Prime",monospace; font-size:7pt; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--slate); margin:1.7em 0 .5em; font-weight:700;
+}
+p{ margin:0 0 .74em; text-align:justify }
+p.lede{ font-size:12pt; line-height:1.52; text-align:left; color:#25292D; margin-bottom:1em }
+p + p{ text-indent:1.1em }
+.lede + p, h2 + p, h3 + p, h4 + p, figure + p, .box + p, table + p, blockquote + p, .schema + p, ul + p{ text-indent:0 }
+a{ color:var(--slate); text-decoration:none; border-bottom:.4pt solid var(--rule) }
+.mono{ font-family:"Courier Prime",monospace; font-size:8.6pt }
+
+hr.r{ border:0; border-top:.5pt solid var(--rule); margin:1.8em 0 }
+hr.rr{ border:0; border-top:1.6pt solid var(--ink); margin:2.2em 0 1.3em }
+
+/* ---- couverture ---- */
+.cover{ padding:24mm 0 0; border-bottom:1.6pt solid var(--ink); margin-bottom:2.3em }
+.cover .kick{ font-family:"Courier Prime",monospace; font-size:7pt; letter-spacing:.22em; text-transform:uppercase; color:var(--slate) }
+.cover h1{ font-size:37pt; line-height:1.02; letter-spacing:-.03em; font-weight:200; margin:.55em 0 .35em }
+.cover h1 em{ font-style:italic; font-weight:300 }
+.cover .sub{ font-size:13pt; font-style:italic; color:#333A3E; max-width:34em; line-height:1.42; margin:0 0 1.7em }
+.cover .meta{ display:flex; flex-wrap:wrap; gap:0 2.2em; font-family:"Courier Prime",monospace; font-size:6.9pt; color:var(--grey); padding-bottom:1.5em }
+.cover .meta div span{ display:block; color:var(--ink) }
+
+/* ---- chiffres ---- */
+.stats{ display:grid; grid-template-columns:repeat(4,1fr); border-top:.5pt solid var(--rule); border-bottom:.5pt solid var(--rule); margin:1.5em 0 1.9em }
+.stats div{ padding:.85em .8em .85em 0; border-right:.5pt solid var(--rule) }
+.stats div:last-child{ border-right:0 }
+.stats .n{ display:block; font-size:22pt; line-height:1; font-weight:200; letter-spacing:-.03em }
+.stats .l{ display:block; font-family:"Courier Prime",monospace; font-size:6.2pt; letter-spacing:.09em; text-transform:uppercase; color:var(--grey); margin-top:.5em }
+
+/* ---- fiche ---- */
+.fiche{ margin:1.9em 0 1.1em; break-inside:avoid }
+.fiche .hdr{ border-top:1.2pt solid var(--ink); padding-top:.55em }
+.fiche .rk{ font-family:"Courier Prime",monospace; font-size:6.8pt; letter-spacing:.12em; text-transform:uppercase; color:var(--slate); display:flex; justify-content:space-between; gap:1em; margin-bottom:.3em }
+.fiche h3{ margin:0 0 .12em; font-size:15pt; font-weight:500 }
+.fiche .dt{ font-family:"Courier Prime",monospace; font-size:7.2pt; color:var(--grey); margin:0 }
+.fiche--fer .hdr{ border-top-color:var(--iron) } .fiche--fer .rk{ color:var(--iron) }
+
+/* ---- encarts ---- */
+.box{ background:var(--paper2); padding:1.05em 1.15em .85em; margin:1.4em 0; break-inside:avoid; border-left:2.4pt solid var(--slate) }
+.box h4{ margin-top:0 }
+.box p{ font-size:9.5pt; line-height:1.52; margin-bottom:.5em }
+.box p:last-child{ margin-bottom:0 }
+.box--fer{ border-left-color:var(--iron) } .box--fer h4{ color:var(--iron) }
+
+blockquote{ margin:1.3em 0; padding:0 0 0 1.1em; border-left:.5pt solid var(--rule); font-style:italic; font-size:10pt; color:#2C3236 }
+blockquote cite{ display:block; font-style:normal; font-family:"Courier Prime",monospace; font-size:6.7pt; letter-spacing:.08em; text-transform:uppercase; color:var(--grey); margin-top:.5em }
+
+.acte{
+  font-family:"Courier Prime",monospace; font-size:8pt; line-height:1.62;
+  background:var(--paper2); padding:1em 1.15em; margin:1.4em 0; break-inside:avoid;
+  border-top:1.2pt solid var(--iron); border-bottom:.5pt solid var(--rule); hyphens:none;
+}
+.acte ol{ margin:.6em 0 0; padding-left:1.5em } .acte li{ margin-bottom:.2em }
+.acte .src{ display:block; margin-top:.8em; color:var(--grey); font-size:6.8pt; text-transform:uppercase; letter-spacing:.08em }
+.acte mark{ background:none; color:var(--iron); font-weight:700 }
+
+/* ---- tableaux ---- */
+table{ width:100%; border-collapse:collapse; margin:1.1em 0 1.3em; font-size:8.6pt; break-inside:avoid }
+caption{ text-align:left; font-family:"Courier Prime",monospace; font-size:6.7pt; letter-spacing:.13em; text-transform:uppercase; color:var(--slate); padding-bottom:.6em }
+th{ text-align:left; font-family:"Courier Prime",monospace; font-size:6.5pt; letter-spacing:.08em; text-transform:uppercase; color:var(--grey); font-weight:700; border-bottom:.9pt solid var(--ink); padding:0 .65em .45em 0; vertical-align:bottom }
+td{ padding:.48em .65em; border-bottom:.4pt solid var(--rule); vertical-align:top; padding-left:0 }
+td.n{ font-family:"Courier Prime",monospace; font-size:8pt; white-space:nowrap }
+tr.hot td{ color:var(--iron) } tr.hot td.n{ font-weight:700 }
+
+/* ---- figures ---- */
+figure{ margin:1.5em 0; break-inside:avoid }
+figure img{ width:100%; height:auto; display:block; background:var(--paper2) }
+figcaption{ font-family:"Courier Prime",monospace; font-size:6.5pt; line-height:1.55; color:var(--grey); margin-top:.55em; hyphens:none }
+figcaption b{ color:var(--ink) } figcaption a{ border-bottom:none; color:var(--grey) }
+.figrow{ display:grid; grid-template-columns:1fr 1fr; gap:1.1em; margin:1.5em 0 } .figrow figure{ margin:0 }
+.figrow--3{ grid-template-columns:1fr 1fr 1fr }
+
+.cart{ border:.5pt dashed var(--grey); padding:.9em 1em; margin:1.4em 0; break-inside:avoid; font-family:"Courier Prime",monospace; font-size:6.9pt; line-height:1.6; color:var(--grey); hyphens:none }
+.cart b{ display:block; color:var(--slate); letter-spacing:.13em; text-transform:uppercase; font-size:6.3pt; font-weight:700; margin-bottom:.4em }
+.cart a{ color:var(--ink); border-bottom:.4pt solid var(--rule) }
+
+.schema{ margin:1.7em 0; break-inside:avoid } .schema svg{ width:100%; height:auto; display:block }
+
+ul,ol{ margin:.4em 0 1em; padding-left:1.15em } li{ margin-bottom:.36em }
+ul.t{ list-style:none; padding-left:0 }
+ul.t li{ padding-left:1.05em; position:relative; margin-bottom:.5em }
+ul.t li::before{ content:"—"; position:absolute; left:0; color:var(--slate) }
+
+.colophon{ border-top:1.6pt solid var(--ink); margin-top:2.5em; padding-top:1em; font-family:"Courier Prime",monospace; font-size:6.7pt; line-height:1.7; color:var(--grey); hyphens:none }
+.colophon b{ color:var(--ink) }
+
+.aide{ background:var(--ink); color:var(--paper); padding:1em 1.2em; font-family:"Courier Prime",monospace; font-size:7.5pt; line-height:1.7; margin-bottom:2em }
+.aide b{ color:#8FB6C4 }
+
+/* ==========================  IMPRESSION  ========================== */
+@page{ size:A4; margin:17mm 14mm 19mm 14mm; @bottom-center{ content:counter(page) } }
+@page:first{ margin-top:23mm }
+
+@media print{
+  body{ background:#fff; font-size:9.6pt }
+  .sheet{ max-width:none; margin:0; padding:0 }
+  .no-print{ display:none !important }
+  h2{ break-before:page } #ouv h2{ break-before:avoid }
+  h2,h3,h4,.fiche{ break-after:avoid }
+  figure,table,.box,.acte,.schema,.cart,blockquote,.stats{ break-inside:avoid }
+  p{ orphans:3; widows:3 }
+  a{ border-bottom:none; color:var(--ink) }
+  .note{ font-size:6.1pt }
+  figure img{ max-height:90mm; object-fit:contain; object-position:left top }
+}
+
+@media (max-width:760px){
+  .block{ grid-template-columns:1fr } .block > .txt{ grid-column:1 }
+  .note{ grid-column:1; border-left:2.4pt solid var(--rule); padding:.4em 0 .4em .8em; margin-bottom:1.1em }
+  .note b{ display:inline; margin-right:.5em } .note .cote{ border-top:0; padding-top:0 }
+  .cover h1{ font-size:26pt } .stats{ grid-template-columns:1fr 1fr }
+  .stats div:nth-child(2){ border-right:0 }
+  .figrow,.figrow--3{ grid-template-columns:1fr }
+}
+@media (prefers-reduced-motion:reduce){ *{ animation:none!important; transition:none!important } }
+</style>
+<div class="sheet">
+
+<!-- ══════════════ COUVERTURE ══════════════ -->
+<header class="cover">
+  <p class="kick">Étude de branche · fonds « Bonnet — Muloise — Rattier » · version corrigée du 15 août 2026</p>
+  <h1>Du fer<br>aux <em>oiseaux d'Amérique</em></h1>
+  <p class="sub">La branche Muloise, entre Erdre et forêt de Quénécan : seize générations de laboureurs, de forgerons et d'aubergistes — et un cousin qui a peint tous les oiseaux du Nouveau Monde.</p>
+  <div class="meta">
+    <div>Tête de branche<span>Marie-Thérèse Muloise, née en 1953</span></div>
+    <div>Profondeur<span>16 générations · 1527-1953</span></div>
+    <div>Ancêtres identifiés<span>368</span></div>
+    <div>Épicentres<span>Mésanger · Les Touches · Riaillé</span></div>
+  </div>
+</header>
+
+<!-- ══════════════ OUVERTURE ══════════════ -->
+<section id="ouv" class="block">
+  <div class="txt">
+    <p class="eyebrow">Ce que dit le fichier</p>
+    <h2>Une ascendance six fois plus profonde que <em>la moyenne des familles paysannes</em></h2>
+
+    <p class="lede">Trois cent soixante-huit ancêtres directs, sur seize générations, jusqu'à un Jean Hays né en 1527 et mort à Maumusson en 1582. Là où beaucoup d'arbres paysans s'arrêtent au mur de 1670 — début des registres exploitables —, celui-ci traverse tout le XVI<sup>e</sup> siècle. C'est une branche exceptionnellement bien tenue, et cela change la nature de ce qu'on peut en dire.</p>
+
+    <p>Le noyau est double. À l'est, <b>Mésanger</b> (135 naissances) et son satellite Saint-Herblon, où les Lhériau, Sébilleau, Jourdon, Lefeuvre et Davodeau se marient entre eux depuis le règne de Henri III. Au sud, <b>Les Touches</b> (61 naissances), fief des Ouary — et c'est de là que part le fil le plus étonnant du dossier. Puis, à partir des années 1820, tout se resserre sur <b>Riaillé</b> (45 naissances), où trois métiers arrivent en même temps : la forge, l'auberge et la boulangerie.</p>
+
+    <div class="stats">
+      <div><span class="n">368</span><span class="l">ancêtres directs</span></div>
+      <div><span class="n">16</span><span class="l">générations</span></div>
+      <div><span class="n">1527</span><span class="l">ancêtre le plus ancien</span></div>
+      <div><span class="n">6</span><span class="l">générations de forgerons</span></div>
+    </div>
+
+    <div class="box">
+      <h4>Sept ancêtres comptés deux fois — et c'est un résultat</h4>
+      <p>Un chiffre demande une précision avant d'aller plus loin. Sur les 368 positions d'ancêtre, <b>sept sont occupées deux fois par la même personne</b> : Pierre Ouary (né le 23 août 1630), René Sébilleau (1589) et Renée Davodeau (1599), Jean Leduc, Pierre Poupard, Jacques Martin. Autrement dit, on descend deux fois du même couple, par deux chemins différents.</p>
+      <p>Ce n'est pas un défaut du fichier, c'est la <b>mesure de l'endogamie villageoise</b>. Dans un pays où l'on épouse sa voisine dans un rayon de dix kilomètres pendant trois siècles, les lignées se rejoignent nécessairement. Les généalogistes appellent cela un <em>implexe</em>, et il s'accentue à mesure qu'on remonte.</p>
+      <p>Conséquence pratique : les 368 « ancêtres » de cette étude correspondent à un nombre de personnes légèrement inférieur. Un logiciel de généalogie sait produire un coefficient de consanguinité à partir de ces recoupements — c'est un chiffre qui reste à calculer, et il parlerait plus que bien des paragraphes.</p>
+    </div>
+
+    <p>Trois découvertes structurent ce document. La première est un <b>cousinage confirmé avec John James Audubon</b>, le plus grand peintre d'oiseaux de l'histoire, par un ancêtre commun des Touches né en 1566 — et le calcul, entièrement vérifiable dans le fichier, tient. La deuxième est une <b>dynastie de forgerons sur six générations</b>, qui descend de la forêt de Paimpont jusqu'à Riaillé en traversant toute la Bretagne intérieure, et qui s'éteint le jour où s'éteint le dernier haut fourneau. La troisième est un <b>massacre</b>, celui du 19 prairial an II, où un aïeul direct fut tué dans sa propre boulangerie.</p>
+  </div>
+  <aside class="note">
+    <b>Périmètre</b>
+    368 ascendants directs de Marie-Thérèse Muloise, plus 516 collatéraux au premier degré : 699 individus, extraits d'un fonds de 2 169 fiches.
+    <span class="cote">version_corrigee_v3.ged<br>GEDCOM 5.5.1 · UTF-8<br>2 169 INDI · 668 FAM<br>187 sources citées<br>146 mariages datés<br><br>Trois passes de<br>correction appliquées<br>depuis l'export<br>du 1<sup>er</sup> août.</span>
+  </aside>
+</section>
+
+<!-- ══════════════ AUDUBON ══════════════ -->
+<section class="block">
+  <div class="txt">
+    <p class="eyebrow">Découverte n° 1</p>
+    <h2>Le cousin qui a peint <em>Les Oiseaux d'Amérique</em></h2>
+
+    <p class="lede">Jean-Jacques Audubon — John James Audubon — est né aux Cayes, à Saint-Domingue, le 26 avril 1785, fils naturel d'un capitaine de marine nantais et d'une servante des Touches. Cette servante s'appelait Jeanne Rabine. Et Jeanne Rabine descend, comme Marie-Thérèse Muloise, de Guillaume Ouary, laboureur des Touches né vers le 22 septembre 1566 et mort le 17 janvier 1652.</p>
+
+    <p>Le fichier contient les deux descendances complètes. Elles sont ici données intégralement, parce qu'un cousinage célèbre ne vaut rien s'il n'est pas vérifiable pas à pas.</p>
+
+    <div class="schema">
+      <svg viewBox="0 0 660 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Les deux descendances de Guillaume Ouary : vers Marie-Thérèse Muloise et vers John James Audubon">
+        <defs><style>
+          .ln{ stroke:#16181B; stroke-width:1.3; fill:none }
+          .lb{ stroke:#2F5A69; stroke-width:1.3; fill:none }
+          .nm{ font-family:Spectral,Georgia,serif; font-size:9.5px; fill:#16181B }
+          .nmb{ font-family:Spectral,Georgia,serif; font-size:9.5px; fill:#2F5A69 }
+          .yr{ font-family:'Courier Prime',monospace; font-size:6.6px; fill:#6E7476 }
+          .hd{ font-family:'Courier Prime',monospace; font-size:7px; fill:#2F5A69; letter-spacing:.12em; text-transform:uppercase }
+          .hdk{ font-family:'Courier Prime',monospace; font-size:7px; fill:#16181B; letter-spacing:.12em }
+        </style></defs>
+
+        <!-- souche -->
+        <circle cx="330" cy="22" r="4.6" fill="#16181B"/>
+        <text class="nm" x="330" y="14" text-anchor="middle" style="font-size:11px">Guillaume OUARY · 1566–1652 · Les Touches</text>
+        <text class="yr" x="330" y="39" text-anchor="middle">souche commune — laboureur, mort à 85 ans</text>
+
+        <!-- fourche -->
+        <path class="ln" d="M330 27 L330 48 L150 48 L150 62"/>
+        <path class="lb" d="M330 27 L330 48 L510 48 L510 62"/>
+        <text class="hdk" x="150" y="59" text-anchor="middle">fils : Pierre</text>
+        <text class="hd" x="510" y="59" text-anchor="middle">fille : Renée</text>
+
+        <!-- colonne gauche : MT -->
+        <line class="ln" x1="150" y1="62" x2="150" y2="392"/>
+        <g>
+          <circle cx="150" cy="76" r="2.6" fill="#16181B"/><text class="nm" x="162" y="79">Pierre OUARY · 1630–1697</text>
+          <circle cx="150" cy="111" r="2.6" fill="#16181B"/><text class="nm" x="162" y="114">Julien OUARY · 1664–1723</text>
+          <circle cx="150" cy="146" r="2.6" fill="#16181B"/><text class="nm" x="162" y="149">Pierre OUARY · 1701–1774</text>
+          <circle cx="150" cy="181" r="2.6" fill="#16181B"/><text class="nm" x="162" y="184">Julien OUARY · 1738–1785</text>
+          <circle cx="150" cy="216" r="2.6" fill="#16181B"/><text class="nm" x="162" y="219">François OUARY · 1774–1847</text>
+          <text class="yr" x="162" y="229">laboureur — quitte Les Touches pour Riaillé</text>
+          <circle cx="150" cy="256" r="2.6" fill="#16181B"/><text class="nm" x="162" y="259">Léon OUARY · 1824–1903</text>
+          <text class="yr" x="162" y="269">menuisier</text>
+          <circle cx="150" cy="291" r="2.6" fill="#16181B"/><text class="nm" x="162" y="294">Marie Rosalie OUARY · 1855–1939</text>
+          <text class="yr" x="162" y="304">aubergiste, hôtel de la Rigaudière</text>
+          <circle cx="150" cy="326" r="2.6" fill="#16181B"/><text class="nm" x="162" y="329">Marguerite JUVIN · 1892–1958</text>
+          <circle cx="150" cy="361" r="2.6" fill="#16181B"/><text class="nm" x="162" y="364">Joseph MULOISE · 1927–2020</text>
+          <text class="yr" x="162" y="374">menuisier à Riaillé</text>
+          <circle cx="150" cy="392" r="4.6" fill="#16181B"/><text class="nm" x="162" y="395" style="font-weight:600">MARIE-THÉRÈSE MULOISE · 1953</text>
+        </g>
+        <text class="hdk" x="150" y="418" text-anchor="middle">10 générations</text>
+
+        <!-- colonne droite : Audubon -->
+        <line class="lb" x1="510" y1="62" x2="510" y2="252"/>
+        <g>
+          <circle cx="510" cy="76" r="2.6" fill="#2F5A69"/><text class="nmb" x="498" y="79" text-anchor="end">Renée OUARY · 1625–1711</text>
+          <circle cx="510" cy="111" r="2.6" fill="#2F5A69"/><text class="nmb" x="498" y="114" text-anchor="end">Luc CALLO · 1658–1688</text>
+          <circle cx="510" cy="146" r="2.6" fill="#2F5A69"/><text class="nmb" x="498" y="149" text-anchor="end">Marie CALLO · 1683–1715</text>
+          <circle cx="510" cy="181" r="2.6" fill="#2F5A69"/><text class="nmb" x="498" y="184" text-anchor="end">Marie LETEXIER · 1712–1788</text>
+          <circle cx="510" cy="216" r="2.6" fill="#2F5A69"/><text class="nmb" x="498" y="219" text-anchor="end">Guillaume RABINE · 1734–1802</text>
+          <circle cx="510" cy="252" r="2.6" fill="#2F5A69"/><text class="nmb" x="498" y="249" text-anchor="end">Jeanne RABINE · 1758–1785</text>
+          <text class="yr" x="498" y="260" text-anchor="end">servante, part pour Saint-Domingue</text>
+          <path class="lb" d="M510 252 L510 288"/>
+          <circle cx="510" cy="288" r="4.6" fill="#2F5A69"/>
+          <text class="nmb" x="498" y="285" text-anchor="end" style="font-weight:600">JOHN JAMES AUDUBON</text>
+          <text class="yr" x="498" y="296" text-anchor="end">1785, Les Cayes — 1851, New York</text>
+          <text class="yr" x="498" y="306" text-anchor="end">auteur de « The Birds of America »</text>
+        </g>
+        <text class="hd" x="510" y="330" text-anchor="middle">7 générations</text>
+
+        <!-- verdict -->
+        <rect x="380" y="352" width="270" height="46" fill="#DEE0DC"/>
+        <text class="hdk" x="392" y="369">RELATION</text>
+        <text class="nm" x="392" y="384">Sixièmes cousins, à la troisième réduction.</text>
+      </svg>
+    </div>
+
+    <p><b>Une précision de comptage.</b> Les degrés donnés ici sont calculés depuis Marie-Thérèse Muloise, tête de la présente branche. Comptés depuis la génération suivante, ils augmentent d'un cran : ce qui est ici « trois fois éloignés » devient « quatre générations d'écart ». Les deux formulations désignent le même lien.</p>
+
+    <p>Guillaume Ouary est à <b>dix générations</b> au-dessus de Marie-Thérèse et à <b>sept</b> au-dessus d'Audubon. Ses enfants Pierre et Renée sont le frère et la sœur par lesquels les deux lignes se séparent, vers 1630. En termes de cousinage : <b>sixièmes cousins, trois fois éloignés</b> — soit le dix-septième degré civil. C'est lointain, et c'est parfaitement établi.</p>
+
+    <div class="box">
+      <h4>Contexte — Jeanne Rabine, la mère qu'il n'a pas connue</h4>
+      <p>Jeanne Rabine naît aux Touches le 15 mars 1758, fille de Guillaume Rabine, et part servir aux Antilles. Elle devient la compagne du lieutenant Jean Audubon, planteur et capitaine, aux Cayes. Elle accouche de Jean-Jacques le 26 avril 1785. <b>Elle meurt le 11 novembre 1785</b> — l'enfant a six mois et demi. Il sera ramené en France, élevé à Couëron près de Nantes par l'épouse légitime de son père, Anne Moynet, qui l'adoptera ; à dix-huit ans il partira pour les États-Unis.</p>
+      <p>La date de sa mort est le détail qui donne son poids au cousinage. Le lien entre cette famille de laboureurs des Touches et l'homme des <em>Oiseaux d'Amérique</em> tient à une jeune femme de vingt-sept ans, morte à l'autre bout du monde, dont son fils n'a gardé aucun souvenir. C'est la parente commune, et c'est aussi celle dont on parle le moins.</p>
+    </div>
+
+    <div class="figrow">
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/John%20James%20Audubon%201826.jpg?width=800" alt="Portrait de John James Audubon par John Syme, 1826">
+        <figcaption><b>John James Audubon, portrait par John Syme, 1826.</b> Peint à Édimbourg, où Audubon cherchait des souscripteurs pour <i>The Birds of America</i>. Domaine public. — Wikimedia Commons, <i>John James Audubon 1826.jpg</i></figcaption>
+      </figure>
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Blason%20ville%20fr%20Les%20Touches%20(Loire-Atlantique).svg?width=560" alt="Blason des Touches">
+        <figcaption><b>Armes des Touches (Loire-Atlantique).</b> La commune d'origine des Ouary, où la souche commune Guillaume Ouary naît en 1566 et où 61 naissances de la branche sont enregistrées. — Wikimedia Commons, <i>Blason ville fr Les Touches (Loire-Atlantique).svg</i></figcaption>
+      </figure>
+    </div>
+
+    <figure>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/1%20Wild%20Turkey.jpg?width=1000" alt="Planche 1 de The Birds of America : le dindon sauvage">
+      <figcaption><b>Planche 1 de <i>The Birds of America</i> : le dindon sauvage.</b> La première image de l'ouvrage, gravée à l'aquatinte au format « double éléphant ». Le grand-père de Marie-Thérèse Muloise fabriquait des meubles à Riaillé au moment où un cousin au sixième degré était devenu, en Amérique, le plus célèbre peintre d'oiseaux du monde. Domaine public. — Wikimedia Commons, <i>1 Wild Turkey.jpg</i></figcaption>
+    </figure>
+
+    <div class="box">
+      <h4>Précaution éditoriale — Audubon aujourd'hui</h4>
+      <p>Revendiquer ce cousinage suppose de le faire complètement. <cite>Les apports scientifiques d'Audubon furent considérables mais controversés : il fut accusé de fraude, de plagiat et de fautes scientifiques de son vivant comme après sa mort</cite>. La réévaluation contemporaine porte aussi sur un fait longtemps passé sous silence : Audubon a possédé et vendu des êtres humains réduits en esclavage, et défendu l'esclavage par écrit. Plusieurs institutions portant son nom ont depuis engagé un travail public sur cet héritage.</p>
+      <p>Cela n'affaiblit pas la généalogie d'un pouce — un ancêtre commun n'est ni un mérite ni une faute. Mais un document de famille qui mentionne Audubon sans mentionner cela se rend fragile. Mieux vaut l'écrire soi-même, avec mesure, que de le laisser découvrir par un lecteur.</p>
+    </div>  </div>
+  <aside class="note">
+    <b>Chemin vérifié</b>
+    Les deux descendances sont reconstituées par parcours automatique des liens FAMC du fichier, sans intervention manuelle. Aucun chaînon n'est supposé.
+    <span class="cote">Souche : @I108@<br>Guillaume OUARY<br>ABT 22 SEP 1566<br>17 JAN 1652<br>Les Touches<br><br>Sosa 1408 pour<br>Marie-Thérèse<br><br>Audubon : @I355@<br>BIRT 26 APR 1785<br>PLAC Les Cayes,<br>Saint-Domingue<br>Present Day Haiti</span>
+  </aside>
+</section>
+
+<!-- ══════════════ LA ROUTE DU FER ══════════════ -->
+<section class="block">
+  <div class="txt">
+    <p class="eyebrow">Découverte n° 2</p>
+    <h2>La route du fer : <em>six générations, deux cents kilomètres</em></h2>
+
+    <p class="lede">C'est le plus beau motif du fichier, et il ne se voit qu'en alignant les lieux de naissance et les métiers de six ancêtres successifs. Une famille de forgerons descend la Bretagne intérieure d'ouest en est, de forge en forge, pendant cent quatre-vingts ans — et s'arrête exactement là où le dernier haut fourneau s'éteint.</p>
+
+    <div class="schema">
+      <svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="La migration des forgerons Vavasseur puis Chauvel, de Paimpont à Riaillé">
+        <defs><style>
+          .rd{ stroke:#8E3B1F; stroke-width:2; fill:none }
+          .tk{ stroke:#8E3B1F; stroke-width:1; fill:none }
+          .pl{ font-family:Spectral,Georgia,serif; font-size:10px; fill:#16181B; font-weight:500 }
+          .oc{ font-family:Spectral,Georgia,serif; font-size:9px; fill:#8E3B1F; font-style:italic }
+          .dt{ font-family:'Courier Prime',monospace; font-size:6.5px; fill:#6E7476 }
+          .gn{ font-family:'Courier Prime',monospace; font-size:7px; fill:#8E3B1F; letter-spacing:.1em }
+        </style></defs>
+
+        <line class="rd" x1="40" y1="150" x2="620" y2="150"/>
+        <!-- stations -->
+        <g>
+          <circle cx="55" cy="150" r="5" fill="#8E3B1F"/>
+          <line class="tk" x1="55" y1="145" x2="55" y2="112"/>
+          <text class="gn" x="55" y="105" text-anchor="middle">GÉN. 1</text>
+          <text class="pl" x="55" y="176" text-anchor="middle">Paimpont</text>
+          <text class="dt" x="55" y="187" text-anchor="middle">Ille-et-Vilaine</text>
+          <text class="oc" x="55" y="204" text-anchor="middle">forgeron</text>
+          <text class="dt" x="55" y="216" text-anchor="middle">Olivier VAVASSEUR</text>
+          <text class="dt" x="55" y="226" text-anchor="middle">1663–1729</text>
+
+          <circle cx="185" cy="150" r="5" fill="#8E3B1F"/>
+          <line class="tk" x1="185" y1="145" x2="185" y2="112"/>
+          <text class="gn" x="185" y="105" text-anchor="middle">GÉN. 2</text>
+          <text class="pl" x="185" y="176" text-anchor="middle">Saint-Launeuc</text>
+          <text class="dt" x="185" y="187" text-anchor="middle">Côtes-d'Armor</text>
+          <text class="oc" x="185" y="204" text-anchor="middle">forgeron aux Forges des Salles</text>
+          <text class="dt" x="185" y="216" text-anchor="middle">François VAVASSEUR</text>
+          <text class="dt" x="185" y="226" text-anchor="middle">1699–1762</text>
+
+          <circle cx="330" cy="150" r="5" fill="#8E3B1F"/>
+          <line class="tk" x1="330" y1="145" x2="330" y2="112"/>
+          <text class="gn" x="330" y="105" text-anchor="middle">GÉN. 3</text>
+          <text class="pl" x="330" y="176" text-anchor="middle">Sainte-Brigitte</text>
+          <text class="dt" x="330" y="187" text-anchor="middle">Morbihan · Les Salles</text>
+          <text class="oc" x="330" y="204" text-anchor="middle">marteleur</text>
+          <text class="dt" x="330" y="216" text-anchor="middle">Jacques CHAUVEL</text>
+          <text class="dt" x="330" y="226" text-anchor="middle">1723–1790</text>
+          <text class="dt" x="330" y="240" text-anchor="middle">épouse Anne VAVASSEUR, 1731</text>
+
+          <circle cx="475" cy="150" r="5" fill="#8E3B1F"/>
+          <line class="tk" x1="475" y1="145" x2="475" y2="112"/>
+          <text class="gn" x="475" y="105" text-anchor="middle">GÉN. 4-5</text>
+          <text class="pl" x="475" y="176" text-anchor="middle">Sion-les-Mines</text>
+          <text class="dt" x="475" y="187" text-anchor="middle">Loire-Atlantique</text>
+          <text class="oc" x="475" y="204" text-anchor="middle">forgeron</text>
+          <text class="dt" x="475" y="216" text-anchor="middle">Olivier CHAUVEL</text>
+          <text class="dt" x="475" y="226" text-anchor="middle">1761–1837</text>
+
+          <circle cx="605" cy="150" r="6.5" fill="#8E3B1F"/>
+          <line class="tk" x1="605" y1="143" x2="605" y2="112"/>
+          <text class="gn" x="605" y="105" text-anchor="middle">GÉN. 6</text>
+          <text class="pl" x="605" y="176" text-anchor="middle">Riaillé</text>
+          <text class="dt" x="605" y="187" text-anchor="middle">Loire-Atlantique</text>
+          <text class="oc" x="605" y="204" text-anchor="middle">forgeron, puis aubergiste</text>
+          <text class="dt" x="605" y="216" text-anchor="middle">Olivier CHAUVEL</text>
+          <text class="dt" x="605" y="226" text-anchor="middle">1799–1875</text>
+          <text class="dt" x="605" y="240" text-anchor="middle">dernier directeur des forges</text>
+        </g>
+        <text class="dt" x="330" y="138" text-anchor="middle">1663 ————————————————————— plus de 200 km, cinq déplacements ————————————————————— 1875</text>
+        <text class="dt" x="330" y="272" text-anchor="middle" style="font-size:7.5px; fill:#8E3B1F">Le fer s'arrête à Riaillé en 1875. La lignée devient aubergiste.</text>
+      </svg>
+    </div>
+
+    <p>Le fichier ne dit jamais « dynastie ». Il dit seulement, fiche par fiche, <span class="mono">OCCU forgeron</span>, <span class="mono">OCCU Forgeron aux forges des Salles</span>, <span class="mono">OCCU Marteleur</span>, <span class="mono">OCCU Forgeron</span>, <span class="mono">OCCU Forgeron, Aubergiste Cabaretier</span>. C'est en les mettant bout à bout que le mouvement apparaît — et il est d'une logique implacable : <b>on ne suit pas une région, on suit le charbon de bois</b>.</p>
+
+    <p><b>Vérification externe.</b> <cite>Les Forges des Salles, sur les communes de Sainte-Brigitte (Morbihan) et Perret (Côtes-d'Armor), en Centre-Bretagne, sont un ancien village sidérurgique fondé en 1623, dont les principaux bâtiments datent des aménagements des XVIII<sup>e</sup> et XIX<sup>e</sup> siècles ; le site abrite l'une des forges à bois les plus anciennes de Bretagne, vestige d'une activité industrielle prospère durant près de trois siècles, jusqu'à l'extinction du haut fourneau en 1877</cite>. Dix naissances de la branche sont enregistrées au lieu-dit « Sainte-Brigitte Morbihan Les Forges des Salles » : la famille ne vivait pas près de la forge, elle vivait <em>dans</em> la forge.</p>
+
+    <div class="box box--fer">
+      <h4>La coïncidence qui n'en est pas une</h4>
+      <p>Le détail suivant mérite d'être souligné, car il transforme la migration en histoire. <cite>Parmi les preneurs successifs du bail des Forges des Salles figurent François de Montullé, <b>maître des forges de Riaillé</b> (1635), et Julien Le Doyen de la Richardière, également <b>maître des forges de Riaillé</b> (1647)</cite>.</p>
+      <p>Autrement dit : les deux extrémités du voyage familial — Les Salles en Centre-Bretagne, Riaillé en Loire-Inférieure — appartenaient au <b>même réseau sidérurgique</b>, tenu par les mêmes maîtres de forges, un siècle avant que les Vavasseur puis les Chauvel ne fassent le trajet. Ces hommes n'ont pas erré : ils ont été <b>déplacés par leur employeur</b>, comme on transfère aujourd'hui un ouvrier qualifié d'un site à l'autre. La migration n'est pas un exode, c'est une carrière.</p>
+    </div>
+
+    <h4>Le vocabulaire perdu de la forge</h4>
+    <p>Trois métiers du fichier n'existent plus, et il faut les traduire pour que la lignée redevienne lisible.</p>
+    <ul class="t">
+      <li><b>Marteleur</b> (Jacques Chauvel, 1723-1790). L'ouvrier qui conduit le gros marteau hydraulique — le « martinet » — pour affiner la fonte en fer forgé. C'est un poste de haute qualification, au sommet de la hiérarchie ouvrière de la forge, juste sous le maître de forge. Un marteleur se transmettait, et se mariait dans le milieu : Jacques Chauvel épouse Anne Vavasseur, fille du forgeron des Salles.</li>
+      <li><b>Charbonnier</b> (Jacques Guérin, 1705-1773, également « marchand de bois »). Celui qui transforme le bois en charbon de bois dans des meules couvertes de terre, en forêt, pendant des semaines de surveillance continue. Sans lui, pas de haut fourneau. <cite>La consommation d'une seule forge pouvait atteindre 4 000 cordes de bois par an, et le rendement était brutal : trois kilos de fonte donnaient deux kilos de fer</cite>. La présence, dans la même ascendance, d'un charbonnier et de forgerons n'est pas un hasard : c'est l'amont et l'aval d'une même chaîne.</li>
+      <li><b>Laboureur à bœufs</b> (Julien Muloise, 1711-1752, et Charles Peigné, 1719-1786). Non pas un journalier mais un laboureur possédant son attelage de bœufs — le capital agricole le plus lourd de l'Ancien Régime. La précision « à bœufs » est une mention de rang, comme on dirait aujourd'hui « propriétaire de son outil ».</li>
+    </ul>  </div>
+  <aside class="note">
+    <b>La chaîne</b>
+    Huit fiches du périmètre portent un métier sidérurgique. Six forment une filiation continue.
+    <span class="cote">s676 Olivier VAVASSEUR<br>forgeron · Paimpont<br><br>s338 François VAVASSEUR<br>« Forgeron aux forges<br>des Salles »<br><br>s169 Anne VAVASSEUR<br>1731, Sainte-Brigitte<br><br>s168 Jacques CHAUVEL<br>« Marteleur »<br><br>s84 Olivier CHAUVEL<br>forgeron · Sion-les-Mines<br><br>s42 Olivier CHAUVEL<br>« Forgeron, Aubergiste<br>Cabaretier » · Riaillé<br><br>s678 Joseph LE BRETON<br>forgeron<br><br>s144 Jacques GUERIN<br>« MARCHAND DE BOIS /<br>CHARBONNIER »</span>
+  </aside>
+</section>
+
+<!-- ══════════════ LE MASSACRE ══════════════ -->
+<section class="block">
+  <div class="txt">
+    <p class="eyebrow">Découverte n° 3</p>
+    <h2>19 prairial an II : <em>tué dans sa boulangerie</em></h2>
+
+    <p class="lede">Jacques Guérin est l'ancêtre direct n° 72 de Marie-Thérèse Muloise — son aïeul à la septième génération. Boulanger, aubergiste et officier municipal de Riaillé, veuf depuis sept ans, il est assassiné le 7 juin 1794 avec une trentaine d'autres républicains, dans l'arrière-salle de sa propre boutique.</p>
+
+    <div class="fiche fiche--fer">
+      <div class="hdr">
+        <div class="rk"><span>Ancêtre direct · Sosa 72</span><span>Génération 7</span></div>
+        <h3>Jacques <em>Guérin</em></h3>
+        <p class="dt">vers 1747 — 7 juin 1794 (19 prairial an II), Riaillé · 47 ans</p>
+        <p class="dt" style="color:var(--iron)">« boulanger, aubergiste et Officier Municipal » · veuf de Jacquette Letort († 5 janvier 1787)</p>
+      </div>
+    </div>
+
+    <p>Le fichier conserve deux notes sur cette fiche, et elles sont d'une qualité rare. La première est la transcription de l'acte d'état civil de Riaillé, dressé sur la déclaration des veuves. La seconde est une tradition familiale, transmise par les descendants, qui donne le lieu exact et le nom de l'auberge.</p>
+
+    <div class="acte">
+      « Nous René Chollet, officier public préposé pour l'exécution de la loi du 20 septembre 1792 dans le territoire de la commune de Riaillé, département de la Loire-Inférieure, district d'Ancenis, sur la déclaration qui nous a été faite par les veuves des ci-dessous dénommés assassinés par les Brigands qui vinrent dans le bourg le samedi 29 prairial et y massacrèrent :
+      <ol>
+        <li>Mathieu <b>DESVALLETS</b>, gendarme, 28 ans, mari de Marie Leconte</li>
+        <li>Louis <b>BECHU</b>, gendarme, 35 ans, mari de Marie Guillois</li>
+        <li>Julien <b>QUENELLE</b>, gendarme, 46 ans, mari de Marie Guais</li>
+        <li>Louis <b>JEAN</b>, gendarme, 35 ans</li>
+        <li>Etienne <b>BLANCHARD</b>, marchand, 45 ans, mari de Marie Coudoux</li>
+        <li><mark>Jacques GUERIN, boulanger, aubergiste et Officier Municipal, 47 ans, veuf de Jacquette Letort</mark></li>
+      </ol>
+      <span class="src">Transcription conservée dans le champ DEAT/NOTE de la fiche @I114@ — extrait de l'état civil de Riaillé</span>
+    </div>
+
+    <p>Deux remarques de méthode sur ce document. D'abord, la liste s'ouvre sur <b>quatre gendarmes</b> : ce n'était pas une émeute contre des civils, c'était l'attaque d'un bourg tenu. Ensuite, l'acte porte une contradiction interne — il annonce « le samedi 29 prairial » alors que le décès est enregistré au 19 prairial. Le 19 prairial an II tombe bien un samedi (7 juin 1794) ; le « 29 » est vraisemblablement une erreur de plume du greffier, ou de transcription. Il vaut la peine de retourner à l'original.</p>
+
+    <p><b>Ce que la note familiale ajoute.</b> Selon ses descendants, Jacques Guérin fut tué <em>« dans sa boulangerie, arrière-salle de l'ancien café Delanoue du haut du bourg de Riaillé »</em>, et l'auberge qu'il tenait en parallèle s'appelait <b>« L'Écu de France »</b>. Le nom de l'enseigne et l'adresse, transmis oralement pendant deux siècles, sont peut-être les informations les plus précieuses de tout le fichier : ce sont exactement celles qu'aucune archive ne conserve.</p>
+
+    <blockquote>
+      Jacques Guérin était le beau-frère de Jacques Letort, maire de Saint-Mars-la-Jaille, fusillé le 16 décembre 1793 par les chouans.
+      <cite>Note du fichier, fiche @I114@</cite>
+    </blockquote>
+
+    <p>Deux hommes de la même famille par alliance, deux élus locaux, tués à six mois d'intervalle par le même camp. Ce n'est pas une famille prise dans la guerre civile par accident : c'est une famille engagée, du côté républicain, dans un pays majoritairement insurgé — et qui l'a payé deux fois.</p>
+
+    <div class="box box--fer">
+      <h4>Contexte — Ce que les chouans sont venus détruire</h4>
+      <p>La note du fichier précise l'objectif de l'incursion : <em>« Menés par de Sarrazin et ses compagnons d'armes, les chouans du Segréen effectuèrent en juin 1794 une incursion en Loire-Inférieure. Ils massacrèrent le 7 juin (19 prairial an II) une trentaine de républicains à Riaillé et détruisirent l'installation des forges et du haut fourneau. »</em></p>
+      <p>Il faut lire les deux moitiés de cette phrase ensemble. Le raid ne visait pas seulement des hommes : il visait <b>l'appareil industriel</b>. En 1794, une forge et un haut fourneau, c'est de la fonte, donc des boulets et des canons pour la République. Détruire les forges de Riaillé était un acte de guerre économique.</p>
+      <p>Et c'est ici que les trois découvertes de ce document se rejoignent. Les forges détruites en 1794 sont celles que la famille Chauvel viendra faire tourner une génération plus tard, et qu'un Chauvel dirigera jusqu'à leur fermeture définitive en 1875. Sur le même arbre, un ancêtre est tué parce que la forge existe, et un autre perd son métier parce qu'elle disparaît.</p>
+    </div>  </div>
+  <aside class="note">
+    <b>Fiche source</b>
+    <span class="cote">@I114@<br>BIRT ABT 1747<br>DEAT 7 JUN 1794<br>PLAC Riaillé<br>AGE About 46-47<br>OCCU « boulanger,<br>aubergiste et Officier<br>Municipal »<br><br>Épouse : Jacquette<br>LETORT (s73)<br>ABT 1752 – 5 JAN 1787<br><br>Source citée dans<br>le fichier :<br>chouannerie.chez-alice.fr</span>
+  </aside>
+</section>
+
+<!-- ══════════════ L'AUBERGE ══════════════ -->
+<section class="block">
+  <div class="txt">
+    <p class="eyebrow">Le motif</p>
+    <h2>La Rigaudière : <em>quatre générations derrière un comptoir</em></h2>
+
+    <p class="lede">Un lieu-dit de Riaillé revient six fois dans le fichier, toujours accolé à un métier de service ou d'artisanat. Ce n'est pas une adresse : c'est une petite entreprise familiale, tenue sur au moins quatre générations, et le fichier permet de la reconstituer presque entièrement.</p>
+
+    <table>
+      <caption>La Rigaudière, Riaillé — les métiers attestés</caption>
+      <thead><tr><th style="width:23%">Personne</th><th style="width:15%">Sosa</th><th style="width:62%">Mention exacte du fichier</th></tr></thead>
+      <tbody>
+        <tr><td>Auguste Juvin<br><span class="mono">1855–1915</span></td><td class="n">10</td><td>« Cafetier Hotelier à Riaillé à la Rigaudière »</td></tr>
+        <tr><td>Marie Rosalie Ouary<br><span class="mono">1855–1939</span></td><td class="n">11</td><td>« Aubergiste (hotel restaurant la Rigaudière à Riaillé) »</td></tr>
+        <tr><td>Olivier Julien Marie Ouary<br><span class="mono">né en 1863</span></td><td class="n">collat.</td><td>« forgeron à Riaillé à la Rigaudière »</td></tr>
+        <tr><td>Joseph Muloise<br><span class="mono">1891–1945</span></td><td class="n">4</td><td>« Menuisier à la Rigaudière (Riaillé) »</td></tr>
+        <tr><td>Joseph Muloise<br><span class="mono">1927–2020</span></td><td class="n">2</td><td>« Menuisier à Riaillé »</td></tr>
+      </tbody>
+    </table>
+
+    <p>La lecture est presque cinématographique. Auguste Juvin et Marie Rosalie Ouary, <b>nés le même jour — le 14 mai 1855 —</b> à Riaillé, tiennent ensemble l'hôtel-restaurant. Le frère de Marie Rosalie, Olivier, y installe sa forge. Leur fille Marguerite épouse en 1910 Joseph Muloise, qui devient menuisier au même lieu-dit. Le fils de celui-ci, Joseph, sera encore menuisier à Riaillé. En une génération, la Rigaudière rassemble un café-hôtel, une forge et une menuiserie, tous tenus par la même parentèle.</p>
+
+    <p>Le motif de l'auberge dépasse d'ailleurs largement la Rigaudière. Il court dans toute la branche, sur deux siècles : Jacques Guérin, boulanger-aubergiste à Riaillé (mort en 1794) ; Olivier Chauvel, « forgeron, aubergiste, cabaretier » à Riaillé (mort en 1875) ; sa femme Anne Marie Morel, « aubergiste » ; Rosalie Richard, « aubergiste » à Teillé (morte en 1902) ; Louis Marie Poulain, « aubergiste » au Petit-Auverné. <b>Cinq foyers, cinq communes, cinq générations.</b></p>
+
+    <div class="box">
+      <h4>Contexte — Pourquoi l'auberge, et pourquoi ces familles-là</h4>
+      <p>Dans une économie de métairies, l'auberge est le second métier de ceux qui ont un peu de surface et un emplacement. Elle apporte trois choses qu'une ferme ne donne pas : du <b>numéraire</b> — de l'argent liquide, tous les jours, dans un monde où la richesse est en nature ; de l'<b>information</b> — les voituriers, marchands de bestiaux et colporteurs y descendent ; et une <b>position</b> — l'aubergiste connaît tout le monde, ce qui explique qu'on le retrouve si souvent officier municipal, témoin d'actes ou marguillier.</p>
+      <p>Cela éclaire rétrospectivement le destin de Jacques Guérin. S'il est officier municipal en 1794, c'est très probablement parce qu'il était aubergiste : sa boutique était le lieu où se faisait l'opinion du bourg. Et c'est pour la même raison qu'il a été tué là.</p>
+      <p>La combinaison forge + auberge, attestée deux fois (Olivier Chauvel, Olivier Ouary), a sa logique propre : on ferre les chevaux et on abreuve les charretiers au même carrefour. Le métier de <b>voiturier</b> de Jean-Marie Victor Juvin (1822) complète le tableau — c'est le transporteur, le client naturel des deux autres.</p>
+    </div>
+
+    <figure>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Fran%C3%A7ois%20Millet%20(II)%20001.jpg?width=1200" alt="L'Angélus, Jean-François Millet, 1857-1859">
+      <figcaption><b>Jean-François Millet, <i>L'Angélus</i>, 1857-1859, huile sur toile, musée d'Orsay.</b> Le monde d'où sortent ces familles, et celui qu'elles quittent : entre 1820 et 1900, la branche passe du laboureur au cafetier, du champ au comptoir. Domaine public. — Wikimedia Commons, <i>Jean-François Millet (II) 001.jpg</i></figcaption>
+    </figure>
+  </div>
+  <aside class="note">
+    <b>Métiers du fichier</b>
+    Recensés sur le périmètre : 17 laboureurs, 4 forgerons, 3 boulangers, 3 aubergistes, 3 cultivateurs, 2 laboureurs à bœufs, 2 métayers, 1 marteleur, 1 charbonnier, 1 cardeur de laine, 1 voiturier, 1 minotier, 1 tailleur de pierres, 1 marchand de porcs-charcutier, 1 sergent.
+    <span class="cote">Métiers urbains apparus<br>vers 1880-1900, à Nantes :<br>fleuriste (quartier<br>Saint-Clément), épicière,<br>menuiserie rue du<br>Chapeau-Rouge, tailleur<br>de pierres rue de la<br>Victoire.</span>
+  </aside>
+</section>
+
+<!-- ══════════════ MARIAGES DE MINEURS ══════════════ -->
+<section class="block">
+  <div class="txt">
+    <p class="eyebrow">Mariages de mineurs</p>
+    <h2>Non pas quelques cas, mais <em>la règle</em></h2>
+
+    <p class="lede">Le fichier ne contient aucune mention textuelle de « consentement », « minorité » ou « autorisation ». Les cas ci-dessous sont donc <b>reconstitués par calcul</b> : âge exact au jour du mariage, confronté au seuil légal en vigueur cette année-là. Le résultat est massif : sur 146 mariages datés, <b>84 tombent sous le seuil</b> du consentement parental. Ce n'est pas une anomalie, c'est le fonctionnement normal du mariage d'Ancien Régime.</p>
+
+    <p>Il faut donc changer l'angle. Lister quatre-vingt-quatre unions n'apprendrait rien ; en revanche, les cas <b>extrêmes</b> — ceux qui franchissent non pas le seuil du consentement mais le minimum canonique lui-même — sont peu nombreux et parlants.</p>
+
+    <table>
+      <caption>Les mariages les plus précoces de la branche</caption>
+      <thead><tr><th style="width:14%">Date</th><th style="width:19%">Lieu</th><th style="width:33%">Époux · âge</th><th style="width:34%">Épouse · âge</th></tr></thead>
+      <tbody>
+        <tr class="hot"><td class="n">11.07.1661</td><td>Ligné</td><td>Mathurin Jullienne · 24 a.<br><span class="mono">Sosa 1474</span></td><td><b>Olive Baudouin · env. 13 ans</b><br><span class="mono">Sosa 1475 · née en 1648</span></td></tr>
+        <tr class="hot"><td class="n">13.11.1674</td><td>Pouillé-les-Côteaux</td><td>Joseph Housset · 19 a.<br><span class="mono">Sosa 534</span></td><td><b>Jeanne Robert · env. 14 ans</b><br><span class="mono">Sosa 535 · née en 1660</span></td></tr>
+        <tr class="hot"><td class="n">10.07.1679</td><td>Les Touches</td><td>François Ouary · 19 a. 2 m.<br><span class="mono">Sosa 708</span></td><td><b>Anne Pelé · 15 a. 0 m.</b><br><span class="mono">Sosa 709</span></td></tr>
+        <tr><td class="n">18.11.1614</td><td>Mésanger</td><td>Pierre Delanoue · 28 a.<br><span class="mono">Sosa 2078</span></td><td>Thomasse Perier · env. 15 a.<br><span class="mono">Sosa 2079</span></td></tr>
+        <tr><td class="n">25.01.1658</td><td>Les Touches</td><td>Mathieu Bonneau · <i>inconnu</i><br><span class="mono">Sosa 740</span></td><td>Julienne Collard · 15 a. 11 m.<br><span class="mono">Sosa 741</span></td></tr>
+        <tr><td class="n">30.11.1662</td><td>Ligné</td><td><b>Julien Rigaud · 17 a. 5 m.</b><br><span class="mono">Sosa 1240 — le plus jeune époux</span></td><td>Perrine Drouet · <i>inconnu</i></td></tr>
+        <tr><td class="n">21.01.1684</td><td>Saint-Herblon</td><td>Mathurin Provost · env. 15 a.<br><span class="mono">Sosa 748</span></td><td>Jeanne Bedouet · env. 15 a.<br><span class="mono">Sosa 749</span></td></tr>
+      </tbody>
+    </table>
+
+    <p><b>Un avertissement s'impose sur les quatre cas « env. ».</b> Pour Olive Baudouin, Jeanne Robert, Thomasse Perier, Mathurin Provost et Jeanne Bedouet, le fichier ne donne qu'une année de naissance, parfois précédée de « BEF » ou « ABT ». L'âge calculé peut donc être faux de plusieurs années. Le cas d'<b>Anne Pelé, mariée à quinze ans tout juste le 10 juillet 1679 aux Touches</b>, est en revanche solide : la date de naissance est complète, et l'écart est net. C'est celui-là qu'il faut aller vérifier sur l'acte — d'autant qu'il se situe sur la ligne Ouary, celle du cousinage Audubon.</p>
+
+    <h4>Le cas le plus étrange du fichier</h4>
+
+    <p>Il ne concerne pas une mineure au sens canonique, mais il est difficile de passer à côté. En <b>1617</b>, l'ancêtre commun avec Audubon se marie :</p>
+
+    <div class="fiche">
+      <div class="hdr">
+        <div class="rk"><span>Sosa 1408 × Sosa 1409</span><span>Génération 11</span></div>
+        <h3>Guillaume <em>Ouary</em>, 50 ans, épouse Jeanne <em>Ouary</em>, 18 ans</h3>
+        <p class="dt">1617, Les Touches · 32 ans d'écart · même patronyme</p>
+      </div>
+    </div>
+
+    <p>Guillaume est né en 1566, Jeanne vers 1599 : il a la cinquantaine, elle sort de l'enfance, et ils portent le même nom. Trois lectures sont possibles, et le fichier ne permet pas de trancher : un remariage de veuf avec une jeune parente — pratique courante pour maintenir une exploitation ; une homonymie fortuite, les Ouary étant très nombreux aux Touches ; ou un vrai mariage consanguin nécessitant une <b>dispense de parenté</b> de l'official diocésain. Cette dernière hypothèse est la plus intéressante, car une dispense laisse une trace écrite qui nomme le degré de parenté exact — et donnerait d'un coup une génération de plus.</p>
+
+    <div class="box">
+      <h4>Contexte — Trois seuils qu'il ne faut pas confondre</h4>
+      <p><b>L'âge minimum du mariage.</b> Le droit canonique fixait 14 ans pour les garçons, 12 pour les filles. Le Code civil de 1804 relève à 18 et 15 ans.</p>
+      <p><b>Le consentement parental.</b> C'est le seuil qui produit les 84 cas de cette branche. Sous l'Ancien Régime, l'usage issu de l'ordonnance de Blois l'exigeait jusqu'à <b>25 ans pour les deux sexes</b>. Le Code civil conserve 25 ans pour les hommes mais descend à 21 pour les femmes ; il faut attendre <b>1907</b> pour l'égalisation à 21 ans, et <b>1974</b> pour l'abaissement à 18.</p>
+      <p><b>La dispense.</b> Distincte des deux précédentes, elle relevait de l'autorité ecclésiastique et concernait les empêchements de parenté ou d'alliance. C'est le document à chercher pour le mariage de 1617.</p>
+      <p>L'objet de ces règles n'était pas de protéger les jeunes époux mais le <b>patrimoine des familles</b> contre les mésalliances. D'où un seuil de consentement très supérieur à la puberté légale — et d'où le fait que, dans une branche paysanne, presque tout le monde se marie « mineur ».</p>
+    </div>
+
+    <h4>Le dernier cas, et le plus proche</h4>
+    <p>Les arrière-grands-parents de Marie-Thérèse ferment la série. En <b>1910</b>, Joseph Muloise, 19 ans, épouse Marguerite Juvin, 18 ans — la fille des aubergistes de la Rigaudière. La majorité étant fixée à 21 ans depuis 1907, <b>les deux étaient mineurs</b>, et leur acte de mariage porte nécessairement le consentement des quatre parents. C'est le seul de la liste dont l'acte soit à portée immédiate : mariage de 1910, communicable, et probablement accompagné de signatures de toute la famille.</p>
+  </div>
+  <aside class="note">
+    <b>Méthode</b>
+    146 mariages datés. Âge calculé au jour près quand naissance et mariage sont complets ; sinon estimé au 1<sup>er</sup> juillet de l'année. Les mariages postérieurs à 1974 ne sont pas comptés (majorité à 18 ans).
+    <span class="cote">Seuils appliqués :<br>avant 1792 → 25/25<br>1792-1907 → 25/21<br>1907-1974 → 21/21<br><br>84 unions sous seuil<br>sur 146 = 58 %<br><br>3 cas sous le minimum<br>canonique féminin<br>2 cas sous 18 ans<br>pour l'époux</span>
+  </aside>
+</section>
+
+<!-- ══════════════ CE QUE LES LETTRES NE DISENT PAS ══════════════ -->
+<section class="block">
+  <div class="txt">
+    <p class="eyebrow">Une piste ouverte</p>
+    <h2>Ce que les lettres de 1918 <em>ne disent pas</em></h2>
+
+    <p class="lede">Sur René Joseph Blanchet, arrière-grand-père de Marie-Thérèse, né à Teillé le 20 mars 1893 et mort au même endroit le 24 juillet 1964, le fichier généalogique est muet : pas de régiment, pas de profession, pas une note. La famille, elle, possède ses lettres du front — et c'est justement ce décalage qui indique où chercher.</p>
+
+    <div class="fiche">
+      <div class="hdr">
+        <div class="rk"><span>Ancêtre direct · Sosa 6</span><span>Génération 3</span></div>
+        <h3>René Joseph <em>Blanchet</em></h3>
+        <p class="dt">20 mars 1893, Teillé — 24 juillet 1964, Teillé · 71 ans</p>
+        <p class="dt">114<sup>e</sup> régiment d'infanterie, 2<sup>e</sup> compagnie, secteur postal 166 — d'après ses lettres, non d'après le fichier</p>
+      </div>
+    </div>
+
+    <p>Un Français né en mars 1893 appartient à la <b>classe 1913</b>. Il a été appelé sous les drapeaux en 1913 ou 1914, et il a fait la guerre entière — quatre ans et trois mois. Il avait 21 ans à la mobilisation générale et 25 à l'armistice. Sa classe est l'une des plus exposées de tout le conflit.</p>
+
+    <p>Ce que la famille conserve de lui, ce sont des lettres écrites presque chaque semaine à son père, menuisier à Teillé, et numérotées pour qu'aucune ne se perde. Elles disent le prix du vin, le cinéma au cantonnement, la boue, le bonheur de dormir une nuit entière. En janvier 1918 le régiment est au repos près de Blainville ; en juin il est engagé à Méry, dans l'Oise, où il perd six cent cinquante hommes en trois jours. René Blanchet y est blessé au flanc gauche le 12 juin, évacué, et écrit le 14 depuis l'Hôpital auxiliaire n<sup>o</sup> 3 de Fleury-Meudon pour rassurer son père et le dissuader de venir.</p>
+
+    <p><b>Mais ces lettres commencent en janvier 1918.</b> Quatre années manquent — celles de la mobilisation, du premier hiver, de Verdun peut-être, du Chemin des Dames peut-être. Le fichier ne les contient pas, la correspondance ne les couvre pas, et les témoins ont disparu. C'est le plus gros gisement qui reste ouvert dans cette branche, et il est à portée de main.</p>
+
+    <div class="box">
+      <h4>Comment retrouver les quatre années manquantes</h4>
+      <p><b>1. Le registre matricule.</b> C'est la pièce décisive, et elle est en ligne. Les Archives départementales de Loire-Atlantique ont numérisé les registres matricules du recrutement militaire. Pour la classe 1913, bureau de Nantes ou d'Ancenis, la fiche de René Joseph Blanchet donnera : son signalement physique, son degré d'instruction, sa profession au conseil de révision, ses affectations successives <b>datées depuis 1913</b>, ses blessures, ses citations et sa date de démobilisation. <b>Une seule page couvrirait exactement ce que les lettres taisent.</b></p>
+      <p><b>2. Le journal des marches et opérations du 114<sup>e</sup> RI</b>, consultable sur « Mémoire des hommes » (ministère des Armées). Le régiment est connu par les lettres : il devient possible de savoir où il était, jour par jour, y compris pendant les années que la correspondance ne couvre pas.</p>
+      <p><b>3. Le recensement de Teillé</b> de 1911 et 1921, aux mêmes archives, pour la profession et la composition du foyer avant et après.</p>
+      <p>La même démarche vaut pour son beau-père et pour les hommes de la génération née entre 1880 et 1900 dans cette branche : c'est le gisement le plus rentable qui reste à ouvrir.</p>
+    </div>
+
+    <h4>Deux autres silences à signaler</h4>
+    <ul class="t">
+      <li><b>Aucune cause de décès n'est renseignée</b> dans toute la branche Muloise — pas un seul champ <span class="mono">CAUS</span>, sur 368 ancêtres et 516 collatéraux. C'est notable, car la branche Bonnet du même fichier en contient plusieurs. Les causes de décès des générations récentes sont encore dans la mémoire familiale : c'est maintenant qu'il faut les recueillir, pas dans vingt ans.</li>
+      <li><b>La mortalité infantile est artificiellement basse.</b> Le calcul donne 6 % de décès avant cinq ans sur les 375 individus dotés de deux dates — contre 22 % dans la branche Bonnet. Ce n'est pas une différence démographique réelle : c'est un effet de construction. Une ascendance profonde se bâtit en remontant de parent en parent, et les enfants morts en bas âge, qui n'ont pas de descendance, n'entrent jamais dans le comptage. Les 31 décès d'enfants relevés sont ceux des fratries qu'on a pris la peine de dépouiller entièrement — notamment chez les Lhériau, où l'on compte huit enfants morts avant 16 ans. <b>Cette statistique ne doit pas être publiée telle quelle</b>, ou elle donnera une image faussement douce du XVII<sup>e</sup> siècle.</li>
+    </ul>
+  </div>
+  <aside class="note">
+    <b>Fiche source</b>
+    <span class="cote">@I26@<br>BIRT 20 MAR 1893<br>PLAC Teillé<br>DEAT 24 JUL 1964<br>PLAC Teillé<br>AGE 71<br><br>Père : René Théophile<br>BLANCHET (s12)<br>1866-1951<br>Mère : Rosalie RICHARD<br>(s13), aubergiste<br>† 3 JUL 1902<br><br>Une source du fichier<br>donne le 19 mars 1893<br>au lieu du 20 :<br>divergence à trancher<br>sur l'acte.</span>
+  </aside>
+</section>
+
+<!-- ══════════════ PERSPECTIVES ══════════════ -->
+<section class="block">
+  <div class="txt">
+    <p class="eyebrow">Pour aller plus loin</p>
+    <h2>Trois angles que ce fichier <em>rend possibles</em></h2>
+
+    <h3>1. La courbe de l'endogamie, siècle par siècle</h3>
+    <p>C'est l'analyse que cette branche mérite le plus, parce qu'elle a la profondeur nécessaire — et presque aucun arbre paysan ne l'a. Pour chaque mariage daté, mesurer la <b>distance entre la commune de naissance de l'époux et celle de l'épouse</b>, puis tracer la moyenne par tranche de cinquante ans. L'hypothèse est nette : un rayon de cinq à dix kilomètres jusqu'aux années 1780, une rupture à la génération du chemin de fer, puis l'explosion vers Nantes et au-delà à partir de 1880. Les données sont déjà toutes dans le fichier ; il ne manque qu'un jeu de coordonnées de communes, disponible librement.</p>
+    <p>Le même calcul appliqué aux <b>lieux-dits</b> plutôt qu'aux communes serait encore plus parlant : la Rigaudière, la Poibelière, le Grand Boulay, les Landes, la Bellangeraie, la Benâte, la Meilleraie. C'est l'échelle réelle de ces vies.</p>
+
+    <h3>2. Le stock de prénoms comme empreinte digitale</h3>
+    <p>Sur 699 individus, six prénoms couvrent près de la moitié des personnes : <b>Marie (62), Jean (57), Jeanne (55), Pierre (37), René (32), Perrine (24)</b>. Un stock aussi resserré n'est pas un manque d'imagination : c'est un système. Chaque prénom encode une relation — on porte celui du parrain, de la marraine, du grand-père, ou celui d'un aîné mort en bas âge qu'il faut « remplacer ».</p>
+    <p>L'analyse à mener consiste à croiser, pour chaque enfant du fichier, <b>son prénom avec celui de son parrain et de sa marraine</b> — que plusieurs fiches conservent explicitement (« parrain Jean Brevet cousin », « marraine Marie Beccavin tante », « témoin baptême : mathurine CADOT, demoiselle »). On obtiendrait la règle de nomination réelle de cette famille, et on pourrait alors <b>prédire</b> des filiations manquantes : dans une lignée où l'aîné s'appelle systématiquement comme le grand-père paternel, un prénom est un indice de parenté. C'est un outil de recherche, pas seulement une curiosité.</p>
+    <p>La récurrence de <b>René</b> mérite au passage un examen à part : René Lhériau (1646), René Lhériau (1710), René Auneau (1641), René Sébilleau (1589 et 1624), René Mégret (1755), René Bonneau (1668), René Dutertre (1715), René Voisine (1633), René Théophile Blanchet (1866), René Joseph Blanchet (1893). Dix Renés sur dix générations, dans plusieurs familles distinctes : c'est un marqueur régional, pas familial, et il faudrait le comparer aux relevés des communes voisines.</p>
+
+    <h3>3. La chaîne complète du fer, en amont et en aval</h3>
+    <p>La route des forgerons est belle, mais elle est incomplète : elle ne montre que les hommes du marteau. Or le fichier contient aussi le <b>charbonnier</b> (Jacques Guérin, 1705-1773, « marchand de bois ») et, à Riaillé, la <b>forge de village</b> (Olivier Ouary, 1863). Il manque au tableau les mineurs, les fondeurs et les rouliers.</p>
+    <p>La piste consiste à dépouiller les registres de Sion-les-Mines, de Sainte-Brigitte et de Riaillé non pas par patronyme mais <b>par métier</b>, pour reconstituer la population ouvrière complète autour de ces trois forges — puis à chercher les alliances entre ces familles. L'hypothèse est qu'on trouvera un <b>milieu endogame de la sidérurgie</b>, se mariant entre soi d'une forge à l'autre sur des centaines de kilomètres, exactement comme les mariniers de Loire ou les compagnons du tour de France. Le mariage de Jacques Chauvel, marteleur, avec Anne Vavasseur, fille du forgeron des Salles, en est déjà la première preuve.</p>
+
+    <div class="box">
+      <h4>Et une quatrième, si le cœur y est</h4>
+      <p>Le fichier permet une pièce d'un autre genre : <b>une carte unique superposant les deux voyages</b>. D'un côté la route du fer, 1663-1875, de Paimpont à Riaillé — plus de deux cents kilomètres parcourus en six générations par une famille d'ouvriers qualifiés. De l'autre le voyage de Jeanne Rabine, 1758-1785, des Touches aux Cayes de Saint-Domingue — sept mille kilomètres en une seule vie, et un aller sans retour.</p>
+      <p>Les deux lignes partent du même pays et de la même condition. L'une reste en Bretagne et y gagne un métier ; l'autre traverse l'Atlantique et y perd la vie à vingt-sept ans, en laissant un fils qui deviendra célèbre. Mises côte à côte à la même échelle, elles disent tout ce que ce fichier a à dire.</p>
+    </div>
+
+    <figure>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/226%20Hooping%20Crane.jpg?width=900" alt="Planche 226 de The Birds of America : la grue blanche">
+      <figcaption><b>Planche 226 de <i>The Birds of America</i> : la grue blanche d'Amérique.</b> Audubon peignait ses oiseaux à l'échelle réelle, ce qui imposa le format « double éléphant » — près d'un mètre de haut. Domaine public. — Wikimedia Commons, <i>226 Hooping Crane.jpg</i></figcaption>
+    </figure>
+  </div>
+  <aside class="note">
+    <b>Données disponibles</b>
+    Tout ce qui est proposé ici se calcule sur le fichier existant, sans nouvelle recherche d'archives — sauf la piste n° 3, qui demande un dépouillement.
+    <span class="cote">146 mariages datés<br>avec lieu<br><br>28 communes de<br>naissance distinctes<br><br>699 individus dotés<br>d'un prénom<br><br>Parrains et marraines<br>nommés sur une<br>vingtaine de fiches</span>
+  </aside>
+</section>
+
+<!-- ══════════════ COLOPHON ══════════════ -->
+<footer class="block">
+  <div class="txt">
+    <hr class="rr">
+    <div class="colophon">
+      <b>SOURCE PRIMAIRE</b><br>
+      version_corrigee_v3.ged — GEDCOM 5.5.1, UTF-8. Dérivé de l'export MyHeritage Family Tree Builder du 1<sup>er</sup> août 2026, base « Bonnet — Muloise — Rattier », après trois passes de correction (15 août 2026). 2 169 individus, 668 familles, 187 sources citées — effectifs inchangés par les corrections. Périmètre : 368 ascendants directs de Marie-Thérèse Muloise (1953) et 516 collatéraux au premier degré, soit 699 individus. Le répertoire de photographies annoncé n'accompagnait pas le fichier.<br><br>
+      <b>ÉTABLISSEMENT DU TEXTE</b><br>
+      Le fichier source a fait l'objet de trois passes de correction avant la rédaction : datation d'un acte de mariage, normalisation des toponymes, remise en ordre des champs de profession, complément des mentions de décès et réparation d'un lien de filiation défectueux dans la lignée Ouary. Les effectifs sont restés inchangés. Le journal détaillé de ces corrections est disponible sur demande.<br><br>
+      <b>ARCHIVES CITÉES DANS LE FICHIER</b><br>
+      Archives départementales de Loire-Atlantique (état civil, registres paroissiaux, recensements de 1872) · Centre généalogique de Loire-Atlantique · Association généalogique vertavienne · Archives de Gironde · visionneuse Archinoë · relevés Geneanet et Filae.<br><br>
+      <b>VÉRIFICATIONS EXTERNES</b><br>
+      Cousinage Audubon : chemins reconstitués intégralement sur le fichier, sans apport extérieur ; éléments biographiques et réévaluation critique d'après la notice Wikipédia de John James Audubon. — Forges des Salles : notice Wikipédia (fondation en 1623, extinction du haut fourneau en 1877, liste des preneurs de bail dont les maîtres des forges de Riaillé) ; site officiel lesforgesdessalles.info. — Massacre de Riaillé : transcription d'état civil conservée dans le fichier, et source qu'il cite (chouannerie.chez-alice.fr).<br><br>
+      <b>ICONOGRAPHIE</b><br>
+      Images reproduites : Wikimedia Commons, domaine public (planches de John James Audubon, mort en 1851 ; œuvres de Jean-François Millet, mort en 1875) ou licence libre — se reporter à la page de description de chaque fichier pour l'attribution exacte. Les cartouches en pointillés signalent les illustrations restant à choisir, avec le lien de la catégorie Commons correspondante.<br><br>
+      <b>MENTION DE PRUDENCE</b><br>
+      Les âges au mariage et les durées de vie sont calculés sur les dates du fichier ; les mentions « environ », « avant » et « après » sont signalées partout où elles affectent une conclusion. Les 84 cas de consentement parental sont <b>déduits</b> de la comparaison avec les seuils légaux : ce sont des hypothèses à confirmer sur les actes, non des faits établis. Le taux de mortalité infantile calculé sur cette branche est un artefact de construction et ne doit pas être publié tel quel. Toute conclusion présentée ici comme incertaine doit rester incertaine dans les versions ultérieures.
+    </div>
+  </div>
+  <aside class="note"><b>Colophon</b></aside>
+</footer>
+
+</div>
+</BaseLayout>

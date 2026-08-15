@@ -1,0 +1,891 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Étude de branche importée depuis _import/branche-bonnet-carquefou.html
+// (fonds MyHeritage « Bonnet — Muloise — Rattier »), reliée depuis la
+// section XI de /genealogie/. Document autonome, mise en page A4
+// « web-to-print » volontaire : CSS interne non touché, seul l'habillage
+// du site (BaseLayout : nav, pied de page, meta) a été ajouté.
+const DESCRIPTION = "Étude généalogique de la branche Bonnet de Carquefou (Loire-Atlantique) : 58 ancêtres directs sur onze générations, de 1620 à 1950 — un bienheureux massacré aux Carmes, un carabinier mort à Strasbourg, un poilu tué à Quennevières, une religieuse partie pour Séoul.";
+---
+
+<BaseLayout lang="fr" title="La branche Bonnet de Carquefou" description={DESCRIPTION}>
+<style>
+/* ============================================================
+   LA BRANCHE BONNET DE CARQUEFOU
+   Feuille de style « édition critique » — web-to-print A4
+   Parti pris : l'appareil d'archive (cotes, vues, numéros Sosa)
+   vit dans la marge, en monospace, comme les annotations d'un
+   greffier. Le récit occupe la colonne de texte.
+   ============================================================ */
+
+:root{
+  --ink:      #1B1F24;   /* encre de registre */
+  --paper:    #EDEEE9;   /* papier lichen, froid */
+  --lichen:   #47664F;   /* accent : ardoise mousse de Bretagne */
+  --register: #8A2D28;   /* rouge de mention marginale — deuils et guerres */
+  --sage:     #737E73;   /* appareil critique */
+  --rule:     #C6C9C0;
+  --paper-2:  #E3E5DE;   /* encarts */
+}
+
+*{box-sizing:border-box}
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Newsreader",Georgia,serif;
+  font-optical-sizing:auto;
+  font-weight:400;
+  font-size:10.5pt;
+  line-height:1.58;
+  hyphens:auto;
+}
+
+/* ---------- grille : marge d'appareil + colonne de texte ---------- */
+.sheet{ max-width:186mm; margin:0 auto; padding:14mm 10mm 20mm; }
+
+.spread{
+  display:grid;
+  grid-template-columns:32mm 1fr;
+  column-gap:9mm;
+  align-items:start;
+}
+.spread > .col{ grid-column:2; min-width:0; }
+.marg{
+  grid-column:1;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:6.6pt;
+  line-height:1.5;
+  color:var(--sage);
+  letter-spacing:.005em;
+  text-align:right;
+  padding-top:.35em;
+  hyphens:none;
+}
+.marg b{ color:var(--lichen); font-weight:500; display:block; letter-spacing:.06em; text-transform:uppercase; }
+.marg .cote{ display:block; margin-top:.5em; }
+
+/* ---------- typographie ---------- */
+h1,h2,h3,h4{ font-weight:400; margin:0; }
+
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:6.8pt; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--lichen); margin:0 0 .9em;
+}
+
+h2{
+  font-size:19pt; line-height:1.14; letter-spacing:-.012em;
+  margin:0 0 .15em; font-weight:400;
+}
+h2 em{ font-style:italic; }
+h3{
+  font-size:12.5pt; font-style:italic; font-weight:400;
+  margin:1.9em 0 .35em; letter-spacing:-.004em;
+}
+h4{
+  font-family:"IBM Plex Mono",monospace;
+  font-size:7pt; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--lichen); margin:1.6em 0 .5em;
+}
+p{ margin:0 0 .72em; text-align:justify; text-justify:inter-word; }
+p.lede{
+  font-size:12pt; line-height:1.5; color:#2A3038;
+  text-align:left; margin-bottom:1.1em;
+}
+p + p{ text-indent:1.15em; }
+p.lede + p, h3 + p, h4 + p, blockquote + p, figure + p, .box + p, table + p{ text-indent:0; }
+a{ color:var(--lichen); text-decoration:none; border-bottom:.4pt solid var(--rule); }
+small{ font-size:8pt; }
+
+.rule{ border:0; border-top:.5pt solid var(--rule); margin:1.7em 0; }
+.rule--thick{ border-top:1.6pt solid var(--ink); margin:2.2em 0 1.4em; }
+
+/* ---------- couverture ---------- */
+.cover{ padding:26mm 0 0; border-bottom:1.6pt solid var(--ink); margin-bottom:2.4em; }
+.cover .kicker{
+  font-family:"IBM Plex Mono",monospace; font-size:7pt;
+  letter-spacing:.26em; text-transform:uppercase; color:var(--lichen);
+}
+.cover h1{
+  font-size:40pt; line-height:1.0; letter-spacing:-.028em;
+  margin:.5em 0 .3em; font-weight:300;
+}
+.cover h1 em{ font-style:italic; font-weight:400; }
+.cover .sub{
+  font-size:13pt; font-style:italic; color:#39404A;
+  max-width:36em; line-height:1.42; margin:0 0 1.6em;
+}
+.cover .meta{
+  display:flex; flex-wrap:wrap; gap:0 2.4em;
+  font-family:"IBM Plex Mono",monospace; font-size:6.9pt;
+  letter-spacing:.05em; color:var(--sage); padding-bottom:1.6em;
+}
+.cover .meta div span{ display:block; color:var(--ink); }
+
+/* ---------- chiffres-clés ---------- */
+.stats{
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:0; border-top:.5pt solid var(--rule); border-bottom:.5pt solid var(--rule);
+  margin:1.6em 0 2em;
+}
+.stats div{ padding:.85em .9em .85em 0; border-right:.5pt solid var(--rule); }
+.stats div:last-child{ border-right:0; }
+.stats .n{
+  display:block; font-size:21pt; line-height:1; letter-spacing:-.03em; font-weight:300;
+}
+.stats .l{
+  display:block; font-family:"IBM Plex Mono",monospace; font-size:6.3pt;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--sage); margin-top:.5em;
+}
+
+/* ---------- fiche biographique ---------- */
+.fiche{ margin:2.2em 0 0; break-inside:avoid; }
+.fiche > .hdr{
+  border-top:1.2pt solid var(--ink); padding-top:.6em; margin-bottom:.7em;
+}
+.fiche .sosa{
+  font-family:"IBM Plex Mono",monospace; font-size:6.6pt;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--lichen);
+  display:flex; justify-content:space-between; gap:1em; margin-bottom:.35em;
+}
+.fiche h3{ margin:0 0 .1em; font-style:normal; font-size:15pt; letter-spacing:-.012em; }
+.fiche h3 em{ font-style:italic; }
+.fiche .dates{
+  font-family:"IBM Plex Mono",monospace; font-size:7pt; color:var(--sage);
+  letter-spacing:.03em;
+}
+.fiche--deuil > .hdr{ border-top-color:var(--register); }
+.fiche--deuil .sosa{ color:var(--register); }
+
+/* ---------- encarts ---------- */
+.box{
+  background:var(--paper-2); padding:1.05em 1.15em .85em;
+  margin:1.4em 0; break-inside:avoid;
+  border-left:2pt solid var(--lichen);
+}
+.box h4{ margin-top:0; }
+.box p{ font-size:9.4pt; line-height:1.5; margin-bottom:.5em; }
+.box p:last-child{ margin-bottom:0; }
+.box--alert{ border-left-color:var(--register); }
+.box--alert h4{ color:var(--register); }
+
+blockquote{
+  margin:1.3em 0 1.3em 0; padding:0 0 0 1.1em;
+  border-left:.5pt solid var(--rule);
+  font-style:italic; font-size:10pt; color:#333A42;
+}
+blockquote cite{
+  display:block; font-style:normal; font-family:"IBM Plex Mono",monospace;
+  font-size:6.6pt; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--sage); margin-top:.55em;
+}
+
+/* ---------- tableaux ---------- */
+table{
+  width:100%; border-collapse:collapse; margin:1.1em 0 1.4em;
+  font-size:8.6pt; break-inside:avoid;
+}
+caption{
+  text-align:left; font-family:"IBM Plex Mono",monospace; font-size:6.6pt;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--lichen);
+  padding-bottom:.6em;
+}
+th{
+  text-align:left; font-weight:500; font-size:6.6pt;
+  font-family:"IBM Plex Mono",monospace; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--sage); border-bottom:.9pt solid var(--ink);
+  padding:0 .7em .45em 0; vertical-align:bottom;
+}
+td{ padding:.5em .7em .5em 0; border-bottom:.4pt solid var(--rule); vertical-align:top; }
+td.num{ font-family:"IBM Plex Mono",monospace; font-size:8pt; white-space:nowrap; }
+tr.flag td{ color:var(--register); }
+tr.flag td.num{ font-weight:500; }
+
+/* ---------- figures ---------- */
+figure{ margin:1.5em 0; break-inside:avoid; }
+figure img{
+  width:100%; height:auto; display:block;
+  filter:saturate(.82) contrast(1.03);
+  background:var(--paper-2);
+}
+figcaption{
+  font-family:"IBM Plex Mono",monospace; font-size:6.4pt; line-height:1.55;
+  color:var(--sage); margin-top:.55em; letter-spacing:.01em; hyphens:none;
+}
+figcaption b{ color:var(--ink); font-weight:500; }
+figcaption a{ border-bottom:none; color:var(--sage); }
+.figrow{ display:grid; grid-template-columns:1fr 1fr; gap:1.1em; margin:1.5em 0; }
+.figrow figure{ margin:0; }
+
+/* cartouche : illustration à sourcer par l'auteur */
+.cartouche{
+  border:.5pt dashed var(--sage); padding:.9em 1em;
+  margin:1.4em 0; break-inside:avoid;
+  font-family:"IBM Plex Mono",monospace; font-size:6.8pt; line-height:1.6;
+  color:var(--sage); hyphens:none;
+}
+.cartouche b{
+  display:block; color:var(--lichen); letter-spacing:.14em;
+  text-transform:uppercase; font-weight:500; margin-bottom:.4em; font-size:6.4pt;
+}
+.cartouche a{ color:var(--ink); border-bottom:.4pt solid var(--rule); }
+
+/* ---------- schéma SVG ---------- */
+.schema{ margin:1.8em 0; break-inside:avoid; }
+.schema svg{ width:100%; height:auto; display:block; }
+
+/* ---------- listes ---------- */
+ul,ol{ margin:.4em 0 1em; padding-left:1.15em; }
+li{ margin-bottom:.34em; }
+ul.tight{ list-style:none; padding-left:0; }
+ul.tight li{
+  padding-left:1.1em; position:relative; margin-bottom:.5em;
+}
+ul.tight li::before{
+  content:"—"; position:absolute; left:0; color:var(--lichen);
+}
+
+/* ---------- pied ---------- */
+.colophon{
+  border-top:1.6pt solid var(--ink); margin-top:2.6em; padding-top:1em;
+  font-family:"IBM Plex Mono",monospace; font-size:6.6pt; line-height:1.7;
+  color:var(--sage); letter-spacing:.02em; hyphens:none;
+}
+
+/* ============================================================
+   IMPRESSION
+   ============================================================ */
+@page{
+  size:A4;
+  margin:17mm 15mm 19mm 15mm;
+  @bottom-center{ content:counter(page); }
+}
+@page:first{ margin-top:24mm; }
+
+@media print{
+  body{ background:#fff; font-size:9.6pt; }
+  .sheet{ max-width:none; margin:0; padding:0; }
+  .no-print{ display:none !important; }
+  h2,h3,.fiche{ break-after:avoid; }
+  h2{ break-before:page; }
+  .cover h2, .cover + * h2:first-child{ break-before:auto; }
+  #ouverture h2{ break-before:avoid; }
+  figure,table,.box,.schema,.cartouche,blockquote,.stats{ break-inside:avoid; }
+  p{ orphans:3; widows:3; }
+  a{ border-bottom:none; color:var(--ink); }
+  .marg{ font-size:6pt; }
+  figure img{ max-height:88mm; object-fit:contain; object-position:left top; }
+}
+
+@media (max-width:760px){
+  .spread{ grid-template-columns:1fr; }
+  .spread > .col{ grid-column:1; }
+  .marg{
+    grid-column:1; text-align:left; border-left:2pt solid var(--rule);
+    padding:.4em 0 .4em .8em; margin-bottom:1em;
+  }
+  .marg b{ display:inline; margin-right:.6em; }
+  .marg .cote{ display:inline; }
+  .cover h1{ font-size:27pt; }
+  .stats{ grid-template-columns:1fr 1fr; }
+  .stats div:nth-child(2){ border-right:0; }
+  .figrow{ grid-template-columns:1fr; }
+}
+
+@media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; } }
+
+.aide{
+  background:var(--ink); color:var(--paper); padding:1em 1.2em;
+  font-family:"IBM Plex Mono",monospace; font-size:7.4pt; line-height:1.7;
+  margin-bottom:2em; letter-spacing:.02em;
+}
+.aide b{ color:#A8C4AE; }
+</style>
+<div class="sheet">
+
+<!-- ═══════════════════════ COUVERTURE ═══════════════════════ -->
+<header class="cover">
+  <p class="kicker">Étude de branche · Fonds MyHeritage « Bonnet — Muloise — Rattier » · version corrigée du 15 août 2026</p>
+  <h1>Neuf générations<br>sur la même <em>colline</em></h1>
+  <p class="sub">La branche Bonnet de Carquefou, de 1620 à nos jours : laboureurs, métayers, journaliers — et cinq destins qui ont rompu la ligne.</p>
+  <div class="meta">
+    <div>Tête de branche<span>Loïc Bonnet, né en 1950</span></div>
+    <div>Profondeur<span>11 générations · 1620-1950</span></div>
+    <div>Ancêtres identifiés<span>58 sur 2 047 théoriques</span></div>
+    <div>Épicentre<span>Carquefou, Loire-Atlantique</span></div>
+  </div>
+</header>
+
+<!-- ═══════════════════════ OUVERTURE ═══════════════════════ -->
+<section id="ouverture" class="spread">
+  <aside class="marg">
+    <b>Périmètre</b>
+    58 ascendants directs de Loïc Bonnet, plus leurs 106 frères et sœurs recensés : 164 individus au total, extraits d'un fonds de 2 169 fiches.
+    <span class="cote">version_corrigee_v3.ged<br>GEDCOM 5.5.1 · UTF-8<br>2 169 INDI · 668 FAM<br>187 sources citées<br><br>Trois passes de<br>correction appliquées<br>depuis l'export<br>du 1<sup>er</sup> août :<br>datation, toponymie,<br>champs de métier,<br>balises de décès,<br>boucle de filiation.<br>Journal complet en<br>fin de volume.</span>
+  </aside>
+  <div class="col">
+    <p class="eyebrow">Ce que dit le fichier</p>
+    <h2>Une famille qui n'a pas bougé — <em>sauf quand l'Histoire est venue la chercher</em></h2>
+
+    <p class="lede">Sur onze générations, la branche Bonnet tient dans un rayon de six kilomètres. Carquefou revient 176 fois dans les actes ; Nantes, la grande ville voisine, 31 fois seulement. Tous les autres lieux réunis — Sainte-Luce, Le Cellier, Indre, Nort-sur-Erdre — ne pèsent qu'une poignée de mentions. Le métier ne bouge pas davantage : sur les cinquante-huit ancêtres, on compte vingt-deux <em>laboureurs</em>, neuf <em>cultivateurs</em>, huit <em>cultivatrices</em>, deux métayers, deux journaliers, deux domestiques. Pas un marchand, pas un artisan, pas un notaire.</p>
+
+    <p>C'est précisément ce qui rend les exceptions lisibles. Quand un fils de laboureur de Carquefou meurt à Paris, à Strasbourg ou dans l'Oise, ce n'est jamais parce qu'il a choisi de partir : c'est que la Révolution, la conscription impériale ou la Grande Guerre est passée par la métairie. Cinq trajectoires rompent la ligne — un prêtre massacré aux Carmes, un séminariste disparu sous la Terreur, un carabinier mort à dix-neuf ans, un poilu tué au premier jour d'une offensive, une religieuse envoyée à Séoul. À elles cinq, elles racontent l'histoire de France mieux qu'un manuel.</p>
+
+    <div class="stats">
+      <div><span class="n">176</span><span class="l">mentions de Carquefou</span></div>
+      <div><span class="n">22 %</span><span class="l">morts avant 5 ans</span></div>
+      <div><span class="n">1620</span><span class="l">ancêtre le plus ancien</span></div>
+      <div><span class="n">8</span><span class="l">unions sous consentement</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ LE PAYS ═══════════════════════ -->
+<section class="spread">
+  <aside class="marg">
+    <b>Toponymes</b>
+    Les hameaux nommés dans les actes : la Filonnière (13 mentions), la Gouachère (7), la Savaudière, le Housseau, la Bréchetière, la Magdeleine, la Pintinière, la Monnerie, la Salle, l'Angle, Riou, Tournière, le Plessis-Chéreau.
+    <span class="cote">Norme retenue : toponyme historique, jamais le nom de commune fusionnée.</span>
+  </aside>
+  <div class="col">
+    <p class="eyebrow">Le pays</p>
+    <h2>Carquefou, une paroisse de métairies</h2>
+
+    <p class="lede">Le bourg est perché sur l'un des points hauts de la commune, à 34 mètres, et son église se voit à plusieurs kilomètres à la ronde. Tout autour, une constellation de métairies et de villages — c'est là, et non au bourg, que la famille vit et meurt.</p>
+
+    <p>Les actes ne disent presque jamais « Carquefou » tout court : ils disent « Carquefou la Filonnière », « Carquefou la Bréchetière », « Carquefou la Magdeleine ». Ces noms de lieux-dits sont l'unité de vie réelle. La Filonnière, en particulier, revient sur quatre générations : c'est là que naissent Jean Bourgouin en 1792, Jeanne Briand en 1795, plusieurs enfants Bourgouin dans les années 1830, puis Louis Frédéric Bonnet en 1884 et son frère Henri en 1885. Ce n'est pas un hasard mais une exploitation transmise.</p>
+
+    <figure>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Carquefou%20%C3%A9glise.jpg?width=1100" alt="L'église Saint-Pierre-et-Saint-Paul de Carquefou">
+      <figcaption><b>L'église Saint-Pierre-et-Saint-Paul de Carquefou.</b> Point culminant de la commune, et lieu de la quasi-totalité des baptêmes, mariages et sépultures de la branche entre 1620 et 1900. Les actes la désignent « Carquefou—Saint-Pierre ». — Wikimedia Commons, <i>Carquefou église.jpg</i> · commons.wikimedia.org/wiki/File:Carquefou_église.jpg</figcaption>
+    </figure>
+
+    <div class="figrow">
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Location%20Carquefou.svg?width=600" alt="Localisation de Carquefou en Loire-Atlantique">
+        <figcaption><b>Carquefou dans la Loire-Atlantique.</b> Nord-est immédiat de Nantes, entre l'Erdre et la Loire. — Wikimedia Commons, <i>Location Carquefou.svg</i></figcaption>
+      </figure>
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Blason%20ville%20fr%20Carquefou%20(Loire-Atlantique).svg?width=520" alt="Blason de Carquefou">
+        <figcaption><b>Armes de Carquefou.</b> Le chef d'hermine rappelle l'appartenance bretonne de la paroisse, aux marches de l'Anjou. — Wikimedia Commons, <i>Blason ville fr Carquefou (Loire-Atlantique).svg</i></figcaption>
+      </figure>
+    </div>
+
+    <div class="box">
+      <h4>Contexte — Ce qu'est un laboureur</h4>
+      <p>Le mot ne désigne pas un ouvrier agricole mais le sommet de la paysannerie : celui qui possède un attelage et une charrue, et qui exploite une métairie en fermage ou en métayage. Au-dessous viennent le <em>journalier</em>, payé à la journée, et le <em>domestique</em>, logé et nourri chez le maître. La branche Bonnet oscille entre ces trois états, et la trajectoire est plutôt descendante : laboureurs sous l'Ancien Régime, « laboureur, journalier » pour Pierre Marie Bonnet (1784-1835), simples cultivateurs au XIX<sup>e</sup>, puis maçon et ouvrier d'usine au XX<sup>e</sup>.</p>
+      <p>Le terme <em>métayer</em>, porté par Gilles Beccavin (1728-1793), signale un contrat de partage des fruits avec le propriétaire — souvent la moitié de la récolte. À Carquefou, ces propriétaires sont les seigneurs de Maubreuil, de la Seilleraye, de l'Épinay.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ LA LIGNE AGNATIQUE ═══════════════════════ -->
+<section class="spread">
+  <aside class="marg">
+    <b>Lecture</b>
+    Colonne centrale : la ligne Bonnet de père en fils. À droite, les destins qui s'en écartent — et l'année où ils s'en écartent.
+    <span class="cote">Les traits rouges marquent une mort violente ou hors du pays.</span>
+  </aside>
+  <div class="col">
+    <p class="eyebrow">Le fil</p>
+    <h2>Neuf Bonnet, de père en fils</h2>
+
+    <p class="lede">La filiation agnatique est continue et documentée de 1698 à aujourd'hui. Elle ne quitte Carquefou qu'une fois — pour la naissance de Julien à Nantes en 1733 — et n'y revient jamais moins.</p>
+
+    <div class="schema">
+      <svg viewBox="0 0 640 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma de la ligne agnatique Bonnet et des destins collatéraux">
+        <defs>
+          <style>
+            .sp{ stroke:#1B1F24; stroke-width:1.6; fill:none; }
+            .br{ stroke:#8A2D28; stroke-width:.9; fill:none; }
+            .brg{ stroke:#47664F; stroke-width:.9; fill:none; }
+            .nm{ font-family:Newsreader,Georgia,serif; font-size:11px; fill:#1B1F24; }
+            .yr{ font-family:'IBM Plex Mono',monospace; font-size:7.5px; fill:#737E73; letter-spacing:.04em; }
+            .so{ font-family:'IBM Plex Mono',monospace; font-size:7px; fill:#47664F; letter-spacing:.1em; }
+            .ev{ font-family:Newsreader,Georgia,serif; font-size:9.5px; font-style:italic; fill:#8A2D28; }
+            .evg{ font-family:Newsreader,Georgia,serif; font-size:9.5px; font-style:italic; fill:#47664F; }
+          </style>
+        </defs>
+
+        <!-- spine -->
+        <line class="sp" x1="150" y1="26" x2="150" y2="474"/>
+
+        <!-- generations -->
+        <g>
+          <circle cx="150" cy="30"  r="3.4" fill="#1B1F24"/>
+          <text class="so" x="140" y="26" text-anchor="end">256</text>
+          <text class="nm" x="140" y="36" text-anchor="end">Jean Bonnet</text>
+          <text class="yr" x="140" y="47" text-anchor="end">1698-1750 · laboureur</text>
+
+          <circle cx="150" cy="85"  r="3.4" fill="#1B1F24"/>
+          <text class="so" x="140" y="81" text-anchor="end">128</text>
+          <text class="nm" x="140" y="91" text-anchor="end">Julien Bonnet</text>
+          <text class="yr" x="140" y="102" text-anchor="end">1733-1774 · né à Nantes</text>
+
+          <circle cx="150" cy="140" r="3.4" fill="#1B1F24"/>
+          <text class="so" x="140" y="136" text-anchor="end">64</text>
+          <text class="nm" x="140" y="146" text-anchor="end">Pierre Louis Thomas</text>
+          <text class="yr" x="140" y="157" text-anchor="end">1757-1825 · laboureur</text>
+
+          <circle cx="150" cy="195" r="3.4" fill="#1B1F24"/>
+          <text class="so" x="140" y="191" text-anchor="end">32</text>
+          <text class="nm" x="140" y="201" text-anchor="end">Pierre Marie</text>
+          <text class="yr" x="140" y="212" text-anchor="end">1784-1835 · journalier</text>
+
+          <circle cx="150" cy="250" r="3.4" fill="#1B1F24"/>
+          <text class="so" x="140" y="246" text-anchor="end">16</text>
+          <text class="nm" x="140" y="256" text-anchor="end">Honoré Chantal</text>
+          <text class="yr" x="140" y="267" text-anchor="end">1822-1890 · cultivateur</text>
+
+          <circle cx="150" cy="305" r="3.4" fill="#1B1F24"/>
+          <text class="so" x="140" y="301" text-anchor="end">8</text>
+          <text class="nm" x="140" y="311" text-anchor="end">Louis Honoré</text>
+          <text class="yr" x="140" y="322" text-anchor="end">1859-1900 · cultivateur</text>
+
+          <circle cx="150" cy="360" r="3.4" fill="#1B1F24"/>
+          <text class="so" x="140" y="356" text-anchor="end">4</text>
+          <text class="nm" x="140" y="366" text-anchor="end">Louis Frédéric Léon</text>
+          <text class="yr" x="140" y="377" text-anchor="end">1884-1957 · brancardier</text>
+
+          <circle cx="150" cy="415" r="3.4" fill="#1B1F24"/>
+          <text class="so" x="140" y="411" text-anchor="end">2</text>
+          <text class="nm" x="140" y="421" text-anchor="end">Louis François Marie</text>
+          <text class="yr" x="140" y="432" text-anchor="end">1925-2009 · maçon</text>
+
+          <circle cx="150" cy="470" r="5" fill="#47664F"/>
+          <text class="so" x="140" y="466" text-anchor="end">1</text>
+          <text class="nm" x="140" y="476" text-anchor="end">Loïc Bonnet</text>
+          <text class="yr" x="140" y="487" text-anchor="end">1950 · professeur, journaliste</text>
+        </g>
+
+        <!-- collateral branches -->
+        <path class="brg" d="M150 140 C 210 140, 220 118, 268 118"/>
+        <text class="evg" x="274" y="115">Joseph Bécavin, prêtre — 1792</text>
+        <text class="yr" x="274" y="127">bienheureux, massacré aux Carmes (Paris)</text>
+
+        <path class="br" d="M150 140 C 210 140, 220 152, 268 152"/>
+        <text class="ev" x="274" y="149">Gilles Bécavin, séminariste — déc. 1793</text>
+        <text class="yr" x="274" y="161">disparu à 22 ans, lieu inconnu</text>
+
+        <path class="br" d="M150 195 C 215 195, 225 190, 268 190"/>
+        <text class="ev" x="274" y="187">Julien Bonnet, carabinier — 1808</text>
+        <text class="yr" x="274" y="199">7ᵉ léger, mort à Strasbourg à 19 ans</text>
+
+        <path class="br" d="M150 360 C 215 360, 225 340, 268 340"/>
+        <text class="ev" x="274" y="337">Henri Auguste Bonnet — 6 juin 1915</text>
+        <text class="yr" x="274" y="349">tué à Quennevières (Oise), médaille militaire</text>
+
+        <path class="brg" d="M150 360 C 215 360, 225 378, 268 378"/>
+        <text class="evg" x="274" y="375">Germaine Bonnet, sœur Jeanne-Françoise</text>
+        <text class="yr" x="274" y="387">Chartres → Séoul, 1924</text>
+
+        <path class="brg" d="M150 415 C 215 415, 225 432, 268 432"/>
+        <text class="evg" x="274" y="429">François Louis Germain Bonnet</text>
+        <text class="yr" x="274" y="441">ouvrier aux Batignolles-Nantes</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PARCOURS ATYPIQUES ═══════════════════════ -->
+<section class="spread">
+  <aside class="marg">
+    <b>Note de méthode</b>
+    Les six portraits qui suivent reposent sur les champs NOTE, OCCU, CAUS, EVEN et BURI du fichier. Chaque élément externe est signalé comme tel : les données du GEDCOM et les vérifications faites en dehors ne sont pas mêlées.
+  </aside>
+  <div class="col">
+    <p class="eyebrow">Parcours atypiques · 1 sur 6</p>
+    <h2>Le bienheureux : <em>Joseph Bécavin</em></h2>
+
+    <p class="lede">C'est la découverte majeure du fichier, et elle est passée inaperçue parce qu'elle tient en deux lignes : <span style="font-family:'IBM Plex Mono',monospace;font-size:8.5pt">DEAT 2 SEP 1792 / PLAC couvent des Carmes</span>. Joseph Bécavin, frère de l'ancêtre Jean Bécavin (Sosa 66), est un bienheureux de l'Église catholique.</p>
+
+    <div class="box">
+      <h4>D'abord : par où les Bécavin entrent-ils chez les Bonnet ?</h4>
+      <p>La question se pose d'emblée, car ce n'est pas une lignée Bonnet. Les Bécavin entrent dans la famille par <b>un mariage, le 21 juin 1809 à Carquefou</b>. Voici la chaîne complète, sans aucun maillon supposé :</p>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:8.2pt;line-height:1.75;text-align:left">
+        1. Loïc Bonnet (1950)<br>
+        2. Louis François Marie Bonnet (1925-2009), maçon<br>
+        3. Louis Frédéric Léon Bonnet (1884-1957) — le grand-père brancardier<br>
+        4. Louis Honoré Bonnet (1859-1900), cultivateur<br>
+        5. Honoré Chantal Bonnet (1822-1890), cultivateur<br>
+        6. <b>Pierre Marie Bonnet (1784-1835)</b>, laboureur-journalier ⚭ 21 juin 1809 →<br>
+        7. <b>Marie Becavin (1790-1826)</b>, fille de →<br>
+        8. <b>Jean Bécavin (1764-1849)</b>, laboureur à Carquefou, fils de →<br>
+        9. <b>Gilles Beccavin (1728-1793)</b>, métayer et ancien marguillier,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;et <b>Marie Brevet (1737-1807)</b>
+      </p>
+      <p>Gilles et Marie Brevet ont eu huit enfants. Jean, l'ancêtre direct, est l'aîné. <b>Joseph, le bienheureux, est son frère cadet</b> — et Gilles, le séminariste, le benjamin des trois.</p>
+      <p>Autrement dit : on ne descend pas de Joseph, mort à vingt-cinq ans, prêtre, sans postérité. On descend de <em>son frère aîné</em>, et donc de leurs parents communs. Joseph est l'<b>arrière-arrière-arrière-arrière-grand-oncle</b> de Loïc Bonnet : un collatéral, mais un collatéral direct, puisque ses parents sont des ancêtres.</p>
+    </div>
+
+    <div class="fiche fiche--deuil">
+      <div class="hdr">
+        <div class="sosa"><span>Collatéral · frère du Sosa 66</span><span>Génération 7</span></div>
+        <h3>Joseph <em>Bécavin</em></h3>
+        <p class="dates">6 février 1767, Carquefou (la Bréchetière) — 2 septembre 1792, couvent des Carmes, Paris · 25 ans</p>
+      </div>
+    </div>
+
+    <p>Le GEDCOM le désigne « joseph BECAVIN (prêtre) », avec une profession touchante de précision : <em>« étudiant en théologie (signe ainsi le 23/10/1787 au mariage de son frère Jean) »</em>. Autrement dit, on connaît son état par sa signature au bas de l'acte de mariage de son frère — l'ancêtre direct. Les deux frères sont côte à côte devant le curé de Carquefou en octobre 1787 ; cinq ans plus tard, l'un labourera encore la Bréchetière pendant soixante ans, l'autre sera mort à Paris.</p>
+
+    <p><b>Vérification externe.</b> Joseph Bécavin figure nommément dans la liste des 191 bienheureux martyrs de septembre 1792, béatifiés par Pie XI en 1926. <cite>Wikipédia le décrit comme un ecclésiastique né le 6 février 1767 à Carquefou et tué le 2 septembre 1792 à la prison des Carmes, fils de Gilles Bécavin, marguillier, et de Marie Brevet</cite> — exactement les parents que le fichier donne pour les Sosa 132 et 133. La concordance est totale. <cite>L'ouvrage du chanoine Joseph Grente, </cite><em><cite>Les Martyrs de Septembre 1792 à Paris</cite></em><cite> (1926), précise qu'il n'était que sous-diacre lors de la prestation du serment constitutionnel, que son opposition au schisme l'obligea à se réfugier à Paris, et qu'il y reçut le diaconat puis la prêtrise les 1<sup>er</sup> et 15 avril 1792</cite>. Il était donc prêtre depuis quatre mois et demi quand il fut tué.</p>
+
+    <p><cite>La page consacrée à Carquefou par Wikipédia l'inscrit parmi les personnalités de la commune, « prêtre et martyr, massacré dans le jardin des Carmes à Paris lors des massacres de septembre »</cite>. Un ancêtre collatéral de la branche est donc une gloire locale officielle — et personne, dans la famille, ne semble l'avoir su.</p>
+
+    <div class="box">
+      <h4>Contexte — Les massacres de septembre 1792</h4>
+      <p><cite>Après l'adoption de la Constitution civile du clergé, les prêtres refusant le serment sont entassés dans des maisons religieuses transformées en prisons improvisées : les Carmes, l'Abbaye, la Force. Le 2 septembre 1792, celles-ci sont investies par des sans-culottes exaltés</cite>. La journée se déroule aux Carmes en deux temps qu'il faut distinguer, faute de quoi elle devient incompréhensible.</p>
+
+      <p><b>D'abord une tuerie sans jugement.</b> <cite>En début d'après-midi, les septembriseurs surprennent les prisonniers à la promenade ; on les refoule dans l'étroit couloir et le commissaire Violet leur ordonne de sortir deux par deux, vers le petit escalier du jardin, où les égorgeurs les attendent</cite>. <cite>C'est vers seize heures que des hommes en armes pénètrent dans le couvent et blessent à mort plusieurs prêtres</cite>.</p>
+
+      <p><b>Puis un simulacre de procès pour les survivants.</b> <cite>Après ce commencement de tuerie désordonnée, Violet, délégué de la section du Luxembourg, intervient pour l'arrêter : il fait rentrer dans l'église tous les prêtres dispersés dans le jardin et fait interroger chacun sur le serment — l'avez-vous prêté, voulez-vous le prêter maintenant ? Sur réponse négative, les prisonniers sont « élargis » : le mot convenu pour les mener à la mort, l'un après l'autre, à l'entrée du jardin</cite>. <cite>Au lieu de les tuer tous sur-le-champ, les commissaires organisent donc une parodie de procès pour les contraindre au serment ; à chaque refus, c'est l'exécution</cite>.</p>
+
+      <p>Le jugement ne suit donc jamais la mort d'un même homme : il suit la <em>première</em> vague de meurtres et précède la seconde. C'est cette inversion apparente qui rend les récits d'époque déroutants. <cite>Plus d'un millier de prisonniers périssent en ces jours ; pour 191 d'entre eux, on a pu établir qu'ils sont morts à cause de leur foi</cite>.</p>
+      <p><b>Et Joseph Bécavin, dans lequel des deux temps ?</b> On ne peut pas le savoir, et il ne faut pas prétendre le contraire. La seule indication est celle de la notice de Carquefou, qui le dit « massacré dans le jardin » — ce qui vaut pour les deux phases, puisque les victimes de la première y furent poursuivies et que celles de la seconde y furent menées après interrogatoire. Prêtre depuis quatre mois, réfractaire déclaré, il aurait de toute façon répondu la même chose à la question sur le serment.</p>
+
+      <p><cite>Les béatifiés sont vénérés dans la crypte-ossuaire aménagée au XIX<sup>e</sup> siècle sous l'église Saint-Joseph-des-Carmes, 74 rue de Vaugirard, Paris 6<sup>e</sup>. L'escalier du martyre, marqué d'une plaque </cite><em><cite>Hic ceciderunt</cite></em><cite> — « Ici ils tombèrent » —, est aujourd'hui inclus dans le jardin du séminaire de l'Institut catholique</cite>. Ce nom prend tout son sens une fois la chronologie rétablie : c'est le petit escalier du jardin, le point de passage obligé où attendaient les égorgeurs, dans les deux phases de la journée. L'adresse est visitable : c'est le seul lieu au monde où l'on peut se recueillir devant les restes d'un ancêtre de cette branche.</p>
+    </div>
+
+    <div class="cartouche">
+      <b>Illustration à sourcer</b>
+      Pour ce portrait, deux ressources libres de Wikimedia Commons sont à privilégier — les fichiers exacts changent au fil des versements, mieux vaut choisir dans la catégorie :<br>
+      · <a href="https://commons.wikimedia.org/wiki/Category:Saint-Joseph-des-Carmes">commons.wikimedia.org/wiki/Category:Saint-Joseph-des-Carmes</a> — l'église et sa crypte-ossuaire.<br>
+      · <a href="https://commons.wikimedia.org/wiki/Category:September_Massacres">commons.wikimedia.org/wiki/Category:September_Massacres</a> — gravures d'époque (domaine public).<br>
+      Article de référence : <a href="https://fr.wikipedia.org/wiki/Joseph_B%C3%A9cavin">fr.wikipedia.org/wiki/Joseph_Bécavin</a>
+    </div>
+
+    <hr class="rule">
+
+    <p class="eyebrow">Parcours atypiques · 2 sur 6</p>
+    <h3 style="font-style:normal;font-size:15pt;margin-top:.4em">Le frère cadet, disparu — <em>Gilles Bécavin</em></h3>
+
+    <p>Le même couple, Gilles Beccavin et Marie Brevet, a placé <em>deux</em> fils dans les ordres. Le cadet, Gilles, né à la Bréchetière le 17 juillet 1771, est décrit par le fichier comme <em>« étudiant en troisième »</em> — encore une fois d'après sa signature au mariage de son frère Jean en 1787 — et suivi d'un point d'interrogation : « séminariste ? ».</p>
+
+    <p>Sa mort est datée de <b>décembre 1793</b>, sans lieu. Il a vingt-deux ans. La date, à elle seule, est un signal : décembre 1793, en Loire-Inférieure, c'est le cœur de la Terreur nantaise. <b>Le fichier ne dit rien de plus, et il faut résister à la tentation de conclure</b> — mais un séminariste de Carquefou mourant sans lieu d'inhumation en décembre 1793, un an après le martyre de son frère aîné, mérite une recherche ciblée dans les registres de la commission militaire de Nantes et dans les listes de prêtres et clercs poursuivis du diocèse.</p>
+
+    <blockquote>
+      Deux fils sur huit envoyés au séminaire, dans une famille de métayers : ce n'est pas une vocation isolée, c'est une stratégie familiale. Le père, Gilles, est <em>« ancien marguillier »</em> — marchand de fabrique, gestionnaire des biens de la paroisse. La maison Bécavin était du côté de l'Église, et elle a payé.
+      <cite>Lecture d'ensemble du groupe F500021</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CARABINIER ═══════════════════════ -->
+<section class="spread">
+  <aside class="marg">
+    <b>Fiche source</b>
+    <span class="cote">@I502179@<br>NOTE naissance : « à la Pintinière »<br>CHR BMS St-Pierre, parrain François Marchand, marraine Jeanne Ploteau<br>NOTE décès : « transcription à Carquefou le 29 10 1808 / mort à l'hôpital militaire »<br>AGE 18-19</span>
+  </aside>
+  <div class="col">
+    <p class="eyebrow">Parcours atypiques · 3 sur 6</p>
+    <h2>Le carabinier de l'an XVI : <em>Julien Bonnet</em></h2>
+
+    <p class="lede">Frère cadet de l'ancêtre Pierre Marie Bonnet (Sosa 32), Julien naît à la Pintinière le 15 avril 1789 — trois semaines avant l'ouverture des États généraux. Il meurt à Strasbourg le 6 octobre 1808, à dix-neuf ans, et le fichier conserve sa qualité militaire complète.</p>
+
+    <div class="fiche fiche--deuil">
+      <div class="hdr">
+        <div class="sosa"><span>Collatéral · frère du Sosa 32</span><span>Génération 6</span></div>
+        <h3>Julien <em>Bonnet</em></h3>
+        <p class="dates">15 avril 1789, Carquefou (la Pintinière) — 6 octobre 1808, Strasbourg · 19 ans</p>
+        <p class="dates" style="color:var(--register)">« carabinier au septième régiment d'infanterie légère, quatrième bataillon »</p>
+      </div>
+    </div>
+
+    <p>Le détail est précieux parce qu'il est rare. Une mention d'unité aussi précise dans un acte de décès civil transcrit à la commune d'origine — « transcription à Carquefou le 29 10 1808 » — signifie que la famille a reçu l'avis officiel, et que le régiment a fait son travail administratif. Le grade de <em>carabinier</em> désigne, dans l'infanterie légère, le soldat des compagnies d'élite, l'équivalent du grenadier dans l'infanterie de ligne : on y choisissait les hommes les plus grands et les plus solides. Un fils de laboureur de vingt ans y avait sa place.</p>
+
+    <p>Il ne meurt pas au combat, mais <em>« à l'hôpital militaire »</em>. C'est le sort statistiquement le plus probable pour un soldat napoléonien : la typhoïde, la dysenterie et le typhus exanthématique ont tué bien plus d'hommes de la Grande Armée que la mitraille. Strasbourg, place forte et grand dépôt sur la route d'Allemagne, concentrait ces hôpitaux.</p>
+
+    <div class="box">
+      <h4>Contexte — La conscription vue de la métairie</h4>
+      <p>La loi Jourdan-Delbrel de 1798 instaure la conscription par classe d'âge. Pour une famille de laboureurs, le départ d'un garçon de vingt ans n'est pas d'abord un drame patriotique : c'est la perte d'un bras au moment des labours et des moissons. On y échappait par le tirage au sort favorable, par un remplaçant payé — hors de portée d'un journalier — ou pas du tout.</p>
+      <p>Julien appartient à la classe 1809, appelée par anticipation en 1808 pour alimenter la guerre d'Espagne et la Grande Armée d'Allemagne. Il meurt avant d'avoir vu le feu. Sur la même fratrie de six enfants, deux sont morts en bas âge (Joseph à 1 an et demi en 1793, René à 6 mois en 1794) et un troisième, Julien, à dix-neuf ans loin de chez lui. Seuls trois ont atteint l'âge adulte.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 14-18 ═══════════════════════ -->
+<section class="spread">
+  <aside class="marg">
+    <b>Fiche source</b>
+    <span class="cote">@I500072@<br>DEAT 6 JUN 1915 · PLAC Quennevières<br>NOTE « MPLF »<br>CAUS « Au combat »<br>EVEN médaille militaire à titre posthume, 21 AUG 1920<br>EVEN croix de guerre avec étoile de bronze<br>BURI tombe individuelle n°41, carré A, Tracy-le-Mont<br>CENS 1906 : domestique cultivateur chez Jean Guillet, Carquefou Tournière</span>
+  </aside>
+  <div class="col">
+    <p class="eyebrow">Parcours atypiques · 4 sur 6</p>
+    <h2>Le premier jour : <em>Henri Auguste Bonnet</em></h2>
+
+    <p class="lede">La tradition familiale, consignée dans le fichier, disait simplement : <em>« Le grand-père a fait la guerre 14-18, où son frère Henri est mort en 1915. »</em> Le GEDCOM permet de reconstituer la journée exacte — et elle est terrible.</p>
+
+    <div class="fiche fiche--deuil">
+      <div class="hdr">
+        <div class="sosa"><span>Collatéral · frère du Sosa 4</span><span>Génération 3</span></div>
+        <h3>Henri Auguste <em>Bonnet</em></h3>
+        <p class="dates">13 novembre 1885, Carquefou (la Filonnière) — 6 juin 1915, Quennevières (Oise) · 29 ans</p>
+        <p class="dates" style="color:var(--register)">Mort pour la France · médaille militaire à titre posthume, 21 août 1920 · croix de guerre avec étoile de bronze</p>
+      </div>
+    </div>
+
+    <p>Henri est le second des six enfants de Louis Honoré Bonnet et Anne Cottineau. Le recensement de 1906 le trouve à vingt ans, <em>« domestique cultivateur chez Jean Guillet »</em>, au lieu-dit Tournière : il travaille chez un autre, dans sa propre commune. Neuf ans plus tard il meurt sur un plateau de l'Oise, à quatre cents kilomètres de là.</p>
+
+    <p><b>Vérification externe.</b> <cite>La bataille de Quennevières — nom donné à l'offensive de la 6<sup>e</sup> armée sur le saillant de Quennevières — se déroule du 6 au 16 juin 1915, entre Tracy-le-Mont et Nampcel. Conçue par le général Nivelle, alors à la tête de la 61<sup>e</sup> division d'infanterie, il s'agit d'une opération de diversion destinée à soulager le front d'Artois. Elle est lancée le 6 juin 1915. Le 16 juin, après onze jours de combats acharnés, les pertes françaises s'élèvent à 134 officiers et 7 700 hommes</cite>. <cite>Plus de 10 000 pertes humaines en dix jours : c'est l'une des batailles les plus meurtrières de l'Oise en 14-18, livrée pour quelques arpents de terre devant une ferme</cite>.</p>
+
+    <p>Henri Auguste Bonnet est mort le <b>6 juin 1915 : le premier jour</b>, dans la vague d'assaut initiale. Le fichier donne même l'emplacement de sa tombe : <em>tombe individuelle n° 41, carré A</em>, à la nécropole nationale de Tracy-le-Mont. <cite>Celle-ci réunit les dépouilles de 3 196 soldats morts pour la France lors des opérations de l'Oise, et fut créée en 1920 pour regrouper les corps inhumés dans les cimetières provisoires du secteur, notamment celui du plateau de Touvent</cite>. La date de la médaille militaire — 21 août 1920 — coïncide avec cette période de regroupement des corps et de liquidation administrative de la guerre.</p>
+
+    <div class="box">
+      <h4>La médaille est dans la famille</h4>
+      <p>Ces éléments, tirés du seul fichier, ont été soumis à Loïc Bonnet, tête de la présente branche. Sa réponse confirme les trois découvertes du XX<sup>e</sup> siècle — le grand-père brancardier, la sœur religieuse partie en Corée puis mariée à Henri Turcaud, et la mort d'Henri au front — et ajoute une pièce que le GEDCOM ne pouvait pas contenir :</p>
+      <blockquote style="margin-bottom:.4em">Son frère Henri tué sur le front — je possède sa médaille militaire.<cite>Loïc Bonnet, août 2026</cite></blockquote>
+      <p>La médaille décernée à titre posthume le 21 août 1920 n'a donc pas quitté la famille. C'est l'objet qui ferme le dossier : le fichier donnait la date du décret, la nécropole et le numéro de tombe ; il manquait la décoration elle-même. Elle mériterait d'être photographiée recto-verso, avec son ruban, et versée au fonds — d'autant que les photographies numériques du dossier, elles, sont perdues.</p>
+    </div>
+
+    <div class="box box--alert">
+      <h4>Deux frères, deux guerres</h4>
+      <p>Louis Frédéric (Sosa 4) et Henri Auguste sont nés à quatorze mois d'intervalle, à la Filonnière. Tous deux partent. L'un revient et donne naissance, en 1925, à la génération suivante ; l'autre est tué au premier jour d'une offensive de diversion. Une photographie conservée dans le fonds porte la légende manuscrite : <em>« Louis Frédéric Bonnet en tenue de brancardier pendant la guerre 14-18 »</em>. Une autre, datée 1915 et localisée « Quennevieres 60 », est identifiée <em>« HA Bonnet »</em> — le portrait d'Henri, probablement le dernier.</p>
+    </div>
+
+    <div class="cartouche">
+      <b>Illustration à sourcer</b>
+      · <a href="https://commons.wikimedia.org/wiki/Category:Bataille_de_Quennevi%C3%A8res">commons.wikimedia.org/wiki/Category:Bataille_de_Quennevières</a><br>
+      · <a href="https://commons.wikimedia.org/wiki/Category:N%C3%A9cropole_nationale_de_Tracy-le-Mont">commons.wikimedia.org/wiki/Category:Nécropole_nationale_de_Tracy-le-Mont</a><br>
+      · Fonds photographiques publics à créditer explicitement : ECPAD et ImagesDéfense conservent des vues de la ferme de Quennevières et des carrières de Tracy-le-Mont datées de 1915-1917 — <a href="https://imagesdefense.gouv.fr">imagesdefense.gouv.fr</a>. Attention : ces fonds ne sont pas sous licence libre, vérifier les conditions avant reproduction.<br>
+      · Base « Mémoire des hommes » (ministère des Armées) : la fiche individuelle « Mort pour la France » d'Henri Auguste Bonnet devrait y être consultable, avec régiment et mention exacte — pièce à joindre au dossier.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ LE VALET DU MARQUIS ═══════════════════════ -->
+<section class="spread">
+  <aside class="marg">
+    <b>Fiche source</b>
+    <span class="cote">Note portée sur @I46@ (Sosa 5) :<br>« Louis, Frédéric, Léon, BONNET (1884-1957), et Marie, Anne, Louise, BERNARDEAU (1892-1947), étaient paysans. Le grand-père a fait la guerre 14-18 (où son frère Henri est mort en 1915). Il a aussi été employé (valet, disait-on) du marquis de Dion (probablement au château de Maubreuil à Carquefou), marquis qui créa les usines de Dion-Bouton à Puteaux ! Avant d'exploiter une toute petite ferme à Carquefou... »</span>
+  </aside>
+  <div class="col">
+    <p class="eyebrow">Parcours atypiques · 5 sur 6</p>
+    <h2>Le brancardier au service de l'inventeur</h2>
+
+    <p class="lede">La note familiale la plus longue du fichier est aussi la plus vérifiable — et elle est exacte, y compris dans son incise prudente « probablement ».</p>
+
+    <p><b>Vérification externe.</b> <cite>Jules-Albert de Dion, né à Nantes le 10 mars 1856, homme politique mais surtout pionnier de l'industrie automobile en France et dans le monde, a résidé à Carquefou au château de Maubreuil jusqu'en 1934</cite>. <cite>Il partagea son existence entre Paris et le domaine de Maubreuil, fut conseiller général, député puis sénateur de Loire-Inférieure, et De Dion-Bouton était en 1900 le plus important constructeur de moteurs au monde</cite>. <cite>Les établissements De Dion-Bouton furent installés à Puteaux après leurs débuts dans le XVI<sup>e</sup> arrondissement</cite>. Chaque élément de la tradition orale tient : le marquis, le château, Carquefou, Puteaux.</p>
+
+    <p>Ce que la note ne dit pas, mais que la chronologie suggère : Louis Frédéric Bonnet, né en 1884, est en âge de servir au château entre 1900 et 1914 environ, soit exactement les années où le marquis de Dion est au sommet — <cite>présent et récompensé dans les premières compétitions automobiles, Paris-Rouen en 1894, Paris-Bordeaux-Paris en 1895, Paris-Marseille-Paris en 1896, et fondateur de l'Automobile Club de France en 1895</cite>. Un domestique de Maubreuil dans ces années-là voyait passer les premières automobiles du monde dans la cour d'un château de Carquefou.</p>
+
+    <p>Puis il repart. Après la guerre, il « exploite une toute petite ferme à Carquefou », épouse Marie Bernardeau en 1924, et le fichier les décrit tous deux d'un seul mot : <em>« paysans »</em>. Le trajet est complet : métairie → domesticité au château → tranchées → petite ferme. Il mourra à Carquefou en 1957, à 73 ans, dans la commune où il est né.</p>
+
+    <figure>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/De%20Dion-Bouton%201900%20I%20Hinterachse.jpg?width=1000" alt="Détail mécanique d'une De Dion-Bouton de 1900">
+      <figcaption><b>De Dion-Bouton, 1900.</b> Détail du train arrière — le fameux « pont De Dion », dont le principe est encore utilisé aujourd'hui. C'est la machine dont sortaient les usines de Puteaux à l'époque où un fils de laboureur de Carquefou servait chez leur créateur. — Wikimedia Commons, <i>De Dion-Bouton 1900 I Hinterachse.jpg</i></figcaption>
+    </figure>
+
+    <div class="cartouche">
+      <b>Illustration à sourcer</b>
+      · <a href="https://commons.wikimedia.org/wiki/Category:Ch%C3%A2teau_de_Maubreuil">commons.wikimedia.org/wiki/Category:Château_de_Maubreuil</a> — le château où il a servi, aujourd'hui hôtel Relais &amp; Châteaux.<br>
+      · <a href="https://commons.wikimedia.org/wiki/Category:Jules-Albert_de_Dion">commons.wikimedia.org/wiki/Category:Jules-Albert_de_Dion</a> — portraits du marquis (domaine public).<br>
+      · <a href="https://commons.wikimedia.org/wiki/Category:Stretcher_bearers_of_World_War_I">commons.wikimedia.org/wiki/Category:Stretcher_bearers_of_World_War_I</a> — brancardiers, pour accompagner la photographie familiale de 1915.<br>
+      · Piste locale : la Ville de Carquefou a ouvert un « lieu de mémoire du Marquis de Dion » près du château, avec fresque historique et documents — <a href="https://www.carquefou.fr/lieu-de-memoire-du-marquis-de-dion/">carquefou.fr</a>. Les archives municipales pourraient conserver des états du personnel de Maubreuil.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SÉOUL ═══════════════════════ -->
+<section class="spread">
+  <aside class="marg">
+    <b>Fiche source</b>
+    <span class="cote">@I500070@<br>_RNAME sœur Jeanne-Françoise<br>_MARNM Turcaud<br>19 JUL 1919 entrée dans la communauté<br>12 APR 1921 obédience 1 — Chartres Saint-Brice<br>24 SEP 1922 profession temporaire, Chartres<br>26 MAR 1924 obédience 2 — Cerny (Essonne), maison hospitalière<br>AUG 1924 obédience 3 — Chartres, maison mère<br>6 NOV 1924 obédience 4 — Séoul, Corée<br>26 MAY 1928 obédience 6 — Chartres<br>OCT 1929 obédience 7 — Laons<br>OCT 1931 obédience 8 — hôpital, Verneuil-sur-Avre<br>DEC 1931 obédience 9 — Mézières-en-Drouais<br>29 FEB 1932 sortie professe</span>
+  </aside>
+  <div class="col">
+    <p class="eyebrow">Parcours atypiques · 6 sur 6</p>
+    <h2>De la Filonnière à <em>Séoul</em> : Germaine Bonnet</h2>
+
+    <p class="lede">C'est le dossier le plus richement documenté du fichier, et le plus inattendu : treize événements datés reconstituent, obédience par obédience, treize ans de vie religieuse — dont un séjour en Corée.</p>
+
+    <div class="fiche">
+      <div class="hdr">
+        <div class="sosa"><span>Collatérale · sœur du Sosa 4</span><span>Génération 3</span></div>
+        <h3>Germaine Louise Marie <em>Bonnet</em></h3>
+        <p class="dates">née le 13 novembre 1894 à Montreuil-sur-Loir (Maine-et-Loire) · en religion : <b>sœur Jeanne-Françoise</b> · nom d'épouse : Turcaud</p>
+      </div>
+    </div>
+
+    <p>La benjamine des six enfants de Louis Honoré Bonnet. Elle entre en communauté le 19 juillet 1919 — huit mois après l'armistice, quatre ans après la mort de son frère Henri —, très probablement chez les Sœurs de Saint-Paul de Chartres, dont le fichier note l'adresse de la maison mère : « 5 rue Saint-Jacques ». Elle fait profession temporaire à Chartres le 24 septembre 1922 sous le nom de sœur Jeanne-Françoise ; une photographie du fonds porte la dédicace correspondante.</p>
+
+    <p>Puis, le <b>6 novembre 1924</b>, obédience pour <b>Séoul, Corée</b>, à l'« école ménagère du noviciat de la Sainte-Enfance ». Elle a trente ans. La Corée est alors sous administration coloniale japonaise. Elle y reste jusqu'au printemps 1928, revient à la maison mère de Chartres, enchaîne trois affectations françaises — Laons, l'hôpital de Verneuil-sur-Avre, Mézières-en-Drouais — et sort de la congrégation, professe, le 29 février 1932. Le fichier note sobrement : <em>« renoncera à la vie religieuse »</em>. Le champ <span style="font-family:'IBM Plex Mono',monospace;font-size:8.5pt">_MARNM Turcaud</span> indique qu'elle s'est ensuite mariée.</p>
+
+    <blockquote>
+      Une fille de la Filonnière née en 1894, dans une famille qui n'avait pas quitté Carquefou depuis neuf générations, a traversé la Sibérie ou l'océan Indien pour enseigner l'économie domestique à des novices coréennes. Puis elle est rentrée, a quitté l'habit, et s'est mariée. C'est le parcours le plus libre de toute la branche.
+      <cite>Reconstitution d'après les treize champs EVEN de la fiche @I500070@</cite>
+    </blockquote>
+
+    <div class="cartouche">
+      <b>Illustration à sourcer</b>
+      · <a href="https://commons.wikimedia.org/wiki/Category:Sisters_of_St._Paul_de_Chartres">commons.wikimedia.org/wiki/Category:Sisters_of_St._Paul_de_Chartres</a><br>
+      · <a href="https://commons.wikimedia.org/wiki/Category:History_of_Seoul">commons.wikimedia.org/wiki/Category:History_of_Seoul</a> — vues de Séoul dans les années 1920.<br>
+      · Piste d'archive : les Sœurs de Saint-Paul de Chartres conservent des registres d'obédience. Une demande motivée permettrait d'obtenir son dossier complet — et peut-être des photographies de la mission de Séoul où elle figure.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ MARIAGES DE MINEURS ═══════════════════════ -->
+<section class="spread">
+  <aside class="marg">
+    <b>Avertissement de méthode</b>
+    Le fichier ne contient <em>aucune</em> mention textuelle de « consentement », « minorité » ou « autorisation ». Les cas ci-contre sont donc <b>reconstitués par calcul</b> : âge exact au jour du mariage, confronté au seuil légal en vigueur cette année-là. Ce sont des cas à vérifier sur l'acte, non des faits établis.
+    <span class="cote">17 mariages datés dans la branche · 8 sous seuil de consentement · 2 dispenses probables</span>
+  </aside>
+  <div class="col">
+    <p class="eyebrow">Mariages de mineurs</p>
+    <h2>Huit unions qui ont exigé <em>l'accord des parents</em></h2>
+
+    <p class="lede">La majorité matrimoniale n'a jamais coïncidé avec la majorité civile. Sous le Code civil de 1804, un homme pouvait se marier à 18 ans et une femme à 15 — mais il fallait le consentement des parents jusqu'à <b>25 ans pour les garçons et 21 ans pour les filles</b>. Sous l'Ancien Régime, l'usage issu de l'ordonnance de Blois maintenait ce consentement jusqu'à 25 ans pour les deux sexes. Sur les dix-sept mariages datés de la branche, huit tombent sous ces seuils.</p>
+
+    <table>
+      <caption>Mariages de la branche exigeant le consentement parental (calcul sur dates exactes)</caption>
+      <thead>
+        <tr><th style="width:16%">Date</th><th style="width:34%">Époux · âge</th><th style="width:34%">Épouse · âge</th><th style="width:16%">Seuil</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">31.08.1659</td>
+          <td>Pierre Bourgouin · <b>20 a. 6 m.</b></td>
+          <td>Julienne Marzelière · <b>18 a. 8 m.</b></td>
+          <td class="num">25 / 25</td>
+        </tr>
+        <tr>
+          <td class="num">09.07.1720</td>
+          <td>Maurice Vilaine · <i>date de naissance inconnue</i></td>
+          <td>Louise Janvret · <b>23 a. 4 m.</b></td>
+          <td class="num">25 / 25</td>
+        </tr>
+        <tr>
+          <td class="num">01.07.1732</td>
+          <td>Pierre Brevet · <b>20 a.</b></td>
+          <td>Marie Breton · <b>20 a.</b></td>
+          <td class="num">25 / 25</td>
+        </tr>
+        <tr class="flag">
+          <td class="num">13.02.1753</td>
+          <td>Gilles Beccavin · 25 a. 1 m.</td>
+          <td>Marie Brevet · <b>15 a. 6 m.</b></td>
+          <td class="num">25 / 25</td>
+        </tr>
+        <tr>
+          <td class="num">15.02.1757</td>
+          <td>Julien Bonnet · <b>23 a. 11 m.</b></td>
+          <td>Catherine Vilaine · <b>21 a. 7 m.</b></td>
+          <td class="num">25 / 25</td>
+        </tr>
+        <tr class="flag">
+          <td class="num">04.07.1780</td>
+          <td>Pierre Bourgouin · <b>22 a. 6 m.</b></td>
+          <td>Andrée Fr. Julienne · <b>15 a. 0 m.</b></td>
+          <td class="num">25 / 25</td>
+        </tr>
+        <tr>
+          <td class="num">21.06.1809</td>
+          <td>Pierre Marie Bonnet · <b>24 a. 8 m.</b></td>
+          <td>Marie Becavin · <b>18 a. 9 m.</b></td>
+          <td class="num">25 / 21</td>
+        </tr>
+        <tr>
+          <td class="num">21.10.1883</td>
+          <td>Louis Honoré Bonnet · <b>24 a. 4 m.</b></td>
+          <td>Anne Fr. Cottineau · 23 a. 8 m.</td>
+          <td class="num">25 / 21</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>Les deux cas exceptionnels</h4>
+
+    <p>Deux mariages sortent du lot, et c'est sur ceux-là qu'il faut retourner aux actes en priorité. <b>Marie Brevet, 15 ans et 6 mois</b>, épouse le 13 février 1753 Gilles Beccavin, qui en a 25 : dix ans d'écart, et une épouse à peine sortie de l'enfance. C'est le couple qui donnera huit enfants, dont le bienheureux Joseph, le séminariste Gilles, et l'ancêtre Jean. <b>Andrée Françoise Julienne, 15 ans tout juste</b> — née le 2 juillet 1765, mariée le 4 juillet 1780 —, épouse Pierre Bourgouin, 22 ans. Deux jours après son quinzième anniversaire : la date n'est pas un hasard. Elle a été choisie pour atteindre le minimum canonique.</p>
+
+    <div class="box box--alert">
+      <h4>À vérifier sur l'acte — ce que vous devriez y trouver</h4>
+      <p>Pour ces deux unions, l'acte de mariage paroissial devrait porter une formule du type <em>« du consentement de ses père et mère »</em>, avec les noms et les signatures ou marques des parents, et parfois la mention d'une dispense de l'official diocésain. Pour le mariage de 1780, la référence de l'acte est déjà dans le fichier : <span style="font-family:'IBM Plex Mono',monospace;font-size:8.5pt">vue 10/21</span>. Pour celui de 1753 : <span style="font-family:'IBM Plex Mono',monospace;font-size:8.5pt">vue 3/13</span>. Ces deux images valent le déplacement — ce sont les seules pièces qui transformeront un calcul en fait.</p>
+    </div>
+
+    <div class="box">
+      <h4>Contexte — Pourquoi le consentement, et pourquoi si tard</h4>
+      <p>L'objet du droit n'était pas de protéger les mineurs mais de protéger le <b>patrimoine des familles</b> contre les mésalliances. Le mariage transférait des terres, des cheptels, des créances ; un fils marié sans accord pouvait être déshérité. D'où un seuil de 25 ans, très supérieur à la puberté légale.</p>
+      <p>Le Code civil de 1804 conserve cette logique et y ajoute une inégalité franche : 25 ans pour les hommes, 21 pour les femmes, une femme étant censée passer plus tôt de l'autorité du père à celle du mari. Il faudra attendre <b>1907</b> pour que le seuil soit ramené à 21 ans pour les deux sexes. Autrement dit, tous les mariages de cette branche antérieurs à 1907 se sont faits sous le régime du consentement long.</p>
+    </div>
+
+    <figure>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Fran%C3%A7ois%20Millet%20-%20Gleaners%20-%20Google%20Art%20Project%202.jpg?width=1200" alt="Des glaneuses, Jean-François Millet, 1857">
+      <figcaption><b>Jean-François Millet, <i>Des glaneuses</i>, 1857, huile sur toile, musée d'Orsay.</b> Le glanage — droit de ramasser les épis restés au sol après la moisson — était l'ultime recours des plus pauvres. Trois femmes de la branche portent la mention « laboureuse » ou « cultivatrice » : le travail des femmes aux champs n'était pas un supplément mais une condition de survie du foyer. Domaine public. — Wikimedia Commons, <i>Jean-François Millet - Gleaners - Google Art Project 2.jpg</i></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════════════ MORTALITÉ ═══════════════════════ -->
+<section class="spread">
+  <aside class="marg">
+    <b>Base de calcul</b>
+    114 individus de la branche disposant à la fois d'une date de naissance et d'une date de décès. 25 sont morts avant cinq ans, soit 22 %. Trente sont morts avant seize ans.
+    <span class="cote">Le chiffre réel est certainement plus élevé : les enfants morts sans acte retrouvé sont absents du fichier.</span>
+  </aside>
+  <div class="col">
+    <p class="eyebrow">Ce que coûtait une famille</p>
+    <h2>Un enfant sur cinq n'atteignait pas <em>cinq ans</em></h2>
+
+    <p class="lede">C'est la statistique la plus dure du fichier, et elle est d'une régularité glaçante : de 1730 à 1928, dans presque chaque fratrie, un à trois enfants meurent avant d'avoir marché.</p>
+
+    <table>
+      <caption>Les décès les plus précoces documentés dans la branche</caption>
+      <thead>
+        <tr><th style="width:24%">Durée de vie</th><th style="width:44%">Enfant</th><th style="width:32%">Année</th></tr>
+      </thead>
+      <tbody>
+        <tr class="flag"><td class="num">1 jour</td><td>Jean Bonnet</td><td class="num">1747</td></tr>
+        <tr class="flag"><td class="num">1 jour</td><td>René Bonnet</td><td class="num">1730</td></tr>
+        <tr class="flag"><td class="num">le jour même</td><td>Félicité Gergaud</td><td class="num">1899</td></tr>
+        <tr class="flag"><td class="num">le jour même</td><td>« anonyme » Beccavin</td><td class="num">1776</td></tr>
+        <tr><td class="num">3 jours</td><td>Andrée Bourgoin</td><td class="num">1782</td></tr>
+        <tr><td class="num">12 jours</td><td>Jeanne Françoise Beccavin</td><td class="num">1775</td></tr>
+        <tr><td class="num">18 jours</td><td>Marie-Louise Thérèse Bonnet</td><td class="num">1928</td></tr>
+        <tr><td class="num">20 jours</td><td>Louis Bourgouin</td><td class="num">1833</td></tr>
+        <tr><td class="num">6 semaines</td><td>Geneviève Bourgouin</td><td class="num">1828</td></tr>
+        <tr><td class="num">6 semaines</td><td>Pierre Jean Marie Louis Bonnet</td><td class="num">1888</td></tr>
+      </tbody>
+    </table>
+
+    <p>Deux détails méritent qu'on s'y arrête. Le premier : l'enfant <b>« anonyme » Beccavin</b>, né et mort le 23 juillet 1776 — l'acte n'a même pas eu le temps de recevoir un prénom, et le fichier a conservé cette absence plutôt que de l'inventer. Le second : <b>René Bonnet, né le 3 novembre 1793</b>, le jour même de la mort de son frère aîné Joseph, âgé d'un an et demi. Le prénom de Joseph était pris ; on a donné René au nouveau-né. Il mourra à son tour six mois plus tard, en avril 1794.</p>
+
+    <p>Et pourtant la longévité existe, dès le XVII<sup>e</sup> siècle, pour ceux qui franchissaient le cap de l'enfance : <b>Étienne Beccavin</b> meurt à 82 ans en 1702 ; <b>Jeanne Marzelière</b> à 82 ans en 1811 ; <b>Jean Becavin</b>, le frère du bienheureux, à 84 ans en 1849 — ayant vu la Révolution, l'Empire, la Restauration, la monarchie de Juillet et la Deuxième République. La courbe de mortalité de l'Ancien Régime n'est pas une courbe de vies courtes : c'est une courbe à deux pics, terrible avant cinq ans, presque moderne ensuite.</p>
+
+    <figure>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Fran%C3%A7ois%20Millet%20(II)%20001.jpg?width=1200" alt="L'Angélus, Jean-François Millet, 1857-1859">
+      <figcaption><b>Jean-François Millet, <i>L'Angélus</i>, 1857-1859, huile sur toile, 55,5 × 66 cm, musée d'Orsay.</b> Deux paysans interrompent le travail au son de la cloche de l'église voisine. C'est exactement la scène que décrivent les actes de Carquefou : une paroisse dont le clocher, planté sur le point haut, réglait la journée des métairies. Domaine public. — Wikimedia Commons, <i>Jean-François Millet (II) 001.jpg</i></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════════════ COLOPHON ═══════════════════════ -->
+<footer class="spread">
+  <aside class="marg"><b>Colophon</b></aside>
+  <div class="col">
+    <hr class="rule--thick">
+    <div class="colophon">
+      <b>SOURCE PRIMAIRE</b><br>
+      version_corrigee_v3.ged — GEDCOM 5.5.1, UTF-8. Dérivé de l'export MyHeritage Family Tree Builder du 1<sup>er</sup> août 2026, base « Bonnet — Muloise — Rattier », après trois passes de correction (15 août 2026). 2 169 individus, 668 familles, 187 sources citées — effectifs inchangés par les corrections. Périmètre de la présente étude : 58 ascendants directs de Loïc Bonnet (1950) et leurs collatéraux au premier degré, soit 158 individus.<br><br>
+      <b>ÉTABLISSEMENT DU TEXTE</b><br>
+      Le fichier source a fait l'objet de trois passes de correction avant la rédaction : datation d'un acte de mariage, normalisation des toponymes, remise en ordre des champs de profession, complément des mentions de décès et réparation d'un lien de filiation défectueux. Les effectifs sont restés inchangés. Le journal détaillé de ces corrections est disponible sur demande.<br><br>
+      <b>TÉMOIGNAGE ORAL</b><br>
+      Loïc Bonnet (août 2026) : confirmation indépendante du grand-père brancardier, de la mort d'Henri au front et du parcours de Germaine Bonnet en Corée puis de son mariage avec Henri Turcaud ; signale détenir la médaille militaire d'Henri Auguste Bonnet.<br><br>
+      <b>SOURCES D'ARCHIVES CITÉES DANS LE FICHIER</b><br>
+      Archives départementales de Loire-Atlantique (état civil et registres paroissiaux, recensements de 1872, 1901, 1906) · Centre généalogique de Loire-Atlantique · Association généalogique vertavienne · MemorialGenWeb.<br><br>
+      <b>VÉRIFICATIONS EXTERNES</b><br>
+      Joseph Bécavin : notice Wikipédia ; liste des 191 bienheureux martyrs des Carmes ; chanoine Joseph Grente, <i>Les Martyrs de Septembre 1792 à Paris</i>, Téqui, 1926, p. 286 ; diocèse de Paris. — Bataille de Quennevières : notice Wikipédia ; nécropole nationale de Tracy-le-Mont, Chemins de mémoire (ministère des Armées) ; Rémi Hébert, <i>La Première de Nivelle, la bataille de Quennevières, juin 1915</i>, Le Manuscrit, 2005. — Marquis de Dion et château de Maubreuil : Ville de Carquefou ; Fédération française des véhicules d'époque ; notices Wikipédia.<br><br>
+      <b>ICONOGRAPHIE</b><br>
+      Toutes les images reproduites proviennent de Wikimedia Commons et sont soit dans le domaine public (œuvres de Jean-François Millet, mort en 1875), soit sous licence libre — se reporter à la page de description de chaque fichier pour la mention d'attribution exacte. Les cartouches en pointillés signalent les illustrations restant à sélectionner, avec le lien de la catégorie Commons correspondante.<br><br>
+      <b>MENTION DE PRUDENCE</b><br>
+      Les âges au mariage et les durées de vie sont calculés sur les dates exactes du fichier, sans correction des mentions « environ » ou « vers ». Les cas de consentement parental sont déduits par comparaison avec les seuils légaux : ce sont des hypothèses à confirmer sur les actes originaux, non des faits établis. Toute conclusion présentée comme incertaine dans ce document doit rester incertaine dans les versions ultérieures.
+    </div>
+  </div>
+</footer>
+
+</div>
+</BaseLayout>
