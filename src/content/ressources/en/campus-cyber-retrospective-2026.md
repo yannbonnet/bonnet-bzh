@@ -74,8 +74,8 @@ Bonnet, then deputy chief executive of the Campus Cyber (in French).</p>
   </button>
 </div>
 <p class="video-legende">Same series, with Guillaume Poupard, director general of ANSSI
-(the French national cybersecurity agency) at the time, now deputy chief executive of
-Docaposte (in French).</p>
+(the French national cybersecurity agency) at the time, now Chief Trust Officer at
+Orange (in French).</p>
 
 <script is:inline src="/scripts/video-facade.js"></script>
 

@@ -75,7 +75,7 @@ directeur général délégué du Campus Cyber.</p>
   </button>
 </div>
 <p class="video-legende">Même série, avec Guillaume Poupard, directeur général de l’ANSSI au
-moment des faits, aujourd’hui directeur général adjoint de Docaposte.</p>
+moment des faits, aujourd’hui Chief Trust Officer d’Orange.</p>
 
 <script is:inline src="/scripts/video-facade.js"></script>
 
