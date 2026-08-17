@@ -64,17 +64,6 @@ Président de la République annonçait une stratégie nationale dotée de 1,5 m
 
 <div class="video">
   <iframe
-    src="https://www.youtube-nocookie.com/embed/ADi_8OL6vRk"
-    title="Remise du rapport au Président de la République, Collège de France (version doublée en anglais)"
-    loading="lazy"
-    allow="encrypted-media; picture-in-picture"
-    referrerpolicy="strict-origin-when-cross-origin"
-  ></iframe>
-</div>
-<p class="video-legende">Même cérémonie, version doublée en anglais.</p>
-
-<div class="video">
-  <iframe
     src="https://mediatheque.univ-paris1.fr/video/3256-410-quel-sens-donner-a-lia-le-rapport-villani-5-ans-apres/?is_iframe=true"
     title="Quel sens donner à l'IA ? Le rapport Villani, cinq ans après"
     loading="lazy"

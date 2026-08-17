@@ -55,17 +55,6 @@ France, the President of the Republic announced a national strategy backed by
 
 <div class="video">
   <iframe
-    src="https://www.youtube-nocookie.com/embed/xmhzO0k04mg?list=PLrKNY-H-j3t6BX3Tot3mJUEP02hWfvLKl"
-    title="Report handover to the President of the Republic, Collège de France (French version)"
-    loading="lazy"
-    allow="encrypted-media; picture-in-picture"
-    referrerpolicy="strict-origin-when-cross-origin"
-  ></iframe>
-</div>
-<p class="video-legende">Report handover to the President of the Republic, Collège de France, French version (full playlist).</p>
-
-<div class="video">
-  <iframe
     src="https://www.youtube-nocookie.com/embed/ADi_8OL6vRk"
     title="Report handover to the President of the Republic, Collège de France (English-dubbed version)"
     loading="lazy"
