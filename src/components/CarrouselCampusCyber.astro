@@ -177,6 +177,7 @@ const regionLabel = lang === 'fr' ? 'Carrousel de photos' : 'Photo carousel';
 
   .carrousel-piste {
     display: flex;
+    align-items: flex-start;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -203,8 +204,7 @@ const regionLabel = lang === 'fr' ? 'Carrousel de photos' : 'Photo carousel';
   .carrousel-diapo :global(img) {
     display: block;
     width: 100%;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
+    height: auto;
     border-radius: 2px;
     background: var(--papier-2);
   }
