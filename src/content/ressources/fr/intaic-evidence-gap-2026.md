@@ -7,7 +7,7 @@ dateNotice: "2026-08"
 type: rapport
 cadre: "INTAiC — Integrated Network for Trusted AI in Cyberspace, Forum de Paris sur la Paix"
 externe: false
-role: coordinateur
+role: contributeur
 coAuteurs:
   - "Pablo Rice"
   - "Illena Armstrong"
