@@ -62,19 +62,6 @@ Président de la République annonçait une stratégie nationale dotée de 1,5 m
 </div>
 <p class="video-legende">Remise du rapport au Président de la République, Collège de France, version française (playlist complète).</p>
 
-<div class="video">
-  <iframe
-    src="https://mediatheque.univ-paris1.fr/video/3256-410-quel-sens-donner-a-lia-le-rapport-villani-5-ans-apres/?is_iframe=true"
-    title="Quel sens donner à l'IA ? Le rapport Villani, cinq ans après"
-    loading="lazy"
-    allow="encrypted-media; picture-in-picture"
-    referrerpolicy="strict-origin-when-cross-origin"
-  ></iframe>
-</div>
-<p class="video-legende">« Quel sens donner à l'IA ? Le rapport Villani, cinq ans après »,
-dans le cadre du séminaire de l'Observatoire de l'intelligence artificielle, université
-Paris 1 Panthéon-Sorbonne, 22 juin 2022 (16 min, CC BY-NC-SA 4.0).</p>
-
 Je raconte cette généalogie parce qu'elle contredit l'image qu'on se fait de la fabrique des
 politiques publiques. Une stratégie nationale à 1,5 milliard d'euros procède ici d'une
 inquiétude exprimée par un ingénieur, relayée par une petite équipe sans mandat, dans une
@@ -94,6 +81,19 @@ Le pari sur les capacités de calcul publiques s'est révélé le plus juste. Je
 entraîner Bloom, modèle de 176 milliards de paramètres, quand les modèles français
 antérieurs se comptaient en centaines de millions. Sans cette infrastructure, la recherche
 publique française aurait été spectatrice de la bascule générative.
+
+<div class="video">
+  <iframe
+    src="https://mediatheque.univ-paris1.fr/video/3256-410-quel-sens-donner-a-lia-le-rapport-villani-5-ans-apres/?is_iframe=true"
+    title="Quel sens donner à l'IA ? Le rapport Villani, cinq ans après"
+    loading="lazy"
+    allow="encrypted-media; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+</div>
+<p class="video-legende">« Quel sens donner à l'IA ? Le rapport Villani, cinq ans après »,
+dans le cadre du séminaire de l'Observatoire de l'intelligence artificielle, université
+Paris 1 Panthéon-Sorbonne, 22 juin 2022 (16 min, CC BY-NC-SA 4.0).</p>
 
 ## Les recommandations, une par une
 

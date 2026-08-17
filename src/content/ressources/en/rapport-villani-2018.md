@@ -64,19 +64,6 @@ France, the President of the Republic announced a national strategy backed by
 </div>
 <p class="video-legende">Same ceremony, English-dubbed version.</p>
 
-<div class="video">
-  <iframe
-    src="https://mediatheque.univ-paris1.fr/video/3256-410-quel-sens-donner-a-lia-le-rapport-villani-5-ans-apres/?is_iframe=true"
-    title="Quel sens donner à l'IA ? Le rapport Villani, cinq ans après"
-    loading="lazy"
-    allow="encrypted-media; picture-in-picture"
-    referrerpolicy="strict-origin-when-cross-origin"
-  ></iframe>
-</div>
-<p class="video-legende">"What meaning to give to AI? The Villani report, five years on",
-seminar of the AI Observatory, Université Paris 1 Panthéon-Sorbonne, 22 June 2022
-(16 min, in French, CC BY-NC-SA 4.0).</p>
-
 I tell this genealogy because it contradicts the image one tends to have of how public
 policy gets made. Here, a 1.5-billion-euro national strategy originates in a worry
 voiced by an engineer, relayed by a small team with no mandate, in a memo. That says
@@ -96,6 +83,19 @@ The bet on public computing capacity proved to be the soundest one. Jean Zay was
 to train Bloom, a 176-billion-parameter model, at a time when earlier French models
 were measured in the hundreds of millions. Without that infrastructure, French public
 research would have watched the generative shift from the sidelines.
+
+<div class="video">
+  <iframe
+    src="https://mediatheque.univ-paris1.fr/video/3256-410-quel-sens-donner-a-lia-le-rapport-villani-5-ans-apres/?is_iframe=true"
+    title="Quel sens donner à l'IA ? Le rapport Villani, cinq ans après"
+    loading="lazy"
+    allow="encrypted-media; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+</div>
+<p class="video-legende">"What meaning to give to AI? The Villani report, five years on",
+seminar of the AI Observatory, Université Paris 1 Panthéon-Sorbonne, 22 June 2022
+(16 min, in French, CC BY-NC-SA 4.0).</p>
 
 ## The recommendations, one by one
 
