@@ -50,7 +50,7 @@ Published on 3 October 2014 after ten months of work and more than a hundred hea
 the wake of the Council's earlier work on digital inclusion. The report appeared a few
 weeks after the presidential announcement of a "digital plan for schools": it was read,
 and sometimes used, as a contribution to that plan. Its reception in parliament was
-unusual for a report from an advisory body — at least six written questions from members
+unusual for a report from an advisory body: at least six written questions from members
 of parliament named it explicitly in the weeks that followed.
 
 **What succeeded, and at what cost.** The central recommendation was followed: computer
@@ -71,7 +71,7 @@ the report had correctly identified, and it was not ignored: a CAPES (the second
 school teaching certification exam) in digital and computer science opened as early as
 the 2020 session, an agrégation (a more senior, competitive teaching qualification) in
 computer science followed from 2022, and continuing-education diplomas were offered to
-volunteer teachers — mostly mathematics teachers. But the numbers stayed wildly out of
+volunteer teachers, mostly mathematics teachers. But the numbers stayed wildly out of
 scale with the stated ambition: thirty CAPES places in 2020, fifty in 2022, fifty for the
 CAPES and twenty-two for the agrégation in 2023. By the end of 2022, only two out of
 three lycées (upper-secondary schools) offered the specialisation. The Société
@@ -85,6 +85,6 @@ the effects of digital equipment in the classroom. Research conducted since has 
 confirmed that link, and several countries have since restricted the use of screens in
 schools. The report was probably right to want computer science taught, and wrong to
 believe that equipment would transform pedagogy. The comparison that structured its
-reasoning — England folding computer science into the science curriculum in 2013,
-following the Royal Society's *Shut down or restart* report — was about the discipline,
+reasoning (England folding computer science into the science curriculum in 2013,
+following the Royal Society's *Shut down or restart* report) was about the discipline,
 not the machines. Only half the message got through.

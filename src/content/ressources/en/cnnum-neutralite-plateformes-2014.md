@@ -28,7 +28,7 @@ aVerifier: true
 The concept has been vindicated by events. In 2014, the opinion proposed extending the
 neutrality requirement beyond networks, to platforms that had become mandatory
 gateways to information and services. Eight years later, the Digital Markets Act
-imposes access and non-discrimination obligations on gatekeepers — the same idea,
+imposes access and non-discrimination obligations on gatekeepers, the same idea,
 fitted with a legal apparatus.
 
 One has to resist the temptation to claim credit for this. These analyses were
@@ -41,7 +41,21 @@ addressed to a French Prime Minister, on a subject where the national level had 
 purchase at all: no obligation imposed by France alone on major structuring platforms
 would have been enforceable, and later attempts confirmed as much. We had the right
 concept and the wrong addressee. This error of level recurs across several pieces of
-work from this period — [Digital Ambition](/en/commons/ambition-numerique-2015/) offers
-another example, on the platform rating agency —, and it deserves naming: producing
+work from this period ([Digital Ambition](/en/commons/ambition-numerique-2015/) offers
+another example, on the platform rating agency), and it deserves naming: producing
 national opinions on transnational objects absorbed a share of French public energy
 through the 2010s.
+
+## On video
+
+<div class="video">
+  <button type="button" class="video-facade" data-video-facade data-video-id="00QV7gzsmwM" data-video-titre="Confiance à l'ère des plateformes - quelles garanties ?">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+    <span class="video-facade-texte">Confiance à l'ère des plateformes</span>
+  </button>
+</div>
+<p class="video-legende">"Confiance à l'ère des plateformes - quelles garanties?"
+(Trust in the age of platforms: what guarantees?), Conseil national du numérique
+(in French).</p>
+
+<script is:inline src="/scripts/video-facade.js"></script>

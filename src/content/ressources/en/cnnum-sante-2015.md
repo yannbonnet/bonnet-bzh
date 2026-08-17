@@ -32,7 +32,7 @@ Data Hub in 2019, and the nationwide roll-out of the espace numérique de santé
 personal digital health record) in 2022.
 
 This entry should be read alongside the [Villani report](/en/commons/rapport-villani-2018/), whose first strand explicitly
-took up the idea of centralising health data for research purposes — and justified it
+took up the idea of centralising health data for research purposes, and justified it
 in the name of sovereignty. Three years separate the two texts, and they push in the
 same direction.
 

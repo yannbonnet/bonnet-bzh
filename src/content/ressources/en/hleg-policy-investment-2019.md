@@ -22,7 +22,7 @@ aVerifier: true
 ---
 
 This is the twin document to the [ethics guidelines](/en/commons/hleg-ethics-guidelines-2019/), and the one that has aged worse of
-the two. One set out the principles, the other the industrial policy — and it is the
+the two. One set out the principles, the other the industrial policy, and it is the
 industrial policy that failed.
 
 The June 2019 recommendations correctly identified the levers: computing capacity, data

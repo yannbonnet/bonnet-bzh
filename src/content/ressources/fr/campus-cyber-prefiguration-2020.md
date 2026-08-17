@@ -28,7 +28,7 @@ resume: "Rapport de préfiguration remis au Premier ministre le 7 janvier 2020, 
 aVerifier: true
 ---
 
-Voici le document fondateur, à lire à côté de ma note rétrospective de 2026. C'est la seule
+Voici le document fondateur, à lire à côté de [ma note rétrospective de 2026](https://bonnet.bzh/communs/campus-cyber-retrospective-2026/). C'est la seule
 paire de cette bibliothèque où l'on peut confronter un projet et son bilan et je suis
 co-auteur des deux, ce qui doit être dit d'emblée : personne n'est bien placé pour évaluer un
 plan qu'il a lui-même écrit.

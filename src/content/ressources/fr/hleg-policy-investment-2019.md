@@ -22,7 +22,7 @@ aVerifier: true
 ---
 
 C'est le document jumeau des [lignes directrices éthiques](/communs/hleg-ethics-guidelines-2019/), et le plus mal vieilli des deux.
-L'un disait les principes, l'autre la politique industrielle — et c'est la politique
+L'un disait les principes, l'autre la politique industrielle, et c'est la politique
 industrielle qui a échoué.
 
 Les recommandations de juin 2019 identifiaient correctement les leviers : capacités de

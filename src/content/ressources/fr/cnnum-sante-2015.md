@@ -31,7 +31,7 @@ depuis : la plateforme des données de santé en 2019 et l'espace numérique de 
 en 2022.
 
 Cette fiche se lit avec celle du [rapport Villani](/communs/rapport-villani-2018/), dont le premier axe reprenait explicitement
-l'idée d'une centralisation des données de santé au service de la recherche — et la justifiait
+l'idée d'une centralisation des données de santé au service de la recherche, et la justifiait
 par la souveraineté. Trois ans séparent les deux textes et ils poussent dans le même sens.
 
 Le test le plus dur est donc commun aux deux : la controverse sur l'hébergement de la

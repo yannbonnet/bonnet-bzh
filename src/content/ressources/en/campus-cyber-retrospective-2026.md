@@ -4,7 +4,7 @@ sousTitre: "[What building the Campus Cyber teaches about public-private coopera
 annee: 2026
 dateNotice: "2026-08"
 type: note
-cadre: "Written for bonnet.bzh"
+cadre: "Written for bonnet.bzh · author: Yann Bonnet"
 externe: false
 role: cofondateur
 coAuteurs: []
@@ -20,15 +20,16 @@ carrousel: true
 ---
 
 *An original note, written for this site. It covers a period I lived through from the
-inside, first at ANSSI, then as deputy chief executive of the Campus Cyber. This is
+inside, first at ANSSI, then as co-founder and deputy chief executive of the Campus
+Cyber. This is
 therefore not an independent evaluation, and should be read as such.*
 
 ## What was built
 
 The idea was born in 2019-2020 at ANSSI, with Guillaume Poupard: faced with a growing
-threat, cyber risk cannot be mastered by state action alone — the ecosystem has to be
+threat, cyber risk cannot be mastered by state action alone; the ecosystem has to be
 activated. A pre-figuration mission was entrusted to Michel Van Den Berghe, whom I
-supported in that capacity as co-founder — designing the governance, drafting the
+supported in that capacity as co-founder: designing the governance, drafting the
 by-laws with the lawyers, seeking public and private funding, winning over the
 undecided. 29 million euros raised, and everything to build from a blank page. The
 Campus Cyber was inaugurated in February 2022: 26,000 m² at La Défense, a company
@@ -36,11 +37,11 @@ jointly owned by public and private actors, with no hierarchical authority over 
 members.
 
 Three years after opening, the site brought together more than 300 organisations,
-including 60% of CAC 40 companies. The Studio des Communs (the Campus's shared-commons
-studio) gathered around 750 contributors into working groups and produced some thirty
+including 60% of CAC 40 companies. The [Studio des Communs](https://wiki.campuscyber.fr/Wiki_du_campus_cyber)
+(the Campus's shared-commons studio) gathered around 750 contributors into working groups and produced some thirty
 shared resources, made freely available to the whole ecosystem, on AI applied to
 cybersecurity, threat intelligence, post-quantum cryptography and eco-design. Five
-regional campuses have been officially recognised — Hauts-de-France,
+regional campuses have been officially recognised: Hauts-de-France,
 Nouvelle-Aquitaine, Normandie, Brittany, Région Sud. A European consortium on AI and
 cybersecurity was entrusted to the Campus by the Commission and the Île-de-France
 region, and a talent consortium funded by France 2030 brought together Radio France,
@@ -60,7 +61,7 @@ of two of the people who lived it.
 <div class="video">
   <button type="button" class="video-facade" data-video-facade data-video-id="GVhmJ0ZJJLM" data-video-titre="Portrait Cyber | Yann Bonnet, Directeur général délégué du Campus Cyber">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
-    <span class="video-facade-texte">Portrait Cyber — Yann Bonnet</span>
+    <span class="video-facade-texte">Portrait Cyber: Yann Bonnet</span>
   </button>
 </div>
 <p class="video-legende">An interview from the <em>Portrait Cyber</em> series, with Yann
@@ -69,10 +70,10 @@ Bonnet, then deputy chief executive of the Campus Cyber (in French).</p>
 <div class="video">
   <button type="button" class="video-facade" data-video-facade data-video-id="7DLwUbE8gSo" data-video-titre="Portrait Cyber | Guillaume Poupard, Directeur Général Adjoint de Docaposte">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
-    <span class="video-facade-texte">Portrait Cyber — Guillaume Poupard</span>
+    <span class="video-facade-texte">Portrait Cyber: Guillaume Poupard</span>
   </button>
 </div>
-<p class="video-legende">Same series, with Guillaume Poupard — director general of ANSSI
+<p class="video-legende">Same series, with Guillaume Poupard, director general of ANSSI
 (the French national cybersecurity agency) at the time, now deputy chief executive of
 Docaposte (in French).</p>
 
@@ -86,7 +87,7 @@ transferable independently of everything else.
 The diversity of participants, deliberately including members who are not
 cybersecurity specialists.
 
-The decoupling of capital contribution from decision-making power — a majority
+The decoupling of capital contribution from decision-making power: a majority
 shareholder does not hold a proportional vote. The reasoning was ecological: land is
 productive when no single species dominates it, and an over-dominant actor marks the
 onset of the pollution that breaks the fertility chain. This is the condition that made
@@ -94,7 +95,7 @@ the state's participation acceptable to the private sector, and the private sect
 acceptable to the state.
 
 And the production of commons, rather than the provision of services: the Campus does
-not sell — it builds, together with its members, what none of them would have built
+not sell; it builds, together with its members, what none of them would have built
 alone.
 
 ## The 2025 target: neither met nor missed
@@ -136,10 +137,6 @@ in Lithuania, interest from Germany and the Netherlands: an identifiable physica
 has a diplomatic effectiveness that no equivalent administrative arrangement has.
 
 ## What the model does not make possible
-
-**The decision-making deadlock.** The absence of vertical hierarchical authority
-structurally limits such a consortium's ability to make hard calls or impose strong
-choices.
 
 **The cost of cooperation.** Bringing competitors together makes it possible to build
 commons, but that synergy comes at a price. It requires considerable energy spent

@@ -22,7 +22,7 @@ resume: "Avis sur l'imposition des activités numériques et sur l'inadéquation
 aVerifier: true
 ---
 
-Rare cas de cette bibliothèque où la recommandation a été suivie — six ans plus tard et par
+Rare cas de cette bibliothèque où la recommandation a été suivie, six ans plus tard et par
 un autre chemin.
 
 L'avis constatait en 2013 que des règles fiscales fondées sur l'établissement physique

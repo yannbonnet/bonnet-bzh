@@ -55,7 +55,7 @@ malhonnête d'en simuler une. Cette fiche dit trois choses.
 Le déplacement qu'il opère. Le débat sur l'IA et la cybersécurité a longtemps porté sur les
 capacités : ce qu'un modèle de frontière est en mesure de faire, mesuré en laboratoire. Le
 livre blanc soutient que la question de gouvernance n'est plus celle-là mais celle des
-usages constatés — comment ces modèles sont effectivement détournés, par qui, à quelle
+usages constatés : comment ces modèles sont effectivement détournés, par qui, à quelle
 échelle. Ce déplacement du potentiel vers l'observé paraît modeste ; il change ce qu'il
 faudrait mesurer, et donc ce qu'il faudrait construire pour le mesurer.
 
@@ -66,7 +66,7 @@ affaires judiciarisées : trois angles partiels que rien n'agrège. Le livre bla
 produit avec Microsoft, INTERPOL, Google Threat Intelligence Group, Orange Cyberdefense,
 Wavestone, la Cloud Security Alliance, WithSecure, la Cyber Threat Alliance, le Frontier
 Model Forum, le GPAI Policy Lab, le CeSIA, la Luxembourg House of Cybersecurity et l'Oxford
-Martin AI Governance Initiative — la composition est elle-même l'argument.
+Martin AI Governance Initiative : la composition est elle-même l'argument.
 
 Le critère d'évaluation, et il est daté. INTAiC annonce la publication d'un premier indice
 des menaces IA-cyber au Forum de Paris sur la Paix des 10 et 11 novembre 2026. C'est le test :

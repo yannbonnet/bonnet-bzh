@@ -31,7 +31,7 @@ aVerifier: true
 
 The report belongs to the Council's plenary body, not to me: I coordinated the
 consultation and the drafting process as secretary general. This distinction is not a
-formality — it explains the nature of the document, a negotiated synthesis among 30
+formality: it explains the nature of the document, a negotiated synthesis among 30
 members, not an authored thesis.
 
 The innovation lay less in the content than in the method. Nearly 15,000 contributions
@@ -55,7 +55,7 @@ during a payment default.
 
 One provision deserves to be singled out for how far ahead of its time it was. The law
 created a right of access to the rules defining the algorithmic processing used by public
-administrations whenever it underpins individual decisions. That was in 2016 — two years
+administrations whenever it underpins individual decisions. That was in 2016, two years
 before the Villani report called for a public function to audit algorithms, which never
 came into being, and eight years before the EU AI Act imposed evaluation obligations of
 its own. On this particular point, French law got there before anyone else, and no one
@@ -78,7 +78,7 @@ Two recommendations never went anywhere, and they resemble each other. Giving pr
 free and open-source software in public procurement was scaled back to a mere statement of
 encouragement. And the creation of a rating agency for digital players, tasked with
 publicly assessing platform practices with the support of an open network of contributors,
-never came into being — for lack of a sponsor and probably of a legal basis. The problem it
+never came into being, for lack of a sponsor and probably of a legal basis. The problem it
 targeted, the information asymmetry between platforms and everyone else, is addressed
 today by the audit and transparency obligations of the Digital Services Act. The diagnosis
 was right; the instrument was not.
@@ -86,3 +86,20 @@ was right; the instrument was not.
 The same gap between a sound diagnosis and the wrong level of action recurs in the 2014
 opinion on [platform neutrality](/en/commons/cnnum-neutralite-plateformes-2014/): national,
 when the subject had already stopped being one.
+
+## On video
+
+The Conseil national du numérique had summed up the report in five minutes, at the time of
+its publication.
+
+<div class="video">
+  <iframe
+    src="https://geo.dailymotion.com/player.html?video=x2riqzx"
+    title="Le numérique nous concerne tous ! Les grands enjeux de demain sont dans le rapport Ambition numérique"
+    loading="lazy"
+    allow="autoplay; fullscreen; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+</div>
+<p class="video-legende">"Digital affects us all!", a five-minute presentation of the
+<em>Ambition numérique</em> report, Conseil national du numérique (in French).</p>

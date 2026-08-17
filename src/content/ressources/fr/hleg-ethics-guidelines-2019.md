@@ -38,14 +38,14 @@ autant.
 
 Il faut cependant traiter deux critiques plutôt que les contourner. La première est venue de
 l'intérieur du groupe : plusieurs membres ont reproché publiquement au processus d'avoir
-écarté les lignes rouges — les usages qu'il aurait fallu interdire — au profit d'un consensus
+écarté les lignes rouges (les usages qu'il aurait fallu interdire) au profit d'un consensus
 opérationnel, et ont qualifié l'exercice de blanchiment éthique. Le reproche porte : la
 version finale privilégie des principes praticables sur des interdits, ce qui était le prix de
 l'unanimité.
 
 La seconde est chronologique. Le texte d'avril 2019 ignore entièrement ce qui domine la
 question aujourd'hui : les modèles à usage général, l'échelle de calcul, les capacités
-émergentes. Ce n'est pas un manque de clairvoyance, c'est un décalage de calendrier — mais il
+émergentes. Ce n'est pas un manque de clairvoyance, c'est un décalage de calendrier, mais il
 a fallu réouvrir le règlement européen en 2023 pour y intégrer ces objets, ce qui mesure assez
 bien la portée temporelle d'un cadre éthique adossé à un état de l'art.
 

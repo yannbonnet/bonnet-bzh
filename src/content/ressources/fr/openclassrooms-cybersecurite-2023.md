@@ -59,7 +59,7 @@ l'œuvre.
 
 ## En vidéo
 
-Une autre facette du même sujet, filmée cette fois au Campus Cyber.
+Vidéo de présentation produite dans le cadre de ce cours.
 
 <div class="video">
   <button type="button" class="video-facade" data-video-facade data-video-id="C7SMCH5SSRI" data-video-titre="Découvrez le Campus Cyber avec Yann Bonnet : un lieu clé de la cybersécurité en France">

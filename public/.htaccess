@@ -39,8 +39,11 @@ ErrorDocument 404 /404.html
   # composants en balises <style> intégrées à chaque page (pas de contenu
   # tiers, pas de script) ; script-src reste strict, sans exception, puisque
   # le script des filtres est un fichier externe (public/scripts/filtres.js).
-  # frame-src : seule exception à default-src 'self', pour les deux embeds
-  # vidéo youtube-nocookie.com de la fiche rapport-villani-2018 — sans elle,
-  # le navigateur bloque silencieusement l'iframe malgré une src correcte.
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'"
+  # frame-src : seule exception à default-src 'self', pour les embeds vidéo
+  # tiers (rapport-villani-2018 : youtube-nocookie.com et mediatheque.univ-
+  # paris1.fr ; ambition-numerique-2015 : dailymotion.com, dont l'iframe
+  # officielle redirige vers geo.dailymotion.com ; cnnum-neutralite-plateformes-2014 :
+  # youtube-nocookie.com) — sans ces domaines, le navigateur bloque
+  # silencieusement l'iframe malgré une src correcte.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src https://www.youtube-nocookie.com https://mediatheque.univ-paris1.fr https://www.dailymotion.com https://geo.dailymotion.com; object-src 'none'; base-uri 'self'"
 </IfModule>

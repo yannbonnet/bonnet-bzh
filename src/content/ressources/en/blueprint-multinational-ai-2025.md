@@ -52,28 +52,28 @@ entry therefore says three things only.
 
 **The problem.** The development of the most advanced AI systems is concentrated in a
 small number of private companies under two jurisdictions. As of October 2025, the United
-States holds about 75% of global compute capacity, China 15%, the European Union 5% —
-that is, in H100 equivalents, just over a million chips on the US side, 231,000 on the
-Chinese side, and 79,000 across the rest of the G7. This asymmetry, compounded by a
+States holds about 75% of global compute capacity, China 15%, the European Union 5%, that
+is, in H100 equivalents, just over a million chips on the US side, 231,000 on the Chinese
+side, and 79,000 across the rest of the G7. This asymmetry, compounded by a
 comparable concentration of talent, data and model ownership, leaves intermediate
 economies facing an equally bad choice: dependency, if they adopt foreign systems that a
 supplier can restrict, degrade or cut off, and whose design choices constrain everything
 built on top of them; or falling behind, if they abstain and let a gap widen in
 productivity, scientific discovery and military capability. Existing instruments of
-international cooperation — summit declarations, voluntary commitments, national safety
-institutes — create no interdependence capable of altering that dynamic.
+international cooperation (summit declarations, voluntary commitments, national safety
+institutes) create no interdependence capable of altering that dynamic.
 
 **The proposal.** The note introduces the notion of a *bridge power*: a state with real
-AI capabilities — researchers, data, compute infrastructure — but not the scale to
+AI capabilities (researchers, data, compute infrastructure) but not the scale to
 sustain a frontier effort alone. Its thesis is that these powers, pooled together, can
 produce competitive models. Three forms of pooling underpin it. Compute first: training
 is a massive fixed cost, independent of the number of users, which makes it the natural
-candidate for sharing — European capacity already committed or planned, from Jupiter to
+candidate for sharing: European capacity already committed or planned, from Jupiter to
 the five gigafactories expected by 2027, represents more than twenty billion euros.
 Talent next: of the hundred most-cited AI researchers worldwide, eighty-seven come from,
 or now work in, countries other than the United States and China. Data last, not for what
 is already public, but for what is expensive: expert annotation and cleaning. To this the
-note adds two methodological conditions — placing targeted research bets rather than
+note adds two methodological conditions: placing targeted research bets rather than
 chasing scale, and positioning on reliability, where industrial need is real and the
 quality of the legal framework is a structural advantage. The institutional form
 envisaged draws on CERN and Airbus: a semi-distributed structure built around a few
@@ -95,7 +95,7 @@ ask for this, but it does not say how to get it. Bringing together actors who re
 competitors produces real commons, at a price rarely put into figures: the time spent
 maintaining consensus, the trade-offs avoided, the ambitions trimmed to preserve
 unanimity. At the scale of sovereign states sharing strategic assets, that cost does not
-fall — it rises. And the pace of the technological frontier will not wait for it.
+fall; it rises. And the pace of the technological frontier will not wait for it.
 
 The third is that the sovereignty being sought stops at the hardware layer. The
 partnership pools compute, but the chips themselves remain, for the most part, of

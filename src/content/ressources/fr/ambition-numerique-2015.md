@@ -31,7 +31,7 @@ aVerifier: true
 
 Le rapport est celui du collège du Conseil, pas le mien : j'en ai coordonné la concertation
 et la production comme secrétaire général. Cette distinction n'est pas formelle, elle
-explique la nature du document — une synthèse négociée entre 30 membres, non une thèse
+explique la nature du document : une synthèse négociée entre 30 membres, non une thèse
 d'auteur.
 
 L'innovation tenait moins au contenu qu'à la méthode. Près de 15 000 contributions
@@ -54,7 +54,7 @@ quatrième volet a produit le droit au maintien de la connexion internet en cas 
 
 Une disposition mérite d'être signalée pour ce qu'elle anticipe. La loi crée un droit d'accès
 aux règles définissant les traitements algorithmiques employés par les administrations lorsqu'ils
-fondent des décisions individuelles. C'était en 2016 — deux ans avant que le rapport Villani ne
+fondent des décisions individuelles. C'était en 2016, deux ans avant que le rapport Villani ne
 réclame une fonction publique d'audit des algorithmes, qui n'a jamais vu le jour, et huit ans
 avant que le règlement européen sur l'IA n'impose des obligations d'évaluation. Sur ce point
 précis, le droit français a devancé tout le monde, et personne ne s'en souvient.
@@ -74,7 +74,7 @@ l'avant-projet était déjà rédigé le jour de la remise.
 Deux recommandations n'ont pas abouti, et elles se ressemblent. La priorité au logiciel libre
 dans la commande publique a été ramenée à une formulation d'encouragement. Et la création d'une
 agence de notation des acteurs numériques, chargée d'évaluer publiquement les pratiques des
-plateformes en s'appuyant sur un réseau ouvert de contributeurs, n'a jamais vu le jour — faute
+plateformes en s'appuyant sur un réseau ouvert de contributeurs, n'a jamais vu le jour, faute
 d'un porteur et probablement d'un fondement juridique. Le problème qu'elle visait, l'asymétrie
 d'information entre les plateformes et tout le monde, est aujourd'hui traité par les obligations
 d'audit et de transparence du règlement européen sur les services numériques. Le diagnostic était
@@ -83,3 +83,20 @@ bon, l'instrument ne l'était pas.
 Le même écart entre un bon diagnostic et un mauvais échelon d'action se retrouve dans l'avis
 de 2014 sur la [neutralité des plateformes](/communs/cnnum-neutralite-plateformes-2014/) :
 national quand le sujet ne l'était déjà plus.
+
+## En vidéo
+
+Le Conseil national du numérique avait résumé le rapport en cinq minutes, au moment de sa
+publication.
+
+<div class="video">
+  <iframe
+    src="https://geo.dailymotion.com/player.html?video=x2riqzx"
+    title="Le numérique nous concerne tous ! Les grands enjeux de demain sont dans le rapport Ambition numérique"
+    loading="lazy"
+    allow="autoplay; fullscreen; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+</div>
+<p class="video-legende">« Le numérique nous concerne tous ! », présentation en cinq
+minutes du rapport <em>Ambition numérique</em>, Conseil national du numérique.</p>

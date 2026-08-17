@@ -50,7 +50,7 @@ Publié le 3 octobre 2014 au terme de dix mois de travaux et de plus de cent aud
 le sillage des travaux du Conseil sur l’inclusion numérique. Le rapport paraît quelques
 semaines après l’annonce présidentielle d’un « grand plan numérique pour l’école » : il a
 été lu, et parfois instrumentalisé, comme une contribution à ce plan. Sa réception
-parlementaire est inhabituelle pour un rapport d’organisme consultatif — au moins six
+parlementaire est inhabituelle pour un rapport d’organisme consultatif : au moins six
 questions écrites de députés le citent nommément dans les semaines qui suivent.
 
 **Ce qui a abouti, et à quel prix.** La recommandation centrale a été suivie : l’informatique
@@ -67,7 +67,7 @@ d’excellence, pas un socle commun.
 C’était le point de blocage que le rapport avait correctement identifié, et il
 n’a pas été ignoré : un CAPES numérique et sciences informatiques a été ouvert
 dès la session 2020, une agrégation d’informatique à partir de 2022, et une
-formation continue diplômante proposée aux professeurs volontaires — pour
+formation continue diplômante proposée aux professeurs volontaires, pour
 l’essentiel des professeurs de mathématiques. Mais les volumes sont restés hors
 d’échelle avec l’ambition affichée : trente places au CAPES en 2020, cinquante
 en 2022, cinquante au CAPES et vingt-deux à l’agrégation en 2023. Fin 2022,
@@ -81,7 +81,7 @@ l’optimisme de son temps sur les effets de l’équipement numérique en class
 Les travaux conduits depuis n’ont pas confirmé ce lien, et plusieurs pays ont
 restreint l’usage des écrans en milieu scolaire. Le rapport avait sans doute
 raison de vouloir enseigner l’informatique et tort de croire que l’équipement
-transformerait la pédagogie. La comparaison qui structurait le raisonnement —
-l’Angleterre intégrant l’informatique au curriculum scientifique en 2013, à la
-suite du rapport *Shut down or restart* de la Royal Society — portait sur la
+transformerait la pédagogie. La comparaison qui structurait le raisonnement
+(l’Angleterre intégrant l’informatique au curriculum scientifique en 2013, à la
+suite du rapport *Shut down or restart* de la Royal Society) portait sur la
 discipline, pas sur les machines. C’est la moitié du message qui a été entendue.

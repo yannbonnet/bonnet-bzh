@@ -28,9 +28,9 @@ resume: "Pre-figuration report submitted to the Prime Minister on 7 January 2020
 aVerifier: true
 ---
 
-This is the founding document, to be read alongside my 2026 retrospective note. It is
+This is the founding document, to be read alongside [my 2026 retrospective note](/en/commons/campus-cyber-retrospective-2026/). It is
 the only pair in this library where a plan and its outcome can be set side by side, and
-I am a co-author of both — which needs to be said upfront: no one is well placed to
+I am a co-author of both, which needs to be said upfront: no one is well placed to
 evaluate a plan they wrote themselves.
 
 The report was submitted on 7 January 2020, following a mission assigned in July 2019
@@ -41,7 +41,7 @@ Van Den Berghe.
 Three gaps between the plan and its realisation, measurable and instructive.
 
 **Floor space.** The report proposed a site of 10,000 to 15,000 m². The Campus occupies
-26,000 — double the upper bound. A public project whose physical ambition doubles
+26,000, double the upper bound. A public project whose physical ambition doubles
 between the feasibility study and delivery is rare enough to be worth noting, and the
 question is not whether the outcome was better, but what it says about how the
 feasibility study had gauged demand.
@@ -57,7 +57,7 @@ recognised: Hauts-de-France, Nouvelle-Aquitaine, Normandie, Brittany, Région Su
 of the three regions we anticipated are on that list, Pays de la Loire is not, and
 three unplanned regions were added. The actual network was built by the initiative of
 the territories rather than by the map we had drawn. That is probably the document's
-best lesson: an ecosystem scheme cannot be planned from Paris — it has to be allowed to
+best lesson: an ecosystem scheme cannot be planned from Paris; it has to be allowed to
 declare itself.
 
 One reversal, to close. The report studied Beer Sheva in Israel, Cyber NYC, LORCA in

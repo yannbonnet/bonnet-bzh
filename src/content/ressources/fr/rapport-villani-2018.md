@@ -39,7 +39,7 @@ Le rapport n'a pas commencé par une commande politique. Il a commencé par une 
 dans une bibliothèque de Stanford, en octobre 2016, entre François Levin, alors rapporteur
 au Conseil national du numérique, moi-même, et un entrepreneur français installé aux
 États-Unis, Gregory Renard. Gregory Renard nous décrivait deux choses en même temps : ce que ses
-algorithmes savaient déjà faire, et sa peur de ce qu'ils feraient à l'emploi — des centaines
+algorithmes savaient déjà faire, et sa peur de ce qu'ils feraient à l'emploi : des centaines
 de milliers de postes menacés dans certains secteurs, et la question de sa responsabilité
 envers la société qu'il laisserait à ses enfants. Venant de quelqu'un qui construisait ces
 systèmes, c'était un électrochoc.
@@ -60,7 +60,7 @@ Président de la République annonçait une stratégie nationale dotée de 1,5 m
     referrerpolicy="strict-origin-when-cross-origin"
   ></iframe>
 </div>
-<p class="video-legende">Remise du rapport au Président de la République, Collège de France — version française (playlist complète).</p>
+<p class="video-legende">Remise du rapport au Président de la République, Collège de France, version française (playlist complète).</p>
 
 <div class="video">
   <iframe
@@ -71,19 +71,32 @@ Président de la République annonçait une stratégie nationale dotée de 1,5 m
     referrerpolicy="strict-origin-when-cross-origin"
   ></iframe>
 </div>
-<p class="video-legende">Même cérémonie — version doublée en anglais.</p>
+<p class="video-legende">Même cérémonie, version doublée en anglais.</p>
+
+<div class="video">
+  <iframe
+    src="https://mediatheque.univ-paris1.fr/video/3256-410-quel-sens-donner-a-lia-le-rapport-villani-5-ans-apres/?is_iframe=true"
+    title="Quel sens donner à l'IA ? Le rapport Villani, cinq ans après"
+    loading="lazy"
+    allow="encrypted-media; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+</div>
+<p class="video-legende">« Quel sens donner à l'IA ? Le rapport Villani, cinq ans après »,
+dans le cadre du séminaire de l'Observatoire de l'intelligence artificielle, université
+Paris 1 Panthéon-Sorbonne, 22 juin 2022 (16 min, CC BY-NC-SA 4.0).</p>
 
 Je raconte cette généalogie parce qu'elle contredit l'image qu'on se fait de la fabrique des
 politiques publiques. Une stratégie nationale à 1,5 milliard d'euros procède ici d'une
 inquiétude exprimée par un ingénieur, relayée par une petite équipe sans mandat, dans une
-note. Cela dit quelque chose sur la porosité du système français — sa réactivité, et sa
+note. Cela dit quelque chose sur la porosité du système français : sa réactivité, et sa
 dépendance aux circonstances.
 
 ## Ce que le rapport a obtenu
 
 La première phase de la stratégie, dite « AI for Humanity », a mobilisé 1,5 milliard d'euros
-entre 2018 et 2022 : quatre instituts interdisciplinaires — PRAIRIE, MIAI à Grenoble, ANITI
-à Toulouse, 3IA Côte d'Azur — sélectionnés par un jury international en avril 2019, 180
+entre 2018 et 2022 : quatre instituts interdisciplinaires (PRAIRIE, MIAI à Grenoble, ANITI
+à Toulouse, 3IA Côte d'Azur) sélectionnés par un jury international en avril 2019, 180
 chaires d'excellence, 300 programmes doctoraux, et le supercalculateur Jean Zay. Une seconde
 phase a suivi à partir de 2022, portant l'engagement total à environ 2,5 milliards d'euros
 dans le cadre de France 2030.
@@ -102,9 +115,9 @@ plus net.
 
 **L'éthique intégrée à tous les niveaux.** Nous demandions deux choses. Un comité national
 consultatif d'éthique sur les technologies numériques et l'intelligence artificielle : il a
-été créé. Et une fonction publique d'audit des algorithmes — un corps d'experts assermentés
+été créé. Et une fonction publique d'audit des algorithmes (un corps d'experts assermentés
 capables d'« ouvrir les boîtes noires » dans une procédure judiciaire ou sur saisine du
-Défenseur des droits : elle ne l'a pas été. La fonction existe désormais, mais à l'échelle
+Défenseur des droits) : elle ne l'a pas été. La fonction existe désormais, mais à l'échelle
 européenne et sous une autre forme, par les obligations d'évaluation de conformité du
 règlement sur l'IA.
 
@@ -115,7 +128,7 @@ Il n'a pas vu le jour. C'est la recommandation dont l'absence me paraît la plus
 aujourd'hui, précisément parce que la question qu'elle posait est revenue avec une acuité
 supérieure.
 
-**Les quatre secteurs stratégiques** — santé, transport et mobilités, écologie, défense et
+**Les quatre secteurs stratégiques** : santé, transport et mobilités, écologie, défense et
 sécurité. C'est l'axe qui a le plus dérivé. La seconde phase de la stratégie nationale
 s'organise aujourd'hui autour de priorités technologiques et non sectorielles : IA
 embarquée, IA de confiance, IA frugale, IA générative. Le passage d'un découpage par usages
@@ -157,8 +170,8 @@ La critique la plus sévère ne vient pas de nous. Dans son rapport public thém
 novembre 2025, la Cour des comptes relève que le recours à une succession d'appels à projets
 a produit de la fragmentation plutôt que des masses critiques, que l'horizon des financements
 était trop court pour créer des effets de levier, et que la coordination interministérielle a
-changé de tutelle en cours de route — de la direction interministérielle du numérique en 2018
-vers la direction générale des entreprises en mars 2020 — le coordonnateur national ne
+changé de tutelle en cours de route (de la direction interministérielle du numérique en 2018
+vers la direction générale des entreprises en mars 2020), le coordonnateur national ne
 disposant que d'une équipe très restreinte.
 
 Un rapport de mission ne contrôle pas la gouvernance qui suit sa remise. Mais il aurait pu
@@ -187,12 +200,12 @@ l'université Paris 1. C'est-à-dire cinq mois avant la sortie de ChatGPT.
 Ce bilan ne contient pas un mot sur les modèles de fondation, les lois d'échelle ou l'IA
 générative. Ce n'est pas un oubli : ces objets n'étaient pas dans le champ de vision de la
 communauté à laquelle je m'adressais, et le rapport de 2018 encore moins. Mais l'écart
-mesure exactement ce qu'un bilan à cinq ans peut valoir dans ce domaine — et il invite à lire
+mesure exactement ce qu'un bilan à cinq ans peut valoir dans ce domaine, et il invite à lire
 celui-ci avec la même prudence.
 
 Je maintiens deux choses de cette intervention. La conviction qu'il faut faire levier sur
 l'écosystème plutôt que compter sur l'action publique seule : cinq ans de Campus Cyber ne
-m'ont pas fait changer d'avis. Et la formule qui la concluait — il n'y a pas de déterminisme
+m'ont pas fait changer d'avis. Et la formule qui la concluait : il n'y a pas de déterminisme
 technologique, cette transformation a besoin de sens. Elle est plus exigeante aujourd'hui
 qu'elle ne l'était alors, ce qui est un argument pour la conserver et non pour l'abandonner.
 

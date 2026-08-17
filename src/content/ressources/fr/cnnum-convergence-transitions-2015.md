@@ -41,7 +41,7 @@ politique publique, et l'appel tenait lieu de mise à l'agenda.
 Le reste est instructif par comparaison. En juillet 2020, le CNNum a remis à la ministre de
 la Transition écologique et au secrétaire d'État au Numérique une feuille de route de
 50 mesures sur l'environnement et le numérique. Un vrai instrument, avec des
-recommandations chiffrées — et je n'y ai pris aucune part, ayant quitté le Conseil deux ans
+recommandations chiffrées, et je n'y ai pris aucune part, ayant quitté le Conseil deux ans
 plus tôt. Cinq ans séparent l'appel de la feuille de route, et il a fallu attendre une loi,
 en 2021, pour que des obligations existent.
 
@@ -51,7 +51,7 @@ sujet, trois ans avant qu'il devienne un objet de politique publique, et nous l'
 par le moyen qui engageait le moins.
 
 Un dernier point relie cette fiche au rapport Villani. Son cinquième axe reprenait la même
-ambition — une IA plus sobre et une IA au service de l'écologie. Dix ans après l'appel de
+ambition : une IA plus sobre et une IA au service de l'écologie. Dix ans après l'appel de
 2015, la consommation des centres de données a progressé plus vite que les usages
 environnementaux du numérique. Les deux termes de la convergence n'étaient pas symétriques,
 et nous ne l'avions vu ni en 2015 ni en 2018.

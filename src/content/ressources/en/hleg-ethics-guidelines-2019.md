@@ -35,13 +35,13 @@ as much.
 
 Two criticisms deserve to be addressed rather than sidestepped. The first came from
 within the group itself: several members publicly accused the process of sidelining red
-lines — the uses that should have been prohibited outright — in favour of an operational
+lines (the uses that should have been prohibited outright) in favour of an operational
 consensus, and called the exercise ethics-washing. The charge holds: the final version
 favours workable principles over prohibitions, which was the price of unanimity.
 
 The second is a matter of timing. The April 2019 text says nothing at all about what now
 dominates the debate: general-purpose models, compute scale, emergent capabilities. This
-is not a failure of foresight so much as a mismatch of calendars — but the European
+is not a failure of foresight so much as a mismatch of calendars, but the European
 regulation had to be reopened in 2023 to bring these objects within its scope, which is a
 fair measure of how far an ethical framework tied to a given state of the art can travel
 in time.

@@ -34,7 +34,7 @@ législatives françaises comparables.
 Le volet « prédictions » a moins bien tenu. Le cadre d'analyse de 2017 raisonnait sur des
 systèmes entraînés à une tâche définie, dont on pouvait discuter l'usage et le périmètre. Il
 ne dit rien de systèmes généralistes dont les usages ne sont pas fixés à la conception. Ce
-n'est pas une erreur, c'est une limite d'époque — mais elle rend la première moitié de l'avis
+n'est pas une erreur, c'est une limite d'époque, mais elle rend la première moitié de l'avis
 moins utile que la seconde.
 
 Reste la question désagréable : cet avis a-t-il modifié une décision ? Je n'en ai pas la

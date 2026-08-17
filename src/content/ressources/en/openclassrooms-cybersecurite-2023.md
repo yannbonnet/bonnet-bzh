@@ -61,7 +61,7 @@ mechanisms actually at work.
 
 ## On video
 
-Another angle on the same subject, filmed this time at the Campus Cyber.
+Presentation video produced as part of this course.
 
 <div class="video">
   <button type="button" class="video-facade" data-video-facade data-video-id="C7SMCH5SSRI" data-video-titre="Découvrez le Campus Cyber avec Yann Bonnet : un lieu clé de la cybersécurité en France">

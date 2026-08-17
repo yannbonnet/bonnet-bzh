@@ -36,12 +36,12 @@ aVerifier: true
 ## A Stanford library, October 2016
 
 The report did not begin as a political commission. It began with a conversation in a
-Stanford library, in October 2016, between François Levin — then a rapporteur, a staff
-policy officer, at the Conseil national du numérique (French national digital council)
-— myself, and a French entrepreneur based in the United States, Gregory Renard. Renard
+Stanford library, in October 2016, between François Levin, then a rapporteur, a staff
+policy officer, at the Conseil national du numérique (French national digital council),
+myself, and a French entrepreneur based in the United States, Gregory Renard. Renard
 described two things to us at once: what his algorithms could already do, and his fear
-of what they would do to employment — hundreds of thousands of jobs threatened in
-certain sectors — along with the question of his own responsibility toward the society
+of what they would do to employment: hundreds of thousands of jobs threatened in
+certain sectors, along with the question of his own responsibility toward the society
 he would leave to his children. Coming from someone who was building these systems, it
 was a shock.
 
@@ -62,7 +62,7 @@ France, the President of the Republic announced a national strategy backed by
     referrerpolicy="strict-origin-when-cross-origin"
   ></iframe>
 </div>
-<p class="video-legende">Report handover to the President of the Republic, Collège de France — French version (full playlist).</p>
+<p class="video-legende">Report handover to the President of the Republic, Collège de France, French version (full playlist).</p>
 
 <div class="video">
   <iframe
@@ -73,19 +73,32 @@ France, the President of the Republic announced a national strategy backed by
     referrerpolicy="strict-origin-when-cross-origin"
   ></iframe>
 </div>
-<p class="video-legende">Same ceremony — English-dubbed version.</p>
+<p class="video-legende">Same ceremony, English-dubbed version.</p>
+
+<div class="video">
+  <iframe
+    src="https://mediatheque.univ-paris1.fr/video/3256-410-quel-sens-donner-a-lia-le-rapport-villani-5-ans-apres/?is_iframe=true"
+    title="Quel sens donner à l'IA ? Le rapport Villani, cinq ans après"
+    loading="lazy"
+    allow="encrypted-media; picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+</div>
+<p class="video-legende">"What meaning to give to AI? The Villani report, five years on",
+seminar of the AI Observatory, Université Paris 1 Panthéon-Sorbonne, 22 June 2022
+(16 min, in French, CC BY-NC-SA 4.0).</p>
 
 I tell this genealogy because it contradicts the image one tends to have of how public
 policy gets made. Here, a 1.5-billion-euro national strategy originates in a worry
 voiced by an engineer, relayed by a small team with no mandate, in a memo. That says
-something about the porousness of the French system — its responsiveness, and its
+something about the porousness of the French system: its responsiveness, and its
 dependence on circumstance.
 
 ## What the report achieved
 
 The strategy's first phase, known as "AI for Humanity", committed 1.5 billion euros
-between 2018 and 2022: four interdisciplinary institutes — PRAIRIE, MIAI in Grenoble,
-ANITI in Toulouse, 3IA Côte d'Azur — selected by an international jury in April 2019,
+between 2018 and 2022: four interdisciplinary institutes (PRAIRIE, MIAI in Grenoble,
+ANITI in Toulouse, 3IA Côte d'Azur) selected by an international jury in April 2019,
 180 chairs of excellence, 300 doctoral programmes, and the Jean Zay supercomputer. A
 second phase followed from 2022 onward, bringing the total commitment to around
 2.5 billion euros under France 2030.
@@ -105,9 +118,9 @@ success.
 
 **Ethics built in at every level.** We asked for two things. A national consultative
 committee on the ethics of digital technologies and artificial intelligence: it was
-created. And a public algorithm-auditing function — a body of sworn experts able to
+created. And a public algorithm-auditing function: a body of sworn experts able to
 "open the black boxes" in a judicial proceeding or on a saisine (formal referral) from
-the Défenseur des droits (the French ombudsman): it was not. That function now exists,
+the Défenseur des droits (the French ombudsman). It was not. That function now exists,
 but at European level and in a different form, through the conformity-assessment
 obligations of the AI Act.
 
@@ -117,7 +130,7 @@ automation, and new ways of distributing value. It never came into being. Of all
 recommendations, its absence strikes me today as the costliest, precisely because the
 question it raised has come back with even greater urgency.
 
-**The four strategic sectors** — health, transport and mobility, ecology, defence and
+**The four strategic sectors**: health, transport and mobility, ecology, defence and
 security. This is the strand that has drifted furthest. The national strategy's second
 phase is now organised around technological rather than sectoral priorities: embedded
 AI, trustworthy AI, frugal AI, generative AI. The shift from a breakdown by use case to
@@ -158,10 +171,10 @@ The harshest criticism does not come from us. In its thematic public report of
 November 2025, the Cour des comptes (France's national audit court) finds that relying
 on a succession of calls for projects produced fragmentation rather than critical mass,
 that the funding horizon was too short to create leverage effects, and that
-interministerial coordination changed hands along the way — from the direction
-interministérielle du numérique (the interministerial digital directorate) in 2018 to
-the direction générale des entreprises (the directorate general for enterprises) in
-March 2020 — with the national coordinator left with only a very small team.
+interministerial coordination changed hands along the way (from the direction
+interministérielle du numérique, the interministerial digital directorate, in 2018 to
+the direction générale des entreprises, the directorate general for enterprises, in
+March 2020), with the national coordinator left with only a very small team.
 
 A mission report does not control the governance that follows its handover. But it
 could have anticipated it: nothing in the 2018 text secured the piloting of what it
@@ -190,12 +203,12 @@ release of ChatGPT.
 That assessment does not contain a single word on foundation models, scaling laws, or
 generative AI. This is not an oversight: those objects were not within the field of
 vision of the community I was addressing, still less within that of the 2018 report.
-But the gap measures exactly what a five-year assessment can be worth in this field —
+But the gap measures exactly what a five-year assessment can be worth in this field,
 and it invites reading this one with the same caution.
 
 I still hold to two things from that talk. The conviction that one must leverage the
 ecosystem rather than rely on public action alone: five years at Campus Cyber have not
-changed my mind. And the line that concluded it — there is no technological
+changed my mind. And the line that concluded it: there is no technological
 determinism, this transformation needs meaning. It is more demanding today than it was
 then, which is an argument for keeping it, not for abandoning it.
 

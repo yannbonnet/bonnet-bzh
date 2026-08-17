@@ -42,7 +42,7 @@ agenda.
 What came afterwards is instructive by comparison. In July 2020, the CNNum submitted a
 50-measure roadmap on the environment and digital technology to the Minister for the
 Ecological Transition and the Secretary of State for Digital Affairs. A real
-instrument, with quantified recommendations — and I had no part in it, having left the
+instrument, with quantified recommendations, and I had no part in it, having left the
 Council two years earlier. Five years separate the call from the roadmap, and it took
 until a 2021 law for actual obligations to exist.
 
@@ -52,7 +52,7 @@ years before it became a matter of public policy, and we carried it through the 
 that committed us the least.
 
 One last point connects this entry to the Villani report. Its fifth strand took up the
-same ambition — a leaner AI and an AI in the service of ecology. Ten years after the
+same ambition: a leaner AI and an AI in the service of ecology. Ten years after the
 2015 call, data-centre energy consumption has grown faster than digital technology's
 environmental applications. The two terms of the convergence were not symmetrical, and
 we failed to see it either in 2015 or in 2018.

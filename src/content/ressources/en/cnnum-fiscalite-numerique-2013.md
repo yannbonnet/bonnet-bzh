@@ -23,7 +23,7 @@ resume: "Opinion on the taxation of digital activities and on the mismatch betwe
 aVerifier: true
 ---
 
-A rare case in this library where the recommendation was actually followed — six years
+A rare case in this library where the recommendation was actually followed, six years
 later, and by a different route.
 
 The opinion noted in 2013 that tax rules based on physical establishment were

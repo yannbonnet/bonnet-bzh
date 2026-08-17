@@ -40,8 +40,21 @@ La vraie leçon porte sur le niveau d'action, non sur le diagnostic. L'avis éta
 Premier ministre français, sur un sujet où l'échelon national n'avait aucune prise : aucune
 obligation imposée par la France seule aux plateformes structurantes n'aurait été applicable,
 et les tentatives ultérieures l'ont confirmé. Nous avions le bon concept et le mauvais
-destinataire. Cette erreur de niveau se retrouve dans plusieurs travaux de cette période —
-[Ambition numérique](/communs/ambition-numerique-2015/) en offre un autre exemple, sur
-l'agence de notation des plateformes —, et elle mérite d'être nommée : la production d'avis
+destinataire. Cette erreur de niveau se retrouve dans plusieurs travaux de cette période
+([Ambition numérique](/communs/ambition-numerique-2015/) en offre un autre exemple, sur
+l'agence de notation des plateformes), et elle mérite d'être nommée : la production d'avis
 nationaux sur des objets transnationaux a occupé une partie de l'énergie publique française
 des années 2010.
+
+## En vidéo
+
+<div class="video">
+  <button type="button" class="video-facade" data-video-facade data-video-id="00QV7gzsmwM" data-video-titre="Confiance à l'ère des plateformes - quelles garanties ?">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+    <span class="video-facade-texte">Confiance à l'ère des plateformes</span>
+  </button>
+</div>
+<p class="video-legende">« Confiance à l'ère des plateformes - quelles garanties ? »,
+Conseil national du numérique.</p>
+
+<script is:inline src="/scripts/video-facade.js"></script>
